@@ -1,0 +1,34 @@
+.sidebar {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebarHeader .header{
+    background-color: aliceblue;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+
+}
+
+.sidebarContainer {
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    border: 1px solid green ;
+
+}
+
+.sidebarContainerTwo{
+    padding: 0 2rem;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.mainContainer {
+    flex: 1 
+}
