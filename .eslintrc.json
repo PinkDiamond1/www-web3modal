@@ -1,3 +1,21 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next", "next/core-web-vitals", "prettier"],
+  "plugins": ["prettier", "simple-import-sort", "import"],
+  "rules": {
+    "simple-import-sort/imports": "off",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "prettier/prettier": ["error"]
+  },
+  "overrides": [
+    {
+      "files": "./pages/api/**/*.ts",
+      "env": { "node": true },
+      "rules": {
+        "simple-import-sort/imports": "off",
+        "import/order": ["error", { "newlines-between": "always" }]
+      }
+    }
+  ]
 }
