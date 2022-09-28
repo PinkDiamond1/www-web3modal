@@ -2,7 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'ABC Diatype', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -14,6 +14,28 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@font-face {
+  font-family: 'ABC Diatype';
+  src: url(/fonts/ABCDiatype-Regular.woff2) format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ABC Diatype Bold';
+  src: url(/fonts/ABCDiatype-Bold.woff2) format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ABC Diatype Thin';
+  src: url(/fonts/ABCDiatype-Thin.woff2) format('woff2');
+  font-weight: lighter;
+  font-style: normal;
+}
+
 
 @media (prefers-color-scheme: dark) {
   html {

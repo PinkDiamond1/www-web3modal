@@ -3,14 +3,22 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { ConnectButton } from "@web3modal/react";
+import Button from "../components/Button/Index";
+import Text from "../components/Text/Index";
 
 const Home: NextPage = () => {
-  // const videoContent = (
-  //   <Image>
-
-  //   </Image>
-
-  // )
+  const videoContent = (
+    <video
+      muted
+      autoPlay
+      controls
+      width={800}
+      height={500}
+      style={{ borderRadius: 44, paddingBottom: "2em" }}
+    >
+      <source src="/web3modal.mp4" type="video/mp4" />
+    </video>
+  );
   return (
     <div className={styles.container}>
       <Head>
@@ -19,16 +27,24 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <ConnectButton /> */}
-
       <main className={styles.main}>
-        <h3>
-          Web3Modal is an elegantly simple yet powerful library that helps you
-          manage your multi-chain wallet connection flows, all in one place.
-          Designed with both developers and end users in mind, it is easy to
-          integrate and customize, bringing to life a sleek and unique
-          experience.{" "}
-        </h3>
+        {videoContent}
+        <div style={{ padding: "0 10em 0 10em" }}>
+          <Text>
+            Web3Modal is an elegantly simple yet powerful library that helps you
+            manage your multi-chain wallet connection flows, all in one place.
+            <span style={{ color: "#9EA9A9" }}>
+              {" "}
+              Designed with both developers and end users in mind, it is easy to
+              integrate and customize, bringing to life a sleek and unique
+              experience.
+            </span>
+          </Text>
+          {/* <div style={{ display: "flex" }}>
+            <Button>Get Started</Button>
+            <Button>Try It Out</Button>
+          </div> */}
+        </div>
       </main>
     </div>
   );

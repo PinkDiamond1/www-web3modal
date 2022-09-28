@@ -1,31 +1,62 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "../../styles/Layout.module.css";
+import Text from "../Text/Index";
+import Tag from "../Tag/Index";
 
 export default function SideBar() {
+  const router = useRouter();
+
   const menuItems = [
     {
       href: "/",
-      title: "Introduction",
-    },
-    {
-      href: "/get-started",
-      title: "Get started",
+      title: "INTRODUCTION",
     },
     {
       href: "/try-it-out",
-      title: "Try It Out",
+      title: "TRY IT OUT",
+    },
+    {
+      href: "/guide",
+      title: "GUIDE",
     },
   ];
+
+  const checkIfCurrentRoute = (href: string) => {
+    if (href === router.pathname) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   return (
     <aside className={styles.sidebarContainerTwo}>
-      <h2>Web3 Modal</h2>
+      <div
+        style={{
+          border: "1px solid redf",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: 250, // ToDo: Push up higher
+        }}
+      >
+        <Text>Web3modal</Text>
+        <Tag> 2.0.0</Tag>
+      </div>
       <nav>
-        <h1>Docs</h1>
-        <ul>
+        <h4 style={{ padding: "0.25em 0 0em" }}>Docs</h4>
+        <ul style={{ padding: 0, margin: 0 }}>
           {menuItems.map(({ href, title }) => (
-            <li key={title}>
-              <Link href={href}>
+            <li
+              key={title}
+              className={
+                checkIfCurrentRoute(href)
+                  ? styles.sideBarRoutesSelected
+                  : styles.sideBarRoute
+              }
+            >
+              <Link href={href} style={{}}>
                 <a>{title}</a>
               </Link>
             </li>
