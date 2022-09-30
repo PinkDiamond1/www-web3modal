@@ -5,7 +5,7 @@ import { Web3ModalProvider } from "@web3modal/react";
 import Layout from "../components/layout/Layout";
 
 const config: ConfigOptions = {
-  projectId: "26ee9facbe4cbc407218b99540bc8053",
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
   theme: "dark",
   accentColor: "default",
   ethereum: {

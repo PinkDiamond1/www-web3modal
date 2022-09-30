@@ -13,6 +13,10 @@ export default function SideBar() {
       title: "INTRODUCTION",
     },
     {
+      href: "/get-started",
+      title: "GET STARTED",
+    },
+    {
       href: "/try-it-out",
       title: "TRY IT OUT",
     },
@@ -41,7 +45,7 @@ export default function SideBar() {
           width: 250, // ToDo: Push up higher
         }}
       >
-        <Text>Web3modal</Text>
+        <Text>Web3Modal</Text>
         <Tag> 2.0.0</Tag>
       </div>
       <nav>

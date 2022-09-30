@@ -5,8 +5,10 @@ import styles from "../styles/Home.module.css";
 import { ConnectButton } from "@web3modal/react";
 import Button from "../components/Button/Index";
 import Text from "../components/Text/Index";
+// import arrowRightWhiteIcon from "../../public/icons/Chevron.svg";
 
 const Home: NextPage = () => {
+  // console.log(arrowRightWhiteIcon);
   const videoContent = (
     <video
       muted
@@ -19,6 +21,7 @@ const Home: NextPage = () => {
       <source src="/web3modal.mp4" type="video/mp4" />
     </video>
   );
+
   return (
     <div className={styles.container}>
       <Head>
@@ -40,10 +43,26 @@ const Home: NextPage = () => {
               experience.
             </span>
           </Text>
-          {/* <div style={{ display: "flex" }}>
-            <Button>Get Started</Button>
-            <Button>Try It Out</Button>
-          </div> */}
+          <div style={{ display: "flex" }}>
+            <Button
+              variant="fill"
+              color="blue"
+              iconRight={
+                <Image
+                  src="/Chevron.svg"
+                  width={20}
+                  height={20}
+                  alt="arrow right"
+                />
+              }
+              style={{ marginRight: 10 }}
+            >
+              GET STARTED
+            </Button>
+            <Button variant="fill" color="grey">
+              TRY IT OUT
+            </Button>
+          </div>
         </div>
       </main>
     </div>

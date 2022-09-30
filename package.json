@@ -15,6 +15,7 @@
     "@next/mdx": "^12.3.1",
     "@web3modal/ethereum": "^2.0.0-alpha.4",
     "@web3modal/react": "^2.0.0-alpha.4",
+    "dotenv": "^16.0.3",
     "ethers": "^5.7.1",
     "next": "12.3.1",
     "react": "18.2.0",
