@@ -18,8 +18,22 @@ import RPC from '../components/Features/RPC/Index'
 import V2Ready from '../components/Features/V2Ready/Index'
 import Community from '../components/Community/Index'
 import Video from '../components/Video/Index'
+import { useEffect } from 'react'
+import { ThemeCtrl } from '../controllers/ThemeCtrl'
+import { subscribe } from 'valtio'
 
 const Home: NextPage = () => {
+  useEffect(() => {
+    unsubscribe()
+  }, [])
+
+  // Subscribe to all state changes
+  const unsubscribe = subscribe(ThemeCtrl.state, () =>
+    console.log('state has changed to', ThemeCtrl.state)
+  )
+  // Unsubscribe by calling the result
+  unsubscribe()
+
   const textContent = (
     <div style={{ padding: '2em' }}>
       <Text variant="heading4" color="white">

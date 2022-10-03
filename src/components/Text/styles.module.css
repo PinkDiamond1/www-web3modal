@@ -1,8 +1,8 @@
 .heading {
-    font-family: 'ABC Diatype Bold', sans-serif;
-    font-feature-settings: 'case', 'ss02', 'ss04', 'ss06';
-  }
-  
+  font-family: 'ABC Diatype Bold', sans-serif;
+  font-feature-settings: 'case', 'ss02', 'ss04', 'ss06';
+}
+
 .heading1 {
   font-size: 130px;
   line-height: 100%;
@@ -95,6 +95,7 @@
   font-size: 20px;
   line-height: 120%;
   letter-spacing: -0.01em;
+  margin: 0;
 }
 
 @media (max-width: 800px) {
@@ -103,6 +104,7 @@
     line-height: 140%;
     letter-spacing: -0.01em;
   }
+
   .anchor2 {
     font-size: 20px;
     line-height: 125%;

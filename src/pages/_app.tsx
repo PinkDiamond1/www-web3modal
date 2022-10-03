@@ -3,18 +3,32 @@ import type { AppProps } from 'next/app'
 import type { ConfigOptions } from '@web3modal/react'
 import { Web3ModalProvider } from '@web3modal/react'
 import Layout from '../components/layout/Layout'
+import { ThemeCtrl } from '../controllers/ThemeCtrl'
+import { useEffect, useState } from 'react'
 
-// ToDo: Pass Vite through the here ... Like I did with example App.
-const config: ConfigOptions = {
-  projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
-  theme: 'dark',
-  accentColor: 'magenta',
-  ethereum: {
-    appName: 'web3Modal'
+function App({ Component, pageProps }: AppProps) {
+  const [theme, setTheme] = useState('')
+  const [accentColor, setAccentColor] = useState('')
+
+  const config: ConfigOptions = {
+    projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
+    theme: ThemeCtrl.state.theme,
+    accentColor: ThemeCtrl.state.accentColor,
+    ethereum: {
+      appName: 'web3Modal'
+    }
   }
-}
 
-function MyApp({ Component, pageProps }: AppProps) {
+  const unsubscribe = ThemeCtrl.subscribe(() => {
+    setTheme(ThemeCtrl.state.theme)
+    setAccentColor(ThemeCtrl.state.accentColor)
+  })
+
+  useEffect(() => {
+    ThemeCtrl.setTheme('dark')
+    ThemeCtrl.setAccentColor('default')
+  }, [])
+
   return (
     <Web3ModalProvider config={config}>
       <Layout>
@@ -24,4 +38,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   )
 }
 
-export default MyApp
+export default App
+function useSnapshot(store: any) {
+  throw new Error('Function not implemented.')
+}
