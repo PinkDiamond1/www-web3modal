@@ -1,10 +1,10 @@
-import useConditionalValue from "../../hooks/useConditionalValue"
-import { ButtonHTMLAttributes } from "react"
-import s from "./styles.module.css"
+import useConditionalValue from '../../hooks/useConditionalValue'
+import { ButtonHTMLAttributes } from 'react'
+import s from './styles.module.css'
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "fill" | "ghost" | "outline"
-  color?: "blue" | "cyan" | "grey"
+  variant?: 'fill' | 'ghost' | 'outline'
+  color?: 'blue' | 'cyan' | 'grey'
   className?: string
   iconLeft?: JSX.Element
   iconRight?: JSX.Element

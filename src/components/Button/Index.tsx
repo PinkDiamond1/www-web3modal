@@ -1,11 +1,11 @@
-import useConditionalValue from "../../hooks/useConditionalValue"
-import { ButtonHTMLAttributes } from "react"
-import s from "./styles.module.css"
-import Text, { IProps as TextProps } from "../../components/Text/Index"
+import useConditionalValue from '../../hooks/useConditionalValue'
+import { ButtonHTMLAttributes } from 'react'
+import s from './styles.module.css'
+import Text, { IProps as TextProps } from '../../components/Text/Index'
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: "fill" | "ghost" | "outline"
-  color: "blue" | "cyan" | "grey"
+  variant: 'fill' | 'ghost' | 'outline'
+  color: 'blue' | 'cyan' | 'grey'
   className?: string
   iconLeft?: JSX.Element
   iconRight?: JSX.Element
@@ -21,26 +21,26 @@ export default function Button({
   variant,
   ...props
 }: IProps) {
-  const textColor = useConditionalValue<TextProps["color"]>(
-    ["black", "white", "blue", "cyan"],
+  const textColor = useConditionalValue<TextProps['color']>(
+    ['black', 'white', 'blue', 'cyan'],
     [
-      color === "grey" && variant === "fill",
-      (color === "blue" && variant === "fill") ||
-        (color === "grey" && variant === "outline") ||
-        (color === "grey" && variant === "ghost"),
-      (color === "blue" && variant === "outline") || (color === "blue" && variant === "ghost"),
-      color === "cyan"
+      color === 'grey' && variant === 'fill',
+      (color === 'blue' && variant === 'fill') ||
+        (color === 'grey' && variant === 'outline') ||
+        (color === 'grey' && variant === 'ghost'),
+      (color === 'blue' && variant === 'outline') || (color === 'blue' && variant === 'ghost'),
+      color === 'cyan'
     ]
   )
 
   const variantClass = useConditionalValue(
     [s.fillGrey, s.fillBlue, s.outlineGrey, s.outlineBlue, s.ghost],
     [
-      color === "grey" && variant === "fill",
-      color === "blue" && variant === "fill",
-      color === "grey" && variant === "outline",
-      color === "blue" && variant === "outline",
-      variant === "ghost"
+      color === 'grey' && variant === 'fill',
+      color === 'blue' && variant === 'fill',
+      color === 'grey' && variant === 'outline',
+      color === 'blue' && variant === 'outline',
+      variant === 'ghost'
     ]
   )
 
@@ -48,7 +48,7 @@ export default function Button({
   const textIconRightClass = iconRight ? s.textIconRight : undefined
 
   return (
-    <button {...props} className={`${s.button} ${variantClass} ${className ?? ""}`}>
+    <button {...props} className={`${s.button} ${variantClass} ${className ?? ''}`}>
       {iconLeft}
       <Text
         as="span"

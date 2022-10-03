@@ -1,15 +1,15 @@
-import Card from "../../Card"
-import Text from "../../Text/Index"
-import Image from "next/image"
-import FEATURE_CARDS from "../../../data/FEATURE_CARDS"
-import Button from "../../Button/Index"
+import Card from '../../Card'
+import Text from '../../Text/Index'
+import Image from 'next/image'
+import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
+import Button from '../../Button/Index'
 
 const Interface = () => {
   const { title, image, text } = FEATURE_CARDS[3]
 
   return (
     <Card color="dark" padding="none" rounded="lg" width="md">
-      <div style={{ padding: "2rem" }}>
+      <div style={{ padding: '2rem' }}>
         <Text variant="heading5" color="white">
           {title}
         </Text>

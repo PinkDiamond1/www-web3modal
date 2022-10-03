@@ -1,28 +1,28 @@
-import Link from "next/link"
-import { useRouter } from "next/router"
-import s from "../../styles/Layout.module.css"
-import Text from "../Text/Index"
-import Tag from "../Tag/Index"
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import s from '../../styles/Layout.module.css'
+import Text from '../Text/Index'
+import Tag from '../Tag/Index'
 
 export default function SideBar() {
   const router = useRouter()
 
   const menuItems = [
     {
-      href: "/",
-      title: "INTRODUCTION"
+      href: '/',
+      title: 'INTRODUCTION'
     },
     {
-      href: "/get-started",
-      title: "GET STARTED"
+      href: '/get-started',
+      title: 'GET STARTED'
     },
     {
-      href: "/try-it-out",
-      title: "TRY IT OUT"
+      href: '/try-it-out',
+      title: 'TRY IT OUT'
     },
     {
-      href: "/guide",
-      title: "GUIDE"
+      href: '/guide',
+      title: 'GUIDE'
     }
   ]
 
@@ -38,10 +38,10 @@ export default function SideBar() {
     <aside className={s.sidebarContainerTwo}>
       <div
         style={{
-          border: "1px solid redf",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
+          border: '1px solid redf',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
           width: 250 // ToDo: Push up higher
         }}
       >
@@ -51,7 +51,7 @@ export default function SideBar() {
         <Tag> 2.0.0</Tag>
       </div>
       <nav>
-        <h4 style={{ padding: "0.25em 0 0em" }}>Docs</h4>
+        <h4 style={{ padding: '0.25em 0 0em' }}>Docs</h4>
         <ul style={{ padding: 0, margin: 0 }}>
           {menuItems.map(({ href, title }) => (
             <li

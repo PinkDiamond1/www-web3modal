@@ -1,8 +1,8 @@
-import type { NextPage } from "next"
-import Head from "next/head"
-import Image from "next/image"
-import styles from "../../styles/TryItOut.module.css"
-import { ConnectButton, AccountButton, useAccount } from "@web3modal/react"
+import type { NextPage } from 'next'
+import Head from 'next/head'
+import Image from 'next/image'
+import styles from '../../styles/TryItOut.module.css'
+import { ConnectButton, AccountButton, useAccount } from '@web3modal/react'
 
 const TryItOut: NextPage = () => {
   const { connected } = useAccount()
@@ -17,7 +17,7 @@ const TryItOut: NextPage = () => {
           style={{ borderRadius: 44 }}
         />
       </foreignObject>
-      <div style={{ position: "relative", top: -300, left: 275 }}>
+      <div style={{ position: 'relative', top: -300, left: 275 }}>
         {!connected ? <ConnectButton /> : <AccountButton />}
       </div>
     </div>
@@ -26,9 +26,9 @@ const TryItOut: NextPage = () => {
   const headerContent = (
     <div
       style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center"
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center'
       }}
     >
       <h2>Try It Out</h2>
@@ -39,7 +39,7 @@ const TryItOut: NextPage = () => {
   return (
     <div className={styles.container}>
       <main className={styles.main}>
-        <div style={{ flex: 1, width: "60%" }}>{headerContent}</div>
+        <div style={{ flex: 1, width: '60%' }}>{headerContent}</div>
         {checkeredSVG}
       </main>
     </div>
