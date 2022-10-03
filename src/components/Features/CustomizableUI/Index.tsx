@@ -4,7 +4,7 @@ import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
 import { ConnectButton, useConnectModal } from '@web3modal/react'
 // import { useEffect, useState } from "react";
-// import { Web3Modal } from "../../Web3Modal/Index";
+import { Web3Spinner } from '../../Web3Modal/Index'
 
 const CustomizableUI = () => {
   const { isOpen, open, close } = useConnectModal()
@@ -31,7 +31,7 @@ const CustomizableUI = () => {
       <Image
         src="/CheckeredRectangle.svg"
         alt="TryBackground"
-        width={720}
+        width={600}
         height={564}
         style={{ borderRadius: 44 }}
       />
@@ -41,7 +41,7 @@ const CustomizableUI = () => {
         <ConnectButton /> */}
         {/* <w3m-modal open={"true"} /> */}
         {/* {console.log("web3Modal", <w3m-modal />)} */}
-        {/* <Web3Modal /> */}
+        <Web3Spinner />
       </div>
     </Card>
   )

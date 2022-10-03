@@ -19,11 +19,11 @@ export default function SideBar() {
     {
       href: '/try-it-out',
       title: 'TRY IT OUT'
-    },
-    {
-      href: '/guide',
-      title: 'GUIDE'
     }
+    // {
+    //   href: '/guide',
+    //   title: 'GUIDE'
+    // }
   ]
 
   const checkIfCurrentRoute = (href: string) => {
