@@ -18,7 +18,6 @@ import RPC from "../components/Features/RPC/Index";
 import V2Ready from "../components/Features/V2Ready/Index";
 import Community from "../components/Community/Index";
 import Video from "../components/Video/Index";
-// import arrowRightWhiteIcon from "../../public/icons/Chevron.svg";
 
 const Home: NextPage = () => {
   const textContent = (
