@@ -3,8 +3,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    unoptomized: true
+  experimental: {
+    images: {
+      unoptimized: true
+    }
   }
 }
 
