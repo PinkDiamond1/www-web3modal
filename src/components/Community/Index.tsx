@@ -1,11 +1,11 @@
-import Card from "../Card";
-import Text from "../Text/Index";
-import Image from "next/image";
-import FEATURE_CARDS from "../../data/FEATURE_CARDS";
-import Button from "../Button/Index";
+import Card from "../Card"
+import Text from "../Text/Index"
+import Image from "next/image"
+import FEATURE_CARDS from "../../data/FEATURE_CARDS"
+import Button from "../Button/Index"
 
 export default function Community() {
-  const { title, image, text } = FEATURE_CARDS[9];
+  const { title, image, text } = FEATURE_CARDS[9]
 
   return (
     <Card color="dark" padding="none" rounded="lg">
@@ -29,13 +29,7 @@ export default function Community() {
         </div>
       </div>
 
-      <Image
-        src={image}
-        alt={title}
-        width={800}
-        height={220}
-        style={{ borderRadius: 54 }}
-      />
+      <Image src={image} alt={title} width={800} height={220} style={{ borderRadius: 54 }} />
     </Card>
-  );
+  )
 }

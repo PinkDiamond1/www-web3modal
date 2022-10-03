@@ -1,37 +1,36 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import s from "../styles/Home.module.css";
-import { ConnectButton } from "@web3modal/react";
-import Button from "../components/Button/Index";
-import Text from "../components/Text/Index";
-import Card from "../components/Card";
-import MultiChain from "../components/Features/MultiChain";
-import Interface from "../components/Features/Interface/Index";
-import CustomizableUI from "../components/Features/CustomizableUI/Index";
-import Wallets from "../components/Features/Wallets";
-import FEATURE_CARDS from "../data/FEATURE_CARDS";
-import RichFeatures from "../components/Features/RichFeatures/Index";
-import TermsConditions from "../components/Features/TermsConditions/Index";
-import Frameworks from "../components/Features/Frameworks/Index";
-import RPC from "../components/Features/RPC/Index";
-import V2Ready from "../components/Features/V2Ready/Index";
-import Community from "../components/Community/Index";
-import Video from "../components/Video/Index";
+import type { NextPage } from 'next'
+import Head from 'next/head'
+import Image from 'next/image'
+import s from '../styles/Home.module.css'
+import { ConnectButton } from '@web3modal/react'
+import Button from '../components/Button/Index'
+import Text from '../components/Text/Index'
+import Card from '../components/Card'
+import MultiChain from '../components/Features/MultiChain'
+import Interface from '../components/Features/Interface/Index'
+import CustomizableUI from '../components/Features/CustomizableUI/Index'
+import Wallets from '../components/Features/Wallets'
+import FEATURE_CARDS from '../data/FEATURE_CARDS'
+import RichFeatures from '../components/Features/RichFeatures/Index'
+import TermsConditions from '../components/Features/TermsConditions/Index'
+import Frameworks from '../components/Features/Frameworks/Index'
+import RPC from '../components/Features/RPC/Index'
+import V2Ready from '../components/Features/V2Ready/Index'
+import Community from '../components/Community/Index'
+import Video from '../components/Video/Index'
 
 const Home: NextPage = () => {
   const textContent = (
-    <div style={{ padding: "2em" }}>
+    <div style={{ padding: '2em' }}>
       <Text variant="heading4" color="white">
-        Web3Modal is an elegantly simple yet powerful library that helps you
-        manage your multi-chain wallet connection flows, all in one place.
+        Web3Modal is an elegantly simple yet powerful library that helps you manage your multi-chain
+        wallet connection flows, all in one place.
         <Text as="span" color="grey" variant="heading4">
-          {""} Designed with both developers and end users in mind, it is easy
-          to integrate and customize, bringing to life a sleek and unique
-          experience.
+          {''} Designed with both developers and end users in mind, it is easy to integrate and
+          customize, bringing to life a sleek and unique experience.
         </Text>
       </Text>
-      <div style={{ display: "flex", paddingTop: "2em" }}>
+      <div style={{ display: 'flex', paddingTop: '2em' }}>
         <Button
           variant="fill"
           color="blue"
@@ -52,7 +51,7 @@ const Home: NextPage = () => {
         </Button>
       </div>
     </div>
-  );
+  )
   return (
     <div className={s.container}>
       <Head>
@@ -63,7 +62,7 @@ const Home: NextPage = () => {
 
       <main className={s.main}>
         <Video />
-        <div style={{ padding: "0 2em 0 2em" }}>
+        <div style={{ padding: '0 2em 0 2em' }}>
           {textContent}
 
           <CustomizableUI />
@@ -92,7 +91,7 @@ const Home: NextPage = () => {
         </div>
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

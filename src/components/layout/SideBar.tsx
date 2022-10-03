@@ -1,38 +1,38 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import s from "../../styles/Layout.module.css";
-import Text from "../Text/Index";
-import Tag from "../Tag/Index";
+import Link from "next/link"
+import { useRouter } from "next/router"
+import s from "../../styles/Layout.module.css"
+import Text from "../Text/Index"
+import Tag from "../Tag/Index"
 
 export default function SideBar() {
-  const router = useRouter();
+  const router = useRouter()
 
   const menuItems = [
     {
       href: "/",
-      title: "INTRODUCTION",
+      title: "INTRODUCTION"
     },
     {
       href: "/get-started",
-      title: "GET STARTED",
+      title: "GET STARTED"
     },
     {
       href: "/try-it-out",
-      title: "TRY IT OUT",
+      title: "TRY IT OUT"
     },
     {
       href: "/guide",
-      title: "GUIDE",
-    },
-  ];
+      title: "GUIDE"
+    }
+  ]
 
   const checkIfCurrentRoute = (href: string) => {
     if (href === router.pathname) {
-      return true;
+      return true
     } else {
-      return false;
+      return false
     }
-  };
+  }
 
   return (
     <aside className={s.sidebarContainerTwo}>
@@ -42,7 +42,7 @@ export default function SideBar() {
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
-          width: 250, // ToDo: Push up higher
+          width: 250 // ToDo: Push up higher
         }}
       >
         <Text variant="heading4" color="white">
@@ -56,11 +56,7 @@ export default function SideBar() {
           {menuItems.map(({ href, title }) => (
             <li
               key={title}
-              className={
-                checkIfCurrentRoute(href)
-                  ? s.sideBarRoutesSelected
-                  : s.sideBarRoute
-              }
+              className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
             >
               <Link href={href} style={{}}>
                 <a>{title}</a>
@@ -70,5 +66,5 @@ export default function SideBar() {
         </ul>
       </nav>
     </aside>
-  );
+  )
 }

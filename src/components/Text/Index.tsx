@@ -1,6 +1,6 @@
-import useConditionalValue from "../../hooks/useConditionalValue";
-import { createElement, ReactHTML, ReactNode } from "react";
-import s from "./styles.module.css";
+import useConditionalValue from "../../hooks/useConditionalValue"
+import { createElement, ReactHTML, ReactNode } from "react"
+import s from "./styles.module.css"
 
 const mappings: Record<IProps["variant"], keyof ReactHTML> = {
   anchor1: "a",
@@ -17,8 +17,8 @@ const mappings: Record<IProps["variant"], keyof ReactHTML> = {
   text1: "p",
   text2: "p",
   text3: "p",
-  text4: "p",
-};
+  text4: "p"
+}
 
 export interface IProps {
   variant:
@@ -36,24 +36,15 @@ export interface IProps {
     | "text1"
     | "text2"
     | "text3"
-    | "text4";
-  children: ReactNode | number | string;
-  color:
-    | "black"
-    | "blue"
-    | "cyan"
-    | "green"
-    | "grey"
-    | "orange"
-    | "pink"
-    | "purple"
-    | "white";
-  as?: "a" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
-  className?: string;
-  href?: string;
-  target?: "_blank";
-  rel?: "noopener noreferrer";
-  id?: string;
+    | "text4"
+  children: ReactNode | number | string
+  color: "black" | "blue" | "cyan" | "green" | "grey" | "orange" | "pink" | "purple" | "white"
+  as?: "a" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span"
+  className?: string
+  href?: string
+  target?: "_blank"
+  rel?: "noopener noreferrer"
+  id?: string
 }
 
 export default function Text({
@@ -65,7 +56,7 @@ export default function Text({
   href,
   id,
   target,
-  rel,
+  rel
 }: IProps) {
   const baseClass = useConditionalValue(
     [s.anchor, s.heading, s.numeric, s.text],
@@ -73,9 +64,9 @@ export default function Text({
       variant.includes("anchor"),
       variant.includes("heading"),
       variant.includes("numeric"),
-      variant.includes("text"),
-    ],
-  );
+      variant.includes("text")
+    ]
+  )
 
   const colorClass = useConditionalValue(
     [
@@ -87,7 +78,7 @@ export default function Text({
       s.colorOrange,
       s.colorCyan,
       s.colorPink,
-      s.colorPurple,
+      s.colorPurple
     ],
     [
       color === "white",
@@ -98,11 +89,11 @@ export default function Text({
       color === "orange",
       color === "cyan",
       color === "pink",
-      color === "purple",
-    ],
-  );
+      color === "purple"
+    ]
+  )
 
-  const variantClass = s[variant] ?? "";
+  const variantClass = s[variant] ?? ""
 
   // return <h2 className={s.heading4}>{children}</h2>;
 
@@ -113,6 +104,6 @@ export default function Text({
     target,
     rel,
     className: `${baseClass} ${variantClass} ${colorClass} ${className ?? ""}`,
-    id,
-  });
+    id
+  })
 }

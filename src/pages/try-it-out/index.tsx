@@ -1,11 +1,11 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
-import styles from "../../styles/TryItOut.module.css";
-import { ConnectButton, AccountButton, useAccount } from "@web3modal/react";
+import type { NextPage } from "next"
+import Head from "next/head"
+import Image from "next/image"
+import styles from "../../styles/TryItOut.module.css"
+import { ConnectButton, AccountButton, useAccount } from "@web3modal/react"
 
 const TryItOut: NextPage = () => {
-  const { connected } = useAccount();
+  const { connected } = useAccount()
   const checkeredSVG = (
     <div>
       <foreignObject>
@@ -21,20 +21,20 @@ const TryItOut: NextPage = () => {
         {!connected ? <ConnectButton /> : <AccountButton />}
       </div>
     </div>
-  );
+  )
 
   const headerContent = (
     <div
       style={{
         display: "flex",
         justifyContent: "space-between",
-        alignItems: "center",
+        alignItems: "center"
       }}
     >
       <h2>Try It Out</h2>
       <p>Copy Code</p>
     </div>
-  );
+  )
 
   return (
     <div className={styles.container}>
@@ -43,7 +43,7 @@ const TryItOut: NextPage = () => {
         {checkeredSVG}
       </main>
     </div>
-  );
-};
+  )
+}
 
-export default TryItOut;
+export default TryItOut

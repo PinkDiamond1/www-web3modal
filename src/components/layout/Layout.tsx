@@ -1,10 +1,14 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import styles from "../../styles/Layout.module.css";
-import SideBar from "./SideBar";
+import { useRouter } from 'next/router'
+import { ReactNode } from 'react'
+import styles from '../../styles/Layout.module.css'
+import SideBar from './SideBar'
 
-export default function Layout({ children }) {
-  const router = useRouter();
+interface Props {
+  children?: ReactNode
+}
+
+export default function Layout({ children, ...props }: Props) {
+  const router = useRouter()
 
   return (
     <div className={styles.sidebar}>
@@ -13,5 +17,5 @@ export default function Layout({ children }) {
         <main className={styles.mainContainer}>{children}</main>
       </div>
     </div>
-  );
+  )
 }
