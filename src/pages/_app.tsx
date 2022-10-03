@@ -4,10 +4,11 @@ import type { ConfigOptions } from "@web3modal/react";
 import { Web3ModalProvider } from "@web3modal/react";
 import Layout from "../components/layout/Layout";
 
+// ToDo: Pass Vite through the here ... Like I did with example App.
 const config: ConfigOptions = {
   projectId: process.env.NEXT_PUBLIC_PROJECT_ID,
   theme: "dark",
-  accentColor: "default",
+  accentColor: "magenta",
   ethereum: {
     appName: "web3Modal",
   },

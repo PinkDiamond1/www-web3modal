@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import styles from "../../styles/Layout.module.css";
+import s from "../../styles/Layout.module.css";
 import Text from "../Text/Index";
 import Tag from "../Tag/Index";
 
@@ -35,7 +35,7 @@ export default function SideBar() {
   };
 
   return (
-    <aside className={styles.sidebarContainerTwo}>
+    <aside className={s.sidebarContainerTwo}>
       <div
         style={{
           border: "1px solid redf",
@@ -45,7 +45,9 @@ export default function SideBar() {
           width: 250, // ToDo: Push up higher
         }}
       >
-        <Text>Web3Modal</Text>
+        <Text variant="heading4" color="white">
+          Web3Modal
+        </Text>
         <Tag> 2.0.0</Tag>
       </div>
       <nav>
@@ -56,8 +58,8 @@ export default function SideBar() {
               key={title}
               className={
                 checkIfCurrentRoute(href)
-                  ? styles.sideBarRoutesSelected
-                  : styles.sideBarRoute
+                  ? s.sideBarRoutesSelected
+                  : s.sideBarRoute
               }
             >
               <Link href={href} style={{}}>

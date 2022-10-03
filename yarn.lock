@@ -1292,7 +1292,7 @@
     "@web3modal/core" "2.0.0-alpha.4"
     "@web3modal/ui" "2.0.0-alpha.4"
 
-"@web3modal/ui@2.0.0-alpha.4":
+"@web3modal/ui@2.0.0-alpha.4", "@web3modal/ui@^2.0.0-alpha.4":
   version "2.0.0-alpha.4"
   resolved "https://registry.yarnpkg.com/@web3modal/ui/-/ui-2.0.0-alpha.4.tgz#84e04a9941024d167d4d9d7e400cfe2a61f5b575"
   integrity sha512-rbMbnrWx5LlHam07X1jCYsw/M+PzbMooP/98HK6zM+M8aCOjOHnRkO4DaFC1wZZPAVVE4+dnI5TQDXPTdmFN9A==
@@ -3496,7 +3496,7 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
-lit-element@^3.2.0:
+lit-element@^3.2.0, lit-element@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/lit-element/-/lit-element-3.2.2.tgz#d148ab6bf4c53a33f707a5168e087725499e5f2b"
   integrity sha512-6ZgxBR9KNroqKb6+htkyBwD90XGRiqKDHVrW/Eh0EZ+l+iC+u+v+w3/BA5NGi4nizAVHGYvQBHUDuSmLjPp7NQ==

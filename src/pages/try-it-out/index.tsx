@@ -17,7 +17,6 @@ const TryItOut: NextPage = () => {
           style={{ borderRadius: 44 }}
         />
       </foreignObject>
-
       <div style={{ position: "relative", top: -300, left: 275 }}>
         {!connected ? <ConnectButton /> : <AccountButton />}
       </div>

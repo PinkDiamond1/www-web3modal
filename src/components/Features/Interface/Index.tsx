@@ -4,15 +4,25 @@ import Image from "next/image";
 import FEATURE_CARDS from "../../../data/FEATURE_CARDS";
 
 const Interface = () => {
-  const { title, image, text, width } = FEATURE_CARDS[0];
+  const { title, image, text } = FEATURE_CARDS[1];
 
   return (
     <Card color="dark" padding="none" rounded="lg" width="lg">
-      <div style={{ padding: 30 }}>
-        <Text>{title}</Text>
-        <Text>{text}</Text>
+      <div style={{ padding: "2rem" }}>
+        <Text variant="heading5" color="grey">
+          <Text as="span" color="white" variant="heading5">
+            {title}
+          </Text>
+          {text}
+        </Text>
       </div>
-      <Image src={image} alt={title} width={472} height={290} />
+      <Image
+        src={image}
+        layout="responsive"
+        alt={title}
+        width={472}
+        height={262}
+      />
     </Card>
   );
 };

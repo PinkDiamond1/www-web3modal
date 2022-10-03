@@ -54,7 +54,14 @@ export default function Button({
       className={`${s.button} ${variantClass} ${className ?? ""}`}
     >
       {iconLeft}
-      <p style={{ color: textColor }}>{children}</p>
+      <Text
+        as="span"
+        variant="anchor2"
+        color={textColor}
+        className={textIconLeftClass ?? textIconRightClass}
+      >
+        {children}
+      </Text>
       {iconRight}
     </button>
   );

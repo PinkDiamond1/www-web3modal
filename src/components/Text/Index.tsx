@@ -1,10 +1,5 @@
 import useConditionalValue from "../../hooks/useConditionalValue";
-import {
-  ButtonHTMLAttributes,
-  createElement,
-  ReactHTML,
-  ReactNode,
-} from "react";
+import { createElement, ReactHTML, ReactNode } from "react";
 import s from "./styles.module.css";
 
 const mappings: Record<IProps["variant"], keyof ReactHTML> = {
@@ -61,6 +56,63 @@ export interface IProps {
   id?: string;
 }
 
-export default function Text({ children, ...props }: IProps) {
-  return <h2 className={s.heading4}>{children}</h2>;
+export default function Text({
+  variant,
+  children,
+  as,
+  color,
+  className,
+  href,
+  id,
+  target,
+  rel,
+}: IProps) {
+  const baseClass = useConditionalValue(
+    [s.anchor, s.heading, s.numeric, s.text],
+    [
+      variant.includes("anchor"),
+      variant.includes("heading"),
+      variant.includes("numeric"),
+      variant.includes("text"),
+    ],
+  );
+
+  const colorClass = useConditionalValue(
+    [
+      s.colorWhite,
+      s.colorBlack,
+      s.colorBlue,
+      s.colorGrey,
+      s.colorGreen,
+      s.colorOrange,
+      s.colorCyan,
+      s.colorPink,
+      s.colorPurple,
+    ],
+    [
+      color === "white",
+      color === "black",
+      color === "blue",
+      color === "grey",
+      color === "green",
+      color === "orange",
+      color === "cyan",
+      color === "pink",
+      color === "purple",
+    ],
+  );
+
+  const variantClass = s[variant] ?? "";
+
+  // return <h2 className={s.heading4}>{children}</h2>;
+
+  // eslint-disable-next-line react/no-children-prop
+  return createElement(as ?? mappings[variant], {
+    children,
+    href,
+    target,
+    rel,
+    className: `${baseClass} ${variantClass} ${colorClass} ${className ?? ""}`,
+    id,
+  });
 }

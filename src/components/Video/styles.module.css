@@ -1,0 +1,18 @@
+.videoWrapper {
+    position: relative;
+}
+
+.videoWrapper video {
+    width: 800px;
+    height: 500px;
+}
+
+@media (max-width: 800px) {
+  .videoWrapper video {
+    position: relative;
+    overflow: hidden;
+    width: 371px;
+    height: 530px;
+    object-fit: cover;
+  }
+}
