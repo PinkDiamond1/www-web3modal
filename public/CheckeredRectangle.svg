@@ -1,0 +1,24 @@
+<svg width="720" height="564" viewBox="0 0 720 564" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g clip-path="url(#clip0_509_24142)">
+<rect width="720" height="564" rx="44" fill="url(#pattern0)"/>
+<rect width="720" height="564" rx="44" fill="url(#paint0_linear_509_24142)"/>
+<rect width="720" height="564" fill="url(#pattern1)"/>
+</g>
+<rect x="0.5" y="0.5" width="719" height="563" rx="43.5" stroke="#3B4040"/>
+<defs>
+<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="0.138889" height="0.177305">
+<use xlink:href="#image0_509_24142" transform="scale(0.000694444 0.000886525)"/>
+</pattern>
+<pattern id="pattern1" patternContentUnits="objectBoundingBox" width="0.138889" height="0.177305">
+<use xlink:href="#image0_509_24142" transform="scale(0.000694444 0.000886525)"/>
+</pattern>
+<linearGradient id="paint0_linear_509_24142" x1="0" y1="0" x2="789.137" y2="123.996" gradientUnits="userSpaceOnUse">
+<stop stop-color="#272A2A"/>
+<stop offset="1" stop-color="#141414"/>
+</linearGradient>
+<clipPath id="clip0_509_24142">
+<rect width="720" height="564" rx="44" fill="white"/>
+</clipPath>
+<image id="image0_509_24142" width="200" height="200" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI1SURBVHgB7dbRCQJBEAXBPTGXg8s/lgOjWQ1A+3vAqhCGaXjHeV17Mcbrvo/FGI8F/CQQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCM/F3zuv61h85TDDfJ51L6bYJhYEgQxi6swjEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoEgEAgCgSAQCAKBIBAIAoHwXEyzF1PsN1L9CwJ+/mTvAAAAAElFTkSuQmCC"/>
+</defs>
+</svg>

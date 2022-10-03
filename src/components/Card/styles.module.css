@@ -1,0 +1,89 @@
+.card {
+    border: 1px solid transparent;
+    margin: 1.5em 0 0 0 !important
+  }
+  
+  .roundedLg {
+    border-radius: 64px;
+  }
+  
+  @media (max-width: 800px) {
+    .roundedLg {
+      border-radius: 44px;
+    }
+  }
+  
+  .roundedMd {
+    border-radius: 54px;
+  }
+  
+  .gradient {
+    background: linear-gradient(97.02deg, #272a2a 0%, #141414 100%);
+    border-color: var(--color-grey-24);
+  }
+  
+  .dark {
+    background: rgba(0, 0, 0, 0.33);
+    border-color: rgba(255, 255, 255, 0.33);
+  }
+  
+  .transparent {
+    background: transparent;
+    border-color: var(--color-grey-24);
+  }
+  
+  .paddingLg {
+    padding: 30px;
+  }
+
+  .threeColumn {
+    width: 60%;
+    margin-right: 1em !important
+  }
+
+  .twoColumn {
+    width: 40%;
+    margin-right: 1em !important
+}
+
+
+  
+@media (max-width: 800px) {
+.paddingLg {
+    padding: 30px 20px;
+}
+
+.card{
+  margin-top: 4em !important;
+}
+}
+
+.paddingMd {
+padding: 10px;
+}
+
+@media (max-width: 800px) {
+.paddingMd {
+    padding: 0;
+}
+}
+
+.paddingNone {
+padding: 0;
+}
+
+@media (max-width: 800px) {
+    .threeColumn {
+        width: 100%;
+    }
+    .twoColumn {
+        width: 100%;
+    }
+    /* .cardRow {
+        display: flex;
+    } */
+
+}
+  
+  
+  

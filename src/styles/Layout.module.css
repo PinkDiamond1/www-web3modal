@@ -1,0 +1,47 @@
+.sidebar {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebarContainer {
+    display: flex;
+    flex-direction: row;
+    flex:1;
+}
+
+.sidebarContainerTwo{
+    padding: 0 2rem;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.mainContainer {
+    flex: 1 
+}
+
+.sideBarRoutesSelected {
+    list-style-type: none;
+    height: 40px;
+    background-color: #3396FF;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 1em;
+}
+
+.sideBarRoute {
+    list-style-type: none;
+    height: 40px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 1em;
+}
+
+@media (max-width: 600px) {
+    .sidebarContainerTwo {
+      display: none;
+    }
+  }

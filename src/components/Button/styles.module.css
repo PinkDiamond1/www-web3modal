@@ -1,0 +1,102 @@
+.button {
+  border-radius: 20px;
+  background-color: transparent;
+  outline: none;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  min-height: 40px;
+  padding: 2px 16px 0 16px;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.button:disabled {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.button:disabled span {
+  opacity: 0 !important;
+}
+
+.button img {
+  margin-top: -1px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.button:hover img {
+  transform: translateX(2px);
+}
+
+.button:focus-visible {
+  box-shadow: 0 0 2px 2px var(--color-blue-100);
+}
+
+.button:disabled span {
+  opacity: 0.5;
+}
+
+.fillGrey {
+  background-color: var(--color-grey-95);
+  border-color: var(--color-grey-100);
+}
+
+.fillGrey:hover {
+  background-color: var(--color-grey-70);
+  border-color: var(--color-grey-80);
+}
+
+.fillBlue {
+  background-color: var(--color-blue-100);
+  border-color: var(--color-blue-125);
+}
+
+.fillBlue:hover {
+  background-color: var(--color-blue-125);
+  border-color: var(--color-blue-150);
+}
+
+.outlineGrey {
+  padding-top: 2px;
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.33);
+}
+
+.outlineGrey:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.outlineBlue {
+  padding-top: 2px;
+  background-color: transparent;
+  border-color: var(--color-blue-125);
+}
+
+.outlineBlue:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ghost {
+  background-color: transparent;
+}
+
+.ghost:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.textIconRight {
+  margin-right: 10px;
+}
+
+.textIconLeft {
+  margin-left: 10px;
+}
+
+.spinner {
+  position: absolute;
+  margin-top: -1px;
+}
