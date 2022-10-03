@@ -7,7 +7,7 @@ import { ConnectButton, AccountButton, useAccount } from "@web3modal/react";
 const TryItOut: NextPage = () => {
   const { connected } = useAccount();
   const checkeredSVG = (
-    <div style={{ padding: "1em" }}>
+    <div>
       <foreignObject>
         <Image
           src="/CheckeredRectangle.svg"
@@ -33,7 +33,7 @@ const TryItOut: NextPage = () => {
       }}
     >
       <h2>Try It Out</h2>
-      <p>COPY CODE</p>
+      <p>Copy Code</p>
     </div>
   );
 
