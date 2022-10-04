@@ -7,7 +7,7 @@ const Interface = () => {
   const { title, image, text } = FEATURE_CARDS[1]
 
   return (
-    <Card color="dark" padding="none" rounded="lg" width="lg">
+    <Card color="dark" padding="none" rounded="md" width="lg">
       <div style={{ padding: '2rem' }}>
         <Text variant="heading5" color="grey">
           <Text as="span" color="white" variant="heading5">

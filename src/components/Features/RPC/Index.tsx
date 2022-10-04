@@ -7,7 +7,7 @@ const RPC = () => {
   const { title, image, text } = FEATURE_CARDS[7]
 
   return (
-    <Card color="dark" padding="none" rounded="lg" width="md">
+    <Card color="dark" padding="none" rounded="md" width="md">
       <div style={{ padding: '3rem' }}>
         <Text variant="heading5" color="grey">
           <Text as="span" color="white" variant="heading5">

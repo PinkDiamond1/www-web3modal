@@ -16,6 +16,6 @@ export default function Layout({ children, ...props }: Props) {
         <SideBar />
         <main className={styles.mainContainer}>{children}</main>
       </div>
-    </div>
+    </div >
   )
 }

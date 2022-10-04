@@ -38,20 +38,19 @@ export default function SideBar() {
     <aside className={s.sidebarContainerTwo}>
       <div
         style={{
-          border: '1px solid redf',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           width: 250 // ToDo: Push up higher
         }}
       >
-        <Text variant="heading4" color="white">
+        <Text variant="heading4" color="grey">
           Web3Modal
         </Text>
         <Tag> 2.0.0</Tag>
       </div>
       <nav>
-        <h4 style={{ padding: '0.25em 0 0em' }}>Docs</h4>
+        <Text variant="heading6" color="grey">Docs</Text>
         <ul style={{ padding: 0, margin: 0 }}>
           {menuItems.map(({ href, title }) => (
             <li

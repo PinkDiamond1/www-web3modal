@@ -5,10 +5,14 @@ import { Web3ModalProvider } from '@web3modal/react'
 import Layout from '../components/layout/Layout'
 import { ThemeCtrl } from '../controllers/ThemeCtrl'
 import { useEffect, useState } from 'react'
+import AlphaBanner from '../components/AlphaBanner/Index'
 
 function App({ Component, pageProps }: AppProps) {
+  // ToDo: State for AlphaBanner
+
   const [theme, setTheme] = useState('')
   const [accentColor, setAccentColor] = useState('')
+  // const [closeBanner, setCloseBanner] = useState(false)
 
   const config: ConfigOptions = {
     projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
@@ -31,6 +35,7 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <Web3ModalProvider config={config}>
+      {/* {closeBanner ? null : <AlphaBanner setCloseBanner={setCloseBanner} />} */}
       <Layout>
         <Component {...pageProps} />
       </Layout>

@@ -3,16 +3,18 @@
 }
 
 .videoWrapper video {
-    width: 800px;
-    height: 500px;
+    width: 1000px;
+    height: 562px;
+    border: 1px solid grey
 }
 
 @media (max-width: 800px) {
   .videoWrapper video {
     position: relative;
-    overflow: hidden;
-    width: 371px;
-    height: 530px;
+    overflow: visible;
+    /* width: 550px; */
+    height: 600px;
     object-fit: cover;
+    /* object-fit: fill; */
   }
 }

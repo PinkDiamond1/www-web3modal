@@ -74,9 +74,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+
       <main className={s.main}>
         <Video />
-        <div style={{ padding: '0 2em 0 2em' }}>
+        <div className={s.mainContent}>
           {textContent}
 
           {/* <CustomizableUI /> */}

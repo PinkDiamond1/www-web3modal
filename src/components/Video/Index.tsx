@@ -5,9 +5,9 @@ const Video = () => (
     <video
       muted
       autoPlay
-      controls
-      width={800}
-      height={500}
+      // controls
+      width={1000}
+      height={562}
       style={{ borderRadius: 44, paddingBottom: '2em' }}
     >
       <source src="/web3modal.mp4" type="video/mp4" />

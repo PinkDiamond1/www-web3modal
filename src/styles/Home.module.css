@@ -1,5 +1,5 @@
 .container {
-  padding: 0 10rem 0 10rem;
+  /* padding: 0 4rem 0 4rem; */
 }
 
 .main {
@@ -113,6 +113,10 @@
   display: flex;
 }
 
+.mainContent {
+  padding: 0 10em 0 10em;
+}
+
 
 @media (max-width: 600px) {
   .grid {
@@ -125,6 +129,10 @@
   .container {
     padding: 0 1rem 0 1rem;
   }
+  .mainContent {
+    padding: 0; 
+  }
+  
 }
 
 @media (prefers-color-scheme: dark) {
