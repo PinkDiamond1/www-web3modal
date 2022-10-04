@@ -6,10 +6,5 @@ interface Props {
 }
 
 export default function MDXLayout({ children, ...props }: Props) {
-
-  return (
-    <div className={s.container}>
-      {children}
-    </div>
-  )
+  return <div className={s.container}>{children}</div>
 }

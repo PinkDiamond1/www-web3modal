@@ -6,17 +6,17 @@ import Text, { IProps as TextProps } from '../../components/Text/Index'
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: 'fill' | 'ghost' | 'outline'
   color:
-    | 'blue'
-    | 'cyan'
-    | 'grey'
-    | 'green'
-    | 'magenta'
-    | 'orange'
-    | 'purple'
-    | 'teal'
-    | 'white'
-    | 'blackWhite'
-    | 'blueNew'
+  | 'blue'
+  | 'cyan'
+  | 'grey'
+  | 'green'
+  | 'magenta'
+  | 'orange'
+  | 'purple'
+  | 'teal'
+  | 'white'
+  | 'blackWhite'
+  | 'blueNew'
   className?: string
   iconLeft?: JSX.Element
   iconRight?: JSX.Element
@@ -39,8 +39,8 @@ export default function Button({
     [
       (color === 'grey' && variant === 'fill') || (color === 'blackWhite' && variant === 'fill'),
       (color === 'blue' && variant === 'fill') ||
-        (color === 'grey' && variant === 'outline') ||
-        (color === 'grey' && variant === 'ghost'),
+      (color === 'grey' && variant === 'outline') ||
+      (color === 'grey' && variant === 'ghost'),
       (color === 'blue' && variant === 'outline') || (color === 'blue' && variant === 'ghost'),
       color === 'cyan'
     ]
@@ -85,7 +85,7 @@ export default function Button({
       {iconLeft}
       <Text
         as="span"
-        variant={textVariant || 'anchor2'}
+        variant="anchor2"
         color={textColor}
         className={textIconLeftClass ?? textIconRightClass}
       >
