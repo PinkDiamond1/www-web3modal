@@ -39,6 +39,3 @@ function App({ Component, pageProps }: AppProps) {
 }
 
 export default App
-function useSnapshot(store: any) {
-  throw new Error('Function not implemented.')
-}

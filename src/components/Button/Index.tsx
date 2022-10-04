@@ -5,7 +5,18 @@ import Text, { IProps as TextProps } from '../../components/Text/Index'
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: 'fill' | 'ghost' | 'outline'
-  color: 'blue' | 'cyan' | 'grey'
+  color:
+    | 'blue'
+    | 'cyan'
+    | 'grey'
+    | 'green'
+    | 'magenta'
+    | 'orange'
+    | 'purple'
+    | 'teal'
+    | 'white'
+    | 'blackWhite'
+    | 'blueNew'
   className?: string
   iconLeft?: JSX.Element
   iconRight?: JSX.Element
@@ -26,7 +37,7 @@ export default function Button({
   const textColor = useConditionalValue<TextProps['color']>(
     ['black', 'white', 'blue', 'cyan'],
     [
-      color === 'grey' && variant === 'fill',
+      (color === 'grey' && variant === 'fill') || (color === 'blackWhite' && variant === 'fill'),
       (color === 'blue' && variant === 'fill') ||
         (color === 'grey' && variant === 'outline') ||
         (color === 'grey' && variant === 'ghost'),
@@ -36,10 +47,30 @@ export default function Button({
   )
 
   const variantClass = useConditionalValue(
-    [s.fillGrey, s.fillBlue, s.outlineGrey, s.outlineBlue, s.ghost],
+    [
+      s.fillGrey,
+      s.fillBlue,
+      s.fillGreen,
+      s.fillMagenta,
+      s.fillOrange,
+      s.fillPurple,
+      s.fillTeal,
+      s.fillWhite,
+      s.fillBlueNew,
+      s.outlineGrey,
+      s.outlineBlue,
+      s.ghost
+    ],
     [
       color === 'grey' && variant === 'fill',
       color === 'blue' && variant === 'fill',
+      color === 'green' && variant === 'fill',
+      color === 'magenta' && variant === 'fill',
+      color === 'orange' && variant === 'fill',
+      color === 'purple' && variant === 'fill',
+      color === 'teal' && variant === 'fill',
+      color === 'blackWhite' && variant === 'fill',
+      color === 'blueNew' && variant === 'fill',
       color === 'grey' && variant === 'outline',
       color === 'blue' && variant === 'outline',
       variant === 'ghost'

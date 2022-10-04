@@ -79,7 +79,7 @@ const Home: NextPage = () => {
         <div style={{ padding: '0 2em 0 2em' }}>
           {textContent}
 
-          <CustomizableUI />
+          {/* <CustomizableUI /> */}
 
           <div className={s.cardRow}>
             <Interface />

@@ -11,17 +11,18 @@ import FooterRouter from '../../components/FooterRouter'
 const TryItOut: NextPage = () => {
   const { connected } = useAccount()
 
+  // Calculate ConnectButton posotion based on Size.
   const checkeredSVG = (
     <div>
       <Image
         src="/CheckeredRectangle.svg"
         alt="TryBackground"
-        width={720}
-        height={564}
-        // layout="responsive"
-        style={{ borderRadius: 44 }}
+        layout="responsive"
+        width={680}
+        height={510}
+        // style={{ borderRadius: 44 }}
       />
-      <div style={{ position: 'relative', top: -300, left: 275 }}>
+      <div style={{ position: 'relative', top: -325, left: 320 }}>
         {!connected ? <ConnectButton /> : <AccountButton />}
       </div>
     </div>
@@ -52,7 +53,6 @@ const TryItOut: NextPage = () => {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
         padding: '2em',
         width: '75%'
       }}

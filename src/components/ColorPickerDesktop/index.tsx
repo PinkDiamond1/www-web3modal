@@ -22,7 +22,7 @@ export default function ColorPickerDesktop() {
         <Text variant="text2" color="white">
           Theme
         </Text>
-        <div style={{ display: 'flex', marginRight: '1em' }}>
+        <div style={{ display: 'flex', marginTop: '1em' }}>
           {THEME.map(theme => (
             <Button
               onClick={() => changeTheme(theme.value)}
@@ -42,19 +42,31 @@ export default function ColorPickerDesktop() {
     )
   }
 
+  const buttonColorCheck = (color: string) => {
+    if (color === 'default') {
+      return 'blue'
+    }
+    if (color === 'blue') {
+      console.log('one blue...')
+      return 'blueNew'
+    } else {
+      return color
+    }
+  }
+
   const accentColorContent = () => {
     return (
       <div style={{ padding: '2em 0' }}>
         <Text variant="text2" color="white">
           Accent Color
         </Text>
-        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '1em' }}>
           {ACCENT_COLORS.map(color => (
             <Button
               onClick={() => changeAccentColor(color.value)}
               key={color.value}
               variant="fill"
-              color="blue"
+              color={buttonColorCheck(color.value)}
               textVariant="text4"
               style={{ marginRight: 10, marginTop: 8 }}
             >

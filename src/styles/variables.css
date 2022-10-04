@@ -1,45 +1,51 @@
 :root {
-    /* Colors */
-    --color-blue-200: #e8f2fc;
-    --color-blue-175: #cde5fe;
-    --color-blue-150: #99cbff;
-    --color-blue-125: #66b0ff;
-    --color-blue-100: #3396ff;
-    --color-blue-75: #0d7df2;
-    --color-blue-50: #1464b8;
-    --color-blue-25: #0f4b8a;
-    --color-blue-0: #19324c;
-  
-    --color-grey-100: #ffffff;
-    --color-grey-95: #f1f3f3;
-    --color-grey-90: #e4e7e7;
-    --color-grey-80: #c9cfcf;
-    --color-grey-70: #9ea9a9;
-    --color-grey-64: #9ea9a9;
-    --color-grey-50: #7a8484;
-    --color-grey-36: #585f5f;
-    --color-grey-24: #3b4040;
-    --color-grey-16: #272a2a;
-    --color-grey-8: #141414;
-    --color-grey-0: #000000;
-  
-    --color-cyan-fg: #1ac6ff;
-    --color-cyan-bg: #00ace5;
-  
-    --color-green-fg: #2bee4b;
-    --color-green-bg: #1dc956;
-  
-    --color-orange-fg: #ff974c;
-    --color-orange-bg: #eb8b47;
-  
-    --color-pink-fg: #e87de8;
-    --color-pink-bg: #c653c6;
-  
-    --color-purple-fg: #987de8;
-    --color-purple-bg: #794cff;
-  
-    --breal-mobile: 500px;
-    --break-tablet: 800px;
-    --break-laptop: 1100px;
-  }
-  
+  /* Colors */
+  --color-blue-200: #e8f2fc;
+  --color-blue-175: #cde5fe;
+  --color-blue-150: #99cbff;
+  --color-blue-125: #66b0ff;
+  --color-blue-100: #3396ff;
+  --color-blue-75: #0d7df2;
+  --color-blue-50: #1464b8;
+  --color-blue-25: #0f4b8a;
+  --color-blue-0: #19324c;
+
+  --color-grey-100: #ffffff;
+  --color-grey-95: #f1f3f3;
+  --color-grey-90: #e4e7e7;
+  --color-grey-80: #c9cfcf;
+  --color-grey-70: #9ea9a9;
+  --color-grey-64: #9ea9a9;
+  --color-grey-50: #7a8484;
+  --color-grey-36: #585f5f;
+  --color-grey-24: #3b4040;
+  --color-grey-16: #272a2a;
+  --color-grey-8: #141414;
+  --color-grey-0: #000000;
+
+  --color-cyan-fg: #1ac6ff;
+  --color-cyan-bg: #00ace5;
+
+  --color-green-fg: #2bee4b;
+  --color-green-bg: #1dc956;
+
+  --color-orange-fg: #ff974c;
+  --color-orange-bg: #eb8b47;
+
+  --color-pink-fg: #e87de8;
+  --color-pink-bg: #c653c6;
+
+  --color-purple-fg: #987de8;
+  --color-purple-bg: #794cff;
+
+  --color-magenta: #C65380;
+  --color-green: #26B562;
+  --color-orange: #EA8C2E;
+  --color-teal: #2BB6B6;
+  --color-blue-new: #3D5CF5;
+
+
+  --breal-mobile: 500px;
+  --break-tablet: 800px;
+  --break-laptop: 1100px;
+}
