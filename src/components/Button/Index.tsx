@@ -6,19 +6,19 @@ import Text, { IProps as TextProps } from '../../components/Text/Index'
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: 'fill' | 'ghost' | 'outline'
   color:
-  | 'blue'
-  | 'cyan'
-  | 'grey'
-  | 'green'
-  | 'magenta'
-  | 'orange'
-  | 'purple'
-  | 'teal'
-  | 'white'
-  | 'blackWhite'
-  | 'black'
-  | 'blueNew'
-  | 'pink'
+    | 'blue'
+    | 'cyan'
+    | 'grey'
+    | 'green'
+    | 'magenta'
+    | 'orange'
+    | 'purple'
+    | 'teal'
+    | 'white'
+    | 'blackWhite'
+    | 'black'
+    | 'blueNew'
+    | 'pink'
   className?: string
   iconLeft?: JSX.Element
   iconRight?: JSX.Element
@@ -41,9 +41,9 @@ export default function Button({
     [
       (color === 'grey' && variant === 'fill') || (color === 'blackWhite' && variant === 'fill'),
       (color === 'blue' && variant === 'fill') ||
-      (color === 'cyan' && variant === 'fill') ||
-      (color === 'grey' && variant === 'outline') ||
-      (color === 'grey' && variant === 'ghost'),
+        (color === 'cyan' && variant === 'fill') ||
+        (color === 'grey' && variant === 'outline') ||
+        (color === 'grey' && variant === 'ghost'),
       (color === 'blue' && variant === 'outline') || (color === 'blue' && variant === 'ghost'),
       color === 'cyan'
     ]

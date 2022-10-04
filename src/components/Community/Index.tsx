@@ -16,7 +16,7 @@ export default function Community() {
         <Text variant="text2" color="grey">
           {text}
         </Text>
-        <div style={{ display: 'flex', padding: "1rem 0 1rem 0" }}>
+        <div style={{ display: 'flex', padding: '1rem 0 1rem 0' }}>
           <Button variant="fill" color="blackWhite" style={{ marginRight: 10 }}>
             Raise an Issue
           </Button>
