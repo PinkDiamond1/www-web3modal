@@ -16,7 +16,7 @@ const Interface = () => {
           {text}
         </Text>
       </div>
-      <Image src={image} layout="responsive" alt={title} width={472} height={262} />
+      <Image src={image} layout="responsive" alt={title} width={440} height={262} />
     </Card>
   )
 }

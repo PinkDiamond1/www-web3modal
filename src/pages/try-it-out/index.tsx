@@ -20,7 +20,7 @@ const TryItOut: NextPage = () => {
         layout="responsive"
         width={680}
         height={510}
-        // style={{ borderRadius: 44 }}
+      // style={{ borderRadius: 44 }}
       />
       <div style={{ position: 'relative', top: -325, left: 320 }}>
         {!connected ? <ConnectButton /> : <AccountButton />}
@@ -59,7 +59,7 @@ const TryItOut: NextPage = () => {
     >
       {headerContent}
       {checkeredSVG}
-      <FooterRouter />
+      {/* <FooterRouter /> */}
     </div>
   )
 

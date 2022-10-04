@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { ThemeCtrl } from '../../controllers/ThemeCtrl'
 import { ACCENT_COLORS, THEME } from '../../data/COLOR_PICKER'
 import Button from '../Button/Index'
-import Text from '../Text/Index'
+import Text, { IProps as TextProps } from '../Text/Index'
 
 // ToDo: Make it into a Layout Component
 export default function ColorPickerDesktop() {
@@ -27,7 +27,7 @@ export default function ColorPickerDesktop() {
             <Button
               onClick={() => changeTheme(theme.value)}
               key={theme.title}
-              variant={theme.variant}
+              variant="fill"
               color={theme.color}
               style={{
                 marginRight: '1em'
@@ -44,14 +44,13 @@ export default function ColorPickerDesktop() {
 
   const buttonColorCheck = (color: string) => {
     if (color === 'default') {
-      return 'blue'
+      return 'blue' as const
     }
     if (color === 'blue') {
       console.log('one blue...')
-      return 'blueNew'
-    } else {
-      return color
+      return 'blueNew' as const
     }
+    return color
   }
 
   const accentColorContent = () => {
@@ -66,7 +65,7 @@ export default function ColorPickerDesktop() {
               onClick={() => changeAccentColor(color.value)}
               key={color.value}
               variant="fill"
-              color={buttonColorCheck(color.value)}
+              color={buttonColorCheck(color.value) as TextProps['color']}
               textVariant="text4"
               style={{ marginRight: 10, marginTop: 8 }}
             >
@@ -121,7 +120,7 @@ export default function ColorPickerDesktop() {
         {lightModeContent()}
         {accentColorContent()}
         {/* {modalBackgroundContent()} */}
-        {otherOptionsContent()}
+        {/* {otherOptionsContent()} */}
       </div>
     </div>
   )

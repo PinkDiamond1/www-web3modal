@@ -16,7 +16,7 @@ const V2Ready = () => {
           {text}
         </Text>
       </div>
-      <Image src={image} alt={title} layout="responsive" width={472} height={290} />
+      <Image src={image} alt={title} layout="responsive" width={468} height={290} />
     </Card>
   )
 }

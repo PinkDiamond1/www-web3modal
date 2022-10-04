@@ -3,13 +3,13 @@ export const THEME = [
     value: 'light',
     title: 'Light',
     variant: 'fill',
-    color: 'blue'
+    color: 'blue' as const
   },
   {
     value: 'dark',
     title: 'Dark',
     variant: 'fill',
-    color: 'grey'
+    color: 'grey' as const
   }
 ]
 export const ACCENT_COLORS = [

@@ -16,15 +16,15 @@ export default function Community() {
         <Text variant="text2" color="grey">
           {text}
         </Text>
-        <div style={{ display: 'flex' }}>
-          <Button variant="fill" color="grey">
-            Github
+        <div style={{ display: 'flex', padding: "1rem 0 1rem 0" }}>
+          <Button variant="fill" color="blackWhite" style={{ marginRight: 10 }}>
+            Raise an Issue
           </Button>
-          <Button variant="fill" color="grey">
-            Discord
+          <Button variant="fill" color="purple" style={{ marginRight: 10 }}>
+            Join Our Discord
           </Button>
-          <Button variant="fill" color="grey">
-            Twitter
+          <Button variant="fill" color="cyan">
+            Follow Us
           </Button>
         </div>
       </div>

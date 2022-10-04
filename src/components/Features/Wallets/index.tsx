@@ -15,15 +15,15 @@ const Interface = () => {
         </Text>
       </div>
       <Image src={image} alt={title} layout="responsive" width={300} height={274} />
-      <div style={{ padding: 30 }}>
+      <div style={{ padding: 24 }}>
         <Text color="grey" variant="heading5">
           {text}
         </Text>
-        <div style={{ margin: 12 }}>
+        {/* <div style={{ margin: 12 }}>
           <Button variant="fill" color="grey">
             POWERED BY WALLETCONNECT
           </Button>
-        </div>
+        </div> */}
       </div>
     </Card>
   )

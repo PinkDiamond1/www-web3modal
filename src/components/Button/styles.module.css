@@ -97,6 +97,11 @@
   border-color: rgba(255, 255, 255, 0.1)
 }
 
+.fillCyan {
+  background-color: var(--color-cyan-fg);
+  border-color: rgba(255, 255, 255, 0.1)
+}
+
 .outlineGrey {
   padding-top: 2px;
   background-color: transparent;
