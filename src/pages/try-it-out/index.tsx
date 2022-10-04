@@ -5,8 +5,8 @@ import Image from 'next/image'
 import s from '../../styles/TryItOut.module.css'
 import { ConnectButton, AccountButton, useAccount } from '@web3modal/react'
 import Button from '../../components/Button/Index'
-import ColorPickerDesktop from '../../components/ColorPickerDesktop/Index'
-import FooterRouter from '../../components/FooterRouter'
+import ColorPickerDesktop from '../../components/ColorPickerDesktop/index'
+// import FooterRouter from '../../components/FooterRouter/index'
 
 const TryItOut: NextPage = () => {
   const { connected } = useAccount()
@@ -20,7 +20,6 @@ const TryItOut: NextPage = () => {
         layout="responsive"
         width={680}
         height={510}
-        // style={{ borderRadius: 44 }}
       />
       <div style={{ position: 'relative', top: -325, left: 320 }}>
         {!connected ? <ConnectButton /> : <AccountButton />}

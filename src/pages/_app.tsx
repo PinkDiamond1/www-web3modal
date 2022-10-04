@@ -12,8 +12,8 @@ function App({ Component, pageProps }: AppProps) {
 
   const config: ConfigOptions = {
     projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
-    theme: ThemeCtrl.state.theme,
-    accentColor: ThemeCtrl.state.accentColor,
+    theme: ThemeCtrl.state.theme as ConfigOptions['theme'],
+    accentColor: ThemeCtrl.state.accentColor as ConfigOptions['accentColor'],
     ethereum: {
       appName: 'web3Modal'
     }
