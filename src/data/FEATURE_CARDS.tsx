@@ -6,7 +6,7 @@ const FEATURE_CARDS = [
   },
   {
     title: 'Interface that onboards users. ',
-    image: '/icons/Interface.svg',
+    image: '/icons/Interface.png',
     text: 'Help your users get started with step-by-step guidance and helpful links ',
     width: 'lg'
   },
@@ -17,7 +17,7 @@ const FEATURE_CARDS = [
     width: 'md'
   },
   {
-    title: 'Hundreds of Wallets. ',
+    title: 'Hundreds of wallets',
     image: '/icons/Wallets.svg',
     text: 'Connect with MetaMask, Coinbase, and many more.',
     width: 'md'
@@ -36,7 +36,7 @@ const FEATURE_CARDS = [
   },
   {
     title: 'Support for multiple frameworks. ',
-    image: '/icons/Frameworks.svg',
+    image: '/icons/Frameworks.jpg',
     text: 'Build with React, Vanilla, Vue, and Angular',
     width: 'md'
   },
@@ -47,9 +47,9 @@ const FEATURE_CARDS = [
     width: 'md'
   },
   {
-    title: 'WalletConnect V2 Ready. ',
+    title: 'Works with WalletConnect v2.0. ',
     image: '/icons/V2.svg',
-    text: 'Compatible with our v2 Sign, Auth, and Push SDK’s.',
+    text: 'Easily upgrade to unlock compatibility with all WalletConnect v2.0 SDKs.',
     width: 'lg'
   },
   {

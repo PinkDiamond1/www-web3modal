@@ -1,0 +1,21 @@
+.walletTextContainer {
+    padding: 2em 2em 0 2em;
+}
+
+.noHeadingMargin {
+    margin: 0
+}
+
+.bottomTextButtonContainer {
+    padding: 0 2em 0 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    flex-direction: column;
+    width: 100%;
+}
+
+.poweredByWC {
+    padding: 10px 0;
+}

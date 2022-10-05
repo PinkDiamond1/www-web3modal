@@ -21,6 +21,8 @@ import Video from '../components/Video/Index'
 import { useEffect } from 'react'
 import { ThemeCtrl } from '../controllers/ThemeCtrl'
 import { subscribe } from 'valtio'
+import FooterRouter from '../components/FooterRouter'
+import IntroText from '../components/IntroText/Index'
 
 const Home: NextPage = () => {
   useEffect(() => {
@@ -34,38 +36,6 @@ const Home: NextPage = () => {
   // Unsubscribe by calling the result
   unsubscribe()
 
-  const textContent = (
-    <div style={{ padding: '2em' }}>
-      <Text variant="heading4" color="white">
-        Web3Modal is an elegantly simple yet powerful library that helps you manage your multi-chain
-        wallet connection flows, all in one place.
-        <Text as="span" color="grey" variant="heading4">
-          {''} Designed with both developers and end users in mind, it is easy to integrate and
-          customize, bringing to life a sleek and unique experience.
-        </Text>
-      </Text>
-      <div style={{ display: 'flex', paddingTop: '2em' }}>
-        <Button
-          variant="fill"
-          color="blue"
-          // iconRight={
-          //   <Image
-          //     src="/Chevron.svg"
-          //     width={20}
-          //     height={20}
-          //     alt="arrow right"
-          //   />
-          // }
-          style={{ marginRight: 10 }}
-        >
-          GET STARTED
-        </Button>
-        <Button variant="fill" color="grey">
-          TRY IT OUT NOW
-        </Button>
-      </div>
-    </div>
-  )
   return (
     <div className={s.container}>
       <Head>
@@ -74,11 +44,10 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-
       <main className={s.main}>
         <Video />
         <div className={s.mainContent}>
-          {textContent}
+          <IntroText />
 
           {/* <CustomizableUI /> */}
 
@@ -103,6 +72,8 @@ const Home: NextPage = () => {
           </div>
 
           <Community />
+
+          <FooterRouter />
         </div>
       </main>
     </div>

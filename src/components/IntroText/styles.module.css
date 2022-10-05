@@ -1,0 +1,9 @@
+.blackChevron {
+    position: relative;
+    left: -10;
+    /* margin-left: -3px; */
+}
+
+.blackChevron path {
+    fill: black
+}

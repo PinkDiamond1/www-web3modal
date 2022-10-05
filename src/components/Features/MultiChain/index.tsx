@@ -16,7 +16,7 @@ const MultiChain = () => {
           {text}
         </Text>
       </div>
-      <Image src={image} alt={title} layout="responsive" width={250} height={200} />
+      <Image src={image} alt={title} layout="responsive" width={200} height={200} />
     </Card>
   )
 }

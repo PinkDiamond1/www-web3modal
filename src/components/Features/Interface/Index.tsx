@@ -2,6 +2,7 @@ import Card from '../../Card'
 import Text from '../../Text/Index'
 import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
+import s from './styles.module.css'
 
 const Interface = () => {
   const { title, image, text } = FEATURE_CARDS[1]
@@ -16,8 +17,13 @@ const Interface = () => {
           {text}
         </Text>
       </div>
-      <Image src={image} layout="responsive" alt={title} width={440} height={262} />
-    </Card>
+      <div className={s.purpleCard}>
+        <div className={s.interfaceCard}>
+          <Image src={image} alt={title} width={392} height={283} className={s.interfaceCard} />
+        </div>
+      </div>
+
+    </Card >
   )
 }
 

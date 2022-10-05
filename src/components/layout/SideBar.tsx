@@ -13,13 +13,14 @@ export default function SideBar() {
       title: 'INTRODUCTION'
     },
     {
+      href: '/try-it-out',
+      title: 'TRY IT OUT'
+    },
+    {
       href: '/get-started',
       title: 'GET STARTED'
     },
-    {
-      href: '/try-it-out',
-      title: 'TRY IT OUT'
-    }
+
     // {
     //   href: '/guide',
     //   title: 'GUIDE'
@@ -50,7 +51,7 @@ export default function SideBar() {
         <Tag> 2.0.0</Tag>
       </div>
       <nav>
-        <Text variant="heading6" color="grey">Docs</Text>
+        <Text variant="heading6" color="grey" className={s.docsHeading}>Docs</Text>
         <ul style={{ padding: 0, margin: 0 }}>
           {menuItems.map(({ href, title }) => (
             <li
