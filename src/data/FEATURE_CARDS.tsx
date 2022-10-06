@@ -42,7 +42,7 @@ const FEATURE_CARDS = [
   },
   {
     title: 'Built-in RPC. ',
-    image: '/icons/RPC.svg',
+    image: '/icons/RPC.jpg',
     text: 'Enjoy read/write access to multiple blockchains without any extra accounts or setup',
     width: 'md'
   },
