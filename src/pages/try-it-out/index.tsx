@@ -6,12 +6,12 @@ import s from '../../styles/TryItOut.module.css'
 import { ConnectButton, AccountButton, useAccount } from '@web3modal/react'
 import Button from '../../components/Button/Index'
 import ColorPickerDesktop from '../../components/ColorPickerDesktop/index'
-// import FooterRouter from '../../components/FooterRouter/index'
+import FooterRouter from '../../components/FooterRouter'
 
 const TryItOut: NextPage = () => {
   const { connected } = useAccount()
 
-  // Calculate ConnectButton posotion based on Size.
+  // ToDo: Calculate ConnectButton position based on Size.
   const checkeredSVG = (
     <div>
       <Image
@@ -21,7 +21,7 @@ const TryItOut: NextPage = () => {
         width={680}
         height={510}
       />
-      <div style={{ position: 'relative', top: -325, left: 320 }}>
+      <div style={{ position: 'relative', top: -325, left: 280 }}>
         {!connected ? <ConnectButton /> : <AccountButton />}
       </div>
     </div>
@@ -47,24 +47,17 @@ const TryItOut: NextPage = () => {
     </div>
   )
 
-  const LeftColumn = (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '2em',
-        width: '75%'
-      }}
-    >
+  const mainContent = (
+    <div className={s.mainContent}>
       {headerContent}
       {checkeredSVG}
-      {/* <FooterRouter /> */}
-    </div>
+      <FooterRouter previousRoute='/' previousRouteName='Introduction' nextRoute='/get-started' nextRouteName='Get Started' padding="md" />
+    </div >
   )
 
   return (
     <main className={s.main}>
-      {LeftColumn}
+      {mainContent}
       <ColorPickerDesktop />
     </main>
   )

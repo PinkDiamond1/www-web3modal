@@ -38,6 +38,7 @@ const Home: NextPage = () => {
 
   return (
     <div className={s.container}>
+
       <Head>
         <title>Web3Modal</title>
         <meta name="description" content="Web3Modal Documentation" />
@@ -73,7 +74,8 @@ const Home: NextPage = () => {
 
           <Community />
 
-          <FooterRouter />
+          <FooterRouter nextRoute='/try-it-out' nextRouteName='Try It Out' padding='lg' />
+
         </div>
       </main>
     </div>

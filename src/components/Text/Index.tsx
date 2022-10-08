@@ -22,42 +22,43 @@ const mappings: Record<IProps['variant'], keyof ReactHTML> = {
 
 export interface IProps {
   variant:
-    | 'anchor1'
-    | 'anchor2'
-    | 'heading1'
-    | 'heading2'
-    | 'heading3'
-    | 'heading4'
-    | 'heading5'
-    | 'heading6'
-    | 'numeric3'
-    | 'numeric4'
-    | 'numeric5'
-    | 'text1'
-    | 'text2'
-    | 'text3'
-    | 'text4'
+  | 'anchor1'
+  | 'anchor2'
+  | 'heading1'
+  | 'heading2'
+  | 'heading3'
+  | 'heading4'
+  | 'heading5'
+  | 'heading6'
+  | 'numeric3'
+  | 'numeric4'
+  | 'numeric5'
+  | 'text1'
+  | 'text2'
+  | 'text3'
+  | 'text4'
   children: ReactNode | number | string
   color:
-    | 'black'
-    | 'blue'
-    | 'cyan'
-    | 'green'
-    | 'grey'
-    | 'orange'
-    | 'pink'
-    | 'purple'
-    | 'white'
-    | 'magenta'
-    | 'teal'
-    | 'blackWhite'
-    | 'blueNew'
+  | 'black'
+  | 'blue'
+  | 'cyan'
+  | 'green'
+  | 'grey'
+  | 'orange'
+  | 'pink'
+  | 'purple'
+  | 'white'
+  | 'magenta'
+  | 'teal'
+  | 'blackWhite'
+  | 'blueNew'
   as?: 'a' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span'
   className?: string
   href?: string
   target?: '_blank'
   rel?: 'noopener noreferrer'
   id?: string
+  capitalized?: boolean
 }
 
 export default function Text({
@@ -69,6 +70,7 @@ export default function Text({
   href,
   id,
   target,
+  capitalized,
   rel
 }: IProps) {
   const baseClass = useConditionalValue(
@@ -108,15 +110,14 @@ export default function Text({
 
   const variantClass = s[variant] ?? ''
 
-  // return <h2 className={s.heading4}>{children}</h2>;
-
+  const capitalizedClass = capitalized ? s.capitalized : ''
   // eslint-disable-next-line react/no-children-prop
   return createElement(as ?? mappings[variant], {
     children,
     href,
     target,
     rel,
-    className: `${baseClass} ${variantClass} ${colorClass} ${className ?? ''}`,
+    className: `${baseClass} ${variantClass} ${colorClass} ${className ?? ''} ${capitalizedClass}`,
     id
   })
 }
