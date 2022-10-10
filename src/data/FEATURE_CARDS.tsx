@@ -24,13 +24,13 @@ const FEATURE_CARDS = [
   },
   {
     title: 'Rich out-of-the-box features. ',
-    image: '/icons/RichFeatures.svg',
+    image: '/icons/AccountModal.png',
     text: 'Leverage the built-in Connect button and UI components for easy connection management, ENS profiles, transaction history, and real-time balance updates',
     width: 'lg'
   },
   {
     title: 'Tailored T&Cs. ',
-    image: '/icons/TermsConditions.svg',
+    image: '/icons/ConnectWalletMobile.png',
     text: 'Customize your terms and conditions, in line with best practices',
     width: 'lg'
   },

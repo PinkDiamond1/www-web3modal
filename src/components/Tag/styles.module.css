@@ -2,8 +2,8 @@
   width: 50px;
   height: 24px;
   border-radius: 12px;
-  background: #C653C6;
-  border: 1px solid #E87DE8;
+  background: linear-gradient(97.02deg, #272A2A 0%, #141414 100%);
+  border: 1px solid var(--color-grey-24);
   display: flex;
   justify-content: center;
   align-items: center;

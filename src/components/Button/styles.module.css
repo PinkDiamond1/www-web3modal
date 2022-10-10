@@ -28,10 +28,6 @@
   transition: transform 0.2s ease-in-out;
 }
 
-.button:hover img {
-  transform: translateX(2px);
-}
-
 .button:focus-visible {
   box-shadow: 0 0 2px 2px var(--color-blue-100);
 }
@@ -83,13 +79,23 @@
 }
 
 .fillPurple {
+
+  background-color: var( --color-purple-bg);
+  border-color: rgba(255, 255, 255, 0.1)
+}
+
+.fillPurple:hover {
   background-color: var(--color-purple-fg);
   border-color: rgba(255, 255, 255, 0.1)
 }
 
 .fillWhite {
   background-color: #FFFFFF;
-  border-color: rgba(255, 255, 255, 0.1)
+  border-color: rgba(255, 255, 255, 1);
+}
+
+.fillWhite:hover {
+  opacity: 1;
 }
 
 .fillTeal {

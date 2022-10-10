@@ -2,6 +2,7 @@ import Card from '../../Card'
 import Text from '../../Text/Index'
 import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
+import s from './styles.module.css'
 
 const RichFeatures = () => {
   const { title, image, text } = FEATURE_CARDS[4]
@@ -16,7 +17,15 @@ const RichFeatures = () => {
           {text}
         </Text>
       </div>
-      <Image src={image} alt={title} layout="responsive" width={472} height={310} />
+
+      <div className={s.pinkCard}>
+        <div className={s.accountButtonCard}>
+          <Image src="/icons/AccountButton.png" alt={title} width={259} height={40} />
+        </div>
+        <div className={s.interfaceCard}>
+          <Image src={image} alt={title} width={392} height={280} />
+        </div>
+      </div>
     </Card>
   )
 }

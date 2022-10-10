@@ -16,7 +16,7 @@ const RPC = () => {
           {text}
         </Text>
       </div>
-      <Image src={image} alt={title} layout="responsive" width={300} height={200} />
+      <Image src={image} alt={title} layout="responsive" width={340} height={280} />
     </Card>
   )
 }

@@ -18,7 +18,7 @@ const Frameworks = () => {
         </Text>
       </div>
       <div className={s.imageWrapper}>
-        <Image src={image} alt={title} layout="responsive" width={300} height={270} />
+        <Image src={image} alt={title} layout="responsive" width={300} height={250} />
       </div>
     </Card>
   )

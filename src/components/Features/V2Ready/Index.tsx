@@ -8,7 +8,7 @@ const V2Ready = () => {
 
   return (
     <Card color="dark" padding="none" rounded="md" width="lg">
-      <div style={{ padding: '3rem' }}>
+      <div style={{ padding: '2rem' }}>
         <Text variant="heading5" color="grey">
           <Text as="span" color="white" variant="heading5">
             {title}
@@ -16,7 +16,7 @@ const V2Ready = () => {
           {text}
         </Text>
       </div>
-      <Image src={image} alt={title} layout="responsive" width={390} height={241} />
+      <Image src={image} alt={title} layout="responsive" width={400} height={270} />
     </Card>
   )
 }

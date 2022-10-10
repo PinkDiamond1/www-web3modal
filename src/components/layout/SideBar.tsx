@@ -3,6 +3,8 @@ import { useRouter } from 'next/router'
 import s from '../../styles/Layout.module.css'
 import Text from '../Text/Index'
 import Tag from '../Tag/Index'
+import SocialIcon from '../SocialIcon/Index'
+import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
 
 export default function SideBar() {
   const router = useRouter()
@@ -51,20 +53,32 @@ export default function SideBar() {
         </Text>
         <Tag> 2.0.0</Tag>
       </div>
-      <nav>
-        <Text variant="heading6" color="grey" className={s.docsHeading}>Docs</Text>
-        <ul style={{ padding: 0, margin: 0 }}>
-          {menuItems.map(({ href, title }) => (
-            <li
-              key={title}
-              className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
-            >
-              <Link href={href} style={{}}>
-                <a>{title}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <nav style={{ display: "flex", flexDirection: "column", justifyContent: "space-between", height: "100%", width: "10" }}>
+        <div>
+          <Text variant="heading6" color="grey" className={s.docsHeading}>Docs</Text>
+          <ul style={{ padding: 0, margin: 0 }}>
+            {menuItems.map(({ href, title }) => (
+              <li
+                key={title}
+                className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
+              >
+                <Link href={href} style={{}}>
+                  <a>{title}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div style={{ paddingBottom: "1.5em" }}>
+          <Text variant="heading6" color="grey" className={s.docsHeading}>Communiy</Text>
+          <div style={{ display: 'flex', justifyContent: "flex-start", padding: 8 }}>
+            {SOCIAL_ICON.map((data) => (
+              <SocialIcon image={data.image} uri={data.uri} title={data.title} />
+            ))}
+          </div>
+        </div>
+
       </nav>
     </aside>
   )

@@ -2,6 +2,7 @@ import Card from '../../Card'
 import Text from '../../Text/Index'
 import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
+import s from './styles.module.css'
 
 const TermsConditions = () => {
   const { title, image, text } = FEATURE_CARDS[5]
@@ -16,14 +17,11 @@ const TermsConditions = () => {
           {text}
         </Text>
       </div>
-      <Image
-        src={image}
-        alt={title}
-        layout="responsive"
-        width={472}
-        height={290}
-        style={{ borderRadius: '0 0 54px 54px', position: 'relative' }}
-      />
+      <div className={s.greenCard}>
+        <div className={s.interfaceCard}>
+          <Image src={image} alt={title} width={392} height={270} />
+        </div>
+      </div>
     </Card>
   )
 }
