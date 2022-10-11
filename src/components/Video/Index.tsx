@@ -7,8 +7,8 @@ const Video = () => (
       autoPlay
       // controls
       width={1000}
-      height={562}
-      style={{ borderRadius: 44, paddingBottom: '2em' }}
+      height={602}
+      style={{ borderRadius: 44 }}
     >
       <source src="/web3modal.mp4" type="video/mp4" />
     </video>

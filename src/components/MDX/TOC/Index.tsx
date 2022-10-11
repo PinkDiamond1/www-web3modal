@@ -8,7 +8,7 @@ interface Props {
 
 export default function MDXToCSection({ children, ...props }: Props) {
   return (
-    <div style={{ width: '25%', background: '#171717', padding: '3em 0 0 1em' }}>
+    <div className={s.container}>
       <Text variant="heading6" color="white">
         On this Page
       </Text>

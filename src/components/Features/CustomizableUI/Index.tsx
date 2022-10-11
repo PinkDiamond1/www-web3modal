@@ -20,7 +20,7 @@ const CustomizableUI = () => {
   const [currentAccentColor, setCurrentAccentColor] = useState('default')
 
   useEffect(() => {
-    console.log('ThemeCtrl', ThemeCtrl.state.accentColor)
+    // console.log('ThemeCtrl', ThemeCtrl.state.accentColor)
   }, [currentAccentColor])
 
   const { title, image, text } = FEATURE_CARDS[0]
@@ -59,10 +59,11 @@ const CustomizableUI = () => {
           <W3mConnectWalletDesktop />
           <W3mConnectWalletMobile />
 
-          <ThemePicker
+          {/* <ThemePicker
             currentAccentColor={currentAccentColor}
             setCurrentAccentColor={setCurrentAccentColor}
-          />
+          /> */}
+          <ThemePicker />
 
           {/* <W3mConnectWalletMobile /> */}
         </div>

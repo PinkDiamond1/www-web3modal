@@ -7,7 +7,7 @@ export interface ThemeControlState {
 }
 
 export const initialThemeState = {
-  theme: 'dark',
+  theme: 'light',
   accentColor: 'default'
 }
 

@@ -63,7 +63,7 @@ const Home: NextPage = () => {
         <Video />
         <div className={s.mainContent}>
           <IntroText />
-          <CustomizableUI />
+          {/* <CustomizableUI /> */}
           {featureCardsContent}
           <Community />
           <FooterRouter nextRoute="/try-it-out" nextRouteName="Try It Out" padding="lg" />

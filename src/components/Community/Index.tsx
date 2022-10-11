@@ -10,7 +10,7 @@ export default function Community() {
   const { title, image, text } = FEATURE_CARDS[9]
 
   return (
-    <div style={{ marginTop: "7rem" }}>
+    <div style={{ marginTop: '7rem' }}>
       <Card color="dark" padding="none" rounded="lg">
         <div style={{ padding: '2rem' }}>
           <Text variant="heading4" color="white">
@@ -20,14 +20,21 @@ export default function Community() {
             {text}
           </Text>
           <div style={{ display: 'flex', padding: '1rem 0 1rem 0' }}>
-            {SOCIAL_ICON_COMMUNITY.map((data) => (
-              <SocialIconCommunity image={data.image} fill={data.fill} color={data.color} uri={data.uri} title={data.title} description={data.description} />
+            {SOCIAL_ICON_COMMUNITY.map(data => (
+              <SocialIconCommunity
+                image={data.image}
+                fill={data.fill}
+                color={data.color}
+                uri={data.uri}
+                title={data.title}
+                description={data.description}
+                key={data.title}
+              />
             ))}
           </div>
         </div>
         <Image src={image} alt={title} width={800} height={220} style={{ borderRadius: 54 }} />
       </Card>
     </div>
-
   )
 }

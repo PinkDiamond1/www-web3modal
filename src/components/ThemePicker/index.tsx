@@ -2,24 +2,44 @@ import { useEffect, useState } from 'react'
 import { ThemeCtrl } from '../../controllers/ThemeCtrl'
 import { ACCENT_COLORS, THEME } from '../../data/COLOR_PICKER'
 import Button from '../Button/Index'
+import { ConfigCtrl } from '@web3modal/core'
 import Text, { IProps as TextProps } from '../Text/Index'
 import s from './styles.module.css'
+import { ConfigOptions } from '@web3modal/react'
+import { chains, providers } from '@web3modal/ethereum'
 
 // ToDo: Make it into a Layout Component
-export default function ThemePicker({
-  currentAccentColor,
-  setCurrentAccentColor,
-  currentTheme,
-  setCurrentTheme
-}) {
+export default function ThemePicker({}) {
+  const [theme, setTheme] = useState('light')
+  const [accentColor, setAccentColor] = useState('default')
+
   const changeTheme = (theme: string) => {
-    setCurrentAccentColor(theme)
+    // setCurrentAccentColor(theme)
     ThemeCtrl.setTheme(theme)
   }
 
+  const modalConfig: ConfigOptions = {
+    projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
+    theme: ThemeCtrl.state.theme as ConfigOptions['theme'],
+    accentColor: accentColor as ConfigOptions['accentColor'],
+    ethereum: {
+      appName: 'web3Modal',
+      autoConnect: true,
+      chains: [chains.mainnet],
+      providers: [
+        providers.walletConnectProvider({ projectId: process.env.NEXT_PUBLIC_PROJECT_ID! })
+      ]
+    }
+  }
+
+  // console.log(modalConfig)
+
   const changeAccentColor = (color: string) => {
-    setCurrentAccentColor(color)
-    ThemeCtrl.setAccentColor(color)
+    // setCurrentAccentColor(theme)
+    // console.log('colorChange', color)
+    console.log('ClientCtrl 1', ConfigCtrl.state.accentColor)
+    ConfigCtrl.setConfig(modalConfig)
+    // Client.setAccentColor(color)
   }
 
   const buttonColorCheck = (color: string) => {
@@ -74,7 +94,10 @@ export default function ThemePicker({
           <div style={{ display: 'flex' }}>
             {ACCENT_COLORS.map(color => (
               <Button
-                onClick={() => changeAccentColor(color.value)}
+                onClick={() => {
+                  setAccentColor(color.value)
+                  changeAccentColor(color.value)
+                }}
                 key={color.value}
                 variant="fill"
                 color={buttonColorCheck(color.value) as TextProps['color']}
