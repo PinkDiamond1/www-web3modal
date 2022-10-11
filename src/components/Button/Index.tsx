@@ -23,6 +23,7 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   iconLeft?: JSX.Element
   iconRight?: JSX.Element
   textVariant?: string
+  accentButton?: boolean
   // loading?: boolean;
 }
 
@@ -34,6 +35,7 @@ export default function Button({
   iconRight,
   variant,
   textVariant,
+  accentButton,
   ...props
 }: IProps) {
   const textColor = useConditionalValue<TextProps['color']>(
@@ -82,11 +84,13 @@ export default function Button({
     ]
   )
 
+  const buttonType = accentButton ? s.accentButton : s.button
+
   const textIconLeftClass = iconLeft ? s.textIconLeft : undefined
   const textIconRightClass = iconRight ? s.textIconRight : undefined
 
   return (
-    <button {...props} className={`${s.button} ${variantClass} ${className ?? ''}`}>
+    <button {...props} className={`${buttonType} ${variantClass} ${className ?? ''}`}>
       {iconLeft}
       <Text
         as="span"

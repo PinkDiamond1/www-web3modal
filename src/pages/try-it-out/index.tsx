@@ -51,8 +51,14 @@ const TryItOut: NextPage = () => {
     <div className={s.mainContent}>
       {headerContent}
       {checkeredSVG}
-      <FooterRouter previousRoute='/' previousRouteName='Introduction' nextRoute='/get-started' nextRouteName='Get Started' padding="md" />
-    </div >
+      <FooterRouter
+        previousRoute="/"
+        previousRouteName="Introduction"
+        nextRoute="/get-started"
+        nextRouteName="Get Started"
+        padding="md"
+      />
+    </div>
   )
 
   return (

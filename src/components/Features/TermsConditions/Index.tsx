@@ -19,7 +19,7 @@ const TermsConditions = () => {
       </div>
       <div className={s.greenCard}>
         <div className={s.interfaceCard}>
-          <Image src={image} alt={title} width={392} height={270} />
+          <Image src={image} alt={title} width={392} height={280} />
         </div>
       </div>
     </Card>

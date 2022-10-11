@@ -21,15 +21,13 @@
   }
 }
 
-
 .gradient {
   background: linear-gradient(97.02deg, #272a2a 0%, #141414 100%);
   border-color: var(--color-grey-24);
 }
 
 .dark {
-  background:      #141414;
-
+  background:#141414;
   border-color: rgba(255, 255, 255, 0.33);
 }
 
@@ -73,7 +71,7 @@ padding: 10px;
 }
 
 .paddingNone {
-padding: 0;
+  padding: 0px;
 }
 
 @media (max-width: 800px) {
@@ -83,9 +81,6 @@ padding: 0;
     .twoColumn {
         width: 100%;
     }
-    /* .cardRow {
-        display: flex;
-    } */
 
 }
   

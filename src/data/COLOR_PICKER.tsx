@@ -19,6 +19,6 @@ export const ACCENT_COLORS = [
   { value: 'orange', text: 'Orange' },
   { value: 'green', text: 'Green' },
   { value: 'purple', text: 'Purple' },
-  { value: 'teal', text: 'Teal' },
-  { value: 'blackWhite', text: 'Black and White' }
+  { value: 'teal', text: 'Teal' }
+  // { value: 'blackWhite', text: 'Black and White' }
 ]

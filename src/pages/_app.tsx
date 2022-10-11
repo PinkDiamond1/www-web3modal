@@ -26,12 +26,13 @@ function App({ Component, pageProps }: AppProps) {
   const unsubscribe = ThemeCtrl.subscribe(() => {
     setTheme(ThemeCtrl.state.theme)
     setAccentColor(ThemeCtrl.state.accentColor)
+    console.log('AccentChange High level...', ThemeCtrl.state.accentColor)
   })
 
   useEffect(() => {
-    ThemeCtrl.setTheme('dark')
+    ThemeCtrl.setTheme('light')
     ThemeCtrl.setAccentColor('default')
-  }, [])
+  }, [ThemeCtrl.state])
 
   return (
     <Web3ModalProvider config={config}>

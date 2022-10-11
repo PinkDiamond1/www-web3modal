@@ -47,7 +47,6 @@ export default function ColorPickerDesktop() {
       return 'blue' as const
     }
     if (color === 'blue') {
-      console.log('one blue...')
       return 'blueNew' as const
     }
     return color
@@ -77,32 +76,6 @@ export default function ColorPickerDesktop() {
     )
   }
 
-  const modalBackgroundContent = () => {
-    return (
-      <div style={{ padding: '2em 0' }}>
-        <Text variant="text2" color="white">
-          Modal Background
-        </Text>
-        <Button variant="fill" color="blue">
-          WC Logo{' '}
-        </Button>
-      </div>
-    )
-  }
-
-  const otherOptionsContent = () => {
-    return (
-      <div style={{ padding: '2em 0' }}>
-        <Text variant="text2" color="white">
-          Options
-        </Text>
-        <Button variant="fill" color="blue" textVariant="text4" style={{ marginTop: 8 }}>
-          WC Logo{' '}
-        </Button>
-      </div>
-    )
-  }
-
   return (
     <div
       style={{
@@ -119,8 +92,6 @@ export default function ColorPickerDesktop() {
       <div style={{ padding: '5rem 1rem 5rem 1rem' }}>
         {lightModeContent()}
         {accentColorContent()}
-        {/* {modalBackgroundContent()} */}
-        {/* {otherOptionsContent()} */}
       </div>
     </div>
   )
