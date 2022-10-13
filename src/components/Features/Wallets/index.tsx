@@ -22,7 +22,7 @@ const Interface = () => {
         </Text>
         <div className={s.poweredByWC}>
           {/* <Image src={"/icons/WalletConnectCloud.png"} layout="responsive" alt={title} width={228} height={40} /> */}
-          <Image src={"/icons/WalletConnectCloud.png"} alt={title} width={240} height={40} />
+          <Image src={'/icons/WalletConnectCloud.png'} alt={title} width={240} height={40} />
         </div>
       </div>
     </Card>

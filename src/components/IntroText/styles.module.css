@@ -7,3 +7,22 @@
 .blackChevron path {
     fill: black
 }
+
+.buttonContent {
+    display: flex;
+    padding-bottom: 4em;
+    border: 1px solid red;
+}
+
+.introTextContainer {
+    padding: 2em;
+}
+
+@media (max-width: 800px) {
+    .buttonContent {
+        padding: 2em 0 0 0;
+    }
+    .introTextContainer {
+        padding: 0 1em 0 1em;
+    }
+}

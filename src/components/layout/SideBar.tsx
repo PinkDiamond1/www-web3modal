@@ -5,30 +5,10 @@ import Text from '../Text/Index'
 import Tag from '../Tag/Index'
 import SocialIcon from '../SocialIcon/Index'
 import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
+import { SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
 
 export default function SideBar() {
   const router = useRouter()
-
-  const menuItems = [
-    {
-      href: '/',
-      title: 'INTRODUCTION'
-    },
-    {
-      href: '/try-it-out',
-      title: 'TRY IT OUT'
-    },
-    {
-      href: '/get-started',
-      title: 'GET STARTED'
-    }
-
-    // ToDo: Add in Nesting + Add in React.
-    // {
-    //   href: '/guide',
-    //   title: 'GUIDE'
-    // }
-  ]
 
   const checkIfCurrentRoute = (href: string) => {
     if (href === router.pathname) {
@@ -67,7 +47,7 @@ export default function SideBar() {
             Docs
           </Text>
           <ul style={{ padding: 0, margin: 0 }}>
-            {menuItems.map(({ href, title }) => (
+            {SIDE_BAR_NAVIGATION.map(({ href, title }) => (
               <li
                 key={title}
                 className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}

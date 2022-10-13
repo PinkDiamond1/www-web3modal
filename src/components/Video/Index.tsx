@@ -5,8 +5,9 @@ const Video = () => (
     <video
       muted
       autoPlay
+      loop
       // controls
-      width={1000}
+      // width={1000}
       height={602}
       style={{ borderRadius: 44 }}
     >

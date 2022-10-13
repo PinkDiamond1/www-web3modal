@@ -1,14 +1,9 @@
-.textContainer {
+.rpcContainer{
     padding: 2em 2em 1.5em 2em;    
 }
 
-.imageWrapper {
-    border-radius: 44px;
-}
-
-
 @media (max-width: 800px) {
-    .textContainer {
+    .rpcContainer {
         padding: 1.5em 1em 1.5em 1em;     
     }
   }

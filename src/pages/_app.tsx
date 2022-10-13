@@ -9,6 +9,7 @@ import { ExplorerCtrl, ConfigCtrl } from '@web3modal/core'
 // import { ThemeCtrl } from '@web3modal/core/dist/_types/src/controllers/statefull/ThemeCtrl'
 import { useEffect, useState } from 'react'
 import AlphaBanner from '../components/AlphaBanner/Index'
+import Header from '../components/Header'
 
 function App({ Component, pageProps }: AppProps) {
   // ToDo: State for AlphaBanner

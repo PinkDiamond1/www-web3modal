@@ -1,7 +1,7 @@
 import useConditionalValue from '../../hooks/useConditionalValue'
 import { ButtonHTMLAttributes } from 'react'
 import s from './styles.module.css'
-import Text from "../Text/Index"
+import Text from '../Text/Index'
 
 interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'fill' | 'ghost' | 'outline'
@@ -13,9 +13,11 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export default function Tag({ children, ...props }: IProps) {
-  return <div className={s.tag}>
-    <Text variant='text3' color="grey">
-      {children}
-    </Text>
-  </div>
+  return (
+    <div className={s.tag}>
+      <Text variant="text3" color="grey">
+        {children}
+      </Text>
+    </div>
+  )
 }

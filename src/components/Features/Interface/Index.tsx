@@ -9,7 +9,7 @@ const Interface = () => {
 
   return (
     <Card color="dark" padding="none" rounded="md" width="lg">
-      <div style={{ padding: '2rem' }}>
+      <div className={s.textContainer}>
         <Text variant="heading5" color="grey">
           <Text as="span" color="white" variant="heading5">
             {title}
@@ -22,8 +22,7 @@ const Interface = () => {
           <Image src={image} alt={title} width={392} height={283} className={s.interfaceCard} />
         </div>
       </div>
-
-    </Card >
+    </Card>
   )
 }
 

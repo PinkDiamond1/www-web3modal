@@ -3,7 +3,6 @@ import Head from 'next/head'
 import s from '../styles/Home.module.css'
 import MultiChain from '../components/Features/MultiChain'
 import Interface from '../components/Features/Interface/Index'
-import CustomizableUI from '../components/Features/CustomizableUI/Index'
 import Wallets from '../components/Features/Wallets'
 import RichFeatures from '../components/Features/RichFeatures/Index'
 import TermsConditions from '../components/Features/TermsConditions/Index'
@@ -11,7 +10,6 @@ import Frameworks from '../components/Features/Frameworks/Index'
 import RPC from '../components/Features/RPC/Index'
 import V2Ready from '../components/Features/V2Ready/Index'
 import Community from '../components/Community/Index'
-import Video from '../components/Video/Index'
 import FooterRouter from '../components/FooterRouter'
 import IntroText from '../components/IntroText/Index'
 
@@ -60,9 +58,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={s.main}>
-        <Video />
+        {/* <Video /> */}
+        <IntroText />
         <div className={s.mainContent}>
-          <IntroText />
           {/* <CustomizableUI /> */}
           {featureCardsContent}
           <Community />

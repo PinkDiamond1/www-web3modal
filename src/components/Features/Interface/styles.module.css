@@ -12,3 +12,13 @@
     left: 35px;
     top: -40px;
 }
+
+.textContainer {
+    padding: 2em 2em 1.5em 2em;    
+}
+
+@media (max-width: 800px) {
+    .textContainer {
+        padding: 1.5em 1em 1.5em 1em;     
+    }
+  }

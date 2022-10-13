@@ -1,0 +1,12 @@
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0 1rem 0;
+}
+
+@media (max-width: 800px) {
+    .buttonContainer {
+        flex-direction: column;
+    }
+  }
+  

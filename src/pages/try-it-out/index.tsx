@@ -9,7 +9,7 @@ import ColorPickerDesktop from '../../components/ColorPickerDesktop/index'
 import FooterRouter from '../../components/FooterRouter'
 
 const TryItOut: NextPage = () => {
-  const { connected } = useAccount()
+  const { isConnected } = useAccount()
 
   // ToDo: Calculate ConnectButton position based on Size.
   const checkeredSVG = (
@@ -22,7 +22,7 @@ const TryItOut: NextPage = () => {
         height={510}
       />
       <div style={{ position: 'relative', top: -325, left: 280 }}>
-        {!connected ? <ConnectButton /> : <AccountButton />}
+        {!isConnected ? <ConnectButton /> : <AccountButton />}
       </div>
     </div>
   )

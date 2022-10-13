@@ -18,15 +18,18 @@
     "dotenv": "^16.0.3",
     "ethers": "^5.7.1",
     "lit-element": "^3.2.2",
+    "motion": "^10.14.2",
     "next": "12.3.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-syntax-highlighter": "^15.5.0",
     "valtio": "^1.7.0"
   },
   "devDependencies": {
     "@types/node": "18.7.23",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
+    "@types/react-syntax-highlighter": "^15.5.5",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
     "eslint-config-prettier": "8.5.0",
