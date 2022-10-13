@@ -17,7 +17,7 @@
     border-radius: 44px;
   }
   .roundedMd {
-    border-radius: 44px;
+    border-radius: 32px;
   }
 }
 
@@ -56,7 +56,7 @@
 }
 
 .card{
-  margin-top: 4em !important;
+  margin-top: 2em !important;
 }
 }
 

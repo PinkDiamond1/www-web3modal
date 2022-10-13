@@ -19,7 +19,7 @@ const Interface = () => {
       </div>
       <div className={s.purpleCard}>
         <div className={s.interfaceCard}>
-          <Image src={image} alt={title} width={392} height={283} className={s.interfaceCard} />
+          <Image src={image} alt={title} layout="responsive" width={392} height={263} />
         </div>
       </div>
     </Card>

@@ -3,6 +3,7 @@ import Text from '../../Text/Index'
 import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
 import s from './styles.module.css'
+import { isMobile } from '../../../utils/Index'
 
 const Frameworks = () => {
   const { title, image, text } = FEATURE_CARDS[6]
@@ -18,7 +19,12 @@ const Frameworks = () => {
         </Text>
       </div>
       <div className={s.imageWrapper}>
-        <Image src={image} alt={title} layout="responsive" width={300} height={250} />
+        <Image
+          src={image}
+          alt={title}
+          width={isMobile() ? 350 : 300}
+          height={isMobile() ? 350 : 240}
+        />
       </div>
     </Card>
   )

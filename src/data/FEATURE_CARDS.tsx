@@ -6,19 +6,19 @@ const FEATURE_CARDS = [
   },
   {
     title: 'Interface that onboards users. ',
-    image: '/icons/Interface.png',
+    image: '/features/Interface.png',
     text: 'Help your users get started with step-by-step guidance and helpful links ',
     width: 'lg'
   },
   {
     title: 'Multi-chain ready. ',
-    image: '/icons/Networks.svg',
+    image: '/features/Chains.png',
     text: 'Easily set up support for EVM and non-EVM chains ',
     width: 'md'
   },
   {
     title: 'Hundreds of wallets',
-    image: '/icons/Wallets.svg',
+    image: '/features/Wallets.jpg',
     text: 'Connect with MetaMask, Coinbase, and many more.',
     width: 'md'
   },
@@ -30,31 +30,31 @@ const FEATURE_CARDS = [
   },
   {
     title: 'Tailored T&Cs. ',
-    image: '/icons/ConnectWalletMobile.png',
+    image: '/features/ConnectWalletMobile.png',
     text: 'Customize your terms and conditions, in line with best practices',
     width: 'lg'
   },
   {
     title: 'Support for multiple frameworks. ',
-    image: '/icons/Frameworks.jpg',
+    image: '/features/Frameworks.jpg',
     text: 'Build with React, Vanilla, Vue, and Angular',
     width: 'md'
   },
   {
     title: 'Built-in RPC. ',
-    image: '/icons/RPC.jpg',
+    image: '/features/RPC.jpg',
     text: 'Enjoy read/write access to multiple blockchains without any extra accounts or setup',
     width: 'md'
   },
   {
     title: 'Works with WalletConnect v2.0. ',
-    image: '/icons/V2.svg',
+    image: '/features/V2Ready.jpg',
     text: 'Easily upgrade to unlock compatibility with all WalletConnect v2.0 SDKs.',
     width: 'lg'
   },
   {
     title: 'Community',
-    image: '/icons/Hands.png',
+    image: '/features/Hands.jpg',
     text: 'Our community means everything to us. Whether you have a feature to suggest, a bug to report, or just want to share your version of Web3Modal, we want to hear from you! '
   }
 ]

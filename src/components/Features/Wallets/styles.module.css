@@ -15,5 +15,12 @@
 }
 
 .poweredByWC {
+    width: 80%;
     padding: 10px 0;
 }
+
+@media (max-width: 800px) {
+    .poweredByWC  {
+      margin-bottom: 1em;
+    }
+  }

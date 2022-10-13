@@ -1,3 +1,4 @@
+import { isMobile } from '../../utils/Index'
 import s from './styles.module.css'
 
 const Video = () => (
@@ -7,9 +8,9 @@ const Video = () => (
       autoPlay
       loop
       // controls
-      // width={1000}
-      height={602}
-      style={{ borderRadius: 44 }}
+      width={isMobile() ? 500 : 1000}
+      height={isMobile() ? 500 : 600}
+      // style={{ borderRadius: isMobile() ? 0 : 44 }}
     >
       <source src="/web3modal.mp4" type="video/mp4" />
     </video>

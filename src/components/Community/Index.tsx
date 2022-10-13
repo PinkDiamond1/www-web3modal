@@ -2,8 +2,7 @@ import Card from '../Card'
 import Text from '../Text/Index'
 import Image from 'next/image'
 import FEATURE_CARDS from '../../data/FEATURE_CARDS'
-import Button from '../Button/Index'
-import { SOCIAL_ICON, SOCIAL_ICON_COMMUNITY } from '../../data/SOCIAL_ICON'
+import { SOCIAL_ICON_COMMUNITY } from '../../data/SOCIAL_ICON'
 import SocialIconCommunity from '../SocialLinksCommunity/Index'
 import s from './styles.module.css'
 
@@ -11,15 +10,18 @@ export default function Community() {
   const { title, image, text } = FEATURE_CARDS[9]
 
   return (
-    <div style={{ marginTop: '0rem' }}>
+    <div className={s.marginContainer}>
       <Card color="dark" padding="none" rounded="lg">
-        <div style={{ padding: '2rem' }}>
+        <div className={s.textContainer}>
           <Text variant="heading4" color="white">
             {title}
           </Text>
-          <Text variant="text2" color="grey">
-            {text}
-          </Text>
+          <div style={{ marginTop: 10 }}>
+            <Text variant="text2" color="grey">
+              {text}
+            </Text>
+          </div>
+
           <div className={s.buttonContainer}>
             {SOCIAL_ICON_COMMUNITY.map(data => (
               <SocialIconCommunity
@@ -34,7 +36,7 @@ export default function Community() {
             ))}
           </div>
         </div>
-        <Image src={image} alt={title} width={800} height={220} style={{ borderRadius: 54 }} />
+        {/* <Image src={image} alt={title} width={800} height={220} style={{ borderRadius: 54 }} /> */}
       </Card>
     </div>
   )

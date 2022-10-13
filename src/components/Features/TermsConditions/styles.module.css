@@ -12,3 +12,32 @@
     left: 30px;
     top: -30px;
 }
+
+.textContainer {
+    padding: 2em 2em 1.5em 2em;    
+}
+
+@media (max-width: 800px) {
+    .greenCard {
+        border-radius: 32px;
+        margin-top: 20px;
+    }
+    .textContainer {
+        padding: 1.5em 1em 2.5em 1em;     
+    }
+    .accountButtonCard {
+        position: relative;
+        left: 60px;
+        top: -15px;
+    }
+    .greenCard {
+        border-radius: 32px;
+    }
+    .interfaceCard {
+        width: 106%;
+        border-radius: 32px;
+        position: relative;
+        left: -10px;
+        /* top: -1px; */
+    }
+  }

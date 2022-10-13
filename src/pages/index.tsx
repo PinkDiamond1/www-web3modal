@@ -12,6 +12,7 @@ import V2Ready from '../components/Features/V2Ready/Index'
 import Community from '../components/Community/Index'
 import FooterRouter from '../components/FooterRouter'
 import IntroText from '../components/IntroText/Index'
+import Video from '../components/Video/Index'
 
 const Home: NextPage = () => {
   // useEffect(() => {

@@ -10,12 +10,11 @@
 
 .buttonContent {
     display: flex;
-    padding-bottom: 4em;
-    border: 1px solid red;
+    padding: 2em 0 4em 0;
 }
 
 .introTextContainer {
-    padding: 2em;
+    padding: 2em 10em 0 10em;
 }
 
 @media (max-width: 800px) {

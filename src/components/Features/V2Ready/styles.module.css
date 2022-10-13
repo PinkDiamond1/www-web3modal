@@ -1,0 +1,19 @@
+.textContainer{
+    padding: 2em 2em 1.5em 2em;    
+}
+
+.imageContainer {
+    border-radius: 44px;
+    overflow: hidden;
+}
+
+@media (max-width: 800px) {
+    .textContainer {
+        padding: 1.5em 1em 2em 1em;     
+    }
+    .imageContainer {
+        /* margin: -10px  */
+        top: 15px;
+        border-radius: 32px;
+    }
+  }
