@@ -23,8 +23,8 @@ const TermsConditions = () => {
           <Image
             src={image}
             alt={title}
-            width={isMobile() ? 500 : 392}
-            height={isMobile() ? 280 : 280}
+            width={isMobile() ? 430 : 392}
+            height={isMobile() ? 300 : 280}
           />
         </div>
       </div>

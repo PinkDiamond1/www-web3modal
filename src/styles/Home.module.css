@@ -29,6 +29,10 @@
   flex-grow: 1;
 }
 
+.mobileFooter {
+  margin: 0;
+}
+
 .title a {
   color: #0070f3;
   text-decoration: none;
@@ -114,7 +118,7 @@
 }
 
 .mainContent {
-  padding: 0 10em 0 10em;
+  padding: 0 14em 0 14em;
 }
 
 
@@ -129,5 +133,11 @@
   .mainContent {
     padding: 0px;
   }
-  
+  .mobileFooter{
+    display: block;
+    margin-right: 10px;
+  }
+  .main{
+    padding: 0;
+  }
 }

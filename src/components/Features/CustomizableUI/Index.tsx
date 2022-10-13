@@ -1,10 +1,8 @@
 import Card from '../../Card'
 import Text from '../../Text/Index'
-import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
-import { ConnectButton, useConnectModal } from '@web3modal/react'
+import { useConnectModal } from '@web3modal/react'
 // import { useEffect, useState } from "react";
-import { Web3Spinner } from '../../Web3Modal/Index'
 import W3MButtonStateless from '../../Web3Modal/W3MButtonStateless/Index'
 import ThemePicker from '../../ThemePicker'
 import { W3mConnectWalletDesktop } from '../../Web3Modal/W3MConnectWalletDesktop/Index'
@@ -12,8 +10,7 @@ import { W3mConnectWalletDesktop } from '../../Web3Modal/W3MConnectWalletDesktop
 import checkeredImage from '../../../../public/CheckerPattern.png'
 import { W3mConnectWalletMobile } from '../../Web3Modal/W3MConnectWalletMobile/Index'
 import { useEffect, useState } from 'react'
-import { ThemeCtrl } from '../../../controllers/ThemeCtrl'
-import ColorPickerDesktop from '../../ColorPickerDesktop'
+import { isMobile } from '../../../utils/Index'
 
 const CustomizableUI = () => {
   const { isOpen, open, close } = useConnectModal()
@@ -56,8 +53,16 @@ const CustomizableUI = () => {
           }}
         >
           <W3MButtonStateless />
-          <W3mConnectWalletDesktop />
-          <W3mConnectWalletMobile />
+          {isMobile() ? (
+            <div>
+              <W3mConnectWalletMobile />
+            </div>
+          ) : (
+            <div>
+              <W3mConnectWalletDesktop />
+              <W3mConnectWalletMobile />
+            </div>
+          )}
 
           {/* <ThemePicker
             currentAccentColor={currentAccentColor}

@@ -13,6 +13,9 @@ import Community from '../components/Community/Index'
 import FooterRouter from '../components/FooterRouter'
 import IntroText from '../components/IntroText/Index'
 import Video from '../components/Video/Index'
+import CustomizableUI from '../components/Features/CustomizableUI/Index'
+import { isMobile } from '../utils/Index'
+import { W3mConnectWalletMobile } from '../components/Web3Modal/W3MConnectWalletMobile/Index'
 
 const Home: NextPage = () => {
   // useEffect(() => {
@@ -59,13 +62,16 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={s.main}>
-        {/* <Video /> */}
-        <IntroText />
+        <Video />
         <div className={s.mainContent}>
-          {/* <CustomizableUI /> */}
+          <IntroText />
+          <CustomizableUI />
+          {/* {isMobile() ? <W3mConnectWalletMobile /> : <CustomizableUI />} */}
           {featureCardsContent}
           <Community />
-          <FooterRouter nextRoute="/try-it-out" nextRouteName="Try It Out" padding="lg" />
+          <div className={s.mobileFooter}>
+            <FooterRouter nextRoute="/try-it-out" nextRouteName="Try It Out" padding="lg" />
+          </div>
         </div>
       </main>
     </div>

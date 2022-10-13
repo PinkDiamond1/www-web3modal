@@ -12,8 +12,8 @@ export default function Layout({ children, ...props }: Props) {
   const router = useRouter()
 
   return (
-    <div>
-      {/* <Header /> */}
+    <div style={{ width: '100vw' }}>
+      <Header />
       <div className={s.sidebar}>
         <div className={s.sidebarContainer}>
           <SideBar />

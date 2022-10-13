@@ -17,7 +17,16 @@
     padding: 2em 2em 1.5em 2em;    
 }
 
-@media (max-width: 800px) {
+@media (min-width:375px) and (max-width:500px) {
+    .interfaceCard {
+        width: 110%;
+        border-radius: 32px;
+        position: relative;
+        left: -10px;
+        top: -50px;
+        margin-top: 10px;
+        /* top: -1px; */
+    }
     .greenCard {
         border-radius: 32px;
         margin-top: 20px;
@@ -33,11 +42,6 @@
     .greenCard {
         border-radius: 32px;
     }
-    .interfaceCard {
-        width: 106%;
-        border-radius: 32px;
-        position: relative;
-        left: -10px;
-        /* top: -1px; */
-    }
-  }
+}
+
+

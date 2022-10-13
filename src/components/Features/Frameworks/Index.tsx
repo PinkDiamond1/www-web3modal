@@ -23,7 +23,7 @@ const Frameworks = () => {
           src={image}
           alt={title}
           width={isMobile() ? 350 : 300}
-          height={isMobile() ? 350 : 240}
+          height={isMobile() ? 300 : 240}
         />
       </div>
     </Card>

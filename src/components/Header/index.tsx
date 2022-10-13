@@ -1,12 +1,8 @@
-import Button from '../Button/Index'
 import Text from '../Text/Index'
 import { animate, timeline } from 'motion'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import s from './styles.module.css'
-import Image from 'next/image'
-import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
-import { SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
 import Tag from '../Tag/Index'
 
 const topLine = `#${s.hamburgerTop}`
@@ -19,7 +15,6 @@ export default function Header() {
 
   function onOpenClick() {
     setOpen(prev => !prev)
-    console.log('open', open)
   }
 
   function onOpenMobileMenu() {
@@ -58,21 +53,30 @@ export default function Header() {
       ],
       { duration: 0.25, defaultOptions: { easing: 'ease-in-out' } }
     )
-    timeline([[header, { height: '60px' }, { duration: 0.25, easing: 'ease-in-out' }]])
-    animate(menuContent, { opacity: 0, y: -10 }, { duration: 0.35, easing: 'ease-in-out' })
+    // timeline([[header, { height: '60px' }, { duration: 0.25, easing: 'ease-in-out' }]])
+    // animate(menuContent, { opacity: 0, y: -10 }, { duration: 0.35, easing: 'ease-in-out' })
   }
 
   useEffect(() => {
     if (open) {
       onOpenMobileMenu()
-    } else if (window.innerWidth <= 800) {
+      console.log('openStatua', open)
+    } else {
+      console.log('closeStatu', open)
       onMobileMenuClose()
     }
   }, [open])
 
   return (
     <header id={s.header}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          marginTop: 10
+        }}
+      >
         <Link href="/">
           <Text variant="heading5" color="grey">
             Web3Modal
@@ -117,7 +121,6 @@ export default function Header() {
 
       <button className={s.hamburger} onClick={onOpenClick}>
         <span id={s.hamburgerTop} />
-        <span id={s.hamburgerText}>Mobile Navigation</span>
         <span id={s.hamburgerBottom} />
       </button>
     </header>
