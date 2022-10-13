@@ -1,17 +1,25 @@
-import Link from "next/link";
-import { useRouter } from "next/router";
-import styles from "../../styles/Layout.module.css";
-import SideBar from "./SideBar";
+import { useRouter } from 'next/router'
+import { ReactNode } from 'react'
+import s from '../../styles/Layout.module.css'
+import Header from '../Header'
+import SideBar from './SideBar'
 
-export default function Layout({ children }) {
-  const router = useRouter();
+interface Props {
+  children?: ReactNode
+}
+
+export default function Layout({ children, ...props }: Props) {
+  const router = useRouter()
 
   return (
-    <div className={styles.sidebar}>
-      <div className={styles.sidebarContainer}>
-        <SideBar />
-        <main className={styles.mainContainer}>{children}</main>
+    <div>
+      {/* <Header /> */}
+      <div className={s.sidebar}>
+        <div className={s.sidebarContainer}>
+          <SideBar />
+          <main className={s.mainContainer}>{children}</main>
+        </div>
       </div>
     </div>
-  );
+  )
 }

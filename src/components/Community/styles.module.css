@@ -1,0 +1,26 @@
+.buttonContainer {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 0 1rem 0;
+}
+
+.marginContainer {
+    margin: 7em 0 0 0;
+}
+
+.textContainer {
+    padding: 1em 2em 1.5em 2em;    
+}
+
+
+@media (max-width: 800px) {
+    .textContainer {
+        padding: 1.5em 1em 1.5em 1em;     
+    }
+    .buttonContainer {
+        flex-direction: column;
+    }
+    .marginContainer{
+        margin: 0;
+    }
+  }

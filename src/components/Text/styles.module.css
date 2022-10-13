@@ -1,8 +1,8 @@
 .heading {
-    font-family: 'ABC Diatype Bold', sans-serif;
-    font-feature-settings: 'case', 'ss02', 'ss04', 'ss06';
-  }
-  
+  font-family: 'ABC Diatype', sans-serif;
+  font-feature-settings: 'case', 'ss02', 'ss04', 'ss06';
+}
+
 .heading1 {
   font-size: 130px;
   line-height: 100%;
@@ -40,6 +40,7 @@
   font-size: 32px;
   line-height: 100%;
   letter-spacing: -0.02em;
+  margin: 20px 0 20px 0;
 }
 
 @media (max-width: 800px) {
@@ -69,6 +70,7 @@
 .heading6 {
   font-size: 16px;
   line-height: 140%;
+  margin: 0;
 }
 
 .text {
@@ -95,6 +97,7 @@
   font-size: 20px;
   line-height: 120%;
   letter-spacing: -0.01em;
+  margin: 0;
 }
 
 @media (max-width: 800px) {
@@ -102,7 +105,9 @@
     font-size: 16px;
     line-height: 140%;
     letter-spacing: -0.01em;
+    margin: 0;
   }
+
   .anchor2 {
     font-size: 20px;
     line-height: 125%;
@@ -114,6 +119,7 @@
   font-size: 16px;
   line-height: 140%;
   letter-spacing: -0.01em;
+  margin: 0;
 }
 
 .text4 {
@@ -164,6 +170,10 @@
   font-size: 20px;
   line-height: 100%;
   letter-spacing: -0.02em;
+}
+
+.capitalized {
+  text-transform: uppercase
 }
 
 .colorWhite {

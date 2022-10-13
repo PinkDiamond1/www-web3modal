@@ -1,0 +1,17 @@
+.textContainer {
+    padding: 2em 2em 1.5em 2em;    
+}
+
+.imageWrapper {
+    border-radius: 44px;
+}
+
+
+@media (max-width: 800px) {
+    .textContainer {
+        padding: 1.5em 1em 1.5em 1em;     
+    }
+    .imageWrapper{
+        padding: 0 1em 0 1em;
+    }
+  }

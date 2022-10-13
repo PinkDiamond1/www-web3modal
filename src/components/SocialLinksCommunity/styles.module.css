@@ -1,0 +1,24 @@
+.fillBlack path  {
+    fill: black;
+}
+
+.socialCircle:hover {
+    border: 1px solid var(--color-grey-36);
+    background-color: var(--color-grey-16);
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobileMargin {
+    margin-right: 10px;
+}
+
+@media (max-width: 800px) {
+    .mobileMargin {
+      margin-bottom: 10px;
+    }
+  }
+  

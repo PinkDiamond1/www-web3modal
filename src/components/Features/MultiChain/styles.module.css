@@ -1,0 +1,17 @@
+.textContainer {
+    padding: 2em 2em 1.5em 2em;    
+}
+
+.imageContainer {
+    margin-top: 10px;
+}
+
+@media (max-width: 800px) {
+    .imageContainer{
+        margin: 0;
+        padding: 0 2em 2em 2em;
+    }
+    .textContainer {
+        padding: 1.5em 1em 1.5em 1em;     
+    }
+  }
