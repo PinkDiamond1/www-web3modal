@@ -1,0 +1,60 @@
+import styles from '../../styles/Home.module.css'
+import MDXLayout from '../../components/MDX/Layout/Index'
+import MDXContentSection from '../../components/MDX/Content/Index'
+import MDXToCSection from '../../components/MDX/TOC/Index'
+import CodeSyntax from '../../components/MDX/CodeSyntax/Index'
+import {
+  CONSOLE_LOG_REACT_PROJECT_ID,
+  CREATE_ENV,
+  CREATE_REACT_APP,
+  GET_CONNECTED_REACT,
+  REACT_PROJECT_ID,
+  WEB3_MODAL_REACT
+} from '../../data/MDX_CODE'
+import FooterRouter from '../../components/FooterRouter'
+import Text from '../../components/Text/Index'
+
+<MDXLayout>
+  <div style={{display: "flex"}}>
+    <MDXContentSection>
+        <div>
+          <div style={{padding: '1em 0 1em 0'}}>
+            # React
+            ## Create a React project
+            <CodeSyntax codeString={CREATE_REACT_APP} codeType={"terminal"} />
+        </div>
+
+        <div>
+          <div style={{padding: '1em 0 1em 0'}}>
+            # Configure your app
+            ## create .ENV
+            <Text variant="text3" color="grey">
+              Save the project ID as an environment variable. Install dotenv and create a new file called .env
+            </Text>
+            <CodeSyntax codeString={CREATE_ENV} codeType={"app"} />
+            <Text variant="text3" color="grey">
+              Create a new variable called REACT_APP_PROJECT_ID
+            </Text>
+            <CodeSyntax codeString={REACT_PROJECT_ID} codeType={"app"} />
+            <Text variant="text3" color="grey">
+              To confirm that you can log this variable add the following code after the import statements.
+            </Text>
+            <CodeSyntax codeString={CONSOLE_LOG_REACT_PROJECT_ID} codeType={"app"} />
+            <Text variant="text3" color="grey">
+                Remove the log and import Web3ModalProvider from @web3modal/react. You will wrap your consuming app with Web3ModalProvider. Set projectId to REACT_APP_PROJECT_ID.
+            </Text>
+            <CodeSyntax codeString={WEB3_MODAL_REACT} codeType={"app"} />
+        </div>
+
+          <div style={{ padding: '1em 0 1em 0' }}>
+            ## Get Connected
+             <CodeSyntax codeString={GET_CONNECTED_REACT} codeType={"app"} />
+          </div>
+          <FooterRouter previousRoute="/try-it-out" previousRouteName="Try It Out" padding="lg" />
+        </div>
+        </div>
+    </MDXContentSection>
+    <MDXToCSection/>
+
+  </div>
+</MDXLayout>

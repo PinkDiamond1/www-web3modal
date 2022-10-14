@@ -10,11 +10,80 @@ export const SIDE_BAR_NAVIGATION = [
   {
     href: '/get-started',
     title: 'GET STARTED'
+  },
+  {
+    href: '/react',
+    title: 'REACT'
+  },
+  {
+    href: '/cloud-explorer',
+    title: 'CLOUD EXPLORER'
   }
+]
 
-  // ToDo: Add in Nesting + Add in React.
+export const HOOKS_NAVIGATION = [
+  {
+    href: '/use-connect-modal;',
+    title: 'USE CONNECT MODAL'
+  },
+  {
+    href: '/use-account',
+    title: 'USE ACCOUNT'
+  },
+  {
+    href: '/use-block-number',
+    title: 'USE BLOCK NUMBER'
+  },
+  {
+    href: '/use-contract',
+    title: 'USE CONTRACT'
+  },
+  {
+    href: '/use-contract-event',
+    title: 'USE CONTRACT EVENT'
+  }
   // {
-  //   href: '/guide',
-  //   title: 'GUIDE'
+  //   href: '/use-contract-event',
+  //   title: 'USE CONTRACT EVENT'
+  // },
+  // {
+  //   href: '/use-contract-event',
+  //   title: 'USE CONTRACT EVENT'
+  // },
+  // {
+  //   href: '/use-contract-event',
+  //   title: 'USE CONTRACT EVENT'
+  // }
+  // {
+  //   href: '/use-contract-event',
+  //   title: 'USE CONTRACT EVENT'
+  // },
+  // {
+  //   href: '/use-contract-event',
+  //   title: 'USE CONTRACT EVENT'
+  // },
+  // {
+  //   href: '/use-contract-event',
+  //   title: 'USE CONTRACT EVENT'
+  // },
+  // {
+  //   href: '/use-contract-event',
+  //   title: 'USE CONTRACT EVENT'
+  // },
+  // {
+  //   href: '/use-contract-event',
+  //   title: 'USE CONTRACT EVENT'
+  // },
+  // {
+  //   href: '/use-contract-event',
+  //   title: 'USE CONTRACT EVENT'
+  // },
+  // {
+  //   href: '/use-contract-event',
+  //   title: 'USE CONTRACT EVENT'
+  // },
+  // {
+  //   href: '/use-contract-event',
+  //   title: 'USE CONTRACT EVENT'
   // }
 ]

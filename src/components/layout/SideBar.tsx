@@ -5,7 +5,7 @@ import Text from '../Text/Index'
 import Tag from '../Tag/Index'
 import SocialIcon from '../SocialIcon/Index'
 import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
-import { SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
+import { HOOKS_NAVIGATION, SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
 
 export default function SideBar() {
   const router = useRouter()
@@ -58,11 +58,28 @@ export default function SideBar() {
               </li>
             ))}
           </ul>
+          <div style={{ marginTop: 20 }}>
+            <Text variant="heading6" color="grey" className={s.docsHeading}>
+              Hooks
+            </Text>
+          </div>
+          <ul style={{ padding: 0, margin: 0 }}>
+            {HOOKS_NAVIGATION.map(({ href, title }) => (
+              <li
+                key={title}
+                className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
+              >
+                <Link href={href} style={{}}>
+                  <a>{title}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div style={{ paddingBottom: '1.5em' }}>
           <Text variant="heading6" color="grey" className={s.docsHeading}>
-            Communiy
+            Community
           </Text>
           <div style={{ display: 'flex', justifyContent: 'flex-start', padding: 8 }}>
             {SOCIAL_ICON.map(data => (
