@@ -98,8 +98,7 @@ function App() {
 export default App;`
 
 //-------- TEST -------------------------------//
-export const useConnectModal =
-`
+export const useConnectModal = `
 import { useConnectModal } from '@web3modal/ethereum'
 
 // Usage
