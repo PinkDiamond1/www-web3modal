@@ -1,43 +1,31 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Text from '../../components/Text/Index'
-import Image from 'next/image'
+import NextImage from 'next/future/image'
 import s from '../../styles/TryItOut.module.css'
-import { ConnectButton, AccountButton, useAccount } from '@web3modal/react'
+import { AccountButton, ConnectButton, useAccount } from '@web3modal/react'
 import Button from '../../components/Button/Index'
 import ColorPickerDesktop from '../../components/ColorPickerDesktop/index'
 import FooterRouter from '../../components/FooterRouter'
+import { isMobile } from '../../utils/Index'
+import checkeredImage from '../../../public/CheckerPattern.png'
 
 const TryItOut: NextPage = () => {
   const { isConnected } = useAccount()
 
   // ToDo: Calculate ConnectButton position based on Size.
   const checkeredSVG = (
-    <div>
-      <Image
-        src="/CheckeredRectangle.svg"
-        alt="TryBackground"
-        layout="responsive"
-        width={680}
-        height={510}
-      />
-      <div style={{ position: 'relative', top: -325, left: 280 }}>
-        {!isConnected ? <ConnectButton /> : <AccountButton />}
+    <div className={s.checkeredContent}>
+      <div
+        className={s.checkeredContentBG}
+        style={{ backgroundImage: `url(${checkeredImage.src})` }}
+      >
+        <div>{!isConnected ? <ConnectButton /> : <AccountButton />}</div>
       </div>
     </div>
   )
 
   const headerContent = (
-    <div
-      style={{
-        display: 'flex',
-        flex: 1,
-        width: '100%',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '0 3rem 0 3rem'
-      }}
-    >
+    <div className={s.headerContent}>
       <Text variant="heading4" color="white">
         Try It Out
       </Text>
@@ -51,6 +39,7 @@ const TryItOut: NextPage = () => {
     <div className={s.mainContent}>
       {headerContent}
       {checkeredSVG}
+
       <FooterRouter
         previousRoute="/"
         previousRouteName="Introduction"
@@ -58,13 +47,18 @@ const TryItOut: NextPage = () => {
         nextRouteName="Get Started"
         padding="md"
       />
+      <div className={s.mobileColorPickerRow}>
+        <button onClick={() => console.log('Color Picker Clicked')} className={s.mobileColorPicker}>
+          <NextImage alt="lightIcon" src={'../icons/LightIcon.svg'} height={32} width={32} />
+        </button>
+      </div>
     </div>
   )
 
   return (
     <main className={s.main}>
       {mainContent}
-      <ColorPickerDesktop />
+      {isMobile() ? null : <ColorPickerDesktop />}
     </main>
   )
 }

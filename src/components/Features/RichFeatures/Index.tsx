@@ -44,7 +44,12 @@ const RichFeatures = () => {
           <NextImage src="/icons/AccountButton.png" alt={title} width={259} height={40} />
         </div>
         <div className={s.interfaceCard}>
-          <NextImage src={image} alt={title} width={400} height={290} />
+          <NextImage
+            src={image}
+            alt={title}
+            width={isMobile() ? 460 : 390}
+            height={isMobile() ? 290 : 285}
+          />
         </div>
       </div>
     </Card>

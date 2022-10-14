@@ -57,7 +57,7 @@ export default function ThemePicker({}) {
       style={{
         position: 'relative',
         top: '-700px',
-        left: '200px',
+        left: '100px',
         display: 'flex',
         flex: 1,
         flexDirection: 'row',
