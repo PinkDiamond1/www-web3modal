@@ -23,8 +23,8 @@ export const SIDE_BAR_NAVIGATION = [
 
 export const HOOKS_NAVIGATION = [
   {
-    href: '/use-connect-modal;',
-    title: 'USE CONNECT MODAL'
+    href: '/TEST',
+    title: 'TEST DEMO'
   },
   {
     href: '/use-account',

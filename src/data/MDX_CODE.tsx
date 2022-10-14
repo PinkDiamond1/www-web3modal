@@ -96,3 +96,19 @@ function App() {
 }
 
 export default App;`
+
+//-------- TEST -------------------------------//
+export const useConnectModal =
+`
+import { useConnectModal } from '@web3modal/ethereum'
+
+// Usage
+const { isOpen, open, close } = useConnectModal()
+
+// Returns
+interface Return {
+  isOpen: boolean
+  open: () => void
+  close: () => void
+}
+`
