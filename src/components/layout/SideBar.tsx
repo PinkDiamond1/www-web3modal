@@ -8,7 +8,6 @@ import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
 import { HOOKS_NAVIGATION, SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
 import { utimes } from 'fs'
 import NavItem from './NavItem'
-import THINCHEVRON from '../../../public/icons/ThinChevron.svg'
 
 export default function SideBar() {
   const router = useRouter()
@@ -70,6 +69,7 @@ export default function SideBar() {
             ))}
           </ul>
         </div>
+        {socialContent}
       </nav>
     </aside>
   )

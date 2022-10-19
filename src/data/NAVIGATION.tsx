@@ -11,14 +11,9 @@ export const SIDE_BAR_NAVIGATION = [
     href: '/get-started',
     title: 'GET STARTED'
   },
-
-  {
-    href: '/cloud-explorer',
-    title: 'CLOUD EXPLORER'
-  },
   {
     href: '/guide',
-    title: 'GUIDE',
+    title: 'GUIDES',
     nestedNav: [
       {
         href: '/react',
@@ -32,89 +27,122 @@ export const SIDE_BAR_NAVIGATION = [
     nestedNav: [
       {
         href: '/get-project-id',
-        title: 'HOW TO GET A PROJECT ID'
+        title: 'GET A PROJECT ID'
       }
     ]
   },
   {
-    href: '/hooks',
-    title: 'Hooks',
+    href: '/modal',
+    title: 'MODAL HOOKS',
     nestedNav: [
       {
+        href: '/use-connect-modal',
+        title: 'useConnectModal'
+      }
+    ]
+  },
+  {
+    href: '/data-hooks',
+    title: 'DATA HOOKS',
+    nestedNav: [
+      {
+        href: '/use-account',
+        title: 'useAccount'
+      },
+      {
         href: '/use-balance',
-        title: 'USE BALANCE'
+        title: 'useBalance'
+      },
+      {
+        href: '/use-block-number',
+        title: 'useBlockNumber'
+      },
+      {
+        href: '/use-contract',
+        title: 'useContract'
+      },
+      {
+        href: '/use-contract-event',
+        title: 'useContractEvent'
+      },
+      {
+        href: '/use-contract-read',
+        title: 'useContractRead'
+      },
+      {
+        href: '/use-ens-address',
+        title: 'useEnsAddress'
+      },
+      {
+        href: '/use-ens-avatar',
+        title: 'useEnsAvatar'
+      },
+      {
+        href: '/use-ens-name',
+        title: 'useEnsName'
+      },
+      {
+        href: '/use-fee-data',
+        title: 'useFeeData'
       },
       {
         href: '/use-network',
-        title: 'USE NETWORK'
+        title: 'useNetwork'
+      },
+      {
+        href: '/use-provider',
+        title: 'useProvider'
+      },
+      {
+        href: '/use-websocket-provider',
+        title: 'useWebsocketProvider'
+      },
+      {
+        href: '/use-signer',
+        title: 'useSigner'
+      },
+      {
+        href: '/use-token',
+        title: 'useToken'
+      },
+      {
+        href: '/use-transaction',
+        title: 'useTransaction'
+      },
+      {
+        href: '/use-wait-for-transaction',
+        title: 'useWaitForTransaction'
+      }
+    ]
+  },
+  {
+    href: '/action-hooks',
+    title: 'ACTION HOOKS',
+    nestedNav: [
+      {
+        href: '/use-contract-write',
+        title: 'useContractWrite'
+      },
+      {
+        href: '/use-disconnect',
+        title: 'useDisconnect'
+      },
+      {
+        href: '/use-send-transaction',
+        title: 'useSendTransaction'
+      },
+      {
+        href: '/use-sign-message',
+        title: 'useSignMessage'
+      },
+      {
+        href: '/use-sign-typed-data',
+        title: 'useSignTypedData'
+      },
+      {
+        href: '/use-switch-network',
+        title: 'useSwitchNetwork'
       }
     ]
   }
-]
-
-export const HOOKS_NAVIGATION = [
-  {
-    href: '/TEST',
-    title: 'TEST DEMO'
-  },
-  {
-    href: '/use-account',
-    title: 'USE ACCOUNT'
-  },
-  {
-    href: '/use-block-number',
-    title: 'USE BLOCK NUMBER'
-  },
-  {
-    href: '/use-contract',
-    title: 'USE CONTRACT'
-  },
-  {
-    href: '/use-contract-event',
-    title: 'USE CONTRACT EVENT'
-  }
-  // {
-  //   href: '/use-contract-event',
-  //   title: 'USE CONTRACT EVENT'
-  // },
-  // {
-  //   href: '/use-contract-event',
-  //   title: 'USE CONTRACT EVENT'
-  // },
-  // {
-  //   href: '/use-contract-event',
-  //   title: 'USE CONTRACT EVENT'
-  // }
-  // {
-  //   href: '/use-contract-event',
-  //   title: 'USE CONTRACT EVENT'
-  // },
-  // {
-  //   href: '/use-contract-event',
-  //   title: 'USE CONTRACT EVENT'
-  // },
-  // {
-  //   href: '/use-contract-event',
-  //   title: 'USE CONTRACT EVENT'
-  // },
-  // {
-  //   href: '/use-contract-event',
-  //   title: 'USE CONTRACT EVENT'
-  // },
-  // {
-  //   href: '/use-contract-event',
-  //   title: 'USE CONTRACT EVENT'
-  // },
-  // {
-  //   href: '/use-contract-event',
-  //   title: 'USE CONTRACT EVENT'
-  // },
-  // {
-  //   href: '/use-contract-event',
-  //   title: 'USE CONTRACT EVENT'
-  // },
-  // {
-  //   href: '/use-contract-event',
-  //   title: 'USE CONTRACT EVENT'
-  // }
 ]
