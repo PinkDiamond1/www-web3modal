@@ -18,6 +18,20 @@ export const SIDE_BAR_NAVIGATION = [
   {
     href: '/cloud-explorer',
     title: 'CLOUD EXPLORER'
+  },
+  {
+    href: '/use-account',
+    title: 'HOOKS',
+    children: [
+      {
+        href: '/use-block-number',
+        title: 'USE BLOCK NUMBER'
+      },
+      {
+        href: '/use-block-number',
+        title: 'USE BLOCK NUMBER'
+      }
+    ]
   }
 ]
 

@@ -5,6 +5,8 @@ import useConditionalValue from '../../hooks/useConditionalValue'
 import Button from '../Button/Index'
 import Text from '../Text/Index'
 import s from './styles.module.css'
+import Image from 'next/image'
+import CHEVRON from '../../../public/icons/Chevron.svg'
 
 interface FooterRouteProps {
   previousRoute?: string
@@ -54,9 +56,15 @@ export default function FooterRouter({
         {nextRoute && nextRouteName && (
           <Link href={nextRoute}>
             <button className={`${s.button} ${s.buttonRight}`}>
-              <Text variant="text3" color="grey">
-                Next
-              </Text>
+              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <Text variant="text3" color="grey">
+                  Next
+                </Text>
+                <div className={s.chevronImage}>
+                  {/* <Image src="/icons/Chevron.svg" width={6} height={17} alt="arrow right" /> */}
+                </div>
+              </div>
+
               <Text variant="heading6" color="white" capitalized={true}>
                 {nextRouteName}
               </Text>

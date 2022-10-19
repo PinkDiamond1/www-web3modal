@@ -3,7 +3,9 @@ import MDXLayout from '../../components/MDX/Layout/Index'
 import MDXContentSection from '../../components/MDX/Content/Index'
 import MDXToCSection from '../../components/MDX/TOC/Index'
 import CodeSyntax from '../../components/MDX/CodeSyntax/Index'
+import InlineCode from '../../components/MDX/InlineCode/Index'
 import { INSTALL_INSTRUCTIONS, GET_ADDRESS, APP_SETUP } from '../../data/MDX_CODE'
+import { TOC_GET_STARTED } from '../../data/TABLE_CONTENTS'
 import FooterRouter from '../../components/FooterRouter'
 import Text from '../../components/Text/Index'
 
@@ -12,7 +14,7 @@ import Text from '../../components/Text/Index'
     <MDXContentSection>
         <div>
           <div style={{padding: '1em 0 1em 0'}}>
-            # Get Started
+            <Text variant="heading5" color="white" id="get-started">Get Started</Text>
             <Text variant="text3" color="grey">
               Getting started with Web3Modal is fast and easy. Web3Modal is chain agnostic and plays with your preferred front-end framework.
               To see what other frameworks and chains we currently support, please visit our [GitHub](https://github.com/WalletConnect/web3modal).
@@ -20,15 +22,15 @@ import Text from '../../components/Text/Index'
         </div>
 
           <div style={{ padding: '1em 0 1em 0' }}>
-            ## WalletConnect Cloud
+            <Text variant="heading5" color="white" id="wallet-connect-cloud">WalletConnect Cloud</Text>
             <Text variant="text3" color="grey">
               If this is your first time using Web3Modal, you will need to obtain a
-              projectId. You can follow [this guide](https://walletconnect.com/) if you need help.
+              ```projectId```. You can follow [this guide](https://walletconnect.com/) if you need help.
             </Text>
           </div>
 
           <div style={{ padding: '1em 0 1em 0' }}>
-            ## Install
+            <Text variant="heading5" color="white" id="install">Install </Text>
             <Text variant="text3" color="grey">
               Install the packages for your project. In our example, our front-end framework will be
               React and the chain will be Ethereum.
@@ -37,29 +39,33 @@ import Text from '../../components/Text/Index'
           </div>
 
           <div style={{ padding: '1em 0 1em 0' }}>
-            ## App Setup
+            <Text variant="heading5" color="white" id="app-setup">App Setup</Text>
             <Text variant="text3" color="grey">
-              In the consuming app - Import ```Web3ModalProvider``` from ```@web3modal/react``` -
-              Import chains and provider from ```@web3/ethereum```. - Wrap the component with
-              ```Web3ModalProvider```. - Set ```projectId``` to ```NEXT_PUBLIC_PROJECT_ID``` - Set chains and
-              providers according to the example code below.
+              In the consuming app:
+              - Import ```Web3ModalProvider``` from ```@web3modal/react```
+              - Import chains and provider from ```@web3/ethereum```.
+              - Wrap the component with ```Web3ModalProvider```.
+              - Set ```projectId``` to ```NEXT_PUBLIC_PROJECT_ID```
+              - Set chains and providers according to the example code below.
             </Text>
 
             <CodeSyntax codeString={APP_SETUP} codeType={"app"} />
           </div>
 
           <div style={{ padding: '1em 0 1em 0' }}>
-            ## Get Address
+            <Text variant="heading5" color="white" id="get-address">Get Address</Text>
             <Text variant="text3" color="grey">
-              To get the connected wallet’s address, import ConnectButton and useAccount from
-              @web3modal/react. connected is a boolean that will return true or false if there is a wallet
+              To get the connected wallet’s address, ```import ConnectButton and useAccount from
+              @web3modal/react.``` ```Connected``` is a boolean that will return ```true``` or ```false``` if there is a wallet
               connected. address is the connected wallet’s address.
             </Text>
+            <CodeSyntax codeString={GET_ADDRESS} codeType={"app"} />
+
           </div>
-          <FooterRouter previousRoute="/try-it-out" previousRouteName="Try It Out" padding="lg" />
+          <FooterRouter previousRoute="/try-it-out" previousRouteName="Try It Out" nextRoute="/react" nextRouteName="React" padding="lg" />
         </div>
     </MDXContentSection>
-    <MDXToCSection/>
+    <MDXToCSection data={TOC_GET_STARTED}/>
 
   </div>
 </MDXLayout>

@@ -3,6 +3,10 @@
     padding: 3em 3em 0 3em;
 }
 
+.container a {
+    color: var(--color-blue-100);
+}
+
 @media (max-width: 800px) {
     .container {
         width: 100%;

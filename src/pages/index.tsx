@@ -65,7 +65,7 @@ const Home: NextPage = () => {
         <Video />
         <div className={s.mainContent}>
           <IntroText />
-          <CustomizableUI />
+          {/* <CustomizableUI /> */}
           {/* {isMobile() ? <W3mConnectWalletMobile /> : <CustomizableUI />} */}
           {featureCardsContent}
           <Community />

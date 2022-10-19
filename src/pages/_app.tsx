@@ -11,6 +11,22 @@ import { useEffect, useState } from 'react'
 import AlphaBanner from '../components/AlphaBanner/Index'
 import Header from '../components/Header'
 
+if (!process.env.NEXT_PUBLIC_PROJECT_ID)
+  throw new Error('You need to provide NEXT_PUBLIC_PROJECT_ID env variable')
+
+// Configure web3modal
+const modalConfig: ConfigOptions = {
+  projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
+  theme: ThemeCtrl.state.theme as ConfigOptions['theme'],
+  accentColor: ThemeCtrl.state.accentColor as ConfigOptions['accentColor'],
+  ethereum: {
+    appName: 'web3Modal',
+    autoConnect: true,
+    chains: [chains.mainnet],
+    providers: [providers.walletConnectProvider({ projectId: process.env.NEXT_PUBLIC_PROJECT_ID! })]
+  }
+}
+
 function App({ Component, pageProps }: AppProps) {
   // ToDo: State for AlphaBanner
 
@@ -26,24 +42,6 @@ function App({ Component, pageProps }: AppProps) {
   //     appName: 'web3Modal'
   //   }
   // }
-
-  if (!process.env.NEXT_PUBLIC_PROJECT_ID)
-    throw new Error('You need to provide NEXT_PUBLIC_PROJECT_ID env variable')
-
-  // Configure web3modal
-  const modalConfig: ConfigOptions = {
-    projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
-    theme: ThemeCtrl.state.theme as ConfigOptions['theme'],
-    accentColor: ThemeCtrl.state.accentColor as ConfigOptions['accentColor'],
-    ethereum: {
-      appName: 'web3Modal',
-      autoConnect: true,
-      chains: [chains.mainnet],
-      providers: [
-        providers.walletConnectProvider({ projectId: process.env.NEXT_PUBLIC_PROJECT_ID! })
-      ]
-    }
-  }
 
   const unsubscribeThemeCtrl = ThemeCtrl.subscribe(() => {
     setTheme(ThemeCtrl.state.theme)

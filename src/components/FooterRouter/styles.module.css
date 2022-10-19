@@ -75,3 +75,10 @@
 }
 
 
+.chevronImage  {
+    margin-left: 6px;
+}
+
+.chevronImage > path {
+    fill: "grey"
+}

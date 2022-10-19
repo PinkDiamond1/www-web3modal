@@ -6,6 +6,7 @@ import Tag from '../Tag/Index'
 import SocialIcon from '../SocialIcon/Index'
 import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
 import { HOOKS_NAVIGATION, SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
+import { utimes } from 'fs'
 
 export default function SideBar() {
   const router = useRouter()
@@ -47,18 +48,24 @@ export default function SideBar() {
             Docs
           </Text>
           <ul style={{ padding: 0, margin: 0 }}>
-            {SIDE_BAR_NAVIGATION.map(({ href, title }) => (
-              <li
-                key={title}
-                className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
-              >
-                <Link href={href} style={{}}>
-                  <a>{title}</a>
-                </Link>
-              </li>
+            {SIDE_BAR_NAVIGATION.map(({ href, title, children }) => (
+              <div key={title}>
+                <li
+                  className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
+                >
+                  <Link href={href} style={{}}>
+                    <a>{title}</a>
+                  </Link>
+                  <ul>
+                    {children?.map(({ href, title }) => (
+                      <li key={title}>{href}</li>
+                    ))}
+                  </ul>
+                </li>
+              </div>
             ))}
           </ul>
-          <div style={{ marginTop: 20 }}>
+          {/* <div style={{ marginTop: 20 }}>
             <Text variant="heading6" color="grey" className={s.docsHeading}>
               Hooks
             </Text>
@@ -74,7 +81,7 @@ export default function SideBar() {
                 </Link>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
 
         <div style={{ paddingBottom: '1.5em' }}>

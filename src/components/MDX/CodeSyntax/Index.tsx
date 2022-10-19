@@ -43,12 +43,12 @@ export default function CodeSyntax({ codeString, codeType }: CodeSyntaxProps) {
   )
 
   return (
-    <div style={{ border: 'linear-gradient(0deg, #3B4040, #3B4040)' }}>
+    <div className={s.codeContainer}>
       <div className={s.topCodeSyntax}>
         {codeType === 'terminal' ? terminalContent : appContent}
         <NextImage
           onClick={() => console.log('copied...')}
-          src="/icons/Clipboard.svg"
+          src="/icons/ClipBoard.svg"
           alt={'codeSnippet'}
           width={17}
           height={17}
