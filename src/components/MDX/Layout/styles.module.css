@@ -1,6 +1,5 @@
 .container {
-    padding: 0 0rem 0 2rem;
-    /* display: flex; */
+    display: flex;
 }
 
 @media (max-width: 800px) {

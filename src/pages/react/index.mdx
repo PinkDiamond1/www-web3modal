@@ -13,20 +13,21 @@ import {
 } from '../../data/MDX_CODE'
 import FooterRouter from '../../components/FooterRouter'
 import Text from '../../components/Text/Index'
+import { TOC_REACT } from '../../data/TABLE_CONTENTS'
 
 <MDXLayout>
   <div style={{display: "flex"}}>
     <MDXContentSection>
         <div>
           <div style={{padding: '1em 0 1em 0'}}>
-            # React
-            ## Create a React project
+            <Text variant="heading4" color="white" id="react">React</Text>
+            <Text variant="heading5" color="white" id="create-react-project">Create a React project</Text>
             <CodeSyntax codeString={CREATE_REACT_APP} codeType={"terminal"} />
         </div>
         <div>
           <div style={{padding: '1em 0 1em 0'}}>
-            # Configure your app
-            ## create .ENV
+            <Text variant="heading4" color="white" id="configure-app">Configure your app</Text>
+            <Text variant="heading5" color="white" id="create-env">create .ENV</Text>
             <Text variant="text3" color="grey">
               Save the project ID as an environment variable. Install dotenv and create a new file called .env
             </Text>
@@ -46,14 +47,14 @@ import Text from '../../components/Text/Index'
         </div>
 
           <div style={{ padding: '1em 0 1em 0' }}>
-            ## Get Connected
-             <CodeSyntax codeString={GET_CONNECTED_REACT} codeType={"app"} />
+            <Text variant="heading5" color="white" id="get-connected">Get</Text>
+            <CodeSyntax codeString={GET_CONNECTED_REACT} codeType={"app"} />
           </div>
           <FooterRouter previousRoute="/try-it-out" previousRouteName="Try It Out" padding="lg" />
         </div>
         </div>
     </MDXContentSection>
-    <MDXToCSection/>
+    <MDXToCSection data={TOC_REACT}/>
 
   </div>
 </MDXLayout>

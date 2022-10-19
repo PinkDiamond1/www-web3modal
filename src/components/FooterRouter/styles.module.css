@@ -76,9 +76,21 @@
 
 
 .chevronImage  {
-    margin-left: 6px;
+    margin-left: 8px;
+    margin-bottom: 4px;
+}
+
+.chevronImagePrevious  {
+    margin-right: 6px;
+    margin-bottom: 4px;
+    transform: rotate(180deg);
+
 }
 
 .chevronImage > path {
-    fill: "grey"
+    fill: var(--color-grey-70);
+}
+
+.chevronImagePrevious > path {
+    fill: var(--color-grey-70);
 }

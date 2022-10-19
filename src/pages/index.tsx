@@ -18,17 +18,6 @@ import { isMobile } from '../utils/Index'
 import { W3mConnectWalletMobile } from '../components/Web3Modal/W3MConnectWalletMobile/Index'
 
 const Home: NextPage = () => {
-  // useEffect(() => {
-  //   unsubscribe()
-  // }, [])
-
-  // // Subscribe to all state changes
-  // const unsubscribe = subscribe(ThemeCtrl.state, () =>
-  //   console.log('state has changed to', ThemeCtrl.state)
-  // )
-  // // Unsubscribe by calling the result
-  // unsubscribe()
-
   const featureCardsContent = (
     <>
       <div className={s.cardRow}>

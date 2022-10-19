@@ -22,7 +22,7 @@ export default function MDXToCSection({ children, data, ...props }: Props) {
 
       <ul className={s.li}>
         {data.map(data => (
-          <li key={data.title} className={data.title === activeId ? s.active : ''}>
+          <li key={data.title} className={data.id === activeId ? s.active : s.nonActive}>
             <a
               href={`#${data.id}`}
               onClick={e => {
@@ -32,7 +32,7 @@ export default function MDXToCSection({ children, data, ...props }: Props) {
                 })
               }}
             >
-              <Text variant="text3" color="grey">
+              <Text variant="text3" color={data.id === activeId ? 'blue' : 'grey'}>
                 {data.title}
               </Text>
             </a>

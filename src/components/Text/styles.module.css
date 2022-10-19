@@ -130,6 +130,7 @@
 .text4 {
   font-size: 12px;
   line-height: 140%;
+  margin-bottom: 8px;
 }
 
 .anchor {
@@ -190,7 +191,7 @@
 }
 
 .colorBlue {
-  color: var(--color-blue-125);
+  color: var(--color-blue-100);
 }
 
 .colorGrey {

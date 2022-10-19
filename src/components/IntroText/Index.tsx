@@ -6,6 +6,7 @@ import Text from '../Text/Index'
 import s from './styles.module.css'
 import { isMobile } from '../../utils/Index'
 import Link from 'next/link'
+import CHEVRON from '../../../public/icons/Chevron.svg'
 
 const buttonContent = (
   <div className={s.buttonContent}>
@@ -13,7 +14,7 @@ const buttonContent = (
       <Button
         variant="fill"
         color="blue"
-        iconRight={<Image src="/icons/Chevron.svg" width={6} height={17} alt="arrow right" />}
+        iconRight={<CHEVRON width={7} height={12} className={s.whiteChevron} />}
         style={{ marginRight: 10 }}
       >
         GET STARTED
@@ -24,15 +25,7 @@ const buttonContent = (
       <Button
         variant="fill"
         color="grey"
-        iconRight={
-          <Image
-            className={s.blackChevron}
-            src="/icons/Chevron.svg"
-            width={6}
-            height={17}
-            alt="arrow right"
-          />
-        }
+        iconRight={<CHEVRON width={7} height={12} className={s.blackChevron} />}
       >
         TRY IT OUT NOW
       </Button>

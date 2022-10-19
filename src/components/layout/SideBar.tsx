@@ -29,7 +29,7 @@ export default function SideBar() {
           width: 250 // ToDo: Push up higher
         }}
       >
-        <Text variant="heading4" color="grey">
+        <Text variant="heading4" color="white">
           Web3Modal
         </Text>
         <Tag> 2.0.0</Tag>
@@ -40,11 +40,11 @@ export default function SideBar() {
           flexDirection: 'column',
           justifyContent: 'space-between',
           height: '100%',
-          width: '10'
+          marginTop: '2.5em'
         }}
       >
-        <div>
-          <Text variant="heading6" color="grey" className={s.docsHeading}>
+        <div className={s.docsHeading}>
+          <Text variant="heading6" color="grey">
             Docs
           </Text>
           <ul style={{ padding: 0, margin: 0 }}>

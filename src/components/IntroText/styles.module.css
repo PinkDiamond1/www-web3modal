@@ -1,11 +1,19 @@
+.whiteChevron {
+    position: relative;
+    left: -4px;
+    top: -2px;
+    /* margin-left: -3px; */
+}
+
 .blackChevron {
     position: relative;
-    left: -10;
+    left: -4px;
+    top: -2px;
     /* margin-left: -3px; */
 }
 
 .blackChevron path {
-    fill: black
+    fill: var(--color-grey-0)
 }
 
 .buttonContent {

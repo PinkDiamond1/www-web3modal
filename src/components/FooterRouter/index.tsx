@@ -6,7 +6,7 @@ import Button from '../Button/Index'
 import Text from '../Text/Index'
 import s from './styles.module.css'
 import Image from 'next/image'
-import CHEVRON from '../../../public/icons/Chevron.svg'
+import THINCHEVRON from '../../../public/icons/ThinChevron.svg'
 
 interface FooterRouteProps {
   previousRoute?: string
@@ -43,10 +43,20 @@ export default function FooterRouter({
         {previousRoute && previousRouteName && (
           <Link href={previousRoute}>
             <button className={`${s.button} ${s.buttonLeft}`}>
-              <Text variant="text3" color="grey" className={s.noMargin}>
-                Previous
-              </Text>
-              <Text variant="heading6" color="white" capitalized={true}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  paddingBottom: 4
+                }}
+              >
+                <THINCHEVRON className={s.chevronImagePrevious} />
+                <Text variant="text3" color="grey">
+                  PREVIOUS
+                </Text>
+              </div>
+              <Text variant="heading6" color="white" capitalized={false}>
                 {previousRouteName}
               </Text>
             </button>
@@ -56,16 +66,21 @@ export default function FooterRouter({
         {nextRoute && nextRouteName && (
           <Link href={nextRoute}>
             <button className={`${s.button} ${s.buttonRight}`}>
-              <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  paddingBottom: 4
+                }}
+              >
                 <Text variant="text3" color="grey">
-                  Next
+                  NEXT
                 </Text>
-                <div className={s.chevronImage}>
-                  {/* <Image src="/icons/Chevron.svg" width={6} height={17} alt="arrow right" /> */}
-                </div>
+                <THINCHEVRON className={s.chevronImage} />
               </div>
 
-              <Text variant="heading6" color="white" capitalized={true}>
+              <Text variant="heading6" color="white" capitalized={false}>
                 {nextRouteName}
               </Text>
             </button>

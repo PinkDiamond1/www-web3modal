@@ -11,10 +11,11 @@
 }
 
 .sidebarContainerTwo{
-    padding: 0 2rem;
+    padding: 0 1rem;
     min-height: 90vh;
     background-color: rgba(0, 0, 0, 0.3);
     display:flex;
+    width: 20%;
     flex-direction: column;
     justify-content: space-between;
 }

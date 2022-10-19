@@ -1,7 +1,8 @@
 //-------- GET STARTED -------------------------------//
 export const INSTALL_INSTRUCTIONS = 'yarn add @web3modal/react @web3modal/ethereum ethers'
 
-export const APP_SETUP = `import { chains, providers } from '@web3modal/ethereum'
+export const APP_SETUP = `
+import { chains, providers } from '@web3modal/ethereum'
 import { Web3ModalProvider } from '@web3modal/react'
 
 const NEXT_PUBLIC_PROJECT_ID = { process.env }
@@ -26,7 +27,10 @@ export default function App({ Component, pageProps }) {
   )
 }`
 
-export const GET_ADDRESS = `import { ConnectButton, useAccount } from '@web3modal/react'
+export const GET_ADDRESS = `
+// index.tsx
+import { ConnectButton, useAccount } from '@web3modal/react'
+
 export default function HomePage() {
   const { connected, address } = useAccount()
 
