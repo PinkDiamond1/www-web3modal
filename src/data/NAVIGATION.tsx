@@ -11,28 +11,45 @@ export const SIDE_BAR_NAVIGATION = [
     href: '/get-started',
     title: 'GET STARTED'
   },
-  {
-    href: '/react',
-    title: 'REACT'
-  },
+
   {
     href: '/cloud-explorer',
     title: 'CLOUD EXPLORER'
+  },
+  {
+    href: '/guide',
+    title: 'GUIDE',
+    nestedNav: [
+      {
+        href: '/react',
+        title: 'REACT'
+      }
+    ]
+  },
+  {
+    href: '/cloud-explorer',
+    title: 'CLOUD EXPLORER',
+    nestedNav: [
+      {
+        href: '/get-project-id',
+        title: 'HOW TO GET A PROJECT ID'
+      }
+    ]
+  },
+  {
+    href: '/hooks',
+    title: 'Hooks',
+    nestedNav: [
+      {
+        href: '/use-balance',
+        title: 'USE BALANCE'
+      },
+      {
+        href: '/use-network',
+        title: 'USE NETWORK'
+      }
+    ]
   }
-  // {
-  //   href: '/use-account',
-  //   title: 'HOOKS',
-  //   children: [
-  //     {
-  //       href: '/use-block-number',
-  //       title: 'USE BLOCK NUMBER'
-  //     },
-  //     {
-  //       href: '/use-block-number',
-  //       title: 'USE BLOCK NUMBER'
-  //     }
-  //   ]
-  // }
 ]
 
 export const HOOKS_NAVIGATION = [

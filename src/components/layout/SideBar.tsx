@@ -7,6 +7,8 @@ import SocialIcon from '../SocialIcon/Index'
 import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
 import { HOOKS_NAVIGATION, SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
 import { utimes } from 'fs'
+import NavItem from './NavItem'
+import THINCHEVRON from '../../../public/icons/ThinChevron.svg'
 
 export default function SideBar() {
   const router = useRouter()
@@ -18,6 +20,21 @@ export default function SideBar() {
       return false
     }
   }
+
+  const socialContent = (
+    <div style={{ paddingBottom: '1.5em' }}>
+      <Text variant="heading6" color="grey" className={s.docsHeading}>
+        Community
+      </Text>
+      <div style={{ display: 'flex', justifyContent: 'flex-start', padding: 8 }}>
+        {SOCIAL_ICON.map(data => (
+          <div key={data.title}>
+            <SocialIcon image={data.image} uri={data.uri} title={data.title} />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 
   return (
     <aside className={s.sidebarContainerTwo}>
@@ -48,53 +65,10 @@ export default function SideBar() {
             Docs
           </Text>
           <ul style={{ padding: 0, margin: 0 }}>
-            {SIDE_BAR_NAVIGATION.map(({ href, title, children }) => (
-              <div key={title}>
-                <li
-                  className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
-                >
-                  <Link href={href} style={{}}>
-                    <a>{title}</a>
-                  </Link>
-                  <ul>
-                    {children?.map(({ href, title }) => (
-                      <li key={title}>{href}</li>
-                    ))}
-                  </ul>
-                </li>
-              </div>
+            {SIDE_BAR_NAVIGATION.map(({ href, title, nestedNav }) => (
+              <NavItem href={href} title={title} key={title} nestedNav={nestedNav} />
             ))}
           </ul>
-          {/* <div style={{ marginTop: 20 }}>
-            <Text variant="heading6" color="grey" className={s.docsHeading}>
-              Hooks
-            </Text>
-          </div>
-          <ul style={{ padding: 0, margin: 0 }}>
-            {HOOKS_NAVIGATION.map(({ href, title }) => (
-              <li
-                key={title}
-                className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
-              >
-                <Link href={href} style={{}}>
-                  <a>{title}</a>
-                </Link>
-              </li>
-            ))}
-          </ul> */}
-        </div>
-
-        <div style={{ paddingBottom: '1.5em' }}>
-          <Text variant="heading6" color="grey" className={s.docsHeading}>
-            Community
-          </Text>
-          <div style={{ display: 'flex', justifyContent: 'flex-start', padding: 8 }}>
-            {SOCIAL_ICON.map(data => (
-              <div key={data.title}>
-                <SocialIcon image={data.image} uri={data.uri} title={data.title} />
-              </div>
-            ))}
-          </div>
         </div>
       </nav>
     </aside>

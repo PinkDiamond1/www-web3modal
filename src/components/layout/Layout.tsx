@@ -6,9 +6,11 @@ import SideBar from './SideBar'
 
 interface Props {
   children?: ReactNode
+  href: string
+  title: string
 }
 
-export default function Layout({ children, ...props }: Props) {
+export default function Layout({ children, href, title, ...props }: Props) {
   const router = useRouter()
 
   return (
