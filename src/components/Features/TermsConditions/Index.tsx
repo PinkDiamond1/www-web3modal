@@ -21,6 +21,7 @@ const TermsConditions = () => {
       <div className={s.greenCard}>
         <div className={s.interfaceCard}>
           <Image
+            priority={true}
             src={image}
             alt={title}
             width={isMobile() ? 430 : 392}

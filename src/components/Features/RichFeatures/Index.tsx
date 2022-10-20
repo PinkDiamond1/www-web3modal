@@ -45,6 +45,7 @@ const RichFeatures = () => {
         </div>
         <div className={s.interfaceCard}>
           <NextImage
+            priority={true}
             src={image}
             alt={title}
             width={isMobile() ? 460 : 390}

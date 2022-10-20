@@ -20,6 +20,7 @@ const Frameworks = () => {
       </div>
       <div className={s.imageWrapper}>
         <Image
+          priority={true}
           src={image}
           alt={title}
           width={isMobile() ? 350 : 300}

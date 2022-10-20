@@ -20,6 +20,7 @@ const MultiChain = () => {
       </div>
       <div className={s.imageContainer}>
         <Image
+          priority={true}
           src={image}
           alt={title}
           layout="responsive"
