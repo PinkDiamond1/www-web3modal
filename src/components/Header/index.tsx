@@ -83,7 +83,7 @@ export default function Header() {
           </Text>
         </Link>
         <div style={{ marginLeft: 16 }}>
-          <Tag> 2.0.0</Tag>
+          <Tag>2.0.0</Tag>
         </div>
       </div>
 

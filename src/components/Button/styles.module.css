@@ -48,8 +48,8 @@
 }
 
 .fillGrey {
-  background-color: var(--color-grey-95);
-  border-color: var(--color-grey-100);
+  background-color: var(--color-grey-16);
+  border-color: var(--color-grey-24);
 }
 
 .fillGrey:hover {
@@ -148,11 +148,11 @@
 }
 
 .textIconRight {
-  margin-right: 10px;
+  margin-right: 6px;
 }
 
 .textIconLeft {
-  margin-left: 10px;
+  margin-left: 6px;
 }
 
 .spinner {

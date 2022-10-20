@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { ThemeCtrl } from '../../controllers/ThemeCtrl'
 import { ACCENT_COLORS, THEME } from '../../data/COLOR_PICKER'
 import Button from '../Button/Index'
 import { ConfigCtrl } from '@web3modal/core'
-import Text, { IProps as TextProps } from '../Text/Index'
+import { IProps as TextProps } from '../Text/Index'
 import s from './styles.module.css'
 import { ConfigOptions } from '@web3modal/react'
 import { chains, providers } from '@web3modal/ethereum'
@@ -80,7 +80,7 @@ export default function ThemePicker({}) {
                 variant="fill"
                 color={theme.color}
                 accentButton={true}
-                textVariant="text4"
+                // textVariant="text4"
               >
                 I
               </Button>
@@ -101,7 +101,7 @@ export default function ThemePicker({}) {
                 key={color.value}
                 variant="fill"
                 color={buttonColorCheck(color.value) as TextProps['color']}
-                textVariant="text4"
+                // textVariant="text4"
                 accentButton={true}
               />
             ))}

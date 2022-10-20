@@ -40,14 +40,13 @@ export default function SideBar() {
         style={{
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center',
-          width: 250 // ToDo: Push up higher
+          alignItems: 'center'
         }}
       >
         <Text variant="heading4" color="white">
           Web3Modal
         </Text>
-        <Tag> 2.0.0</Tag>
+        <Tag>2.0.0</Tag>
       </div>
       <nav
         style={{
@@ -55,7 +54,7 @@ export default function SideBar() {
           flexDirection: 'column',
           justifyContent: 'space-between',
           height: '100%',
-          marginTop: '2.5em'
+          marginTop: '1em'
         }}
       >
         <div className={s.docsHeading}>

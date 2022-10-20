@@ -13,9 +13,8 @@ import Community from '../components/Community/Index'
 import FooterRouter from '../components/FooterRouter'
 import IntroText from '../components/IntroText/Index'
 import Video from '../components/Video/Index'
-import CustomizableUI from '../components/Features/CustomizableUI/Index'
-import { isMobile } from '../utils/Index'
-import { W3mConnectWalletMobile } from '../components/Web3Modal/W3MConnectWalletMobile/Index'
+// import CustomizableUI from '../components/Features/CustomizableUI/Index'
+// import { isMobile } from '../utils/Index'
 
 const Home: NextPage = () => {
   const featureCardsContent = (

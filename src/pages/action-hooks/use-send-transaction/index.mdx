@@ -24,7 +24,13 @@ import NextImage from 'next/future/image'
             <Text variant="heading5" color="white" id="example">Example</Text>
             <CodeSyntax codeString={USE_SEND_TRANSACTION_EXAMPLE} codeType={"app"} />
         </div>
-        <FooterRouter previousRoute="/try-it-out" previousRouteName="Try It Out" nextRoute="/react" nextRouteName="React" padding="lg" />
+        <FooterRouter
+            previousRoute="/action-hooks/use-disconnect"
+            previousRouteName="Use Disconnect"
+            nextRoute="/action-hooks/use-sign-message"
+            nextRouteName="Use Sign Message"
+            padding="lg"
+        />        
         </div>
     </MDXContentSection>
     <MDXToCSection data={USE_SEND_TRANSACTION_TOC}/>

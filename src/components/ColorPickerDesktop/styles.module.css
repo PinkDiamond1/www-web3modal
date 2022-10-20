@@ -1,0 +1,23 @@
+.pickerContainer {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right:0;
+    flex: 1;
+    width: 20%;
+    height: 100%;
+    align-self: stretch;
+    flex-direction: column;
+    background: #171717;
+    border-left: 1px solid #2D2D2D;
+}
+
+.selectedAccentColor {
+    margin: 8px 10px 0px 0px;
+    border: 2px solid #171717; 
+    outline: 2px solid white;
+}
+
+.nonSelectedAccentColor {
+    margin: 8px 10px 0px 0px;
+}

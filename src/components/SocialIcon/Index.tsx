@@ -13,7 +13,7 @@ export default function SocialIcon({ image, title, uri }: SocialIconProps) {
   return (
     <a href={uri} target="_blank" key={title} rel="noreferrer">
       <div className={s.socialCircle}>
-        <Image alt={title} src={image} layout="responsive" width={24} height={24} />
+        <Image priority={true} alt={title} src={image} layout="responsive" width={24} height={24} />
       </div>
     </a>
   )

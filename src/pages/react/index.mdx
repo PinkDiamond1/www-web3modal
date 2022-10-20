@@ -25,6 +25,7 @@ import { TOC_REACT } from '../../data/TABLE_CONTENTS'
             <CodeSyntax codeString={CREATE_REACT_APP} codeType={"terminal"} />
         </div>
         <div>
+
           <div style={{padding: '1em 0 1em 0'}}>
             <Text variant="heading4" color="white" id="configure-app">Configure your app</Text>
             <Text variant="heading5" color="white" id="create-env">create .ENV</Text>
@@ -50,8 +51,15 @@ import { TOC_REACT } from '../../data/TABLE_CONTENTS'
             <Text variant="heading5" color="white" id="get-connected">Get Connected</Text>
             <CodeSyntax codeString={GET_CONNECTED_REACT} codeType={"app"} />
           </div>
-          <FooterRouter previousRoute="/try-it-out" previousRouteName="Try It Out" padding="lg" />
-        </div>
+
+          <FooterRouter
+                previousRoute="/get-started"
+                previousRouteName="Get Started"
+                nextRoute="/cloud-explorer/get-project-id"
+                nextRouteName="Get Project ID"
+                padding="lg"
+              />
+          </div>
         </div>
     </MDXContentSection>
     <MDXToCSection data={TOC_REACT}/>

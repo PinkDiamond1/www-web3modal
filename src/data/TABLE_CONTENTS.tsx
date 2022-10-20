@@ -148,3 +148,12 @@ export const USE_SWITCH_NETWORK_TOC = [
     items: []
   }
 ]
+
+//------CLOUD_GET_PROJECT_ID-------------------------------------------//
+export const CLOUD_GET_PROJECT_ID_TOC = [
+  {
+    id: 'get-project-id',
+    title: 'Get Project ID',
+    items: []
+  }
+]

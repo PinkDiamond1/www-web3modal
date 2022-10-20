@@ -22,13 +22,12 @@
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 0 3em 0 3em;
+  padding: 0 2em 0 2em;
 }
 
 .checkeredContent {
   background: linear-gradient(97.02deg, #272A2A 0%, #141414 100%);
   height: 510px;
-  width: 680px;
   border-radius: 44px;
 }
 
