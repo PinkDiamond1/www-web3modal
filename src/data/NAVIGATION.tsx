@@ -1,49 +1,49 @@
 export const SIDE_BAR_NAVIGATION = [
   {
     href: '/',
-    title: 'INTRODUCTION'
+    title: 'Introduction'
   },
   {
     href: '/try-it-out',
-    title: 'TRY IT OUT'
+    title: 'Try It Out'
   },
   {
     href: '/get-started',
-    title: 'GET STARTED'
+    title: 'Get Started'
   },
   {
     href: '/guide',
-    title: 'GUIDES',
+    title: 'Guides',
     nestedNav: [
       {
         href: '/react',
-        title: 'REACT'
+        title: 'React'
       }
     ]
   },
   {
     href: '/cloud-explorer',
-    title: 'CLOUD EXPLORER',
+    title: 'Cloud Explorer',
     nestedNav: [
       {
-        href: '/get-project-id',
-        title: 'GET A PROJECT ID'
+        href: '/cloud-explorer/get-project-id',
+        title: 'Get a Project ID'
       }
     ]
   },
   {
     href: '/modal',
-    title: 'MODAL HOOKS',
-    nestedNav: [
-      {
-        href: '/use-connect-modal',
-        title: 'useConnectModal'
-      }
-    ]
+    title: 'Modal Hooks'
+    // nestedNav: [
+    //   {
+    //     href: '/modal/use-connect-modal',
+    //     title: 'useConnectModal'
+    //   }
+    // ]
   },
   {
     href: '/data-hooks',
-    title: 'DATA HOOKS',
+    title: 'Data Hooks',
     nestedNav: [
       {
         href: '/use-account',
@@ -117,30 +117,30 @@ export const SIDE_BAR_NAVIGATION = [
   },
   {
     href: '/action-hooks',
-    title: 'ACTION HOOKS',
+    title: 'Action Hooks',
     nestedNav: [
       {
-        href: '/use-contract-write',
+        href: '/action-hooks/use-contract-write',
         title: 'useContractWrite'
       },
       {
-        href: '/use-disconnect',
+        href: '/action-hooks/use-disconnect',
         title: 'useDisconnect'
       },
       {
-        href: '/use-send-transaction',
+        href: '/action-hooks/use-send-transaction',
         title: 'useSendTransaction'
       },
       {
-        href: '/use-sign-message',
+        href: '/action-hooks/use-sign-message',
         title: 'useSignMessage'
       },
       {
-        href: '/use-sign-typed-data',
+        href: '/action-hooks/use-sign-typed-data',
         title: 'useSignTypedData'
       },
       {
-        href: '/use-switch-network',
+        href: '/action-hooks/use-switch-network',
         title: 'useSwitchNetwork'
       }
     ]

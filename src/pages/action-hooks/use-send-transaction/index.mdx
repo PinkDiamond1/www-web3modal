@@ -1,0 +1,32 @@
+import styles from '../../../styles/Home.module.css'
+import MDXLayout from '../../../components/MDX/Layout/Index'
+import MDXContentSection from '../../../components/MDX/Content/Index'
+import MDXToCSection from '../../../components/MDX/TOC/Index'
+import CodeSyntax from '../../../components/MDX/CodeSyntax/Index'
+import InlineCode from '../../../components/MDX/InlineCode/Index'
+import { USE_SEND_TRANSACTION_EXAMPLE, USE_SEND_TRANSACTION } from '../../../data/MDX_CODE'
+import { USE_SEND_TRANSACTION_TOC } from '../../../data/TABLE_CONTENTS'
+import FooterRouter from '../../../components/FooterRouter'
+import Text from '../../../components/Text/Index'
+import NextImage from 'next/future/image'
+
+<MDXLayout>
+    <MDXContentSection>
+        <div>
+          <div style={{padding: '1em 0 1em 0'}}>          
+            <Text variant="heading4" color="white" id="use-send-transaction">useSendTransaction</Text>
+            <Text variant="text3" color="grey">
+                Hook for sending a transaction. Perpares transaction under the hood i.e. estimates gas price.
+            </Text>
+            <CodeSyntax codeString={USE_SEND_TRANSACTION} codeType={"app"} />
+        </div>
+        <div style={{padding: '1em 0 1em 0'}}>          
+            <Text variant="heading5" color="white" id="example">Example</Text>
+            <CodeSyntax codeString={USE_SEND_TRANSACTION_EXAMPLE} codeType={"app"} />
+        </div>
+        <FooterRouter previousRoute="/try-it-out" previousRouteName="Try It Out" nextRoute="/react" nextRouteName="React" padding="lg" />
+        </div>
+    </MDXContentSection>
+    <MDXToCSection data={USE_SEND_TRANSACTION_TOC}/>
+
+</MDXLayout>

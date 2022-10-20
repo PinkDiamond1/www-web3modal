@@ -56,7 +56,7 @@ export default function FooterRouter({
                   PREVIOUS
                 </Text>
               </div>
-              <Text variant="heading6" color="white" capitalized={false}>
+              <Text variant="heading6" color="white">
                 {previousRouteName}
               </Text>
             </button>
@@ -80,7 +80,7 @@ export default function FooterRouter({
                 <THINCHEVRON className={s.chevronImage} />
               </div>
 
-              <Text variant="heading6" color="white" capitalized={false}>
+              <Text variant="heading6" color="white">
                 {nextRouteName}
               </Text>
             </button>

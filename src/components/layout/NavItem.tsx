@@ -5,15 +5,16 @@ import { ReactNode, useState } from 'react'
 import s from '../../styles/Layout.module.css'
 import Header from '../Header'
 import SideBar from './SideBar'
+import Text from '../Text/Index'
 import THINCHEVRON from '../../../public/icons/ThinChevron.svg'
 
 interface Props {
-  nestedNav: [
-    {
-      href: string
-      title: string
-    }
-  ]
+  nestedNav:
+    | {
+        href: string
+        title: string
+      }[]
+    | undefined
   href: string
   title: string
 }
@@ -49,21 +50,24 @@ export default function NavItem({ href, title, nestedNav, ...props }: Props) {
               flex: 1
             }}
           >
-            <a>{title}</a>
+            <Text variant="heading6" color="white" textTransform="capitalize">
+              {title}
+            </Text>
             <THINCHEVRON className={!openSideBarMenu ? s.openChevron : s.closedChevron} />
           </div>
         </li>
         <ul style={{ paddingLeft: '1em', margin: 0 }}>
           {openSideBarMenu &&
             nestedNav.map(({ href, title }) => (
-              <li
-                key={title}
-                className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
-              >
-                <Link href={href} style={{}}>
-                  <a>{title}</a>
-                </Link>
-              </li>
+              <Link href={href} style={{}} key={title}>
+                <li
+                  className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
+                >
+                  <Text variant="heading6" color="white" textTransform="capitalize">
+                    {title}
+                  </Text>
+                </li>
+              </Link>
             ))}
         </ul>
       </>
@@ -72,8 +76,12 @@ export default function NavItem({ href, title, nestedNav, ...props }: Props) {
 
   const nonChildren = (
     <li className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}>
-      <Link href={href} style={{}}>
-        <a>{title}</a>
+      <Link href={href}>
+        <a>
+          <Text variant="heading6" color="white" textTransform={'capitalize'}>
+            {title}
+          </Text>
+        </a>
       </Link>
     </li>
   )

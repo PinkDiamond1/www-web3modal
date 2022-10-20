@@ -178,8 +178,12 @@
   letter-spacing: -0.02em;
 }
 
-.capitalized {
-  text-transform: uppercase
+.upperCase {
+  text-transform: uppercase !important;
+}
+
+.lowerCase {
+  text-transform: capitalize !important;
 }
 
 .colorWhite {

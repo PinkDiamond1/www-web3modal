@@ -61,7 +61,6 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      {/* {closeBanner ? null : <AlphaBanner setCloseBanner={setCloseBanner} />} */}
       <Layout>
         <Component {...pageProps} />
       </Layout>

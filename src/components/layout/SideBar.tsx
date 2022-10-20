@@ -5,8 +5,7 @@ import Text from '../Text/Index'
 import Tag from '../Tag/Index'
 import SocialIcon from '../SocialIcon/Index'
 import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
-import { HOOKS_NAVIGATION, SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
-import { utimes } from 'fs'
+import { SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
 import NavItem from './NavItem'
 
 export default function SideBar() {
@@ -60,7 +59,7 @@ export default function SideBar() {
         }}
       >
         <div className={s.docsHeading}>
-          <Text variant="heading6" color="grey">
+          <Text variant="text3" color="grey">
             Docs
           </Text>
           <ul style={{ padding: 0, margin: 0 }}>

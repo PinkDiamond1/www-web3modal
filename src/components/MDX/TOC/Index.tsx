@@ -1,4 +1,13 @@
-import { ReactNode, useEffect, useRef, useState } from 'react'
+import {
+  JSXElementConstructor,
+  Key,
+  ReactElement,
+  ReactFragment,
+  ReactNode,
+  useEffect,
+  useRef,
+  useState
+} from 'react'
 import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver'
 import Text from '../../Text/Index'
 import s from './styles.module.css'
@@ -21,13 +30,13 @@ export default function MDXToCSection({ children, data, ...props }: Props) {
       </div>
 
       <ul className={s.li}>
-        {data.map(data => (
+        {data.map((data: { title: string; id: string }) => (
           <li key={data.title} className={data.id === activeId ? s.active : s.nonActive}>
             <a
               href={`#${data.id}`}
               onClick={e => {
                 e.preventDefault()
-                document.querySelector(`#${data.id}`).scrollIntoView({
+                document.querySelector(`#${data.id}`)!.scrollIntoView({
                   behavior: 'smooth'
                 })
               }}

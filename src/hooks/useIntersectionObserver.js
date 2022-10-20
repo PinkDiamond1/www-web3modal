@@ -31,29 +31,10 @@ export const useIntersectionObserver = setActiveId => {
       rootMargin: '0px 0px -40% 0px'
     })
 
-    const headingElements = Array.from(document.querySelectorAll('h4, h5'))
+    const headingElements = Array.from(document.querySelectorAll('h2, h3'))
 
     headingElements.forEach(element => observer.observe(element))
 
     return () => observer.disconnect()
   }, [setActiveId])
 }
-
-// import { useEffect, useState, useRef } from 'react';
-
-// export function useHeadsObserver() {
-//   const observer = useRef()
-//   const [activeId, setActiveId] = useState('')
-
-//   useEffect(() => {
-//     const handleObsever = (entries) => {}
-
-//     observer.current = new IntersectionObserver(handleObsever, {
-//       rootMargin: "-20% 0% -35% 0px"}
-//     )
-
-//     return () => observer.current?.disconnect()
-//   }, [])
-
-//   return {activeId}
-// }
