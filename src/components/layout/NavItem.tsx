@@ -59,7 +59,7 @@ export default function NavItem({ href, title, nestedNav, ...props }: Props) {
         <ul style={{ paddingLeft: '1em', margin: 0 }}>
           {openSideBarMenu &&
             nestedNav.map(({ href, title }) => (
-              <Link href={href} style={{}} key={title}>
+              <Link href={href} key={title}>
                 <li
                   className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
                 >
@@ -75,15 +75,13 @@ export default function NavItem({ href, title, nestedNav, ...props }: Props) {
   }
 
   const nonChildren = (
-    <li className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}>
-      <Link href={href}>
-        <a>
-          <Text variant="heading6" color="white" textTransform={'capitalize'}>
-            {title}
-          </Text>
-        </a>
-      </Link>
-    </li>
+    <Link href={href}>
+      <li className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}>
+        <Text variant="heading6" color="white" textTransform={'capitalize'}>
+          {title}
+        </Text>
+      </li>
+    </Link>
   )
 
   return <div key={title}>{nestedNav ? childrenContent() : nonChildren}</div>

@@ -64,7 +64,9 @@ export default function SideBar() {
           </Text>
           <ul style={{ padding: 0, margin: 0 }}>
             {SIDE_BAR_NAVIGATION.map(({ href, title, nestedNav }) => (
-              <NavItem href={href} title={title} key={title} nestedNav={nestedNav} />
+              <Link href={href} key={title}>
+                <NavItem href={href} title={title} nestedNav={nestedNav} />
+              </Link>
             ))}
           </ul>
         </div>
