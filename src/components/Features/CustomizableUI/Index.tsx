@@ -68,7 +68,7 @@ const CustomizableUI = () => {
           >
             <w3m-modal />
             <W3mConnectWalletDesktop />
-            {<W3mConnectWalletMobile />}
+            {/* {<W3mConnectWalletMobile />} */}
           </div>
           <ThemePicker
             currentAccentColor={currentAccentColor}

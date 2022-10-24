@@ -36,7 +36,7 @@ export function W3mConnectWalletMobile() {
       <div className={s.w3mModalContainer}>
         <w3m-modal-backcard></w3m-modal-backcard>
         <div className={s.w3mModalCards}>
-          {isMobile() || true ? (
+          {/* {isMobile() || true ? (
             <div style={{ padding: 12 }}>
               <w3m-modal-header title="Connect your wallet"></w3m-modal-header>
               <w3m-modal-content></w3m-modal-content>
@@ -49,7 +49,7 @@ export function W3mConnectWalletMobile() {
                 </div>
               </w3m-modal-footer>
             </div>
-          ) : null}
+          ) : null} */}
         </div>
       </div>
 

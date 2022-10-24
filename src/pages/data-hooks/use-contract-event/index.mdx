@@ -1,19 +1,20 @@
-import styles from '../../styles/Home.module.css'
-import MDXLayout from '../../components/MDX/Layout/Index'
-import MDXContentSection from '../../components/MDX/Content/Index'
-import MDXToCSection from '../../components/MDX/TOC/Index'
-import MDXContentBlock from '../../components/MDX/ContentBlock/Index'
-import CodeSyntax from '../../components/MDX/CodeSyntax/Index'
+import styles from '../../../styles/Home.module.css'
+import MDXLayout from '../../../components/MDX/Layout/Index'
+import MDXContentSection from '../../../components/MDX/Content/Index'
+import MDXContentBlock from '../../../components/MDX/ContentBlock/Index'
+import MDXToCSection from '../../../components/MDX/TOC/Index'
+import CodeSyntax from '../../../components/MDX/CodeSyntax/Index'
 
-import { INSTALL_INSTRUCTIONS, GET_ADDRESS, APP_SETUP } from '../../data/MDX_CODE'
-import { TOC_GET_STARTED } from '../../data/TABLE_CONTENTS'
-import FooterRouter from '../../components/FooterRouter'
-import Text from '../../components/Text/Index'
+import { USE_CONTRACT_WRITE, USE_CONTRACT_WRITE_EXAMPLE } from '../../../data/MDX_CODE'
+import { USE_CONTRACT_WRITE_TOC } from '../../../data/TABLE_CONTENTS'
+import FooterRouter from '../../../components/FooterRouter'
+import Text from '../../../components/Text/Index'
+import NextImage from 'next/future/image'
 
 <MDXLayout>
   <MDXContentSection>
       <MDXContentBlock id="get-started">
-        ## Get Started 
+        ## UseAccount
         Getting started with Web3Modal is fast and easy. Web3Modal is chain agnostic and plays with your preferred front-end framework.
         To see what other frameworks and chains we currently support, please visit our [GitHub](https://github.com/WalletConnect/web3modal).
       </MDXContentBlock>
@@ -27,30 +28,11 @@ import Text from '../../components/Text/Index'
         ## Install
         Install the packages for your project. In our example, our front-end framework will be
         React and the chain will be Ethereum.
-        <CodeSyntax codeString={INSTALL_INSTRUCTIONS} codeType={"terminal"} />
-      </MDXContentBlock>
-
-      <MDXContentBlock>
-        ## App Setup
-        In the consuming app:
-        - Import ```Web3ModalProvider``` from ```@web3modal/react```
-        - Import chains and provider from ```@web3/ethereum```.
-        - Wrap the component with ```Web3ModalProvider```.
-        - Set ```projectId``` to ```NEXT_PUBLIC_PROJECT_ID```
-        - Set chains and providers according to the example code below.
-        <CodeSyntax codeString={APP_SETUP} codeType={"app"} />
-      </MDXContentBlock>
-
-      <MDXContentBlock>
-        ## Get Address
-        To get the connected wallet’s address, `import ConnectButton and useAccount from @web3modal/react.`
-        `Connected` is a boolean that will return `true` or `false` if there is a wallet
-        connected. address is the connected wallet’s address.
-        <CodeSyntax codeString={GET_ADDRESS} codeType={"app"} />
+        <CodeSyntax codeString={USE_CONTRACT_WRITE} codeType={"terminal"} />
       </MDXContentBlock>
 
       <FooterRouter previousRoute="/try-it-out" previousRouteName="Try It Out" nextRoute="/react" nextRouteName="React" padding="lg" />
 
   </MDXContentSection>
-  <MDXToCSection data={TOC_GET_STARTED}/>
+  <MDXToCSection data={USE_CONTRACT_WRITE_TOC}/>
 </MDXLayout>
