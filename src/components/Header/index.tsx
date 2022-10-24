@@ -58,12 +58,11 @@ export default function Header() {
       ],
       { duration: 0.25, defaultOptions: { easing: 'ease-in-out' } }
     )
-    timeline([[header, { height: '55px' }, { duration: 0.25, easing: 'ease-in-out' }]])
+    timeline([[header, { height: '55px' }, { duration: 0.2, easing: 'ease-in-out' }]])
     animate(menuContent, { opacity: 0, y: -10 }, { duration: 0.35, easing: 'ease-in-out' })
   }
 
   useEffect(() => {
-    // onMobileMenuClose()
     if (open) {
       onOpenMobileMenu()
     } else {

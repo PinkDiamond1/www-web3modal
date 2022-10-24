@@ -15,7 +15,7 @@ const Home: NextPage = () => {
   return (
     <div className={s.container}>
       <main className={s.main}>
-        {/* <Video /> */}
+        <Video />
         <div className={s.mainContent}>
           <IntroText />
           {/* <CustomizableUI /> */}

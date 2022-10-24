@@ -14,7 +14,7 @@ const buttonContent = (
         iconRight={<CHEVRON width={7} height={12} className={s.whiteChevron} />}
         className={s.buttonStretch}
       >
-        TRY IT OUT NOW
+        TRY IT OUT
       </Button>
     </Link>
 

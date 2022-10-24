@@ -17,6 +17,7 @@
         padding: 1.5em 1em 2em 1em;     
     }
     .imageContainer {
+        margin-top: 0em;
         /* margin: -10px  */
         top: 15px;
         border-radius: 32px;

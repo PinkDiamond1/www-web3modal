@@ -24,9 +24,8 @@ export default function Video() {
         muted
         autoPlay
         loop
-        //ToDo: figure out...
-        width={isMobile() ? WINDOW_WIDTH : 1000}
-        height={isMobile() ? WINDOW_WIDTH : 562}
+        width={isMobile() ? width : 1000}
+        height={isMobile() ? width : 562}
       >
         <source src="/web3modal.mp4" type="video/mp4" />
       </video>

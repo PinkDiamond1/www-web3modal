@@ -21,7 +21,7 @@
 @media (max-width: 800px) {
     .purpleCard{
         /* margin-top: 60px; */
-        height: 360px;
+        height: 220px;
         border-radius: 32px;
     }
     .textContainer {
@@ -29,7 +29,7 @@
     }
     .interfaceCard {
         /* width: 371px; */
-        width: 105%;
+        width: 107%;
         position: relative;
         left: -15px;
         top: -50px;

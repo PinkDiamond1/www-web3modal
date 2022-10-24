@@ -91,7 +91,7 @@ export default function Button({
   const textIconRightClass = iconRight ? s.textIconRight : undefined
 
   return (
-    <button {...props} className={` ${buttonType} ${variantClass} ${className ?? ''}`}>
+    <button {...props} className={`${buttonType} ${variantClass} ${className ?? ''}`}>
       {iconLeft}
       <Text
         as="span"

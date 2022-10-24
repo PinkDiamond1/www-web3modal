@@ -19,27 +19,39 @@
 }
 
 @media (min-width:375px) and (max-width:500px) {
-    .interfaceCard {
-        width: 110%;
-        border-radius: 32px;
-        position: relative;
-        left: -10px;
-        top: -50px;
-        margin-top: 10px;
-        /* top: -1px; */
-    }
     .greenCard {
+        height: 220px;
         border-radius: 32px;
         margin-top: 20px;
     }
+
+    .interfaceCard {
+        border-radius: 32px;
+        /* position: relative; */
+        /* left: -10px;
+        top: -50px; */
+        /* margin-top: 10px; */
+        /* top: -1px; */
+    }
+
+    .interfaceCard img {
+        position: relative;
+        /* width: 120%;
+        height: 100%; */
+        top: -30px;
+        left: 2px;
+    }
+
     .textContainer {
         padding: 1.5em 1em 2.5em 1em;     
     }
+
     .accountButtonCard {
         position: relative;
         left: 60px;
         top: -15px;
     }
+
     .greenCard {
         border-radius: 32px;
     }

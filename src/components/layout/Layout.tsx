@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { ReactNode } from 'react'
 import s from '../../styles/Layout.module.css'
@@ -15,6 +16,7 @@ export default function Layout({ children, ...props }: Props) {
   return (
     <div style={{ width: '100vw' }}>
       {router.pathname == '/' ? <AlphaBanner /> : null}
+      <Header />
       <div className={s.sidebar}>
         <div className={s.sidebarContainer}>
           <SideBar />

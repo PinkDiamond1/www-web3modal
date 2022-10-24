@@ -26,12 +26,12 @@ export default function MobileTryItOut() {
 
   function onOpenMobileMenu() {
     document.getElementsByTagName('html')[0].classList.add('noScroll')
-    timeline([[footer, { height: '104vh' }, { duration: 0.25, easing: 'ease-in-out' }]])
+    timeline([[footer, { height: '100vh' }, { duration: 0.2, easing: 'ease-in-out' }]])
   }
 
   function onMobileMenuClose() {
     document.getElementsByTagName('html')[0].classList.remove('noScroll')
-    timeline([[footer, { height: '0vh' }, { duration: 0.25, easing: 'ease-in-out' }]])
+    timeline([[footer, { height: '0vh' }, { duration: 0.2, easing: 'ease-in-out' }]])
   }
 
   useEffect(() => {
