@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={s.main}>
-        <Video />
+        {/* <Video /> */}
         <div className={s.mainContent}>
           <IntroText />
           {/* <CustomizableUI /> */}
