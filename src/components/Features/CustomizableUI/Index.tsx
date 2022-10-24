@@ -57,7 +57,7 @@ const CustomizableUI = () => {
             marginTop: '3em'
           }}
         >
-          <W3MButtonStateless />
+          <W3MButtonStateless text="Connect Wallet" />
           <div
             style={{
               display: 'flex',
