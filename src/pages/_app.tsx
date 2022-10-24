@@ -10,6 +10,8 @@ import { ExplorerCtrl, ConfigCtrl } from '@web3modal/core'
 import { useEffect, useState } from 'react'
 import AlphaBanner from '../components/AlphaBanner/Index'
 import Header from '../components/Header'
+import Head from 'next/head'
+import PlausibleProvider from 'next-plausible'
 
 if (!process.env.NEXT_PUBLIC_PROJECT_ID)
   throw new Error('You need to provide NEXT_PUBLIC_PROJECT_ID env variable')
@@ -50,10 +52,18 @@ function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      <Web3Modal config={modalConfig} />
+      <PlausibleProvider domain="web3modal.com">
+        <Head>
+          <meta
+            name="viewport"
+            content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          />
+        </Head>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        <Web3Modal config={modalConfig} />
+      </PlausibleProvider>
     </>
   )
 }
