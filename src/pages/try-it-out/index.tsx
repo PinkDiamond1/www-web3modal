@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Text from '../../components/Text/Index'
 import NextImage from 'next/future/image'
 import s from '../../styles/TryItOut.module.css'
-import { AccountButton, ConnectButton, useAccount } from '@web3modal/react'
+import { useDisconnect, ConnectButton, useAccount } from '@web3modal/react'
 import Button from '../../components/Button/Index'
 import ColorPickerDesktop from '../../components/ThemeColorPickerDesktop/index'
 import FooterRouter from '../../components/FooterRouter'
@@ -10,23 +10,14 @@ import { isMobile } from '../../utils/Index'
 import checkeredImage from '../../../public/CheckerPattern.png'
 import { useEffect, useState } from 'react'
 import MobileTryItOut from '../../components/MobileTryItOut'
+import W3MButtonStateless from '../../components/Web3Modal/W3MButtonStateless/Index'
 
 const TryItOut: NextPage = () => {
   const [copied, setCopied] = useState(false)
   const [windowHeight, setWindowHeight] = useState(0)
   const { isConnected } = useAccount()
+  const disconnect = useDisconnect()
   let isMobileDimension
-
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      setWindowHeight(window.innerHeight)
-    })
-  }, [])
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    isMobileDimension = isMobile()
-  }, [])
 
   // Add the React Code for the State...
   const copyCode = () => {
@@ -37,13 +28,21 @@ const TryItOut: NextPage = () => {
     }, 2000)
   }
 
+  const accountButton = () => {
+    return (
+      <div style={{ position: 'relative', top: -20 }}>
+        <W3MButtonStateless text="Disconnect" onClick={disconnect} />
+      </div>
+    )
+  }
+
   const checkeredSVG = (
     <div className={s.checkeredContent}>
       <div
         className={s.checkeredContentBG}
         style={{ backgroundImage: `url(${checkeredImage.src})` }}
       >
-        <div>{!isConnected ? <ConnectButton /> : <AccountButton />}</div>
+        <div>{!isConnected ? <ConnectButton /> : accountButton()}</div>
       </div>
     </div>
   )
