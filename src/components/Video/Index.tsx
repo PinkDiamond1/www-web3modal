@@ -21,6 +21,7 @@ export default function Video() {
   return (
     <div className={s.videoWrapper}>
       <video
+        playsInline
         muted
         autoPlay
         loop
