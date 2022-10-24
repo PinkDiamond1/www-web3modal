@@ -23,8 +23,8 @@ const V2Ready = () => {
           src={image}
           alt={title}
           layout="responsive"
-          width={392}
-          height={238}
+          width={350}
+          height={220}
         />
       </div>
     </Card>

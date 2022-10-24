@@ -11,23 +11,15 @@ import { useEffect, useState } from 'react'
 import AlphaBanner from '../components/AlphaBanner/Index'
 import Header from '../components/Header'
 
+if (!process.env.NEXT_PUBLIC_PROJECT_ID)
+  throw new Error('You need to provide NEXT_PUBLIC_PROJECT_ID env variable')
+
 function App({ Component, pageProps }: AppProps) {
   // ToDo: State for AlphaBanner
 
   const [theme, setTheme] = useState('')
   const [accentColor, setAccentColor] = useState('')
-  // const [closeBanner, setCloseBanner] = useState(false)
-
-  // const config: ConfigOptions = {
-  //   projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
-  //   theme: ThemeCtrl.state.theme as ConfigOptions['theme'],
-  //   accentColor: ThemeCtrl.state.accentColor as ConfigOptions['accentColor'],
-  //   ethereum: {
-  //     appName: 'web3Modal'
-  //   }
-  // }
-  if (!process.env.NEXT_PUBLIC_PROJECT_ID)
-    throw new Error('You need to provide NEXT_PUBLIC_PROJECT_ID env variable')
+  const [closeBanner, setCloseBanner] = useState(false)
 
   // Configure web3modal
   const modalConfig: ConfigOptions = {
@@ -49,12 +41,11 @@ function App({ Component, pageProps }: AppProps) {
     setAccentColor(ThemeCtrl.state.accentColor)
   })
 
-  const unsubscribeConfigContrl = ConfigCtrl.subscribe(() => {})
-
   useEffect(() => {
     ThemeCtrl.setTheme('light')
     ThemeCtrl.setAccentColor('default')
     ExplorerCtrl.getPreviewWallets()
+    // unsubscribeThemeCtrl()
   }, [])
 
   return (

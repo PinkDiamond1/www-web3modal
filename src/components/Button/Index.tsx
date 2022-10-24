@@ -25,7 +25,6 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   textTransform?: 'uppercase' | 'capitalize'
   textVariant?: 'heading6' | 'anchor2'
   accentButton?: boolean
-  // loading?: boolean;
 }
 
 export default function Button({
@@ -86,13 +85,13 @@ export default function Button({
     ]
   )
 
-  const buttonType = accentButton ? s.accentButton : undefined
+  const buttonType = accentButton ? s.accentButton : s.button
 
   const textIconLeftClass = iconLeft ? s.textIconLeft : undefined
   const textIconRightClass = iconRight ? s.textIconRight : undefined
 
   return (
-    <button {...props} className={`${s.button} ${buttonType} ${variantClass} ${className ?? ''}`}>
+    <button {...props} className={` ${buttonType} ${variantClass} ${className ?? ''}`}>
       {iconLeft}
       <Text
         as="span"

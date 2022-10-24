@@ -15,7 +15,14 @@
 }
 
 .accentButton {
-  /* margin-right: 12px; */
+  background-color: transparent;
+  border: 1px solid transparent;
+  height: 32px;
+  width: 32px;
+  border-radius: 16px;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  cursor: pointer;
+  margin-right: 12px;
 }
 
 .button:disabled {
@@ -104,11 +111,16 @@
 }
 
 .fillWhite:hover {
-  opacity: 1;
+  background-color: var(--color-grey-70);
 }
 
 .fillTeal {
   background-color: var(--color-teal);
+  border-color: rgba(255, 255, 255, 0.1)
+}
+
+.fillCyan {
+  background-color: var(--color-cyan-fg);
   border-color: rgba(255, 255, 255, 0.1)
 }
 
@@ -160,6 +172,6 @@
 
 @media screen and (max-width: 800px) {
   .accentButton {
-    margin: 6px 12px 0 0;
+    margin-right: 12px;
   }
 }

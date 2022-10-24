@@ -10,11 +10,12 @@
 .interfaceCard {
     position: relative;
     top: -10px;
+    left: 5px;
 }
 
 .accountButtonCard {
     position: relative;
-    left: 60px;
+    left: 70px;
     top: -15px;
 }
 

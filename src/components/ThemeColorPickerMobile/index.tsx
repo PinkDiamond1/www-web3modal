@@ -5,13 +5,18 @@ import Button from '../Button/Index'
 import { ConfigCtrl } from '@web3modal/core'
 import { IProps as TextProps } from '../Text/Index'
 import s from './styles.module.css'
-import { ConfigOptions } from '@web3modal/react'
+import { ConfigOptions, ConnectButton } from '@web3modal/react'
 import { chains, providers } from '@web3modal/ethereum'
 
+interface Props {
+  currentAccentColor?: string
+  setCurrentAccentColor: React.Dispatch<React.SetStateAction<string>>
+}
+
 // ToDo: Make it into a Layout Component
-export default function ThemePicker({}) {
+export default function ThemePicker({ currentAccentColor, setCurrentAccentColor }: Props) {
   const [theme, setTheme] = useState('light')
-  const [accentColor, setAccentColor] = useState('default')
+  // const [accentColor, setAccentColor] = useState('default')
 
   const changeTheme = (theme: string) => {
     // setCurrentAccentColor(theme)
@@ -21,7 +26,7 @@ export default function ThemePicker({}) {
   const modalConfig: ConfigOptions = {
     projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
     theme: ThemeCtrl.state.theme as ConfigOptions['theme'],
-    accentColor: accentColor as ConfigOptions['accentColor'],
+    accentColor: currentAccentColor as ConfigOptions['accentColor'],
     ethereum: {
       appName: 'web3Modal',
       autoConnect: true,
@@ -36,9 +41,23 @@ export default function ThemePicker({}) {
 
   const changeAccentColor = (color: string) => {
     // setCurrentAccentColor(theme)
-    // console.log('colorChange', color)
-    console.log('ClientCtrl 1', ConfigCtrl.state.accentColor)
-    ConfigCtrl.setConfig(modalConfig)
+    // setCurrentAccentColor(color)
+    ThemeCtrl.setAccentColor(color)
+
+    ConfigCtrl.setConfig({
+      projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
+      theme: ThemeCtrl.state.theme as ConfigOptions['theme'],
+      accentColor: currentAccentColor as ConfigOptions['accentColor'],
+      ethereum: {
+        appName: 'web3Modal',
+        autoConnect: true,
+        chains: [chains.mainnet],
+        providers: [
+          providers.walletConnectProvider({ projectId: process.env.NEXT_PUBLIC_PROJECT_ID! })
+        ]
+      }
+    })
+    // console.log('ClientCtrl 1', ConfigCtrl.state.accentColor)
     // Client.setAccentColor(color)
   }
 
@@ -55,13 +74,13 @@ export default function ThemePicker({}) {
   return (
     <div
       style={{
-        position: 'relative',
-        top: '-700px',
-        left: '100px',
+        // position: 'relative',
+        // top: '-700px',
+        // left: '100px',
         display: 'flex',
-        flex: 1,
-        flexDirection: 'row',
-        flexGrow: 'inherit'
+        flex: 1
+        // flexDirection: 'row',
+        // flexGrow: 'inherit'
       }}
     >
       <div style={{ padding: '1em' }}>
@@ -79,13 +98,11 @@ export default function ThemePicker({}) {
                 key={theme.title}
                 variant="fill"
                 color={theme.color}
-                accentButton={true}
-                // textVariant="text4"
-              >
-                I
-              </Button>
+                accentButton
+              ></Button>
             ))}
           </div>
+          <ConnectButton />
 
           <div
             style={{ width: 1, height: 24, background: '#3B4040', marginLeft: 16, marginRight: 16 }}
@@ -95,7 +112,7 @@ export default function ThemePicker({}) {
             {ACCENT_COLORS.map(color => (
               <Button
                 onClick={() => {
-                  setAccentColor(color.value)
+                  // setAccentColor(color.value)
                   changeAccentColor(color.value)
                 }}
                 key={color.value}

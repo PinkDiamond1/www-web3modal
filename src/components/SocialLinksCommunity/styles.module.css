@@ -1,5 +1,14 @@
+.fillBlack{
+    position: relative;
+    /* margin-left: -3px; */
+}
+
 .fillBlack path  {
-    fill: black;
+    fill: var(--color-grey-0);
+}
+
+.fillWhite path  {
+    fill: #FFFFFF;
 }
 
 .socialCircle:hover {

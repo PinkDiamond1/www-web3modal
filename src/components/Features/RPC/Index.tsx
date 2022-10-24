@@ -23,8 +23,8 @@ const RPC = () => {
           src={image}
           alt={title}
           layout="responsive"
-          width={300}
-          height={236}
+          width={250}
+          height={200}
         />
       </div>
     </Card>

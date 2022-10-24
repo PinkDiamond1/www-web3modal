@@ -1,8 +1,7 @@
 .videoWrapper {
-    position: relative;
-    border-radius: 44px;
-    padding-top: 1.25em;
-
+  position: relative;
+  border-radius: 44px;
+  padding-top: 1.25em;
 }
 
 .videoWrapper video {

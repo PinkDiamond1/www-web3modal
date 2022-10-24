@@ -3,32 +3,30 @@ import Text from '../Text/Index'
 import s from './styles.module.css'
 import Link from 'next/link'
 import CHEVRON from '../../../public/icons/Chevron.svg'
+import { isMobile } from '../../utils/Index'
 
 const buttonContent = (
   <div className={s.buttonContent}>
     <Link href="get-started">
-      <div>
-        <Button
-          variant="fill"
-          color="blue"
-          iconRight={<CHEVRON width={7} height={12} className={s.whiteChevron} />}
-          style={{ marginRight: 10 }}
-        >
-          GET STARTED
-        </Button>
-      </div>
+      <Button
+        variant="fill"
+        color="blue"
+        iconRight={<CHEVRON width={7} height={12} className={s.whiteChevron} />}
+        className={s.buttonStretch}
+      >
+        GET STARTED
+      </Button>
     </Link>
 
     <Link href="try-it-out">
-      <div>
-        <Button
-          variant="fill"
-          color="grey"
-          iconRight={<CHEVRON width={7} height={12} className={s.blackChevron} />}
-        >
-          TRY IT OUT NOW
-        </Button>
-      </div>
+      <Button
+        variant="fill"
+        color="grey"
+        iconRight={<CHEVRON width={7} height={12} className={s.blackChevron} />}
+        className={s.buttonStretch}
+      >
+        TRY IT OUT NOW
+      </Button>
     </Link>
   </div>
 )

@@ -6,6 +6,7 @@ import React, { useEffect } from 'react'
 import Text from '../../Text/Index'
 import s from './styles.module.css'
 import { relative } from 'path'
+import { isMobile } from '../../../utils/Index'
 
 /**
  * Component
@@ -25,12 +26,9 @@ export function W3mConnectWalletMobile() {
   return (
     <div
       style={{
-        width: 400,
-        position: 'relative',
-        left: '400px',
-        top: '-500px',
-        // left: 100;
-        // backgroundColor: '#F1F3F3',
+        marginTop: '9em',
+        marginLeft: '-1.2em',
+        width: 375,
         padding: '1em',
         borderRadius: 44
       }}
@@ -38,7 +36,20 @@ export function W3mConnectWalletMobile() {
       <div className={s.w3mModalContainer}>
         <w3m-modal-backcard></w3m-modal-backcard>
         <div className={s.w3mModalCards}>
-          <w3m-connect-wallet-view />
+          {isMobile() || true ? (
+            <div style={{ padding: 12 }}>
+              <w3m-modal-header title="Connect your wallet"></w3m-modal-header>
+              <w3m-modal-content></w3m-modal-content>
+              <w3m-mobile-wallet-selection />
+              <w3m-modal-footer>
+                <w3m-wallets-slideshow></w3m-wallets-slideshow>
+                <div style={{ display: 'flex' }}>
+                  <w3m-button>Get a Wallet</w3m-button>
+                  <w3m-button variant="ghost">Learn More</w3m-button>
+                </div>
+              </w3m-modal-footer>
+            </div>
+          ) : null}
         </div>
       </div>
 

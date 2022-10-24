@@ -2,14 +2,12 @@
     position: relative;
     left: -4px;
     top: -2px;
-    /* margin-left: -3px; */
 }
 
 .blackChevron {
     position: relative;
     left: -4px;
     top: -2px;
-    /* margin-left: -3px; */
 }
 
 .blackChevron path {
@@ -26,11 +24,19 @@
     /* border: 1px solid red; */
 }
 
+.buttonStretch {
+    margin-right: 10px
+}
+
 @media (max-width: 800px) {
     .buttonContent {
-        padding: 2em 0 0 0;
+        padding: 2em 0 2em 0;
+        display: flex;
     }
     .introTextContainer {
-        padding: 0 1em 0 1em;
+        padding: 0 2em 0 2em;
+    }
+    .buttonStretch{
+        width: 100%;
     }
 }

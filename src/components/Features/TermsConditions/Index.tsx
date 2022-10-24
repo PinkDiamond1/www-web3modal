@@ -24,7 +24,7 @@ const TermsConditions = () => {
             priority={true}
             src={image}
             alt={title}
-            width={isMobile() ? 430 : 392}
+            width={isMobile() ? 430 : 400}
             height={isMobile() ? 300 : 280}
           />
         </div>

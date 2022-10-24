@@ -1,14 +1,5 @@
 #footer {
-  display: flex;
-  position: fixed;
-  flex-direction: column;
-  bottom:-5vh;
-  left: 0;
-  background: rgba(39, 42, 42, 0.66);
-  backdrop-filter: blur(20px);
-  width: 100%;
-  Z-index: 5;
-  padding: 1.5em;
+  display: none;
 }
 
 .mobileColorPickerRow {
@@ -19,15 +10,6 @@
   display: none;
 }
 
-.selectedAccentColor {
-  margin: 8px 10px 0px 0px;
-  border: 2px solid #171717; 
-  outline: 2px solid white;
-}
-
-.nonSelectedAccentColor {
-  margin: 8px 10px 0px 0px;
-}
 
 @media screen and (max-width: 800px) {
   .mobileColorPickerRow {
@@ -50,8 +32,30 @@
     margin: 0 10px 10px 0;
     border-radius: 20px;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
+    right: 0px;
     z-index: 10;
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  #footer {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    bottom:-10vh;
+    left: 0;
+    background: rgba(39, 42, 42, 0.66);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    Z-index: 9;
+    padding: 1.5em;
+  }
+  .selectedAccentColor {
+    margin: 8px 10px 0px 0px;
+    border: 2px solid #171717; 
+    outline: 2px solid white;
+  }
+  
+  .nonSelectedAccentColor {
+    margin: 8px 10px 0px 0px;
   }
 }

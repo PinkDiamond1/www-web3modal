@@ -5,6 +5,11 @@
 .imageContainer {
     border-radius: 44px;
     overflow: hidden;
+    margin-top: 1.5em;
+    position: relative;
+    border-radius: inherit;
+    max-height: 350px;
+
 }
 
 @media (max-width: 800px) {

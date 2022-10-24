@@ -13,8 +13,15 @@ import MobileTryItOut from '../../components/MobileTryItOut'
 
 const TryItOut: NextPage = () => {
   const [copied, setCopied] = useState(false)
+  const [windowHeight, setWindowHeight] = useState(0)
   const { isConnected } = useAccount()
   let isMobileDimension
+
+  useEffect(() => {
+    window.addEventListener('resize', () => {
+      setWindowHeight(window.innerHeight)
+    })
+  }, [])
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -30,7 +37,6 @@ const TryItOut: NextPage = () => {
     }, 2000)
   }
 
-  // ToDo: Calculate ConnectButton position based on Size.
   const checkeredSVG = (
     <div className={s.checkeredContent}>
       <div

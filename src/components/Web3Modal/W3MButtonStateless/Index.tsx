@@ -5,30 +5,8 @@ import { ThemeCtrl } from '../../../controllers/ThemeCtrl'
 import Text from '../../Text/Index'
 import useConditionalValue from '../../../hooks/useConditionalValue'
 
-/**
- *  LIT Element React
- */
-
-// export function W3MButtonStateless(props: JSX.IntrinsicElements['w3m-button']) {
-//   return <w3m-button {...props}></w3m-button>
-// }
-
-/**
- * React Component JS
- * Best way to extend ThemeCtrl
- */
-
 export default function W3MButtonStateless() {
   const currentColorState = ThemeCtrl.state.accentColor
-  // const buttonColorCheck = (color: string) => {
-  //   if (color === 'default') {
-  //     return 'blue' as const
-  //   }
-  //   if (color === 'blue') {
-  //     return 'blueNew' as const
-  //   }
-  //   return color
-  // }
 
   //ToDo: Check if much scope..?
   const backgroundColor = useConditionalValue(
@@ -37,7 +15,7 @@ export default function W3MButtonStateless() {
   )
 
   return (
-    <div style={{ margin: 16 }}>
+    <div className={s.buttonContainer}>
       <button className={`${s.button} ${backgroundColor}`}>
         <Text variant="text3" color="white">
           Connect Wallet
@@ -46,14 +24,3 @@ export default function W3MButtonStateless() {
     </div>
   )
 }
-
-/**
- * Types
- */
-// declare global {
-//   namespace JSX {
-//     interface IntrinsicElements {
-//       'w3m-button': Partial<W3mButton>
-//     }
-//   }
-// }

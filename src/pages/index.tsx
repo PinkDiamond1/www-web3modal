@@ -1,47 +1,16 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import s from '../styles/Home.module.css'
-import MultiChain from '../components/Features/MultiChain'
-import Interface from '../components/Features/Interface/Index'
-import Wallets from '../components/Features/Wallets'
-import RichFeatures from '../components/Features/RichFeatures/Index'
-import TermsConditions from '../components/Features/TermsConditions/Index'
-import Frameworks from '../components/Features/Frameworks/Index'
-import RPC from '../components/Features/RPC/Index'
-import V2Ready from '../components/Features/V2Ready/Index'
+
 import Community from '../components/Community/Index'
 import FooterRouter from '../components/FooterRouter'
 import IntroText from '../components/IntroText/Index'
-import Video from '../components/Video/Index'
+import FeatureCards from '../components/Features/Index'
 // import CustomizableUI from '../components/Features/CustomizableUI/Index'
 // import { isMobile } from '../utils/Index'
 
 //ToDo: Rich Features breaks on mobile ...
 const Home: NextPage = () => {
-  const featureCardsContent = (
-    <>
-      <div className={s.cardRow}>
-        <Interface />
-        <MultiChain />
-      </div>
-
-      <div className={s.cardRow}>
-        <Wallets />
-        {/* <RichFeatures /> */}
-      </div>
-
-      <div className={s.cardRow}>
-        <TermsConditions />
-        <Frameworks />
-      </div>
-
-      <div className={s.cardRow}>
-        <RPC />
-        <V2Ready />
-      </div>
-    </>
-  )
-
   return (
     <div className={s.container}>
       <Head>
@@ -55,8 +24,7 @@ const Home: NextPage = () => {
         <div className={s.mainContent}>
           <IntroText />
           {/* <CustomizableUI /> */}
-          {/* {isMobile() ? <W3mConnectWalletMobile /> : <CustomizableUI />} */}
-          {featureCardsContent}
+          <FeatureCards />
           <Community />
           <div className={s.mobileFooter}>
             <FooterRouter nextRoute="/try-it-out" nextRouteName="Try It Out" padding="lg" />

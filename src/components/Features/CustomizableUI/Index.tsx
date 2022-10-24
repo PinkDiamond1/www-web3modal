@@ -20,6 +20,11 @@ const CustomizableUI = () => {
     // console.log('ThemeCtrl', ThemeCtrl.state.accentColor)
   }, [currentAccentColor])
 
+  // const unsubscribeThemeCtrl = ThemeCtrl.subscribe(() => {
+  //   setTheme(ThemeCtrl.state.theme)
+  //   setAccentColor(ThemeCtrl.state.accentColor)
+  // })
+
   const { title, image, text } = FEATURE_CARDS[0]
   //ToDo: Move CheckeredUI  / Use FEATURED_CARDS DATA
   // Import WebComponent only
@@ -53,23 +58,23 @@ const CustomizableUI = () => {
           }}
         >
           <W3MButtonStateless />
-          {isMobile() ? (
-            <div>
-              <W3mConnectWalletMobile />
-            </div>
-          ) : (
-            <div>
-              <W3mConnectWalletDesktop />
-              <W3mConnectWalletMobile />
-            </div>
-          )}
-
-          {/* <ThemePicker
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '80%'
+            }}
+          >
+            <w3m-modal />
+            <W3mConnectWalletDesktop />
+            {<W3mConnectWalletMobile />}
+          </div>
+          <ThemePicker
             currentAccentColor={currentAccentColor}
             setCurrentAccentColor={setCurrentAccentColor}
-          /> */}
-          <ThemePicker />
-
+          />
+          {/* <ThemePicker /> */}
           {/* <W3mConnectWalletMobile /> */}
         </div>
       </div>

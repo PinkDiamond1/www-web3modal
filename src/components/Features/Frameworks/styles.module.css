@@ -4,6 +4,10 @@
 
 .imageWrapper {
     border-radius: 44px;
+    max-height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 

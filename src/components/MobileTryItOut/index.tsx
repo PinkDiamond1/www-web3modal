@@ -26,7 +26,7 @@ export default function MobileTryItOut() {
 
   function onOpenMobileMenu() {
     document.getElementsByTagName('html')[0].classList.add('noScroll')
-    timeline([[footer, { height: '100vh' }, { duration: 0.25, easing: 'ease-in-out' }]])
+    timeline([[footer, { height: '104vh' }, { duration: 0.25, easing: 'ease-in-out' }]])
   }
 
   function onMobileMenuClose() {

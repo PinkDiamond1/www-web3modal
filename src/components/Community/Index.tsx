@@ -36,8 +36,8 @@ export default function Community() {
             ))}
           </div>
         </div>
-        <div style={{ borderRadius: 44, overflow: 'hidden' }}>
-          <Image src={image} alt={title} width={800} height={220} />
+        <div style={{ borderRadius: 44, overflow: 'hidden', position: 'relative', top: 10 }}>
+          <Image layout="responsive" src={image} alt={title} width={800} height={220} />
         </div>
       </Card>
     </div>

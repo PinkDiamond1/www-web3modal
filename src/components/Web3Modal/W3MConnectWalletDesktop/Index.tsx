@@ -25,10 +25,7 @@ export function W3mConnectWalletDesktop() {
   return (
     <div
       style={{
-        width: 400,
-        position: 'relative',
-        top: '0px',
-        // backgroundColor: '#F1F3F3',
+        width: 410,
         padding: '1em',
         borderRadius: 44
       }}
@@ -39,13 +36,6 @@ export function W3mConnectWalletDesktop() {
           <w3m-connect-wallet-view />
         </div>
       </div>
-
-      {/* <div className={s.w3mModalContainer}>
-        <w3m-modal-backcard></w3m-modal-backcard>
-        <div className={s.w3mModalCards}>
-          <w3m-mobile-wallet-selection />
-        </div>
-      </div> */}
     </div>
   )
 }

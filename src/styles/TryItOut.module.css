@@ -6,8 +6,6 @@
   justify-content: stretch;
   align-items: center;
   width: 100%;
-  /* border: 1px solid red; */
-
 }
 
 .mainContent {
@@ -20,7 +18,6 @@
 
 .headerContent {
   display: flex;
-  flex: 1;
   width: 100%;
   justify-content: space-between;
   align-items: center;
@@ -29,8 +26,16 @@
 
 .checkeredContent {
   background: linear-gradient(97.02deg, #272A2A 0%, #141414 100%);
-  height: 510px;
   border-radius: 44px;
+}
+
+.checkeredContentBG {
+  height: 100%;
+  border-radius: 44px;
+  display: flex;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
 }
 
 .mobileColorPickerRow {
@@ -41,30 +46,20 @@
   display: none;
 }
 
-.checkeredContentBG {
-  height: 100%;
-  border-radius: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 @media screen and (max-width: 800px) {
   .main{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: flex-start;
   }
   .mainContent {
     width: 100%;
-    padding: 5em 0 0 0 ;
+    padding: 4em 0 0 0 ;
+    flex: 1;
   }
   .headerContent{
-    padding: 0 1em 1em 1em;
-  }
-  .checkeredContent{
-    width: 100%;
-    /* height: 600px */
+    padding: 0 1em 0 1em;
   }
   .mobileColorPickerRow {
     display: flex;
@@ -84,5 +79,17 @@
     border-radius: 20px;
     background-color: var(--color-blue-100);
     border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 400px) {
+  .checkeredContentBG{
+    height: 500px;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
+  .checkeredContentBG{
+    height: 600px;
   }
 }
