@@ -24,7 +24,7 @@ export default function SideBar() {
       <Text variant="heading6" color="grey" className={s.docsHeading}>
         Community
       </Text>
-      <div style={{ display: 'flex', justifyContent: 'flex-start', padding: 8 }}>
+      <div style={{ display: 'flex', justifyContent: 'flex-start', padding: 8, fill: 'white' }}>
         {SOCIAL_ICON.map(data => (
           <div key={data.title}>
             <SocialIcon image={data.image} uri={data.uri} title={data.title} />
@@ -63,9 +63,7 @@ export default function SideBar() {
           </Text>
           <ul style={{ padding: 0, margin: 0, listStyleType: 'none' }}>
             {SIDE_BAR_NAVIGATION.map(({ href, title, nestedNav }) => (
-              // <Link href={href} key={title}>
               <NavItem key={title} href={href} title={title} nestedNav={nestedNav} />
-              // </Link>
             ))}
           </ul>
         </div>

@@ -10,11 +10,11 @@
     top: -2px;
 }
 
-.whiteChevron path {
+.whiteChevron > path {
     fill: var(--color-grey-100)
 }
 
-.blackChevron path {
+.blackChevron > path {
     fill: var(--color-grey-0)
 }
 
