@@ -63,7 +63,7 @@ export default function Header() {
   }
 
   useEffect(() => {
-    onMobileMenuClose()
+    // onMobileMenuClose()
     if (open) {
       onOpenMobileMenu()
     } else {

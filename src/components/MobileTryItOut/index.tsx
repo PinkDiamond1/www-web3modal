@@ -1,21 +1,24 @@
-import Text from '../Text/Index'
-import { animate, timeline } from 'motion'
-import Link from 'next/link'
+import Text, { IProps as TextProps } from '../Text/Index'
+import { timeline } from 'motion'
 import { useEffect, useState } from 'react'
 import s from './styles.module.css'
-import Tag from '../Tag/Index'
-import { SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
-import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
 import NextImage from 'next/future/image'
-import NavItem from '../layout/NavItem'
+import { ACCENT_COLORS, THEME } from '../../data/COLOR_PICKER'
+import Button from '../Button/Index'
+import {
+  buttonColorCheck,
+  changeAccentColor,
+  changeTheme,
+  checkCurrentAccentColor,
+  checkCurrentTheme
+} from '../../utils/ThemeColorPicker'
+import { ThemeCtrl } from '../../controllers/ThemeCtrl'
 
-const topLine = `#${s.hamburgerTop}`
-const botLine = `#${s.hamburgerBottom}`
 const footer = `#${s.footer}`
-const menuContent = `.${s.menuContent}`
 
 export default function MobileTryItOut() {
   const [open, setOpen] = useState(false)
+  const [currentTheme, setCurrentTheme] = useState('light')
 
   function onOpenClick() {
     setOpen(prev => !prev)
@@ -23,135 +26,116 @@ export default function MobileTryItOut() {
 
   function onOpenMobileMenu() {
     document.getElementsByTagName('html')[0].classList.add('noScroll')
-    timeline(
-      [
-        [topLine, { y: 4.25 }],
-        [topLine, { rotate: 45 }]
-      ],
-      { duration: 0.25, defaultOptions: { easing: 'ease-in-out' } }
-    )
-    timeline(
-      [
-        [botLine, { y: -4.25 }],
-        [botLine, { rotate: -45 }]
-      ],
-      { duration: 0.25, defaultOptions: { easing: 'ease-in-out' } }
-    )
     timeline([[footer, { height: '100vh' }, { duration: 0.25, easing: 'ease-in-out' }]])
-    animate(menuContent, { opacity: 1, y: 0 }, { duration: 0.35, easing: 'ease-in-out' })
   }
 
   function onMobileMenuClose() {
     document.getElementsByTagName('html')[0].classList.remove('noScroll')
-    timeline(
-      [
-        [topLine, { rotate: 0 }],
-        [topLine, { y: 0 }]
-      ],
-      { duration: 0.25, defaultOptions: { easing: 'ease-in-out' } }
-    )
-    timeline(
-      [
-        [botLine, { rotate: 0 }],
-        [botLine, { y: 0 }]
-      ],
-      { duration: 0.25, defaultOptions: { easing: 'ease-in-out' } }
-    )
-    timeline([[footer, { height: '55px' }, { duration: 0.25, easing: 'ease-in-out' }]])
-    animate(menuContent, { opacity: 0, y: -10 }, { duration: 0.35, easing: 'ease-in-out' })
+    timeline([[footer, { height: '0vh' }, { duration: 0.25, easing: 'ease-in-out' }]])
   }
 
-  // useEffect(() => {
-  //   if (open) {
-  //     onOpenMobileMenu()
-  //   } else {
-  //     onMobileMenuClose()
-  //   }
-  // }, [open])
+  useEffect(() => {
+    if (open) {
+      onOpenMobileMenu()
+    } else {
+      onMobileMenuClose()
+    }
+  }, [open])
 
-  const headerContent = (
-    <div className={s.headerContent}>
-      <Link href="/">
-        <div>
-          <Text variant="heading5" color="grey">
-            Mobile Picker
-          </Text>
-        </div>
-      </Link>
-    </div>
-  )
-
-  const routeContent = (
-    <div className={s.menuContent}>
-      <nav>
-        {/* <ul>
-          <div className={s.mobileMenuHeaderContent}>
-            <Text variant="text3" color="grey">
-              Docs
-            </Text>
-          </div>
-
-          {SIDE_BAR_NAVIGATION.map(link => (
-            <li key={link.title} className={s.item}>
-              <Link href={link.href} key={link.title}>
-                <>
-                  <NavItem
-                    href={link.href}
-                    title={link.title}
-                    nestedNav={link.nestedNav}
-                    onOpenClick={onOpenClick}
-                  />
-                </>
-              </Link>
-            </li>
+  const lightModeContent = () => {
+    return (
+      <div>
+        <Text variant="text2" color="grey">
+          Theme
+        </Text>
+        <div style={{ display: 'flex', marginTop: '1em' }}>
+          {THEME.map(theme => (
+            <Button
+              onClick={() => {
+                setCurrentTheme(theme.value)
+                changeTheme(theme.value)
+              }}
+              key={theme.title}
+              variant="fill"
+              color={theme.color}
+              className={
+                checkCurrentTheme(theme.value) ? s.selectedAccentColor : s.nonSelectedAccentColor
+              }
+              iconLeft={<NextImage src={theme.icon} width={24} height={24} alt={''} />}
+              textVariant="heading6"
+            >
+              {theme.title}
+            </Button>
           ))}
-        </ul> */}
-      </nav>
-    </div>
-  )
-
-  const socialContent = (
-    <div>
-      <ul id={s.social} className={s.menuContent}>
-        <div className={s.mobileMenuHeaderContent}>
-          <Text variant="text3" color="grey">
-            Community
-          </Text>
         </div>
-        {SOCIAL_ICON.map(link => (
-          <li key={link.title}>
-            <a href={link.uri} target="_blank" rel="noreferrer" className={s.socialIconContainer}>
-              <NextImage
-                src={link.image}
-                alt={`${link.title} icon`}
-                width="24"
-                height="24"
-                className={s.socialIcon}
-              />
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
+      </div>
+    )
+  }
 
-  return (
-    <div>
-      {/* {headerContent}
-      {routeContent}
-      {socialContent} */}
+  const accentColorContent = () => {
+    return (
+      <div style={{ padding: '2em 0' }}>
+        <Text variant="text2" color="grey">
+          Accent Color
+        </Text>
+        <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '1em' }}>
+          {ACCENT_COLORS.map(color => (
+            <Button
+              onClick={() => changeAccentColor(color.value)}
+              key={color.value}
+              variant="fill"
+              color={buttonColorCheck(color.value) as TextProps['color']}
+              textTransform="capitalize"
+              textVariant="heading6"
+              accentButton={true}
+              className={
+                checkCurrentAccentColor(color.value)
+                  ? s.selectedAccentColor
+                  : s.nonSelectedAccentColor
+              }
+            >
+              {color.text}
+            </Button>
+          ))}
+        </div>
+      </div>
+    )
+  }
 
+  const overLayFooterMenu = () => {
+    return (
+      <footer className={s.mobileOverlay} id={s.footer}>
+        {lightModeContent()}
+        {accentColorContent()}
+      </footer>
+    )
+  }
+
+  const mobileIcon = () => {
+    return (
       <div className={s.mobileColorPickerRow}>
-        <button onClick={() => console.log('Color Picker Clicked')} className={s.mobileColorPicker}>
+        <Button
+          onClick={onOpenClick}
+          className={s.mobileColorPicker}
+          variant={'fill'}
+          color={buttonColorCheck(ThemeCtrl.state.accentColor) as TextProps['color']}
+        >
           <NextImage
             priority={true}
-            alt="lightIcon"
-            src={'../icons/LightIcon.svg'}
+            alt="mobilePickerIcon"
+            src={currentTheme === 'light' ? '../icons/Moon.svg' : '../icons/Light.svg'}
             height={32}
             width={32}
           />
-        </button>
+        </Button>
       </div>
+    )
+  }
+
+  return (
+    <div>
+      {mobileIcon()}
+      {overLayFooterMenu()}
     </div>
   )
 }

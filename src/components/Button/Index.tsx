@@ -86,17 +86,16 @@ export default function Button({
     ]
   )
 
-  const buttonType = accentButton ? s.accentButton : s.button
+  const buttonType = accentButton ? s.accentButton : undefined
 
   const textIconLeftClass = iconLeft ? s.textIconLeft : undefined
   const textIconRightClass = iconRight ? s.textIconRight : undefined
 
   return (
-    <button {...props} className={`${buttonType} ${variantClass} ${className ?? ''}`}>
+    <button {...props} className={`${s.button} ${buttonType} ${variantClass} ${className ?? ''}`}>
       {iconLeft}
       <Text
         as="span"
-        // variant="anchor2"
         variant={textVariant ? textVariant : 'anchor2'}
         color={textColor}
         textTransform={textTransform}

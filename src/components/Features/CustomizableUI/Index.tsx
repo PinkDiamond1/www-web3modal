@@ -4,7 +4,7 @@ import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
 import { useConnectModal } from '@web3modal/react'
 // import { useEffect, useState } from "react";
 import W3MButtonStateless from '../../Web3Modal/W3MButtonStateless/Index'
-import ThemePicker from '../../ThemePicker'
+import ThemePicker from '../../ThemeColorPickerMobile'
 import { W3mConnectWalletDesktop } from '../../Web3Modal/W3MConnectWalletDesktop/Index'
 // import s from "../styles.module.css";
 import checkeredImage from '../../../../public/CheckerPattern.png'

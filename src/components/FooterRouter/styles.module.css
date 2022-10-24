@@ -94,3 +94,10 @@
 .chevronImagePrevious > path {
     fill: var(--color-grey-70);
 }
+
+@media screen and (max-width: 800px) {
+    .mdPadding {
+        padding: 1rem 1rem 0rem 1rem;
+    }
+
+}
