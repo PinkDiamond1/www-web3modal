@@ -7,25 +7,25 @@ import { isMobile } from '../../utils/Index'
 
 const buttonContent = (
   <div className={s.buttonContent}>
-    <Link href="get-started">
+    <Link href="try-it-out">
       <Button
         variant="fill"
         color="blue"
         iconRight={<CHEVRON width={7} height={12} className={s.whiteChevron} />}
         className={s.buttonStretch}
       >
-        GET STARTED
+        TRY IT OUT NOW
       </Button>
     </Link>
 
-    <Link href="try-it-out">
+    <Link href="get-started">
       <Button
         variant="fill"
         color="grey"
         iconRight={<CHEVRON width={7} height={12} className={s.blackChevron} />}
         className={s.buttonStretch}
       >
-        TRY IT OUT NOW
+        GET STARTED
       </Button>
     </Link>
   </div>
