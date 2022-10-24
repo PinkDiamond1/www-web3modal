@@ -1,18 +1,28 @@
+import { useEffect } from 'react'
 import { isMobile } from '../../utils/Index'
 import s from './styles.module.css'
 
-const Video = () => (
-  <div className={s.videoWrapper}>
-    <video
-      muted
-      autoPlay
-      loop
-      width={isMobile() ? window.innerWidth : 1000}
-      height={isMobile() ? window.innerWidth : 562}
-    >
-      <source src="/web3modal.mp4" type="video/mp4" />
-    </video>
-  </div>
-)
+export default function Video() {
+  // let WINDOW_WIDTH
+  // let WINDOW_HEIGHT
 
-export default Video
+  // useEffect(() => {
+  //   WINDOW_WIDTH = window.innerWidth
+  //   WINDOW_HEIGHT = window.innerHeight
+  // }, [])
+
+  return (
+    <div className={s.videoWrapper}>
+      <video
+        muted
+        autoPlay
+        loop
+        //ToDo: figure out...
+        width={isMobile() ? window.innerWidth : 1000}
+        height={isMobile() ? window.innerHeight : 562}
+      >
+        <source src="/web3modal.mp4" type="video/mp4" />
+      </video>
+    </div>
+  )
+}

@@ -8,7 +8,9 @@ export const isMobile = () => {
 }
 
 export const mobileImageCheck = () => {
-  if (window.innerWidth < 500 && window.innerWidth > 400) {
-    return 430
+  if (typeof window !== 'undefined') {
+    if (window.innerWidth < 500 && window.innerWidth > 400) {
+      return 430
+    }
   }
 }

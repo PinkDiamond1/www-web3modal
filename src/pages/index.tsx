@@ -16,6 +16,7 @@ import Video from '../components/Video/Index'
 // import CustomizableUI from '../components/Features/CustomizableUI/Index'
 // import { isMobile } from '../utils/Index'
 
+//ToDo: Rich Features breaks on mobile ...
 const Home: NextPage = () => {
   const featureCardsContent = (
     <>
@@ -26,7 +27,7 @@ const Home: NextPage = () => {
 
       <div className={s.cardRow}>
         <Wallets />
-        <RichFeatures />
+        {/* <RichFeatures /> */}
       </div>
 
       <div className={s.cardRow}>
@@ -50,7 +51,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={s.main}>
-        <Video />
+        {/* <Video /> */}
         <div className={s.mainContent}>
           <IntroText />
           {/* <CustomizableUI /> */}

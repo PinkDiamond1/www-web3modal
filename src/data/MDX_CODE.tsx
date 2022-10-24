@@ -1,7 +1,7 @@
 //-------- GET STARTED -------------------------------//
 export const INSTALL_INSTRUCTIONS = 'yarn add @web3modal/react @web3modal/ethereum ethers'
 
-export const APP_SETUP = `
+export const APP_SETUP = `// App.js
 import { chains, providers } from '@web3modal/ethereum'
 import { Web3ModalProvider } from '@web3modal/react'
 
@@ -21,14 +21,14 @@ const modalConfig = {
 
 export default function App({ Component, pageProps }) {
   return (
-    <Web3ModalProvider config={modalConfig}>
-      <Component {...pageProps} />
-    </Web3ModalProvider>
+    <>
+      <App />
+      <Web3Modal config={config} />
+    </>
   )
 }`
 
-export const GET_ADDRESS = `
-// index.tsx
+export const GET_ADDRESS = `// index.tsx
 import { ConnectButton, useAccount } from '@web3modal/react'
 
 export default function HomePage() {
@@ -46,18 +46,19 @@ export default function HomePage() {
 //-------- REACT -------------------------------//
 export const CREATE_REACT_APP = `npx create-react-app wallectconnect-react-demo
 cd walletconnect-react-demo
-npm install @web3modal/react @web3modal/ethereum ethers`
+yarn add @web3modal/react @web3modal/ethereum ethers`
 
-export const CREATE_ENV = `npm i dotenv
-touch .env`
+export const CREATE_ENV = `npm i dot
+env touch .env`
 
-export const REACT_PROJECT_ID = `REACT_APP_PROJECT_ID='YOUR_PROJECT_ID'`
+export const REACT_PROJECT_ID = `// .env
+REACT_APP_PROJECT_ID='YOUR_PROJECT_ID'`
 
 export const CONSOLE_LOG_REACT_PROJECT_ID = `// index.js
 const { REACT_APP_PROJECT_ID } = process.env
 console.log('REACT_APP_PROJECT_ID', REACT_APP_PROJECT_ID)`
 
-export const WEB3_MODAL_REACT = `
+export const WEB3_MODAL_REACT = `// App.js
 import { Web3ModalProvider } from "@web3modal/react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -77,11 +78,12 @@ const config = {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Web3ModalProvider config={config}>
+  <>
     <App />
-  </Web3ModalProvider>
-);
-`
+    <Web3Modal config={config} />
+  </>
+
+);`
 
 export const GET_CONNECTED_REACT = `// App.js
 

@@ -8,9 +8,27 @@ import ColorPickerDesktop from '../../components/ColorPickerDesktop/index'
 import FooterRouter from '../../components/FooterRouter'
 import { isMobile } from '../../utils/Index'
 import checkeredImage from '../../../public/CheckerPattern.png'
+import { useEffect, useState } from 'react'
+import MobileTryItOut from '../../components/MobileTryItOut'
 
 const TryItOut: NextPage = () => {
+  const [copied, setCopied] = useState(false)
   const { isConnected } = useAccount()
+  let isMobileDimension
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    isMobileDimension = isMobile()
+  }, [])
+
+  // Add the React Code for the State...
+  const copyCode = () => {
+    navigator.clipboard.writeText('....')
+    setCopied(true)
+    setTimeout(() => {
+      setCopied(false)
+    }, 2000)
+  }
 
   // ToDo: Calculate ConnectButton position based on Size.
   const checkeredSVG = (
@@ -26,11 +44,22 @@ const TryItOut: NextPage = () => {
 
   const headerContent = (
     <div className={s.headerContent}>
-      <Text variant="heading4" color="white">
+      <Text variant={isMobileDimension ? 'heading5' : 'heading4'} color="white">
         Try It Out
       </Text>
-      <Button color="grey" variant="outline">
-        Copy Code
+      <Button
+        color="grey"
+        variant="outline"
+        onClick={copyCode}
+        iconLeft={
+          copied ? (
+            <NextImage src={'/icons/Tick.svg'} alt={'codeSnippet'} width={14} height={14} />
+          ) : (
+            <div style={{ margin: 0, padding: 0 }} />
+          )
+        }
+      >
+        {copied ? 'Copied' : 'Copy Code'}
       </Button>
     </div>
   )
@@ -47,18 +76,14 @@ const TryItOut: NextPage = () => {
         nextRouteName="Get Started"
         padding="md"
       />
-      <div className={s.mobileColorPickerRow}>
-        <button onClick={() => console.log('Color Picker Clicked')} className={s.mobileColorPicker}>
-          <NextImage alt="lightIcon" src={'../icons/LightIcon.svg'} height={32} width={32} />
-        </button>
-      </div>
+      <MobileTryItOut />
     </div>
   )
 
   return (
     <main className={s.main}>
       {mainContent}
-      {isMobile() ? null : <ColorPickerDesktop />}
+      <ColorPickerDesktop />
     </main>
   )
 }

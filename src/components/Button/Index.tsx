@@ -43,7 +43,7 @@ export default function Button({
   const textColor = useConditionalValue<TextProps['color']>(
     ['black', 'white', 'blue', 'cyan'],
     [
-      color === 'blackWhite' && variant === 'fill',
+      (color === 'grey' && variant === 'fill') || (color === 'blackWhite' && variant === 'fill'),
       (color === 'blue' && variant === 'fill') ||
         (color === 'cyan' && variant === 'fill') ||
         (color === 'grey' && variant === 'outline') ||

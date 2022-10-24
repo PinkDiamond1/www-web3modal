@@ -28,3 +28,7 @@
     justify-content: space-between;
     align-items: center;
 }
+
+.topCodeSyntax img:hover {
+    opacity: 0.5;
+}

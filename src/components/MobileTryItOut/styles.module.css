@@ -1,0 +1,30 @@
+#footer {
+  height: 40px;
+  width: 100%;
+}
+
+.mobileColorPickerRow {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .mobileColorPickerRow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0 0 0;
+  }
+  .mobileColorPicker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    border-radius: 20px;
+    background-color: var(--color-blue-100);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}

@@ -3,40 +3,65 @@ import MDXLayout from '../../../components/MDX/Layout/Index'
 import MDXContentSection from '../../../components/MDX/Content/Index'
 import MDXToCSection from '../../../components/MDX/TOC/Index'
 import CodeSyntax from '../../../components/MDX/CodeSyntax/Index'
+import MDXContentBlock from '../../../components/MDX/ContentBlock/Index'
 
 import { CLOUD_GET_PROJECT_ID_TOC } from '../../../data/TABLE_CONTENTS'
 import FooterRouter from '../../../components/FooterRouter'
 import Text from '../../../components/Text/Index'
-import NextImage from 'next/future/image'
+import NextImage from 'next/image'
 
 <MDXLayout>
-    <MDXContentSection>
-        <div>
-          <div style={{padding: '1em 0 1em 0'}}>
-            <Text variant="heading4" color="white" id="get-project-id">Get Project ID</Text>
-            <Text variant="text3" color="grey">
-                Get your first project ID [here](https://cloud.walletconnect.com/sign-up).
-            </Text>
-            <NextImage src="/docs/cloud-explorer/sign-in.png" width={700} height={420}/>
-            <Text variant="text3" color="grey">
-                Click on WalletConnect to register with an Ethereum account. Scan the QR code with your mobile device.
-                This should open up your default wallet. Confirm the correct account you would like to connect on your device. Once you do, you will be given the option to continue with the previously selected account. Click continue.
-            </Text>
-            <NextImage src="/docs/cloud-explorer/continue.png" width={700} height={420}/>
-
-            <Text variant="text3" color="grey">
-                You will be prompted once more on your mobile device to sign the transaction. Once you do, you will be able to create a project by clicking on ‘+ New Project’.
-            </Text>
-            <NextImage src="/docs/cloud-explorer/new-project.png" width={700} height={420}/>
-            <Text variant="text3" color="grey">
-                Name your project. At this time, you are not able to delete a project once you create one. [Feature coming soon](https://github.com/WalletConnect/cloud-app/issues/44).
-                Once you create a new project, copy the project id
-            </Text>
-            <NextImage src="/docs/cloud-explorer/demo-app.png" width={700} height={420}/>
-        </div>
-            <FooterRouter previousRoute="/try-it-out" previousRouteName="Try It Out" nextRoute="/react" nextRouteName="React" padding="lg" />
-        </div>
-    </MDXContentSection>
-    <MDXToCSection data={CLOUD_GET_PROJECT_ID_TOC}/>
-
+  <MDXContentSection>
+    <Text variant="heading4" color="white" id="get-project-id">
+      Get Project ID
+    </Text>
+    <MDXContentBlock>
+      Get your first project ID [here](https://cloud.walletconnect.com/sign-up).
+      <NextImage
+        src="/docs/cloud-explorer/sign-in.png"
+        priority={true}
+        layout="responsive"
+        width={700}
+        height={420}
+      />
+      Click on WalletConnect to register with an Ethereum account. Scan the QR code with your mobile
+      device. This should open up your default wallet. Confirm the correct account you would like to
+      connect on your device. Once you do, you will be given the option to continue with the
+      previously selected account. Click continue.
+      <NextImage
+        src="/docs/cloud-explorer/continue.png"
+        priority={true}
+        layout="responsive"
+        width={700}
+        height={420}
+      />
+      You will be prompted once more on your mobile device to sign the transaction. Once you do, you
+      will be able to create a project by clicking on ‘+ New Project’.
+      <NextImage
+        src="/docs/cloud-explorer/new-project.png"
+        priority={true}
+        layout="responsive"
+        width={700}
+        height={420}
+      />
+      Name your project. At this time, you are not able to delete a project once you create one.
+      [Feature coming soon](https://github.com/WalletConnect/cloud-app/issues/44). Once you create a
+      new project, copy the project id
+      <NextImage
+        src="/docs/cloud-explorer/demo-app.png"
+        priority={true}
+        layout="responsive"
+        width={700}
+        height={420}
+      />
+    </MDXContentBlock>
+    <FooterRouter
+      previousRoute="/try-it-out"
+      previousRouteName="Try It Out"
+      nextRoute="/react"
+      nextRouteName="React"
+      padding="lg"
+    />
+  </MDXContentSection>
+  <MDXToCSection data={CLOUD_GET_PROJECT_ID_TOC} />
 </MDXLayout>

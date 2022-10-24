@@ -54,18 +54,18 @@ export default function SideBar() {
           flexDirection: 'column',
           justifyContent: 'space-between',
           height: '100%',
-          marginTop: '1em'
+          marginTop: '2.5em'
         }}
       >
         <div className={s.docsHeading}>
           <Text variant="text3" color="grey">
             Docs
           </Text>
-          <ul style={{ padding: 0, margin: 0 }}>
+          <ul style={{ padding: 0, margin: 0, listStyleType: 'none' }}>
             {SIDE_BAR_NAVIGATION.map(({ href, title, nestedNav }) => (
-              <Link href={href} key={title}>
-                <NavItem href={href} title={title} nestedNav={nestedNav} />
-              </Link>
+              // <Link href={href} key={title}>
+              <NavItem key={title} href={href} title={title} nestedNav={nestedNav} />
+              // </Link>
             ))}
           </ul>
         </div>

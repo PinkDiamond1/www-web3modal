@@ -48,6 +48,11 @@
 }
 
 .fillGrey {
+  background-color: var(--color-grey-95);
+  border-color: var(--color-grey-100);
+}
+
+.fillGreyNew {
   background-color: var(--color-grey-16);
   border-color: var(--color-grey-24);
 }

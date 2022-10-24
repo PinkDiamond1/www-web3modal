@@ -1,12 +1,11 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { title } from 'process'
-import { ReactNode, useState } from 'react'
+import { useState } from 'react'
 import s from '../../styles/Layout.module.css'
-import Header from '../Header'
-import SideBar from './SideBar'
 import Text from '../Text/Index'
 import THINCHEVRON from '../../../public/icons/ThinChevron.svg'
+import { isMobile } from '../../utils/Index'
+import { animate } from 'motion'
 
 interface Props {
   nestedNav:
@@ -17,9 +16,12 @@ interface Props {
     | undefined
   href: string
   title: string
+  onOpenClick?: () => void
 }
 
-export default function NavItem({ href, title, nestedNav, ...props }: Props) {
+// const closedChevron = `.${s.closedChevron}`
+
+export default function NavItem({ href, title, nestedNav, onOpenClick, ...props }: Props) {
   const router = useRouter()
   const [openSideBarMenu, setOpenSideBarMenu] = useState(false)
 
@@ -38,36 +40,60 @@ export default function NavItem({ href, title, nestedNav, ...props }: Props) {
 
     return (
       <>
-        <li
-          className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
-          onClick={() => setOpenSideBarMenu(!openSideBarMenu)}
-        >
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              flex: 1
+        <ul style={{ padding: 0, margin: 0, listStyleType: 'none' }}>
+          <li
+            className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
+            onClick={() => {
+              // if (isMobile()) {
+              //   onClick
+              // } else {
+              setOpenSideBarMenu(!openSideBarMenu)
+
+              // if (openSideBarMenu) {
+              //   animate(
+              //     closedChevron,
+              //     { transform: 'rotate(90deg)' },
+              //     { duration: 0.2, easing: 'ease-in-out' }
+              //   )
+              // }
+
+              // }
             }}
           >
-            <Text variant="heading6" color="white" textTransform="capitalize">
-              {title}
-            </Text>
-            <THINCHEVRON className={!openSideBarMenu ? s.openChevron : s.closedChevron} />
-          </div>
-        </li>
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                flex: 1
+              }}
+            >
+              <Text variant="heading6" color="white" textTransform="capitalize">
+                {title}
+              </Text>
+              <THINCHEVRON className={!openSideBarMenu ? s.openChevron : s.closedChevron} />
+            </div>
+          </li>
+        </ul>
+
         <ul style={{ paddingLeft: '1em', margin: 0 }}>
           {openSideBarMenu &&
             nestedNav.map(({ href, title }) => (
-              <Link href={href} key={title}>
-                <li
-                  className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
-                >
-                  <Text variant="heading6" color="white" textTransform="capitalize">
-                    {title}
-                  </Text>
-                </li>
-              </Link>
+              <div onClick={() => onOpenClick} key={title}>
+                <Link href={href}>
+                  <a onClick={onOpenClick}>
+                    <li
+                      className={
+                        checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute
+                      }
+                    >
+                      <Text variant="heading6" color="white" textTransform="capitalize">
+                        {title}
+                      </Text>
+                    </li>
+                  </a>
+                </Link>
+              </div>
             ))}
         </ul>
       </>
@@ -76,13 +102,19 @@ export default function NavItem({ href, title, nestedNav, ...props }: Props) {
 
   const nonChildren = (
     <Link href={href}>
-      <li className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}>
-        <Text variant="heading6" color="white" textTransform={'capitalize'}>
-          {title}
-        </Text>
-      </li>
+      <a onClick={onOpenClick}>
+        <li className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}>
+          <Text variant="heading6" color="white" textTransform={'capitalize'}>
+            {title}
+          </Text>
+        </li>
+      </a>
     </Link>
   )
 
-  return <div key={title}>{nestedNav ? childrenContent() : nonChildren}</div>
+  return (
+    <ul style={{ padding: 0, margin: 0, listStyleType: 'none' }} key={title}>
+      {nestedNav?.length ? childrenContent() : nonChildren}
+    </ul>
+  )
 }

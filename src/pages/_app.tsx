@@ -47,12 +47,9 @@ function App({ Component, pageProps }: AppProps) {
   const unsubscribeThemeCtrl = ThemeCtrl.subscribe(() => {
     setTheme(ThemeCtrl.state.theme)
     setAccentColor(ThemeCtrl.state.accentColor)
-    console.log('AccentChange High level...', ThemeCtrl.state.accentColor)
   })
 
-  const unsubscribeConfigContrl = ConfigCtrl.subscribe(() => {
-    console.log('AccentChange High level...', ConfigCtrl.state.accentColor)
-  })
+  const unsubscribeConfigContrl = ConfigCtrl.subscribe(() => {})
 
   useEffect(() => {
     ThemeCtrl.setTheme('light')

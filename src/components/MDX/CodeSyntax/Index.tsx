@@ -3,6 +3,7 @@ import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import s from './styles.module.css'
 import Text from '../../Text/Index'
 import NextImage from 'next/future/image'
+import { useState } from 'react'
 
 interface CodeSyntaxProps {
   codeString: string
@@ -10,10 +11,11 @@ interface CodeSyntaxProps {
 }
 
 export default function CodeSyntax({ codeString, codeType }: CodeSyntaxProps) {
+  const [copied, setCopied] = useState(false)
+
   const terminalContent = (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <NextImage
-        onClick={() => console.log('copied...')}
         src="/icons/Terminal.svg"
         alt={'terminal'}
         width={17}
@@ -29,7 +31,6 @@ export default function CodeSyntax({ codeString, codeType }: CodeSyntaxProps) {
   const appContent = (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <NextImage
-        onClick={() => console.log('copied...')}
         src="/icons/App.svg"
         alt={'app'}
         width={17}
@@ -47,16 +48,23 @@ export default function CodeSyntax({ codeString, codeType }: CodeSyntaxProps) {
       <div className={s.topCodeSyntax}>
         {codeType === 'terminal' ? terminalContent : appContent}
         <NextImage
-          onClick={() => console.log('copied...')}
-          src="/icons/ClipBoard.svg"
+          onClick={() => {
+            navigator.clipboard.writeText(codeString)
+            setCopied(true)
+            setTimeout(() => {
+              setCopied(false)
+            }, 2000)
+          }}
+          src={copied ? '/icons/Tick.svg' : '/icons/ClipBoard.svg'}
           alt={'codeSnippet'}
-          width={17}
-          height={17}
+          width={copied ? 14 : 17}
+          height={copied ? 14 : 17}
         />
       </div>
 
       <SyntaxHighlighter
         wrapLongLines={true}
+        lineProps={{ style: { wordBreak: 'break-all', whiteSpace: 'pre-wrap' } }}
         language="typescript"
         style={dracula}
         customStyle={{

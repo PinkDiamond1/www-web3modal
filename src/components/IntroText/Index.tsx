@@ -1,34 +1,34 @@
-import { useRouter } from 'next/router'
-import { ReactNode } from 'react'
-import Image from 'next/image'
 import Button from '../Button/Index'
 import Text from '../Text/Index'
 import s from './styles.module.css'
-import { isMobile } from '../../utils/Index'
 import Link from 'next/link'
 import CHEVRON from '../../../public/icons/Chevron.svg'
 
 const buttonContent = (
   <div className={s.buttonContent}>
     <Link href="get-started">
-      <Button
-        variant="fill"
-        color="blue"
-        iconRight={<CHEVRON width={7} height={12} className={s.whiteChevron} />}
-        style={{ marginRight: 10 }}
-      >
-        GET STARTED
-      </Button>
+      <div>
+        <Button
+          variant="fill"
+          color="blue"
+          iconRight={<CHEVRON width={7} height={12} className={s.whiteChevron} />}
+          style={{ marginRight: 10 }}
+        >
+          GET STARTED
+        </Button>
+      </div>
     </Link>
 
     <Link href="try-it-out">
-      <Button
-        variant="fill"
-        color="grey"
-        iconRight={<CHEVRON width={7} height={12} className={s.blackChevron} />}
-      >
-        TRY IT OUT NOW
-      </Button>
+      <div>
+        <Button
+          variant="fill"
+          color="grey"
+          iconRight={<CHEVRON width={7} height={12} className={s.blackChevron} />}
+        >
+          TRY IT OUT NOW
+        </Button>
+      </div>
     </Link>
   </div>
 )
