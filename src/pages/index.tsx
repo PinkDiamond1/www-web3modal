@@ -7,18 +7,13 @@ import FooterRouter from '../components/FooterRouter'
 import IntroText from '../components/IntroText/Index'
 import FeatureCards from '../components/Features/Index'
 import Video from '../components/Video/Index'
+import AlphaBanner from '../components/AlphaBanner/Index'
 // import CustomizableUI from '../components/Features/CustomizableUI/Index'
 // import { isMobile } from '../utils/Index'
 
 const Home: NextPage = () => {
   return (
     <div className={s.container}>
-      <Head>
-        <title>Web3Modal</title>
-        <meta name="description" content="Web3Modal Documentation" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <main className={s.main}>
         {/* <Video /> */}
         <div className={s.mainContent}>
