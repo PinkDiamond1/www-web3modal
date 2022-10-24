@@ -137,7 +137,7 @@ opacity: 0.5;
       display: none;
     }
     .sideBarRoutesSelected {
-        width: 80vw;
+        width: 90vw;
         flex: 1;
     }
     .sideBarRoute {

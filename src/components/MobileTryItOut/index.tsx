@@ -87,7 +87,7 @@ export default function MobileTryItOut() {
               color={buttonColorCheck(color.value) as TextProps['color']}
               textTransform="capitalize"
               textVariant="heading6"
-              accentButton={true}
+              // accentButton={true}
               className={
                 checkCurrentAccentColor(color.value)
                   ? s.selectedAccentColor

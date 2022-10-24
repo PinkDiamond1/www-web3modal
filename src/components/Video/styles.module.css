@@ -21,6 +21,7 @@
 @media (max-width: 800px) {
   .videoWrapper{
     border-radius: 0px;
+    margin-top: -30px;
   }
   .videoWrapper video {
     /* position: relative; */

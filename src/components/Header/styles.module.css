@@ -62,7 +62,7 @@
     #container {
       /* margin: 28px 0; */
       align-items: flex-start;
-      /* width: 100vw; */
+      /* width: 95vw; */
     }
   
     #container nav {
@@ -88,12 +88,12 @@
   
   .item {
     display: flex;
+    width: 100%;
   }
   
   @media (max-width: 800px) {
     .item {
       display: flex;
-      width: 100vw;
       flex: 1;
     }
   }

@@ -48,8 +48,10 @@ const RichFeatures = () => {
             priority={true}
             src={image}
             alt={title}
-            width={isMobile() ? 460 : 390}
-            height={isMobile() ? 290 : 285}
+            // width={isMobile() ? 390 : 390}
+            // height={isMobile() ? 285 : 285}
+            width={390}
+            height={285}
           />
         </div>
       </div>

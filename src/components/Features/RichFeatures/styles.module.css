@@ -28,15 +28,22 @@
 }
 
 
-@media (min-width:350px) and (max-width:400px) {
+@media (max-width:800px) {
     .pinkCard {
         border-radius: 32px;
     }
     .interfaceCard {
-        width: 150%;
         border-radius: 32px;
-        position: relative;
+        /* position: relative;
         left: 10px;
+        top: 0px; */
+    }
+    .interfaceCard img{
+        /* width: 200vw; */
+        /* height: 200vw; */
+        position: relative;
+        top: 0;
+        left: -30px;
     }
 }
 
@@ -53,7 +60,7 @@
         top: -15px;
     }
     .interfaceCard {
-        width: 150%;
+        /* width: 150%; */
         border-radius: 32px;
         position: relative;
         left: 10px;

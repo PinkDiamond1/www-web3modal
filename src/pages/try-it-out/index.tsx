@@ -6,15 +6,14 @@ import { useDisconnect, ConnectButton, useAccount } from '@web3modal/react'
 import Button from '../../components/Button/Index'
 import ColorPickerDesktop from '../../components/ThemeColorPickerDesktop/index'
 import FooterRouter from '../../components/FooterRouter'
-import { isMobile } from '../../utils/Index'
 import checkeredImage from '../../../public/CheckerPattern.png'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import MobileTryItOut from '../../components/MobileTryItOut'
 import W3MButtonStateless from '../../components/Web3Modal/W3MButtonStateless/Index'
 
 const TryItOut: NextPage = () => {
   const [copied, setCopied] = useState(false)
-  const [windowHeight, setWindowHeight] = useState(0)
+  // const [windowHeight, setWindowHeight] = useState(0)
   const { isConnected } = useAccount()
   const disconnect = useDisconnect()
   let isMobileDimension

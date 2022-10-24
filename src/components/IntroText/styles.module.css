@@ -1,13 +1,17 @@
 .whiteChevron {
     position: relative;
-    left: -4px;
+    left: 2px;
     top: -2px;
 }
 
 .blackChevron {
     position: relative;
-    left: -4px;
+    left: 2px;
     top: -2px;
+}
+
+.whiteChevron path {
+    fill: var(--color-grey-100)
 }
 
 .blackChevron path {

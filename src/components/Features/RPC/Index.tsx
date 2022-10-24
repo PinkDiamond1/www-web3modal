@@ -3,6 +3,7 @@ import Text from '../../Text/Index'
 import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
 import s from './styles.module.css'
+import { isMobile } from '../../../utils/Index'
 
 const RPC = () => {
   const { title, image, text } = FEATURE_CARDS[7]
@@ -23,8 +24,8 @@ const RPC = () => {
           src={image}
           alt={title}
           layout="responsive"
-          width={250}
-          height={200}
+          width={isMobile() ? 200 : 250}
+          height={isMobile() ? 150 : 200}
         />
       </div>
     </Card>
