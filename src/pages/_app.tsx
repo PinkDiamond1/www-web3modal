@@ -54,6 +54,7 @@ function App({ Component, pageProps }: AppProps) {
     <>
       <PlausibleProvider domain="web3modal.com">
         <Head>
+          <title>Web3Modal</title>
           <meta
             name="viewport"
             content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"

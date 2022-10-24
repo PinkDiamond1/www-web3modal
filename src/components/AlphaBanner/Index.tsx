@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { Dispatch, ReactElement, SetStateAction, useEffect, useState } from 'react'
 import Button from '../Button/Index'
 import Text from '../Text/Index'
@@ -5,8 +6,6 @@ import s from './styles.module.css'
 
 const AlphaBanner = ({}) => {
   const [closeBanner, setCloseBanner] = useState(false)
-
-  // useEffect(() => {}, [openBanner])
 
   if (closeBanner) {
     return null
