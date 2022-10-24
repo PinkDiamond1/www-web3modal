@@ -1,3 +1,1 @@
-<svg width="7" height="12" viewBox="0 0 7 12" fill="currentColor">
-<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1.06036 -0.000366211L6.70713 5.64641C6.90239 5.84167 6.90239 6.15826 6.70713 6.35352L1.06036 12.0003L-0.000305176 10.9396L4.93936 5.99996L-0.000305057 1.06029L1.06036 -0.000366211Z"/>
-</svg>
+<svg width="7" height="12" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="m1.06 0 5.647 5.646a.5.5 0 0 1 0 .708L1.06 12 0 10.94 4.94 6 0 1.06 1.06 0Z"/></svg>
