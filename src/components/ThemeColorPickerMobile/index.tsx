@@ -11,15 +11,10 @@ import { chains, providers } from '@web3modal/ethereum'
 interface Props {
   currentAccentColor?: string
   setCurrentAccentColor: React.Dispatch<React.SetStateAction<string>>
-  changeAccentColor: () => void
 }
 
 // ToDo: Make it into a Layout Component
-export default function ThemePicker({
-  currentAccentColor,
-  setCurrentAccentColor,
-  changeAccentColor
-}: Props) {
+export default function ThemePicker({ currentAccentColor, setCurrentAccentColor }: Props) {
   const [theme, setTheme] = useState('light')
   // const [accentColor, setAccentColor] = useState('default')
 
@@ -118,7 +113,7 @@ export default function ThemePicker({
               <Button
                 onClick={() => {
                   // setAccentColor(color.value)
-                  changeAccentColor(color.value)
+                  // changeAccentColor(color.value)
                 }}
                 key={color.value}
                 variant="fill"

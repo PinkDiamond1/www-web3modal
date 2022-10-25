@@ -84,7 +84,7 @@ export const USE_ACCOUNT_TOC = [
   }
 ]
 
-export const USE_BALANCE = [
+export const USE_BALANCE_TOC = [
   {
     id: 'use-balance',
     title: 'useBalance',
@@ -174,6 +174,19 @@ export const USE_ENS_NAME_TOC = [
   {
     id: 'use-ens-name',
     title: 'useEnsName',
+    items: []
+  },
+  {
+    id: 'example',
+    title: 'Example',
+    items: []
+  }
+]
+
+export const USE_ENS_RESOLVER_TOC = [
+  {
+    id: 'use-ens-resolver',
+    title: 'useEnsResolver',
     items: []
   },
   {
@@ -274,9 +287,9 @@ export const USE_WAIT_FOR_TRANSACTION_TOC = [
   }
 ]
 
-export const USE_WEBSOCKET_PROVIDER_TOC = [
+export const USE_WEB_SOCKET_PROVIDER_TOC = [
   {
-    id: 'use-websocket-provider',
+    id: 'use-web-socket-provider',
     title: 'useWebsocketProvider',
     items: []
   },

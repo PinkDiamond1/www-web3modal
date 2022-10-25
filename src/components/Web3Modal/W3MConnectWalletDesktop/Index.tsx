@@ -22,10 +22,10 @@ import { ThemeCtrl } from '../../../controllers/ThemeCtrl'
 export function W3mConnectWalletDesktop() {
   const [renderTheme, setRenderTheme] = React.useState('light')
 
-  useEffect(() => {
-    console.log(ThemeCtrl.state.accentColor)
-    console.log(ThemeCtrl.state.theme)
-  }, [])
+  // useEffect(() => {
+  //   console.log(ThemeCtrl.state.accentColor)
+  //   console.log(ThemeCtrl.state.theme)
+  // }, [])
 
   //   props: JSX.IntrinsicElements['w3m-connect-wallet-view'],
   //   props2: JSX.IntrinsicElements['w3m-desktop-wallet-selection'],

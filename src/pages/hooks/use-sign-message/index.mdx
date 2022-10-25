@@ -1,37 +1,36 @@
 import styles from '../../../styles/Home.module.css'
 import MDXLayout from '../../../components/MDX/Layout/Index'
 import MDXContentSection from '../../../components/MDX/Content/Index'
+import MDXContentBlock from '../../../components/MDX/ContentBlock'
 import MDXToCSection from '../../../components/MDX/TOC/Index'
 import CodeSyntax from '../../../components/MDX/CodeSyntax/Index'
-import { USE_SEND_MESSAGE, USE_SEND_MESSAGE_EXAMPLE } from '../../../data/MDX_CODE'
+
+import { USE_SIGN_MESSAGE, USE_SIGN_MESSAGE_EXAMPLE } from '../../../data/MDX_CODE'
 import { USE_SIGN_MESSAGE_TOC } from '../../../data/TABLE_CONTENTS'
+import { SIDE_BAR_NAVIGATION } from '../../../data/NAVIGATION'
 import FooterRouter from '../../../components/FooterRouter'
 import Text from '../../../components/Text/Index'
 import NextImage from 'next/future/image'
 
 <MDXLayout>
-    <MDXContentSection>
-        <div>
-          <div style={{padding: '1em 0 1em 0'}}>          
-            <Text variant="heading4" color="white" id="use-sign-message">useSignMessage</Text>
-            <Text variant="text3" color="grey">
-                Hook for signing messages with connected account.
-            </Text>
-            <CodeSyntax codeString={USE_SEND_MESSAGE} codeType={"app"} />
-        </div>
-        <div style={{padding: '1em 0 1em 0'}}>          
-            <Text variant="heading5" color="white" id="example">Example</Text>
-            <CodeSyntax codeString={USE_SEND_MESSAGE_EXAMPLE} codeType={"app"} />
-        </div>
-        <FooterRouter
-            previousRoute="/action-hooks/use-send-transaction"
-            previousRouteName="Use Send Transaction"
-            nextRoute="/action-hooks/use-sign-typed-data"
-            nextRouteName="Use Sign Typed Data"
-            padding="lg"
-        />
-        </div>
-    </MDXContentSection>
-    <MDXToCSection data={USE_SIGN_MESSAGE_TOC}/>
+  <MDXContentSection>
+      <Text variant="heading4" color="white" id="use-sign-message">useSignMessage</Text>
+      <MDXContentBlock id="get-started">
+        Hook for signing messages with connected account.
+        <CodeSyntax codeString={USE_SIGN_MESSAGE} codeType={"app"} />
+      </MDXContentBlock>
+      <Text variant="heading4" color="white" id="example">Example</Text>
+      <MDXContentBlock>
+        <CodeSyntax codeString={USE_SIGN_MESSAGE_EXAMPLE} codeType={"app"} />
+      </MDXContentBlock>
+    <FooterRouter
+        previousRoute={SIDE_BAR_NAVIGATION[5].nestedNav[16].href}
+        previousRouteName={SIDE_BAR_NAVIGATION[5].nestedNav[16].title}
+        nextRoute={SIDE_BAR_NAVIGATION[5].nestedNav[18].href}
+        nextRouteName={SIDE_BAR_NAVIGATION[5].nestedNav[18].title}
+        padding="lg"
+    />
 
+  </MDXContentSection>
+  <MDXToCSection data={USE_SIGN_MESSAGE_TOC}/>
 </MDXLayout>

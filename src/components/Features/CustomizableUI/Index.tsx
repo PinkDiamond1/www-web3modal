@@ -87,7 +87,6 @@ const CustomizableUI = () => {
           <ThemePicker
             currentAccentColor={currentAccentColor}
             setCurrentAccentColor={setCurrentAccentColor}
-            changeAccentColor={changeAccentColor()}
           />
           {/* <ThemePicker /> */}
           {/* <W3mConnectWalletMobile /> */}

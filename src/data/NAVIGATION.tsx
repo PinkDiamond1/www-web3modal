@@ -39,10 +39,6 @@ export const SIDE_BAR_NAVIGATION = [
     title: 'Hooks',
     nestedNav: [
       {
-        href: '/hooks/use-connect-modal',
-        title: 'useConnectModal'
-      },
-      {
         href: '/hooks/use-account',
         title: 'useAccount'
       },
@@ -53,6 +49,10 @@ export const SIDE_BAR_NAVIGATION = [
       {
         href: '/hooks/use-block-number',
         title: 'useBlockNumber'
+      },
+      {
+        href: '/hooks/use-connect-modal',
+        title: 'useConnectModal'
       },
       {
         href: '/hooks/use-contract',
@@ -67,6 +67,14 @@ export const SIDE_BAR_NAVIGATION = [
         title: 'useContractRead'
       },
       {
+        href: '/hooks/use-contract-write',
+        title: 'useContractWrite'
+      },
+      {
+        href: '/hooks/use-disconnect',
+        title: 'useDisconnect'
+      },
+      {
         href: '/hooks/use-ens-address',
         title: 'useEnsAddress'
       },
@@ -77,6 +85,10 @@ export const SIDE_BAR_NAVIGATION = [
       {
         href: '/hooks/use-ens-name',
         title: 'useEnsName'
+      },
+      {
+        href: '/hooks/use-ens-resolver',
+        title: 'useEnsResolver'
       },
       {
         href: '/hooks/use-fee-data',
@@ -91,12 +103,24 @@ export const SIDE_BAR_NAVIGATION = [
         title: 'useProvider'
       },
       {
-        href: '/hooks/use-websocket-provider',
-        title: 'useWebsocketProvider'
+        href: '/hooks/use-send-transaction',
+        title: 'useSendTransaction'
+      },
+      {
+        href: '/hooks/use-sign-message',
+        title: 'useSignMessage'
+      },
+      {
+        href: '/hooks/use-sign-typed-data',
+        title: 'useSignTypedData'
       },
       {
         href: '/hooks/use-signer',
         title: 'useSigner'
+      },
+      {
+        href: '/hooks/use-switch-network',
+        title: 'useSwitchNetwork'
       },
       {
         href: '/hooks/use-token',
@@ -111,28 +135,8 @@ export const SIDE_BAR_NAVIGATION = [
         title: 'useWaitForTransaction'
       },
       {
-        href: '/hooks/use-contract-write',
-        title: 'useContractWrite'
-      },
-      {
-        href: '/hooks/use-disconnect',
-        title: 'useDisconnect'
-      },
-      {
-        href: '/hooks/use-send-transaction',
-        title: 'useSendTransaction'
-      },
-      {
-        href: '/hooks/use-sign-message',
-        title: 'useSignMessage'
-      },
-      {
-        href: '/hooks/use-sign-typed-data',
-        title: 'useSignTypedData'
-      },
-      {
-        href: '/hooks/use-switch-network',
-        title: 'useSwitchNetwork'
+        href: '/hooks/use-web-socket-provider',
+        title: 'useWebsocketProvider'
       }
     ]
   }

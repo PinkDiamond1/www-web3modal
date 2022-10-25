@@ -12,14 +12,6 @@ import NextImage from 'next/future/image'
 <MDXLayout>
   <MDXContentSection>
     <div>
-      <div style={{ padding: '1em 0 1em 0' }}>
-        <Text variant="heading4" color="white" id="modal-hooks">
-          Modal Hooks
-        </Text>
-        <Text variant="text3" color="grey">
-          Hooks to manage web3modal.
-        </Text>
-      </div>
       <Text variant="heading4" color="white" id="use-connect-modal">
         useConnectModal
       </Text>
@@ -29,10 +21,10 @@ import NextImage from 'next/future/image'
       <CodeSyntax codeString={USE_MODAL_CONNECT} codeType={'app'} />
     </div>
     <FooterRouter
-      previousRoute="/cloud-explorer/get-project-id"
-      previousRouteName="Get Project ID"
-      nextRoute="/data-hooks/use-account"
-      nextRouteName="Use Account"
+      previousRoute="/hooks/use-block-number"
+      previousRouteName="useBlockNumber"
+      nextRoute="/hooks/use-contract"
+      nextRouteName="useContract"
       padding="lg"
     />
 

@@ -38,14 +38,15 @@ export default function SideBar() {
       <div
         style={{
           display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center'
+          justifyContent: 'flex-start'
         }}
       >
-        <Text variant="heading4" color="white">
-          Web3Modal
-        </Text>
-        <Tag>2.0.0</Tag>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Text variant="heading4" color="white">
+            Web3Modal
+          </Text>
+          <Tag>2.0.0</Tag>
+        </div>
       </div>
       <nav
         style={{

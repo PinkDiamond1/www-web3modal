@@ -5,34 +5,32 @@ import MDXContentBlock from '../../../components/MDX/ContentBlock'
 import MDXToCSection from '../../../components/MDX/TOC/Index'
 import CodeSyntax from '../../../components/MDX/CodeSyntax/Index'
 
-import { USE_CONTRACT_WRITE, USE_CONTRACT_WRITE_EXAMPLE } from '../../../data/MDX_CODE'
-import { USE_CONTRACT_WRITE_TOC } from '../../../data/TABLE_CONTENTS'
+import { USE_WAIT_FOR_TRANSACTION, USE_SEND_TRANSACTION_EXAMPLE } from '../../../data/MDX_CODE'
+import { USE_WAIT_FOR_TRANSACTION_TOC } from '../../../data/TABLE_CONTENTS'
+import { SIDE_BAR_NAVIGATION } from '../../../data/NAVIGATION'
 import FooterRouter from '../../../components/FooterRouter'
 import Text from '../../../components/Text/Index'
 import NextImage from 'next/future/image'
 
 <MDXLayout>
   <MDXContentSection>
-      <MDXContentBlock id="get-started">
-        ## UseAccount
-        Getting started with Web3Modal is fast and easy. Web3Modal is chain agnostic and plays with your preferred front-end framework.
-        To see what other frameworks and chains we currently support, please visit our [GitHub](https://github.com/WalletConnect/web3modal).
-      </MDXContentBlock>
-
-      <MDXContentBlock id="wallet-connect-cloud">
-        ## WalletConnect Cloud
-        If this is your first time using Web3Modal, you will need to obtain a `projectId`. You can follow [this guide](https://walletconnect.com/) if you need help.
-      </MDXContentBlock>
-
+      <Text variant="heading4" color="white" id="use-wait-for-transaction">useWaitForTransaction</Text>
       <MDXContentBlock>
-        ## Install
-        Install the packages for your project. In our example, our front-end framework will be
-        React and the chain will be Ethereum.
-        <CodeSyntax codeString={USE_CONTRACT_WRITE} codeType={"terminal"} />
+        Hook for declaratively waiting until transaction is processed. Pairs well with ```useContractWrite``` and ```useSendTransaction.```
+        <CodeSyntax codeString={USE_WAIT_FOR_TRANSACTION} codeType={"app"} />
       </MDXContentBlock>
-
-      <FooterRouter previousRoute="/try-it-out" previousRouteName="Try It Out" nextRoute="/react" nextRouteName="React" padding="lg" />
+      <Text variant="heading4" color="white" id="example">Example</Text>
+      <MDXContentBlock>
+        <CodeSyntax codeString={USE_SEND_TRANSACTION_EXAMPLE} codeType={"app"} />
+      </MDXContentBlock>
+    <FooterRouter
+        previousRoute={SIDE_BAR_NAVIGATION[5].nestedNav[22].href}
+        previousRouteName={SIDE_BAR_NAVIGATION[5].nestedNav[22].title}
+        nextRoute={SIDE_BAR_NAVIGATION[5].nestedNav[24].href}
+        nextRouteName={SIDE_BAR_NAVIGATION[5].nestedNav[24].title}
+        padding="lg"
+    />
 
   </MDXContentSection>
-  <MDXToCSection data={USE_CONTRACT_WRITE_TOC}/>
+  <MDXToCSection data={USE_WAIT_FOR_TRANSACTION_TOC}/>
 </MDXLayout>

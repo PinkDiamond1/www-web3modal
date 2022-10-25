@@ -1,35 +1,36 @@
+import styles from '../../../styles/Home.module.css'
 import MDXLayout from '../../../components/MDX/Layout/Index'
 import MDXContentSection from '../../../components/MDX/Content/Index'
+import MDXContentBlock from '../../../components/MDX/ContentBlock'
 import MDXToCSection from '../../../components/MDX/TOC/Index'
 import CodeSyntax from '../../../components/MDX/CodeSyntax/Index'
+
+import { USE_SWITCH_NETWORK, USE_SWITCH_NETWORK_EXAMPLE } from '../../../data/MDX_CODE'
+import { USE_SWITCH_NETWORK_TOC } from '../../../data/TABLE_CONTENTS'
+import { SIDE_BAR_NAVIGATION } from '../../../data/NAVIGATION'
 import FooterRouter from '../../../components/FooterRouter'
 import Text from '../../../components/Text/Index'
 import NextImage from 'next/future/image'
 
-import { USE_SWITCH_NETWORK, USE_SWITCH_NETWORK_EXAMPLE } from '../../../data/MDX_CODE'
-import { USE_SWITCH_NETWORK_TOC } from '../../../data/TABLE_CONTENTS'
-
 <MDXLayout>
-    <MDXContentSection>
-        <div>
-          <div style={{padding: '1em 0 1em 0'}}>          
-            <Text variant="heading4" color="white" id="use-switch-network">useSwitchNetwork</Text>
-            <Text variant="text3" color="grey">
-                Hook for switching networks with a connector.
-            </Text>
-            <CodeSyntax codeString={USE_SWITCH_NETWORK} codeType={"app"} />
-        </div>
-        <div style={{padding: '1em 0 1em 0'}}>          
-            <Text variant="heading5" color="white" id="example">Example</Text>
-            <CodeSyntax codeString={USE_SWITCH_NETWORK_EXAMPLE} codeType={"app"} />
-        </div>
-        <FooterRouter
-            previousRoute="/action-hooks/use-sign-typed-data"
-            previousRouteName="Use Sign Typed Data"
-            padding="lg"
-        />
-        </div>
-    </MDXContentSection>
-    <MDXToCSection data={USE_SWITCH_NETWORK_TOC}/>
+  <MDXContentSection>
+      <Text variant="heading4" color="white" id="use-switch-network">useSwitchNetwork</Text>
+      <MDXContentBlock>
+        Hook for switching networks with a connector.
+        <CodeSyntax codeString={USE_SWITCH_NETWORK} codeType={"app"} />
+      </MDXContentBlock>
+      <Text variant="heading4" color="white" id="example">Example</Text>
+      <MDXContentBlock>
+        <CodeSyntax codeString={USE_SWITCH_NETWORK_EXAMPLE} codeType={"app"} />
+      </MDXContentBlock>
+    <FooterRouter
+        previousRoute={SIDE_BAR_NAVIGATION[5].nestedNav[19].href}
+        previousRouteName={SIDE_BAR_NAVIGATION[5].nestedNav[19].title}
+        nextRoute={SIDE_BAR_NAVIGATION[5].nestedNav[21].href}
+        nextRouteName={SIDE_BAR_NAVIGATION[5].nestedNav[21].title}
+        padding="lg"
+    />
 
+  </MDXContentSection>
+  <MDXToCSection data={USE_SWITCH_NETWORK_TOC}/>
 </MDXLayout>

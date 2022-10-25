@@ -21,7 +21,7 @@
     min-height: 90vh;
     background-color: rgba(0, 0, 0, 0.3);
     display:flex;
-    /* width: 20%; */
+    min-width: 25vw;
     flex-direction: column;
     justify-content: space-between;
 }
