@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import s from '../../styles/Layout.module.css'
 import Text from '../Text/Index'

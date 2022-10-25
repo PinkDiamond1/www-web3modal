@@ -11,15 +11,29 @@ import checkeredImage from '../../../../public/CheckerPattern.png'
 import { W3mConnectWalletMobile } from '../../Web3Modal/W3MConnectWalletMobile/Index'
 import { useEffect, useState } from 'react'
 import { isMobile } from '../../../utils/Index'
+import { ThemeCtrl } from '../../../controllers/ThemeCtrl'
 
 const CustomizableUI = () => {
   const { isOpen, open, close } = useConnectModal()
   const [currentAccentColor, setCurrentAccentColor] = useState('default')
 
   useEffect(() => {
-    // console.log('ThemeCtrl', ThemeCtrl.state.accentColor)
+    setCurrentAccentColor(ThemeCtrl.state.accentColor)
+    console.log('ThemeCtrl', ThemeCtrl.state.accentColor)
   }, [currentAccentColor])
 
+  const changeTheme = (theme: string) => {
+    // setCurrentAccentColor(theme)
+    ThemeCtrl.setTheme(theme)
+  }
+
+  const changeAccentColor = (color: string) => {
+    // setCurrentAccentColor(theme)
+    // setCurrentAccentColor(color)
+    ThemeCtrl.setAccentColor(color)
+    // console.log('ClientCtrl 1', ConfigCtrl.state.accentColor)
+    // Client.setAccentColor(color)
+  }
   // const unsubscribeThemeCtrl = ThemeCtrl.subscribe(() => {
   //   setTheme(ThemeCtrl.state.theme)
   //   setAccentColor(ThemeCtrl.state.accentColor)
@@ -66,13 +80,14 @@ const CustomizableUI = () => {
               height: '80%'
             }}
           >
-            <w3m-modal />
+            {/* <w3m-modal /> */}
             <W3mConnectWalletDesktop />
             {/* {<W3mConnectWalletMobile />} */}
           </div>
           <ThemePicker
             currentAccentColor={currentAccentColor}
             setCurrentAccentColor={setCurrentAccentColor}
+            changeAccentColor={changeAccentColor()}
           />
           {/* <ThemePicker /> */}
           {/* <W3mConnectWalletMobile /> */}

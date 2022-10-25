@@ -38,7 +38,7 @@ export default function CodeSyntax({ codeString, codeType }: CodeSyntaxProps) {
         style={{ marginRight: 8 }}
       />
       <Text variant="text3" color="grey">
-        App
+        App.js
       </Text>
     </div>
   )

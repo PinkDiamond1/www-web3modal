@@ -1,13 +1,4 @@
-import {
-  JSXElementConstructor,
-  Key,
-  ReactElement,
-  ReactFragment,
-  ReactNode,
-  useEffect,
-  useRef,
-  useState
-} from 'react'
+import { ReactNode, useState } from 'react'
 import { useIntersectionObserver } from '../../../hooks/useIntersectionObserver'
 import Text from '../../Text/Index'
 import s from './styles.module.css'

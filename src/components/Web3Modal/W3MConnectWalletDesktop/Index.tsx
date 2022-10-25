@@ -2,10 +2,11 @@ import { W3mConnectWalletView } from '@web3modal/ui/dist/_types/src/views/w3m-co
 import { W3mDesktopWalletSelection } from '@web3modal/ui/dist/_types/src/partials/w3m-desktop-wallet-selection'
 import { W3mMobileWalletSelection } from '@web3modal/ui/dist/_types/src/partials/w3m-mobile-wallet-selection'
 import { W3mModalBackcard } from '@web3modal/ui/dist/_types/src/components/w3m-modal-backcard'
-import React from 'react'
+import React, { useEffect } from 'react'
 import Text from '../../Text/Index'
 import s from './styles.module.css'
 import { relative } from 'path'
+import { ThemeCtrl } from '../../../controllers/ThemeCtrl'
 
 /**
  * Component
@@ -19,6 +20,13 @@ import { relative } from 'path'
 //  */
 
 export function W3mConnectWalletDesktop() {
+  const [renderTheme, setRenderTheme] = React.useState('light')
+
+  useEffect(() => {
+    console.log(ThemeCtrl.state.accentColor)
+    console.log(ThemeCtrl.state.theme)
+  }, [])
+
   //   props: JSX.IntrinsicElements['w3m-connect-wallet-view'],
   //   props2: JSX.IntrinsicElements['w3m-desktop-wallet-selection'],
   //   props3: JSX.IntrinsicElements['w3m-mobile-wallet-selection']

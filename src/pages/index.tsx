@@ -8,7 +8,7 @@ import IntroText from '../components/IntroText/Index'
 import FeatureCards from '../components/Features/Index'
 import Video from '../components/Video/Index'
 import AlphaBanner from '../components/AlphaBanner/Index'
-// import CustomizableUI from '../components/Features/CustomizableUI/Index'
+import CustomizableUI from '../components/Features/CustomizableUI/Index'
 // import { isMobile } from '../utils/Index'
 
 const Home: NextPage = () => {

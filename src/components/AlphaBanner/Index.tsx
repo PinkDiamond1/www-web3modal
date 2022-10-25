@@ -1,30 +1,41 @@
 import { useRouter } from 'next/router'
-import { Dispatch, ReactElement, SetStateAction, useEffect, useState } from 'react'
+import { createContext, Dispatch, ReactElement, SetStateAction, useEffect, useState } from 'react'
 import Button from '../Button/Index'
 import Text from '../Text/Index'
 import s from './styles.module.css'
 
 const AlphaBanner = ({}) => {
-  const [closeBanner, setCloseBanner] = useState(false)
+  const [showBanner, setShowBanner] = useState(true)
 
-  if (closeBanner) {
-    return null
-  }
+  useEffect(() => {
+    const data = window.localStorage.getItem('MY_APP_STATE')
+    if (data !== null) setShowBanner(JSON.parse(data))
+  }, [])
+
+  useEffect(() => {
+    window.localStorage.setItem('MY_APP_STATE', JSON.stringify(showBanner))
+  }, [showBanner])
 
   return (
-    <div className={s.bannerContainer}>
-      <Text variant="text3" color="white">
-        🚧
-        <span style={{ marginLeft: 10 }} /> ALPHA RELEASE <span style={{ marginRight: 10 }} /> 🚧
-      </Text>
-      <p
-        style={{ position: 'absolute', right: 10, top: -10, cursor: 'pointer' }}
-        onClick={() => {
-          setCloseBanner(true)
-        }}
-      >
-        X
-      </p>
+    <div>
+      {showBanner && (
+        <div className={s.bannerContainer}>
+          <Text variant="text3" color="blue">
+            🚧
+            <span style={{ marginLeft: 10 }} /> Web3Modal is in{' '}
+            <span style={{ color: '#99CBFF' }}>public alpha </span> and constantly being improved{' '}
+            <span style={{ marginRight: 10 }} /> 🚧
+          </Text>
+          <p
+            style={{ position: 'absolute', right: 10, top: -10, cursor: 'pointer' }}
+            onClick={() => {
+              setShowBanner(false)
+            }}
+          >
+            X
+          </p>
+        </div>
+      )}
     </div>
   )
 }

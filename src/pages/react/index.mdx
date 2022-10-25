@@ -27,15 +27,8 @@ import { TOC_REACT } from '../../data/TABLE_CONTENTS'
       </MDXContentBlock>
 
       <Text variant="heading4" color="white" id="configure-app">Configure your app</Text>
-      <Text variant="heading5" color="white" id="create-env">create .ENV</Text>
       <MDXContentBlock >
-        Save the project ID as an environment variable. Install dotenv and create a new file called .env
-        <CodeSyntax codeString={CREATE_ENV} codeType={"terminal"} />
-        Create a new variable called ```REACT_APP_PROJECT_ID```
-        <CodeSyntax codeString={REACT_PROJECT_ID} codeType={"app"} />
-        To confirm that you can log this variable add the following code after the import statements.
-        <CodeSyntax codeString={CONSOLE_LOG_REACT_PROJECT_ID} codeType={"app"} />
-        Remove the log and ```import Web3ModalProviderfrom @web3modal/react```.  You will wrap your consuming app with ```Web3ModalProvider.``` Set projectId to ```REACT_APP_PROJECT_ID.```
+        Add ```import Web3ModalProviderfrom @web3modal/react```. Set projectId to ```YOUR_PROJECT_ID```
         <CodeSyntax codeString={WEB3_MODAL_REACT} codeType={"app"} />
       </MDXContentBlock>
 

@@ -10,6 +10,7 @@ import checkeredImage from '../../../public/CheckerPattern.png'
 import { useState } from 'react'
 import MobileTryItOut from '../../components/MobileTryItOut'
 import W3MButtonStateless from '../../components/Web3Modal/W3MButtonStateless/Index'
+import { TRY_IT_OUT_CODE } from '../../data/MDX_CODE'
 
 const TryItOut: NextPage = () => {
   const [copied, setCopied] = useState(false)
@@ -20,7 +21,7 @@ const TryItOut: NextPage = () => {
 
   // Add the React Code for the State...
   const copyCode = () => {
-    navigator.clipboard.writeText('....')
+    navigator.clipboard.writeText(TRY_IT_OUT_CODE)
     setCopied(true)
     setTimeout(() => {
       setCopied(false)

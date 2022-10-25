@@ -1,8 +1,7 @@
 //-------- GET STARTED -------------------------------//
 export const INSTALL_INSTRUCTIONS = 'yarn add @web3modal/react @web3modal/ethereum ethers'
 
-export const APP_SETUP = `// App.js
-import { chains, providers } from '@web3modal/ethereum'
+export const APP_SETUP = `import { chains, providers } from '@web3modal/ethereum'
 import { Web3ModalProvider } from '@web3modal/react'
 
 const NEXT_PUBLIC_PROJECT_ID = { process.env }
@@ -28,8 +27,7 @@ export default function App({ Component, pageProps }) {
   )
 }`
 
-export const GET_ADDRESS = `// index.tsx
-import { ConnectButton, useAccount } from '@web3modal/react'
+export const GET_ADDRESS = `import { ConnectButton, useAccount } from '@web3modal/react'
 
 export default function HomePage() {
   const { connected, address } = useAccount()
@@ -43,31 +41,42 @@ export default function HomePage() {
   )
 }`
 
+//-------- TRY IT OUT -------------------------------//
+export const TRY_IT_OUT_CODE = `
+import { useConnected, ConnectButton, useConnectModal } from '@web3modal/react'
+export default function YourAppContent() {
+  const { isOpen, open, close } = useConnectModal()
+  const { connected } = useConnected()
+
+  return (
+    <>
+      <div>{!isConnected ? <ConnectButton /> : accountButton()}</div>
+      {/* or */}
+      <button onClick={open}>Open Modal</button>
+    </>
+  )
+}
+`
+
 //-------- REACT -------------------------------//
 export const CREATE_REACT_APP = `npx create-react-app wallectconnect-react-demo
 cd walletconnect-react-demo
 yarn add @web3modal/react @web3modal/ethereum ethers`
 
-export const CREATE_ENV = `npm i dot
+export const CREATE_ENV = `yarn add dot
 env touch .env`
 
 export const REACT_PROJECT_ID = `// .env
 REACT_APP_PROJECT_ID='YOUR_PROJECT_ID'`
 
-export const CONSOLE_LOG_REACT_PROJECT_ID = `// index.js
-const { REACT_APP_PROJECT_ID } = process.env
+export const CONSOLE_LOG_REACT_PROJECT_ID = `const { REACT_APP_PROJECT_ID } = process.env
 console.log('REACT_APP_PROJECT_ID', REACT_APP_PROJECT_ID)`
 
-export const WEB3_MODAL_REACT = `// App.js
-import { Web3ModalProvider } from "@web3modal/react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
+export const WEB3_MODAL_REACT = `import ReactDOM from "react-dom/client";
 import App from "./App";
 
-const { REACT_APP_PROJECT_ID } = process.env
-
 const config = {
-  projectId: REACT_APP_PROJECT_ID,
+  projectId: YOUR_PROJECT_ID
   theme: "dark",
   accentColor: "default",
   ethereum: {
@@ -85,23 +94,17 @@ root.render(
 
 );`
 
-export const GET_CONNECTED_REACT = `// App.js
-
-import { ConnectButton, useAccount } from '@web3modal/react';
+export const GET_CONNECTED_REACT = `import { ConnectButton, useAccount } from '@web3modal/react';
 
 function App() {
   const { connected, address } = useAccount()
 
-  return connected ? (
-    <>
-      <h1>{address ? address : 'none'} </h1>
-    </>
-  ) : (
-    <ConnectButton />
-  )
+  return connected ? <h1>{address ? address : 'none'} </h1> : <ConnectButton />
+
 }
 
-export default App;`
+export default App;
+`
 
 //-------- MODAL -------------------------------//
 
@@ -116,6 +119,152 @@ interface Return {
   isOpen: boolean
   open: () => void
   close: () => void
+}
+`
+
+//-------- DATA HOOKS -------------------------------//
+export const USE_ACCOUNT = `import { useAccount } from '@web3modal/react'
+
+// Usage
+const { account, isReady } = useAccount()
+
+// Returns
+interface Return {
+  account: {
+    address: string | ''
+    connector?: Connector
+    isConnecting?: boolean
+    isReconnecting?: boolean
+    isConnected?: boolean
+    isDisconnected?: boolean
+    status?: 'connecting' | 'reconnecting' | 'connected' | 'disconnected'
+  }
+  isReady: boolean
+}
+`
+
+export const USE_ACCOUNT_EXAMPLE = `import { useAccount } from '@web3modal/react'
+
+export default function UseAccount() {
+  const { account, isReady } = useAccount()
+
+  return (
+    <section>
+      <h1>useAccount</h1>
+      <ul>
+        <li>
+          Ready: <span>{isReady}</span>
+        </li>
+        <li>
+          Connected: <span>{account.isConnected ? 'Yes' : 'No'}</span>
+        </li>
+        <li>
+          Connector: <span>{account.connector?.id}</span>
+        </li>
+        <li>
+          Address: <span>{account.address}</span>
+        </li>
+      </ul>
+    </section>
+  )
+}
+`
+
+export const USE_BALANCE = `import { useBalance } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading, refetch } = useBalance({ addressOrName: 'vitalik.eth' })
+
+// Returns
+interface Return {
+  data?: {
+    decimals: number
+    formatted: string
+    symbol: string
+    value: BigNumber
+  }
+  error?: Error
+  isLoading: boolean
+  refetch: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  addressOrName: string
+  watch?: boolean
+  enabled?: boolean
+  chainId?: number
+  formatUnits?: number | 'wei' | 'kwei' | 'mwei' | 'gwei' | 'szabo' | 'finney' | 'ether'
+  token?: string
+}
+`
+
+export const USE_BALANCE_EXAMPLE = `import { useAccount, useBalance } from '@web3modal/react'
+
+export default function UseBalance() {
+  const { account } = useAccount()
+  const { data, error, isLoading, refetch } = useBalance({
+    addressOrName: account.address
+  })
+
+  return (
+    <section>
+      <h1>useBalance</h1>
+
+      <ul>
+        <li>
+          Balance Data: <span>{isLoading ? 'Loading...' : JSON.stringify(data, null, 2)}</span>
+        </li>
+        <li>
+          Error: <span>{error ? error.message : 'No Error'}</span>
+        </li>
+      </ul>
+      <button onClick={async () => refetch()}>Refetch</button>
+    </section>
+  )
+}
+`
+export const USE_BLOCK_NUMBER = `import { useBlockNumber } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading, refetch } = useBlockNumber({ watch: true })
+
+// Returns
+interface Return {
+  data?: number
+  error?: Error
+  isLoading: boolean
+  refetch: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  watch?: boolean
+  enabled?: boolean
+  chainId?: number
+}
+`
+
+export const USE_BLOCK_NUMBER_EXAMPLE = `import { useBlockNumber } from '@web3modal/react'
+
+export default function UseBlockNumber() {
+  const { data, error, isLoading, refetch } = useBlockNumber({ watch: true })
+
+  return (
+    <section>
+      <h1>useBlockNumber</h1>
+
+      <ul>
+        <li>
+          BlockNumber: <span>{isLoading ? 'Loading...' : data}</span>
+        </li>
+        <li>
+          Error: <span>{error ? error.message : 'No Error'}</span>
+        </li>
+      </ul>
+      <button onClick={async () => refetch()}>Refetch</button>
+    </section>
+  )
 }
 `
 

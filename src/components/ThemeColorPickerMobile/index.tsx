@@ -11,10 +11,15 @@ import { chains, providers } from '@web3modal/ethereum'
 interface Props {
   currentAccentColor?: string
   setCurrentAccentColor: React.Dispatch<React.SetStateAction<string>>
+  changeAccentColor: () => void
 }
 
 // ToDo: Make it into a Layout Component
-export default function ThemePicker({ currentAccentColor, setCurrentAccentColor }: Props) {
+export default function ThemePicker({
+  currentAccentColor,
+  setCurrentAccentColor,
+  changeAccentColor
+}: Props) {
   const [theme, setTheme] = useState('light')
   // const [accentColor, setAccentColor] = useState('default')
 
@@ -39,27 +44,27 @@ export default function ThemePicker({ currentAccentColor, setCurrentAccentColor 
 
   // console.log(modalConfig)
 
-  const changeAccentColor = (color: string) => {
-    // setCurrentAccentColor(theme)
-    // setCurrentAccentColor(color)
-    ThemeCtrl.setAccentColor(color)
+  // const changeAccentColor = (color: string) => {
+  //   // setCurrentAccentColor(theme)
+  //   // setCurrentAccentColor(color)
+  //   ThemeCtrl.setAccentColor(color)
 
-    ConfigCtrl.setConfig({
-      projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
-      theme: ThemeCtrl.state.theme as ConfigOptions['theme'],
-      accentColor: currentAccentColor as ConfigOptions['accentColor'],
-      ethereum: {
-        appName: 'web3Modal',
-        autoConnect: true,
-        chains: [chains.mainnet],
-        providers: [
-          providers.walletConnectProvider({ projectId: process.env.NEXT_PUBLIC_PROJECT_ID! })
-        ]
-      }
-    })
-    // console.log('ClientCtrl 1', ConfigCtrl.state.accentColor)
-    // Client.setAccentColor(color)
-  }
+  //   ConfigCtrl.setConfig({
+  //     projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
+  //     theme: ThemeCtrl.state.theme as ConfigOptions['theme'],
+  //     accentColor: currentAccentColor as ConfigOptions['accentColor'],
+  //     ethereum: {
+  //       appName: 'web3Modal',
+  //       autoConnect: true,
+  //       chains: [chains.mainnet],
+  //       providers: [
+  //         providers.walletConnectProvider({ projectId: process.env.NEXT_PUBLIC_PROJECT_ID! })
+  //       ]
+  //     }
+  //   })
+  //   // console.log('ClientCtrl 1', ConfigCtrl.state.accentColor)
+  //   // Client.setAccentColor(color)
+  // }
 
   const buttonColorCheck = (color: string) => {
     if (color === 'default') {
