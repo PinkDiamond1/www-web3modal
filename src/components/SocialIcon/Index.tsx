@@ -1,7 +1,5 @@
 import s from './styles.module.css'
 import Image from 'next/image'
-import Link from 'next/link'
-import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
 
 interface SocialIconProps {
   title: string
@@ -20,7 +18,7 @@ export default function SocialIcon({ image, title, uri }: SocialIconProps) {
           layout="responsive"
           width={24}
           height={24}
-          className={s.fillWhite}
+          className={title === 'Github' ? s.fillWhite : s.fillNone}
         />
       </div>
     </a>

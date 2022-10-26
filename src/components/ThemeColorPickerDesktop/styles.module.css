@@ -20,6 +20,17 @@
 
 .nonSelectedAccentColor {
     margin: 8px 10px 0px 0px;
+    outline: 1px solid #3B4040;
+}
+
+.selectedThemedColor {
+    margin: 8px 10px 0px 0px;
+    border: 2px solid #171717; 
+    outline: 2px solid white;
+}
+
+.nonSelectedThemedColor {
+    margin: 8px 10px 0px 0px;
 }
 
 @media screen and (max-width: 800px) {

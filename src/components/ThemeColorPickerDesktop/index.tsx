@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { ThemeCtrl } from '../../controllers/ThemeCtrl'
 import { ACCENT_COLORS, THEME } from '../../data/COLOR_PICKER'
 import Button from '../Button/Index'
@@ -43,11 +42,11 @@ export default function ColorPickerDesktop() {
               onClick={() => changeTheme(theme.value)}
               key={theme.title}
               variant="fill"
-              color={theme.color}
+              color={checkCurrentTheme(theme.value) ? 'blue' : 'greyNew'}
               className={
                 checkCurrentTheme(theme.value) ? s.selectedAccentColor : s.nonSelectedAccentColor
               }
-              iconLeft={<NextImage src={theme.icon} width={24} height={24} alt={''} />}
+              iconLeft={<NextImage src={theme.icon} width={30} height={30} alt={''} />}
               textVariant="heading6"
             >
               {theme.title}

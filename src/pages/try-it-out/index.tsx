@@ -14,12 +14,10 @@ import { TRY_IT_OUT_CODE } from '../../data/MDX_CODE'
 
 const TryItOut: NextPage = () => {
   const [copied, setCopied] = useState(false)
-  // const [windowHeight, setWindowHeight] = useState(0)
   const { isConnected } = useAccount()
   const disconnect = useDisconnect()
   let isMobileDimension
 
-  // Add the React Code for the State...
   const copyCode = () => {
     navigator.clipboard.writeText(TRY_IT_OUT_CODE)
     setCopied(true)

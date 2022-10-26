@@ -27,7 +27,7 @@ export const SOCIAL_ICON_COMMUNITY = [
     description: 'Raise an Issue',
     color: 'blackWhite',
     image: '/icons/social/Github.svg',
-    fill: 'blackWhite',
+    fill: 'white',
     uri: 'https://github.com/WalletConnect/web3modal'
   },
   {

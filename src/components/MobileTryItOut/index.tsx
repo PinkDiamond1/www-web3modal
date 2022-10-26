@@ -57,9 +57,9 @@ export default function MobileTryItOut() {
               }}
               key={theme.title}
               variant="fill"
-              color={theme.color}
+              color={checkCurrentTheme(theme.value) ? 'blue' : 'greyNew'}
               className={
-                checkCurrentTheme(theme.value) ? s.selectedAccentColor : s.nonSelectedAccentColor
+                checkCurrentTheme(theme.value) ? s.selectedThemeColor : s.nonSelectedThemeColor
               }
               iconLeft={<NextImage src={theme.icon} width={24} height={24} alt={''} />}
               textVariant="heading6"

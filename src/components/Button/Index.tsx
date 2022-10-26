@@ -18,6 +18,7 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'blackWhite'
     | 'black'
     | 'blueNew'
+    | 'greyNew'
     | 'pink'
   className?: string
   iconLeft?: JSX.Element
@@ -64,6 +65,7 @@ export default function Button({
       s.fillWhite,
       s.fillBlueNew,
       s.fillCyan,
+      s.fillGreyNew,
       s.outlineGrey,
       s.outlineBlue,
       s.ghost
@@ -79,6 +81,7 @@ export default function Button({
       color === 'blackWhite' && variant === 'fill',
       color === 'blueNew' && variant === 'fill',
       color === 'cyan' && variant === 'fill',
+      color === 'greyNew' && variant === 'fill',
       color === 'grey' && variant === 'outline',
       color === 'blue' && variant === 'outline',
       variant === 'ghost'
