@@ -81,7 +81,6 @@ export default function NavItem({
             nestedNav.map(({ href, title }) => (
               <div
                 onClick={() => {
-                  setTrackNestedHeaderOpen(!trackNestedHeaderOpen)
                   onOpenClick
                 }}
                 key={title}
