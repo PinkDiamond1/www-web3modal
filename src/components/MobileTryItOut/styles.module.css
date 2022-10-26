@@ -15,6 +15,7 @@
   border: 2px solid #171717; 
   outline: 2px solid white;
   color: white;
+  
 }
 
 .nonSelectedAccentColor {
@@ -26,11 +27,14 @@
   margin: 8px 10px 0px 0px;
   border: 2px solid #171717; 
   outline: 2px solid white;
+  color: white;
 }
 
 .nonSelectedThemeColor {
   margin: 8px 10px 0px 0px;
   border: 1px solid #171717;
+  color: white;
+
 }
 
 @media screen and (max-width: 800px) {

@@ -1,12 +1,12 @@
 import Text from '../Text/Index'
 import { animate, timeline } from 'motion'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import s from './styles.module.css'
 import Tag from '../Tag/Index'
 import { SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
 import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
-import NextImage from 'next/future/image'
+import Image from 'next/image'
 import NavItem from '../layout/NavItem'
 
 const topLine = `#${s.hamburgerTop}`
@@ -16,10 +16,19 @@ const menuContent = `.${s.menuContent}`
 
 //ToDo: Figure Hydration error...
 export default function Header() {
+  const scrollRef = useRef(null)
   const [open, setOpen] = useState(false)
+  const [trackNestedHeaderOpen, setTrackNestedHeaderOpen] = useState(false)
 
   function onOpenClick() {
     setOpen(prev => !prev)
+    // scrollRef.current.overflow === 'auto'
+    // document.getElementsByTagName('html')[0].classList.add('allowScroll')
+    // if (open === true) {
+    //   document.getElementsByTagName('html')[0].classList.add('allowScroll')
+    // } else {
+    //   document.getElementsByTagName('html')[0].classList.remove('allowScroll')
+    // }
   }
 
   function onOpenMobileMenu() {
@@ -68,7 +77,9 @@ export default function Header() {
     } else {
       onMobileMenuClose()
     }
-  }, [open])
+
+    console.log('trackNestedHeaderOpen', trackNestedHeaderOpen)
+  }, [open, trackNestedHeaderOpen])
 
   const headerContent = (
     <div className={s.headerContent}>
@@ -104,6 +115,8 @@ export default function Header() {
                     title={link.title}
                     nestedNav={link.nestedNav}
                     onOpenClick={onOpenClick}
+                    setTrackNestedHeaderOpen={setTrackNestedHeaderOpen}
+                    trackNestedHeaderOpen={trackNestedHeaderOpen}
                   />
                 </>
               </Link>
@@ -114,6 +127,7 @@ export default function Header() {
     </div>
   )
 
+  //ToDo: revisit SVG (temp solution)
   const socialContent = (
     <div>
       <ul id={s.social} className={s.menuContent}>
@@ -125,12 +139,12 @@ export default function Header() {
         {SOCIAL_ICON.map(link => (
           <li key={link.title}>
             <a href={link.uri} target="_blank" rel="noreferrer" className={s.socialIconContainer}>
-              <NextImage
+              <Image
                 src={link.image}
                 alt={`${link.title} icon`}
                 width="24"
                 height="24"
-                className={s.socialIcon}
+                className={link.title === 'Github' ? s.socialIconWhiteTemp : s.socialIcon}
               />
             </a>
           </li>
@@ -140,7 +154,7 @@ export default function Header() {
   )
 
   return (
-    <header id={s.header}>
+    <header id={s.header} className={trackNestedHeaderOpen ? s.headerActive : s.header}>
       {headerContent}
       {routeContent}
       {socialContent}

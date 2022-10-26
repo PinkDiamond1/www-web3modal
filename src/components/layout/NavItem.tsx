@@ -17,11 +17,22 @@ interface Props {
   href: string
   title: string
   onOpenClick?: () => void
+  hooksOpen?: boolean
+  setTrackNestedHeaderOpen?: React.Dispatch<React.SetStateAction<boolean>>
+  trackNestedHeaderOpen?: boolean | undefined
 }
 
 // const closedChevron = `.${s.closedChevron}`
 
-export default function NavItem({ href, title, nestedNav, onOpenClick, ...props }: Props) {
+export default function NavItem({
+  href,
+  title,
+  nestedNav,
+  onOpenClick,
+  hooksOpen,
+  setTrackNestedHeaderOpen,
+  ...props
+}: Props) {
   const router = useRouter()
   const [openSideBarMenu, setOpenSideBarMenu] = useState(false)
 
@@ -48,7 +59,7 @@ export default function NavItem({ href, title, nestedNav, onOpenClick, ...props 
               //   onClick
               // } else {
               setOpenSideBarMenu(!openSideBarMenu)
-
+              setTrackNestedHeaderOpen(!trackNestedHeaderOpen)
               // if (openSideBarMenu) {
               //   animate(
               //     closedChevron,
@@ -79,9 +90,15 @@ export default function NavItem({ href, title, nestedNav, onOpenClick, ...props 
         <ul style={{ paddingLeft: '1em', margin: 0 }}>
           {openSideBarMenu &&
             nestedNav.map(({ href, title }) => (
-              <div onClick={() => onOpenClick} key={title}>
+              <div
+                onClick={() => {
+                  setTrackNestedHeaderOpen(!trackNestedHeaderOpen)
+                  onOpenClick
+                }}
+                key={title}
+              >
                 <Link href={href}>
-                  <a onClick={onOpenClick}>
+                  <a>
                     <li
                       className={
                         checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute
