@@ -77,8 +77,6 @@ export default function Header() {
     } else {
       onMobileMenuClose()
     }
-
-    console.log('trackNestedHeaderOpen', trackNestedHeaderOpen)
   }, [open, trackNestedHeaderOpen])
 
   const headerContent = (

@@ -4,8 +4,6 @@ import { useState } from 'react'
 import s from '../../styles/Layout.module.css'
 import Text from '../Text/Index'
 import THINCHEVRON from '../../../public/icons/ThinChevron.svg'
-import { isMobile } from '../../utils/Index'
-import { animate } from 'motion'
 
 interface Props {
   nestedNav:
@@ -71,7 +69,9 @@ export default function NavItem({
               <Text variant="heading6" color="white" textTransform="capitalize">
                 {title}
               </Text>
-              <THINCHEVRON className={!openSideBarMenu ? s.openChevron : s.closedChevron} />
+              <div className={s.safariChevron}>
+                <THINCHEVRON className={!openSideBarMenu ? s.openChevron : s.closedChevron} />
+              </div>
             </div>
           </li>
         </ul>
