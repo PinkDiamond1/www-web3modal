@@ -13,9 +13,8 @@
 .selectedAccentColor {
   margin: 8px 10px 0px 0px;
   border: 2px solid #171717; 
-  outline: 2px solid white;
+  box-shadow: 0px 0px 0px 2px white;
   color: white;
-  
 }
 
 .nonSelectedAccentColor {
@@ -26,15 +25,21 @@
 .selectedThemeColor {
   margin: 8px 10px 0px 0px;
   border: 2px solid #171717; 
-  outline: 2px solid white;
   color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: 0px 0px 0px 2px white;
 }
+
 
 .nonSelectedThemeColor {
   margin: 8px 10px 0px 0px;
   border: 1px solid #171717;
   color: white;
-
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 @media screen and (max-width: 800px) {
@@ -78,14 +83,21 @@
     width: 100%;
     Z-index: 9;
     padding: 1.5em;
+    overflow: hidden;
   }
   .selectedAccentColor {
     margin: 8px 10px 0px 0px;
     border: 2px solid #171717; 
-    outline: 2px solid white;
+    box-shadow: 0px 0px 0px 2px white;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
   
   .nonSelectedAccentColor {
     margin: 8px 10px 0px 0px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
   }
 }
