@@ -18,8 +18,8 @@ interface Props {
   title: string
   onOpenClick?: () => void
   hooksOpen?: boolean
-  setTrackNestedHeaderOpen?: React.Dispatch<React.SetStateAction<boolean>>
-  trackNestedHeaderOpen?: boolean | undefined
+  setTrackNestedHeaderOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined
+  trackNestedHeaderOpen?: boolean
 }
 
 // const closedChevron = `.${s.closedChevron}`
@@ -30,6 +30,7 @@ export default function NavItem({
   nestedNav,
   onOpenClick,
   hooksOpen,
+  trackNestedHeaderOpen,
   setTrackNestedHeaderOpen,
   ...props
 }: Props) {
@@ -55,20 +56,8 @@ export default function NavItem({
           <li
             className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
             onClick={() => {
-              // if (isMobile()) {
-              //   onClick
-              // } else {
               setOpenSideBarMenu(!openSideBarMenu)
-              setTrackNestedHeaderOpen(!trackNestedHeaderOpen)
-              // if (openSideBarMenu) {
-              //   animate(
-              //     closedChevron,
-              //     { transform: 'rotate(90deg)' },
-              //     { duration: 0.2, easing: 'ease-in-out' }
-              //   )
-              // }
-
-              // }
+              setTrackNestedHeaderOpen?.(!trackNestedHeaderOpen)
             }}
           >
             <div
