@@ -4,8 +4,6 @@ import { useState } from 'react'
 import s from '../../styles/Layout.module.css'
 import Text from '../Text/Index'
 import THINCHEVRON from '../../../public/icons/ThinChevron.svg'
-import { isMobile } from '../../utils/Index'
-import { animate } from 'motion'
 
 interface Props {
   nestedNav:
@@ -17,11 +15,21 @@ interface Props {
   href: string
   title: string
   onOpenClick?: () => void
+  hooksOpen?: boolean
+  setTrackNestedHeaderOpen?: React.Dispatch<React.SetStateAction<boolean>> | undefined
+  trackNestedHeaderOpen?: boolean
 }
 
-// const closedChevron = `.${s.closedChevron}`
-
-export default function NavItem({ href, title, nestedNav, onOpenClick, ...props }: Props) {
+export default function NavItem({
+  href,
+  title,
+  nestedNav,
+  onOpenClick,
+  hooksOpen,
+  trackNestedHeaderOpen,
+  setTrackNestedHeaderOpen,
+  ...props
+}: Props) {
   const router = useRouter()
   const [openSideBarMenu, setOpenSideBarMenu] = useState(false)
 
@@ -44,20 +52,8 @@ export default function NavItem({ href, title, nestedNav, onOpenClick, ...props 
           <li
             className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
             onClick={() => {
-              // if (isMobile()) {
-              //   onClick
-              // } else {
               setOpenSideBarMenu(!openSideBarMenu)
-
-              // if (openSideBarMenu) {
-              //   animate(
-              //     closedChevron,
-              //     { transform: 'rotate(90deg)' },
-              //     { duration: 0.2, easing: 'ease-in-out' }
-              //   )
-              // }
-
-              // }
+              setTrackNestedHeaderOpen?.(!trackNestedHeaderOpen)
             }}
           >
             <div
@@ -71,7 +67,9 @@ export default function NavItem({ href, title, nestedNav, onOpenClick, ...props 
               <Text variant="heading6" color="white" textTransform="capitalize">
                 {title}
               </Text>
-              <THINCHEVRON className={!openSideBarMenu ? s.openChevron : s.closedChevron} />
+              <div className={s.safariChevron}>
+                <THINCHEVRON className={!openSideBarMenu ? s.openChevron : s.closedChevron} />
+              </div>
             </div>
           </li>
         </ul>
@@ -79,9 +77,16 @@ export default function NavItem({ href, title, nestedNav, onOpenClick, ...props 
         <ul style={{ paddingLeft: '1em', margin: 0 }}>
           {openSideBarMenu &&
             nestedNav.map(({ href, title }) => (
-              <div onClick={() => onOpenClick} key={title}>
+              <a
+                onClick={() => {
+                  onOpenClick?.()
+                  console.log('closing...')
+                  setTrackNestedHeaderOpen?.(!trackNestedHeaderOpen)
+                }}
+                key={title}
+              >
                 <Link href={href}>
-                  <a onClick={onOpenClick}>
+                  <a>
                     <li
                       className={
                         checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute
@@ -93,7 +98,7 @@ export default function NavItem({ href, title, nestedNav, onOpenClick, ...props 
                     </li>
                   </a>
                 </Link>
-              </div>
+              </a>
             ))}
         </ul>
       </>

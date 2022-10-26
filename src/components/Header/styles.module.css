@@ -5,13 +5,29 @@
     backdrop-filter: blur(20px) saturate(180%);
     padding: 7px 10px 10px 0px;
     position: fixed;
-    z-index: 20;
+    z-index: 30;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: 0 auto;
-    overflow: hidden;
+    overflow: auto;
+  }
+
+  #headerActive {
+    display: none;
+    background-color: rgba(39, 42, 42, 0.66);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px) saturate(180%);
+    padding: 7px 10px 10px 0px;
+    position: fixed;
+    /* z-index: 20; */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    overflow: auto;
   }
 
   .headerContent {
@@ -230,6 +246,12 @@
     height: 24px;
     width: 24px;
     /* margin-right: 4px; */
+  }
+
+  .socialIconWhiteTemp {
+    height: 24px;
+    width: 24px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(308deg) brightness(112%) contrast(101%);
   }
 
   .socialIconContainer {
