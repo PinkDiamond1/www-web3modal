@@ -19,7 +19,7 @@ const CustomizableUI = () => {
 
   useEffect(() => {
     setCurrentAccentColor(ThemeCtrl.state.accentColor)
-    console.log('ThemeCtrl', ThemeCtrl.state.accentColor)
+    // console.log('ThemeCtrl', ThemeCtrl.state.accentColor)
   }, [currentAccentColor])
 
   const changeTheme = (theme: string) => {
