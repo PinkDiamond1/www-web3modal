@@ -58,7 +58,7 @@ export interface IProps {
   target?: '_blank'
   rel?: 'noopener noreferrer'
   id?: string
-  capitalized?: boolean
+  textTransform?: 'uppercase' | 'capitalize'
 }
 
 export default function Text({
@@ -70,7 +70,7 @@ export default function Text({
   href,
   id,
   target,
-  capitalized,
+  textTransform,
   rel
 }: IProps) {
   const baseClass = useConditionalValue(
@@ -110,7 +110,11 @@ export default function Text({
 
   const variantClass = s[variant] ?? ''
 
-  const capitalizedClass = capitalized ? s.capitalized : ''
+  const capitalizedClass = useConditionalValue(
+    [s.lowerCase, s.upperCase],
+    [textTransform === 'capitalize', textTransform === 'uppercase']
+  )
+
   // eslint-disable-next-line react/no-children-prop
   return createElement(as ?? mappings[variant], {
     children,

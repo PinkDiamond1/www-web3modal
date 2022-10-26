@@ -1,0 +1,37 @@
+import styles from '../../../styles/Home.module.css'
+import MDXLayout from '../../../components/MDX/Layout/Index'
+import MDXContentSection from '../../../components/MDX/Content/Index'
+import MDXContentBlock from '../../../components/MDX/ContentBlock'
+import MDXToCSection from '../../../components/MDX/TOC/Index'
+import CodeSyntax from '../../../components/MDX/CodeSyntax/Index'
+
+import { USE_ENS_AVATAR, USE_ENS_AVATAR_EXAMPLE } from '../../../data/MDX_CODE'
+import { USE_ENS_AVATAR_TOC } from '../../../data/TABLE_CONTENTS'
+import { SIDE_BAR_NAVIGATION } from '../../../data/NAVIGATION'
+import FooterRouter from '../../../components/FooterRouter'
+import Text from '../../../components/Text/Index'
+import NextImage from 'next/future/image'
+
+<MDXLayout>
+  <MDXContentSection>
+      <Text variant="heading4" color="white" id="use-ens-avatar">useEnsAvatar</Text>
+      <MDXContentBlock id="get-started">
+        Hook for fetching avatar for ENS name.
+        <CodeSyntax codeString={USE_ENS_AVATAR} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="example">Example</Text>
+      <MDXContentBlock id="wallet-connect-cloud">
+        <CodeSyntax codeString={USE_ENS_AVATAR_EXAMPLE} codeType={"app"} />
+      </MDXContentBlock>
+    <FooterRouter
+        previousRoute={SIDE_BAR_NAVIGATION[5].nestedNav[9].href}
+        previousRouteName={SIDE_BAR_NAVIGATION[5].nestedNav[9].title}
+        nextRoute={SIDE_BAR_NAVIGATION[5].nestedNav[11].href}
+        nextRouteName={SIDE_BAR_NAVIGATION[5].nestedNav[11].title}
+        padding="lg"
+    />
+
+  </MDXContentSection>
+  <MDXToCSection data={USE_ENS_AVATAR_TOC}/>
+</MDXLayout>

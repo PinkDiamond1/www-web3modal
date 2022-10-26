@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import s from '../../styles/Layout.module.css'
 import Text from '../Text/Index'
@@ -6,6 +5,7 @@ import Tag from '../Tag/Index'
 import SocialIcon from '../SocialIcon/Index'
 import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
 import { SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
+import NavItem from './NavItem'
 
 export default function SideBar() {
   const router = useRouter()
@@ -18,20 +18,35 @@ export default function SideBar() {
     }
   }
 
+  const socialContent = (
+    <div style={{ paddingBottom: '1.5em' }}>
+      <Text variant="heading6" color="grey" className={s.docsHeading}>
+        Community
+      </Text>
+      <div style={{ display: 'flex', justifyContent: 'flex-start', padding: 8, fill: 'white' }}>
+        {SOCIAL_ICON.map(data => (
+          <div key={data.title}>
+            <SocialIcon image={data.image} uri={data.uri} title={data.title} />
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+
   return (
     <aside className={s.sidebarContainerTwo}>
       <div
         style={{
           display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          width: 250 // ToDo: Push up higher
+          justifyContent: 'flex-start'
         }}
       >
-        <Text variant="heading4" color="grey">
-          Web3Modal
-        </Text>
-        <Tag> 2.0.0</Tag>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <Text variant="heading4" color="white">
+            Web3Modal
+          </Text>
+          <Tag>2.0.0</Tag>
+        </div>
       </div>
       <nav
         style={{
@@ -39,39 +54,20 @@ export default function SideBar() {
           flexDirection: 'column',
           justifyContent: 'space-between',
           height: '100%',
-          width: '10'
+          marginTop: '2.5em'
         }}
       >
-        <div>
-          <Text variant="heading6" color="grey" className={s.docsHeading}>
+        <div className={s.docsHeading}>
+          <Text variant="text3" color="grey">
             Docs
           </Text>
-          <ul style={{ padding: 0, margin: 0 }}>
-            {SIDE_BAR_NAVIGATION.map(({ href, title }) => (
-              <li
-                key={title}
-                className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
-              >
-                <Link href={href} style={{}}>
-                  <a>{title}</a>
-                </Link>
-              </li>
+          <ul style={{ padding: 0, margin: 0, listStyleType: 'none' }}>
+            {SIDE_BAR_NAVIGATION.map(({ href, title, nestedNav }) => (
+              <NavItem key={title} href={href} title={title} nestedNav={nestedNav} />
             ))}
           </ul>
         </div>
-
-        <div style={{ paddingBottom: '1.5em' }}>
-          <Text variant="heading6" color="grey" className={s.docsHeading}>
-            Communiy
-          </Text>
-          <div style={{ display: 'flex', justifyContent: 'flex-start', padding: 8 }}>
-            {SOCIAL_ICON.map(data => (
-              <div key={data.title}>
-                <SocialIcon image={data.image} uri={data.uri} title={data.title} />
-              </div>
-            ))}
-          </div>
-        </div>
+        {socialContent}
       </nav>
     </aside>
   )

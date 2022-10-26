@@ -75,3 +75,29 @@
 }
 
 
+.chevronImage  {
+    margin-left: 8px;
+    margin-bottom: 4px;
+}
+
+.chevronImagePrevious  {
+    margin-right: 6px;
+    margin-bottom: 4px;
+    transform: rotate(180deg);
+
+}
+
+.chevronImage > path {
+    fill: var(--color-grey-70);
+}
+
+.chevronImagePrevious > path {
+    fill: var(--color-grey-70);
+}
+
+@media screen and (max-width: 800px) {
+    .mdPadding {
+        padding: 1rem 1rem 0rem 1rem;
+    }
+
+}

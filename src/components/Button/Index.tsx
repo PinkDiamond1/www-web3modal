@@ -18,13 +18,14 @@ interface IProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     | 'blackWhite'
     | 'black'
     | 'blueNew'
+    | 'greyNew'
     | 'pink'
   className?: string
   iconLeft?: JSX.Element
   iconRight?: JSX.Element
-  textVariant?: string
+  textTransform?: 'uppercase' | 'capitalize'
+  textVariant?: 'heading6' | 'anchor2'
   accentButton?: boolean
-  // loading?: boolean;
 }
 
 export default function Button({
@@ -34,6 +35,7 @@ export default function Button({
   iconLeft,
   iconRight,
   variant,
+  textTransform,
   textVariant,
   accentButton,
   ...props
@@ -63,6 +65,7 @@ export default function Button({
       s.fillWhite,
       s.fillBlueNew,
       s.fillCyan,
+      s.fillGreyNew,
       s.outlineGrey,
       s.outlineBlue,
       s.ghost
@@ -78,6 +81,7 @@ export default function Button({
       color === 'blackWhite' && variant === 'fill',
       color === 'blueNew' && variant === 'fill',
       color === 'cyan' && variant === 'fill',
+      color === 'greyNew' && variant === 'fill',
       color === 'grey' && variant === 'outline',
       color === 'blue' && variant === 'outline',
       variant === 'ghost'
@@ -94,9 +98,9 @@ export default function Button({
       {iconLeft}
       <Text
         as="span"
-        variant="anchor2"
-        // variant={textVariant ?? "anchor2"}
+        variant={textVariant ? textVariant : 'anchor2'}
         color={textColor}
+        textTransform={textTransform}
         className={textIconLeftClass ?? textIconRightClass}
       >
         {children}

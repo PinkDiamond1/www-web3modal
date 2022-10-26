@@ -1,48 +1,68 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Text from '../../components/Text/Index'
-import Image from 'next/image'
+import NextImage from 'next/future/image'
 import s from '../../styles/TryItOut.module.css'
-import { ConnectButton, AccountButton, useAccount } from '@web3modal/react'
+import { useDisconnect, ConnectButton, useAccount } from '@web3modal/react'
 import Button from '../../components/Button/Index'
-import ColorPickerDesktop from '../../components/ColorPickerDesktop/index'
+import ColorPickerDesktop from '../../components/ThemeColorPickerDesktop/index'
 import FooterRouter from '../../components/FooterRouter'
+import checkeredImage from '../../../public/CheckerPattern.png'
+import { useState } from 'react'
+import MobileTryItOut from '../../components/MobileTryItOut'
+import W3MButtonStateless from '../../components/Web3Modal/W3MButtonStateless/Index'
+import { TRY_IT_OUT_CODE } from '../../data/MDX_CODE'
 
 const TryItOut: NextPage = () => {
+  const [copied, setCopied] = useState(false)
   const { isConnected } = useAccount()
+  const disconnect = useDisconnect()
+  let isMobileDimension
 
-  // ToDo: Calculate ConnectButton position based on Size.
+  const copyCode = () => {
+    navigator.clipboard.writeText(TRY_IT_OUT_CODE)
+    setCopied(true)
+    setTimeout(() => {
+      setCopied(false)
+    }, 2000)
+  }
+
+  const accountButton = () => {
+    return (
+      <div style={{ position: 'relative', top: -20 }}>
+        <W3MButtonStateless text="Disconnect" onClick={disconnect} />
+      </div>
+    )
+  }
+
   const checkeredSVG = (
-    <div>
-      <Image
-        src="/CheckeredRectangle.svg"
-        alt="TryBackground"
-        layout="responsive"
-        width={680}
-        height={510}
-      />
-      <div style={{ position: 'relative', top: -325, left: 280 }}>
-        {!isConnected ? <ConnectButton /> : <AccountButton />}
+    <div className={s.checkeredContent}>
+      <div
+        className={s.checkeredContentBG}
+        style={{ backgroundImage: `url(${checkeredImage.src})` }}
+      >
+        <div>{!isConnected ? <ConnectButton /> : accountButton()}</div>
       </div>
     </div>
   )
 
   const headerContent = (
-    <div
-      style={{
-        display: 'flex',
-        flex: 1,
-        width: '100%',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '0 3rem 0 3rem'
-      }}
-    >
-      <Text variant="heading4" color="white">
+    <div className={s.headerContent}>
+      <Text variant={isMobileDimension ? 'heading5' : 'heading4'} color="white">
         Try It Out
       </Text>
-      <Button color="grey" variant="outline">
-        Copy Code
+      <Button
+        color="grey"
+        variant="outline"
+        onClick={copyCode}
+        iconLeft={
+          copied ? (
+            <NextImage src={'/icons/Tick.svg'} alt={'codeSnippet'} width={14} height={14} />
+          ) : (
+            <div style={{ margin: 0, padding: 0 }} />
+          )
+        }
+      >
+        {copied ? 'Copied' : 'Copy Code'}
       </Button>
     </div>
   )
@@ -51,6 +71,7 @@ const TryItOut: NextPage = () => {
     <div className={s.mainContent}>
       {headerContent}
       {checkeredSVG}
+
       <FooterRouter
         previousRoute="/"
         previousRouteName="Introduction"
@@ -58,6 +79,7 @@ const TryItOut: NextPage = () => {
         nextRouteName="Get Started"
         padding="md"
       />
+      <MobileTryItOut />
     </div>
   )
 

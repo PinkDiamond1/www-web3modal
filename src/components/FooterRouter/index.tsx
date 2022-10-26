@@ -5,6 +5,8 @@ import useConditionalValue from '../../hooks/useConditionalValue'
 import Button from '../Button/Index'
 import Text from '../Text/Index'
 import s from './styles.module.css'
+import Image from 'next/image'
+import THINCHEVRON from '../../../public/icons/ThinChevron.svg'
 
 interface FooterRouteProps {
   previousRoute?: string
@@ -41,10 +43,20 @@ export default function FooterRouter({
         {previousRoute && previousRouteName && (
           <Link href={previousRoute}>
             <button className={`${s.button} ${s.buttonLeft}`}>
-              <Text variant="text3" color="grey" className={s.noMargin}>
-                Previous
-              </Text>
-              <Text variant="heading6" color="white" capitalized={true}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  paddingBottom: 4
+                }}
+              >
+                <THINCHEVRON className={s.chevronImagePrevious} />
+                <Text variant="text3" color="grey">
+                  PREVIOUS
+                </Text>
+              </div>
+              <Text variant="heading6" color="white">
                 {previousRouteName}
               </Text>
             </button>
@@ -54,10 +66,21 @@ export default function FooterRouter({
         {nextRoute && nextRouteName && (
           <Link href={nextRoute}>
             <button className={`${s.button} ${s.buttonRight}`}>
-              <Text variant="text3" color="grey">
-                Next
-              </Text>
-              <Text variant="heading6" color="white" capitalized={true}>
+              <div
+                style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  paddingBottom: 4
+                }}
+              >
+                <Text variant="text3" color="grey">
+                  NEXT
+                </Text>
+                <THINCHEVRON className={s.chevronImage} />
+              </div>
+
+              <Text variant="heading6" color="white">
                 {nextRouteName}
               </Text>
             </button>

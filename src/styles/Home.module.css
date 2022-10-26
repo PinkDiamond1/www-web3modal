@@ -29,6 +29,10 @@
   flex-grow: 1;
 }
 
+.mobileFooter {
+  margin: 0;
+}
+
 .title a {
   color: #0070f3;
   text-decoration: none;
@@ -114,11 +118,15 @@
 }
 
 .mainContent {
-  padding: 0 10em 0 10em;
+  padding: 0 14em 0 14em;
 }
 
 
 @media (max-width: 800px) {
+  .container {
+    padding: 4rem 0 0 0;
+  }
+
   .grid {
     width: 100%;
     flex-direction: column;
@@ -129,5 +137,17 @@
   .mainContent {
     padding: 0px;
   }
-  
+  .mobileFooter{
+    display: block;
+    margin-right: 10px;
+  }
+  .main{
+    padding: 0 0 0 0;
+  }
+}
+
+@media (min-width: 1500px) and (max-width: 2000px) {
+  .mainContent {
+    padding: 0 26em 0 26em;
+  }
 }

@@ -1,11 +1,18 @@
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
 .button {
-    position: relative;
-    top: 20px;
-    left: 600px;
-    padding: 0 15px 1px;
-    height: 40px;
-    border-radius: 10px;
-    border: 1px solid var(--color-grey-50);
+  /* position: relative; */
+  /* top: 20px;
+  left: 600px; */
+  margin: 2em 0 0 0;
+  padding: 0 15px 1px;
+  height: 40px;
+  border-radius: 10px;
+  border: 1px solid var(--color-grey-50);
 }
 
 .button:hover {
@@ -21,25 +28,6 @@
     background-color: var(--color-magenta);
 }
 
-/* 
-button {
-    color: ${foreground.inverse};
-    background-color: ${foreground.accent};
-  }
-
-  button::after {
-    border: 1px solid ${overlay.thin};
-  }
-
-  button:hover::after {
-    background-color: ${overlay.thin};
-  }
-
-  .w3m-button-loading:disabled {
-    background-color: ${background.accent};
-  }
-
-  button:disabled {
-    background-color: ${background[3]};
-    color: ${foreground[3]};
-  } */
+.greenState {
+    background-color: var(--color-green);
+}

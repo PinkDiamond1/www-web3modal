@@ -1,7 +1,39 @@
 .container {
-    width: 25%;
+    padding-top: '4rem';
+    width: 20vw;
     background: #171717;
     padding: 3em 0 0 1em;
+    top: 0px;
+    right: 0px;
+    position: fixed;
+    position: -webkit-sticky;
+    /* overflow: visible;
+    overflow-x: visible; */
+    /* height: 300px; */
+    /* min-height: 100vh; */
+    height: 100%;
+    /* Give table of contents a scrollbar */
+    /* max-height: calc(100vh - 40px); */
+}
+
+.li {
+    list-style-type: none;
+    /* margin-left: -16px; */
+    margin-top: 0px;
+}
+
+.active {
+    color: var(--color-blue-100);
+    margin-left: -56px;
+    padding: 4px 16px 4px 16px;
+    border-left: 1px solid var(--color-blue-100);
+}
+
+.nonActive {
+    margin-left: -56px;
+    padding: 4px 16px 4px 16px;
+    border-left: 1px solid grey;
+
 }
 
 @media (max-width: 800px) {

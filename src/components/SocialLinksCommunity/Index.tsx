@@ -11,6 +11,7 @@ interface SocialIconCommunityProps {
   description: string
   uri: string
   fill: string
+  sidebarIcon?: boolean
 }
 
 export default function SocialIconCommunity({
@@ -19,24 +20,22 @@ export default function SocialIconCommunity({
   fill,
   image,
   title,
-  uri
+  uri,
+  sidebarIcon
 }: SocialIconCommunityProps) {
   const svgFillCheck = useConditionalValue(
     [s.fillBlack, s.fillWhite],
-    [fill === 'blackWhite', fill !== 'blackWhite']
+    [fill === 'blackWhite' && sidebarIcon === false, fill !== 'blackWhite']
   )
 
   return (
-    //ToDo fix color string IColor.props
     <div className={s.mobileMargin}>
       <a href={uri} target="_blank" key={title} rel="noreferrer">
         <Button
           variant="fill"
-          // color={color
           color={color as TextProps['color']}
-          // style={{ marginRight: 10 }}
           iconLeft={
-            <Image className={s.fillBlack} src={image} width={22} height={17} alt={title} />
+            <Image className={svgFillCheck} src={image} width={22} height={17} alt={title} />
           }
         >
           {description}

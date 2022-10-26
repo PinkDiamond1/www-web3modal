@@ -10,25 +10,18 @@ import { ExplorerCtrl, ConfigCtrl } from '@web3modal/core'
 import { useEffect, useState } from 'react'
 import AlphaBanner from '../components/AlphaBanner/Index'
 import Header from '../components/Header'
+import Head from 'next/head'
+import PlausibleProvider from 'next-plausible'
+
+if (!process.env.NEXT_PUBLIC_PROJECT_ID)
+  throw new Error('You need to provide NEXT_PUBLIC_PROJECT_ID env variable')
 
 function App({ Component, pageProps }: AppProps) {
   // ToDo: State for AlphaBanner
 
   const [theme, setTheme] = useState('')
   const [accentColor, setAccentColor] = useState('')
-  // const [closeBanner, setCloseBanner] = useState(false)
-
-  // const config: ConfigOptions = {
-  //   projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
-  //   theme: ThemeCtrl.state.theme as ConfigOptions['theme'],
-  //   accentColor: ThemeCtrl.state.accentColor as ConfigOptions['accentColor'],
-  //   ethereum: {
-  //     appName: 'web3Modal'
-  //   }
-  // }
-
-  if (!process.env.NEXT_PUBLIC_PROJECT_ID)
-    throw new Error('You need to provide NEXT_PUBLIC_PROJECT_ID env variable')
+  const [closeBanner, setCloseBanner] = useState(false)
 
   // Configure web3modal
   const modalConfig: ConfigOptions = {
@@ -48,26 +41,30 @@ function App({ Component, pageProps }: AppProps) {
   const unsubscribeThemeCtrl = ThemeCtrl.subscribe(() => {
     setTheme(ThemeCtrl.state.theme)
     setAccentColor(ThemeCtrl.state.accentColor)
-    console.log('AccentChange High level...', ThemeCtrl.state.accentColor)
-  })
-
-  const unsubscribeConfigContrl = ConfigCtrl.subscribe(() => {
-    console.log('AccentChange High level...', ConfigCtrl.state.accentColor)
   })
 
   useEffect(() => {
     ThemeCtrl.setTheme('light')
     ThemeCtrl.setAccentColor('default')
     ExplorerCtrl.getPreviewWallets()
+    // unsubscribeThemeCtrl()
   }, [])
 
   return (
     <>
-      {/* {closeBanner ? null : <AlphaBanner setCloseBanner={setCloseBanner} />} */}
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      <Web3Modal config={modalConfig} />
+      <PlausibleProvider domain="web3modal.com">
+        <Head>
+          <title>Web3Modal</title>
+          <meta
+            name="viewport"
+            content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          />
+        </Head>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+        <Web3Modal config={modalConfig} />
+      </PlausibleProvider>
     </>
   )
 }

@@ -1,0 +1,36 @@
+import styles from '../../../styles/Home.module.css'
+import MDXLayout from '../../../components/MDX/Layout/Index'
+import MDXContentSection from '../../../components/MDX/Content/Index'
+import MDXContentBlock from '../../../components/MDX/ContentBlock'
+import MDXToCSection from '../../../components/MDX/TOC/Index'
+import CodeSyntax from '../../../components/MDX/CodeSyntax/Index'
+
+import { USE_TOKEN, USE_TOKEN_EXAMPLE } from '../../../data/MDX_CODE'
+import { USE_TOKEN_TOC } from '../../../data/TABLE_CONTENTS'
+import { SIDE_BAR_NAVIGATION } from '../../../data/NAVIGATION'
+import FooterRouter from '../../../components/FooterRouter'
+import Text from '../../../components/Text/Index'
+import NextImage from 'next/future/image'
+
+<MDXLayout>
+  <MDXContentSection>
+      <Text variant="heading4" color="white" id="use-token">useToken</Text>
+      <MDXContentBlock>
+        Hook for switching networks with a connector.
+        <CodeSyntax codeString={USE_TOKEN} codeType={"app"} />
+      </MDXContentBlock>
+      <Text variant="heading4" color="white" id="example">Example</Text>
+      <MDXContentBlock>
+        <CodeSyntax codeString={USE_TOKEN_EXAMPLE} codeType={"app"} />
+      </MDXContentBlock>
+    <FooterRouter
+        previousRoute={SIDE_BAR_NAVIGATION[5].nestedNav[20].href}
+        previousRouteName={SIDE_BAR_NAVIGATION[5].nestedNav[20].title}
+        nextRoute={SIDE_BAR_NAVIGATION[5].nestedNav[22].href}
+        nextRouteName={SIDE_BAR_NAVIGATION[5].nestedNav[22].title}
+        padding="lg"
+    />
+
+  </MDXContentSection>
+  <MDXToCSection data={USE_TOKEN_TOC}/>
+</MDXLayout>

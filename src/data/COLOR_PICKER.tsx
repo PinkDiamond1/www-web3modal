@@ -2,6 +2,7 @@ export const THEME = [
   {
     value: 'light',
     title: 'Light',
+    icon: '/icons/Moon.svg',
     variant: 'fill',
     color: 'blue' as const
   },
@@ -9,6 +10,7 @@ export const THEME = [
     value: 'dark',
     title: 'Dark',
     variant: 'fill',
+    icon: '/icons/Light.svg',
     color: 'grey' as const
   }
 ]

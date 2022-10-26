@@ -18,7 +18,14 @@ const V2Ready = () => {
         </Text>
       </div>
       <div className={s.imageContainer}>
-        <Image src={image} alt={title} layout="responsive" width={392} height={238} />
+        <Image
+          priority={true}
+          src={image}
+          alt={title}
+          layout="responsive"
+          width={350}
+          height={220}
+        />
       </div>
     </Card>
   )

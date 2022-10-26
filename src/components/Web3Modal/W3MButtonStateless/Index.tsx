@@ -5,30 +5,13 @@ import { ThemeCtrl } from '../../../controllers/ThemeCtrl'
 import Text from '../../Text/Index'
 import useConditionalValue from '../../../hooks/useConditionalValue'
 
-/**
- *  LIT Element React
- */
+interface Props {
+  text: string
+  onClick?: () => void
+}
 
-// export function W3MButtonStateless(props: JSX.IntrinsicElements['w3m-button']) {
-//   return <w3m-button {...props}></w3m-button>
-// }
-
-/**
- * React Component JS
- * Best way to extend ThemeCtrl
- */
-
-export default function W3MButtonStateless() {
+export default function W3MButtonStateless({ text, onClick }: Props) {
   const currentColorState = ThemeCtrl.state.accentColor
-  // const buttonColorCheck = (color: string) => {
-  //   if (color === 'default') {
-  //     return 'blue' as const
-  //   }
-  //   if (color === 'blue') {
-  //     return 'blueNew' as const
-  //   }
-  //   return color
-  // }
 
   //ToDo: Check if much scope..?
   const backgroundColor = useConditionalValue(
@@ -37,23 +20,12 @@ export default function W3MButtonStateless() {
   )
 
   return (
-    <div style={{ margin: 16 }}>
-      <button className={`${s.button} ${backgroundColor}`}>
+    <div className={s.buttonContainer}>
+      <button className={`${s.button} ${backgroundColor}`} onClick={onClick}>
         <Text variant="text3" color="white">
-          Connect Wallet
+          {text}
         </Text>
       </button>
     </div>
   )
 }
-
-/**
- * Types
- */
-// declare global {
-//   namespace JSX {
-//     interface IntrinsicElements {
-//       'w3m-button': Partial<W3mButton>
-//     }
-//   }
-// }

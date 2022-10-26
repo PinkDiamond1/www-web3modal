@@ -1,11 +1,21 @@
-.blackChevron {
+.whiteChevron {
     position: relative;
-    left: -10;
-    /* margin-left: -3px; */
+    left: 2px;
+    top: -2px;
 }
 
-.blackChevron path {
-    fill: black
+.blackChevron {
+    position: relative;
+    left: 2px;
+    top: -2px;
+}
+
+.whiteChevron > path {
+    fill: var(--color-grey-100)
+}
+
+.blackChevron > path {
+    fill: var(--color-grey-0)
 }
 
 .buttonContent {
@@ -14,14 +24,23 @@
 }
 
 .introTextContainer {
-    padding: 2em 10em 0 10em;
+    padding: 2em 0;
+    /* border: 1px solid red; */
+}
+
+.buttonStretch {
+    margin-right: 10px
 }
 
 @media (max-width: 800px) {
     .buttonContent {
-        padding: 2em 0 0 0;
+        padding: 2em 0 2em 0;
+        display: flex;
     }
     .introTextContainer {
-        padding: 0 1em 0 1em;
+        padding: 0 2em 0 2em;
+    }
+    .buttonStretch{
+        width: 100%;
     }
 }

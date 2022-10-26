@@ -4,6 +4,12 @@
     flex-direction: row;
 }
 
+#ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 .sidebarContainer {
     display: flex;
     flex-direction: row;
@@ -11,10 +17,11 @@
 }
 
 .sidebarContainerTwo{
-    padding: 0 2rem;
+    padding: 0 2rem 0 2rem;
     min-height: 90vh;
     background-color: rgba(0, 0, 0, 0.3);
     display:flex;
+    min-width: 25vw;
     flex-direction: column;
     justify-content: space-between;
 }
@@ -32,22 +39,24 @@
 
 
 .sideBarRoutesSelected {
-    list-style-type: none;
+    /* list-style-type: none; */
     height: 40px;
     background-color: var(--color-blue-100);
-    border: 1px solid;
-    border-color: var(--color-blue-150);
+    border: 1px solid var(--color-blue-150);
     border-radius: 20px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 0 1em;
     cursor: pointer;
+    margin-bottom: 4px;
 }
 
 .sideBarRoutesSelected:hover {
     background-color: var(--color-blue-125);
     border-color: var(--color-blue-150);
+    transition: ease-in 0.2s;
+
 }
 
 .sideBarRoutesSelected:disabled {
@@ -78,14 +87,17 @@ opacity: 0.5;
     list-style-type: none;
     height: 40px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     padding: 0 1em;
     border-radius: 20px;
+    cursor: pointer;
+
 }
 
 .sideBarRoute:hover {
     background-color: var(--color-grey-16);
+    transition: ease-in 0.2s;
 }
 
 .sideBarRoute:disabled {
@@ -116,8 +128,24 @@ opacity: 0.5;
     opacity: 0.5;
 }
 
+.closedChevron {
+    transform: rotate(90deg);
+}
+
+.openChevron {
+    transform: rotate(180eg);
+}
+
 @media (max-width: 800px) {
     .sidebarContainerTwo {
       display: none;
+    }
+    .sideBarRoutesSelected {
+        width: 90vw;
+        flex: 1;
+    }
+    .sideBarRoute {
+        width: 80vw;
+        flex: 1;
     }
   }

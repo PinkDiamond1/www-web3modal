@@ -1,0 +1,78 @@
+import styles from '../../../styles/Home.module.css'
+import MDXLayout from '../../../components/MDX/Layout/Index'
+import MDXContentSection from '../../../components/MDX/Content/Index'
+import MDXToCSection from '../../../components/MDX/TOC/Index'
+import CodeSyntax from '../../../components/MDX/CodeSyntax/Index'
+import MDXContentBlock from '../../../components/MDX/ContentBlock'
+
+import { CLOUD_GET_PROJECT_ID_TOC } from '../../../data/TABLE_CONTENTS'
+import FooterRouter from '../../../components/FooterRouter'
+import Text from '../../../components/Text/Index'
+import NextImage from 'next/image'
+import s from '../../../styles/MDX.module.css'
+
+<MDXLayout>
+  <MDXContentSection>
+    <Text variant="heading4" color="white" id="get-project-id">
+      Get Project ID
+    </Text>
+    <MDXContentBlock>
+      Get your first project ID [here](https://cloud.walletconnect.com/sign-up).
+      <div className={s.imageContainer}>
+        <NextImage
+          src="/docs/cloud-explorer/sign-in.png"
+          priority={true}
+          layout="responsive"
+          width={700}
+          height={420}
+        />
+      </div>
+      Click on WalletConnect to register with an Ethereum account. Scan the QR code with your mobile
+      device. This should open up your default wallet. Confirm the correct account you would like to
+      connect on your device. Once you do, you will be given the option to continue with the
+      previously selected account. Click continue.
+      <div className={s.imageContainer}>
+        <NextImage
+          src="/docs/cloud-explorer/continue.png"
+          priority={true}
+          layout="responsive"
+          width={700}
+          height={420}
+        />
+      </div>
+      You will be prompted once more on your mobile device to sign the transaction. Once you do, you
+      will be able to create a project by clicking on ‘+ New Project’.
+      <div className={s.imageContainer}>
+        <NextImage
+          src="/docs/cloud-explorer/new-project.png"
+          priority={true}
+          layout="responsive"
+          width={700}
+          height={420}
+        />
+      </div>
+      Name your project. At this time, you are not able to delete a project once you create one.
+      [Feature coming soon](https://github.com/WalletConnect/cloud-app/issues/44). Once you create a
+      new project, copy the project id
+      <div className={s.imageContainer}>
+        <NextImage
+          src="/docs/cloud-explorer/demo-app.png"
+          priority={true}
+          layout="responsive"
+          width={700}
+          height={420}
+        />
+      </div>
+
+    </MDXContentBlock>
+    <FooterRouter
+      previousRoute="/react"
+      previousRouteName="React"
+      nextRoute="/hooks/use-account"
+      nextRouteName="useAccount"
+      padding="lg"
+    />
+
+  </MDXContentSection>
+  <MDXToCSection data={CLOUD_GET_PROJECT_ID_TOC} />
+</MDXLayout>

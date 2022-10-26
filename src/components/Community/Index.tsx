@@ -11,7 +11,7 @@ export default function Community() {
 
   return (
     <div className={s.marginContainer}>
-      <Card color="dark" padding="none" rounded="lg">
+      <Card color="dark" padding="none" rounded="md">
         <div className={s.textContainer}>
           <Text variant="heading4" color="white">
             {title}
@@ -36,7 +36,9 @@ export default function Community() {
             ))}
           </div>
         </div>
-        {/* <Image src={image} alt={title} width={800} height={220} style={{ borderRadius: 54 }} /> */}
+        <div style={{ borderRadius: 44, overflow: 'hidden', position: 'relative', top: 10 }}>
+          <Image layout="responsive" src={image} alt={title} width={800} height={220} />
+        </div>
       </Card>
     </div>
   )

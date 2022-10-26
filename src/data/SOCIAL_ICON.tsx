@@ -7,7 +7,7 @@ export const SOCIAL_ICON = [
   {
     title: 'Github',
     image: '/icons/social/Github.svg',
-    uri: 'https://github.com/walletconnect'
+    uri: 'https://github.com/WalletConnect/web3modal'
   },
   {
     title: 'Twitter',
@@ -27,8 +27,8 @@ export const SOCIAL_ICON_COMMUNITY = [
     description: 'Raise an Issue',
     color: 'blackWhite',
     image: '/icons/social/Github.svg',
-    fill: 'black',
-    uri: 'https://discord.com/invite/cB54BwPGru/'
+    fill: 'white',
+    uri: 'https://github.com/WalletConnect/web3modal'
   },
   {
     title: 'Discord',
@@ -36,7 +36,7 @@ export const SOCIAL_ICON_COMMUNITY = [
     color: 'purple',
     fill: 'white',
     image: '/icons/social/Discord.svg',
-    uri: 'https://github.com/walletconnect'
+    uri: 'https://discord.com/invite/cB54BwPGru/'
   },
   {
     title: 'Twitter',

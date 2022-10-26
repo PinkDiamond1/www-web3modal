@@ -25,6 +25,7 @@ const Interface = () => {
           <Image
             src={'/icons/WalletConnectCloud.png'}
             layout="responsive"
+            priority={true}
             alt={title}
             width={240}
             height={40}

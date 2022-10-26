@@ -1,13 +1,11 @@
-import { useEffect, useState } from 'react'
 import { ThemeCtrl } from '../../controllers/ThemeCtrl'
 import { ACCENT_COLORS, THEME } from '../../data/COLOR_PICKER'
 import Button from '../Button/Index'
 import Text, { IProps as TextProps } from '../Text/Index'
+import s from './styles.module.css'
+import NextImage from 'next/future/image'
 
-// ToDo: Make it into a Layout Component
 export default function ColorPickerDesktop() {
-  // const [lightMode, setLightMode] = useState('false')
-
   const changeTheme = (theme: string) => {
     ThemeCtrl.setTheme(theme)
   }
@@ -16,10 +14,26 @@ export default function ColorPickerDesktop() {
     ThemeCtrl.setAccentColor(color)
   }
 
+  const checkCurrentAccentColor = (color: string) => {
+    if (color === ThemeCtrl.state.accentColor) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  const checkCurrentTheme = (theme: string) => {
+    if (theme === ThemeCtrl.state.theme) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   const lightModeContent = () => {
     return (
       <div>
-        <Text variant="text2" color="white">
+        <Text variant="text2" color="grey">
           Theme
         </Text>
         <div style={{ display: 'flex', marginTop: '1em' }}>
@@ -28,11 +42,12 @@ export default function ColorPickerDesktop() {
               onClick={() => changeTheme(theme.value)}
               key={theme.title}
               variant="fill"
-              color={theme.color}
-              style={{
-                marginRight: '1em'
-              }}
-              textVariant="text4"
+              color={checkCurrentTheme(theme.value) ? 'blue' : 'greyNew'}
+              className={
+                checkCurrentTheme(theme.value) ? s.selectedAccentColor : s.nonSelectedAccentColor
+              }
+              iconLeft={<NextImage src={theme.icon} width={30} height={30} alt={''} />}
+              textVariant="heading6"
             >
               {theme.title}
             </Button>
@@ -55,7 +70,7 @@ export default function ColorPickerDesktop() {
   const accentColorContent = () => {
     return (
       <div style={{ padding: '2em 0' }}>
-        <Text variant="text2" color="white">
+        <Text variant="text2" color="grey">
           Accent Color
         </Text>
         <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '1em' }}>
@@ -65,8 +80,13 @@ export default function ColorPickerDesktop() {
               key={color.value}
               variant="fill"
               color={buttonColorCheck(color.value) as TextProps['color']}
-              textVariant="text4"
-              style={{ marginRight: 10, marginTop: 8 }}
+              textTransform="capitalize"
+              textVariant="heading6"
+              className={
+                checkCurrentAccentColor(color.value)
+                  ? s.selectedAccentColor
+                  : s.nonSelectedAccentColor
+              }
             >
               {color.text}
             </Button>
@@ -77,18 +97,7 @@ export default function ColorPickerDesktop() {
   }
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        flex: 1,
-        width: '25%',
-        alignSelf: 'stretch',
-        flexDirection: 'column',
-        flexGrow: 'inherit',
-        background: '#171717',
-        borderLeft: '1px solid #2D2D2D'
-      }}
-    >
+    <div className={s.pickerContainer}>
       <div style={{ padding: '5rem 1rem 5rem 1rem' }}>
         {lightModeContent()}
         {accentColorContent()}

@@ -1,25 +1,25 @@
-import Button from '../Button/Index'
 import Text from '../Text/Index'
 import { animate, timeline } from 'motion'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import s from './styles.module.css'
-import Image from 'next/image'
-import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
-import { SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
 import Tag from '../Tag/Index'
+import { SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
+import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
+import NextImage from 'next/future/image'
+import NavItem from '../layout/NavItem'
 
 const topLine = `#${s.hamburgerTop}`
 const botLine = `#${s.hamburgerBottom}`
 const header = `#${s.header}`
 const menuContent = `.${s.menuContent}`
 
+//ToDo: Figure Hydration error...
 export default function Header() {
   const [open, setOpen] = useState(false)
 
   function onOpenClick() {
     setOpen(prev => !prev)
-    console.log('open', open)
   }
 
   function onOpenMobileMenu() {
@@ -38,7 +38,7 @@ export default function Header() {
       ],
       { duration: 0.25, defaultOptions: { easing: 'ease-in-out' } }
     )
-    timeline([[header, { height: '437px' }, { duration: 0.25, easing: 'ease-in-out' }]])
+    timeline([[header, { height: '100vh' }, { duration: 0.25, easing: 'ease-in-out' }]])
     animate(menuContent, { opacity: 1, y: 0 }, { duration: 0.35, easing: 'ease-in-out' })
   }
 
@@ -58,52 +58,74 @@ export default function Header() {
       ],
       { duration: 0.25, defaultOptions: { easing: 'ease-in-out' } }
     )
-    timeline([[header, { height: '60px' }, { duration: 0.25, easing: 'ease-in-out' }]])
+    timeline([[header, { height: '55px' }, { duration: 0.2, easing: 'ease-in-out' }]])
     animate(menuContent, { opacity: 0, y: -10 }, { duration: 0.35, easing: 'ease-in-out' })
   }
 
   useEffect(() => {
     if (open) {
       onOpenMobileMenu()
-    } else if (window.innerWidth <= 800) {
+    } else {
       onMobileMenuClose()
     }
   }, [open])
 
-  return (
-    <header id={s.header}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }}>
-        <Link href="/">
+  const headerContent = (
+    <div className={s.headerContent}>
+      <Link href="/">
+        <div>
           <Text variant="heading5" color="grey">
             Web3Modal
           </Text>
-        </Link>
-        <div style={{ marginLeft: 16 }}>
-          <Tag> 2.0.0</Tag>
         </div>
+      </Link>
+      <div style={{ marginLeft: 16 }}>
+        <Tag>2.0.0</Tag>
       </div>
+    </div>
+  )
 
-      {/* <div id={s.container} className={s.menuContent}>
-        <nav>
-          <ul>
-            {SIDE_BAR_NAVIGATION.map(link => (
-              <li key={link.title} className={s.item}>
-                <Link href={link.href}>
-                  <Button type="button" variant="ghost" color="grey" className={s.desktopLink}>
-                    {link.title}
-                  </Button>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div> */}
+  const routeContent = (
+    <div className={s.menuContent}>
+      <nav>
+        <ul>
+          <div className={s.mobileMenuHeaderContent}>
+            <Text variant="text3" color="grey">
+              Docs
+            </Text>
+          </div>
 
-      {/* <ul id={s.social} className={s.menuContent}>
+          {SIDE_BAR_NAVIGATION.map(link => (
+            <li key={link.title} className={s.item}>
+              <Link href={link.href} key={link.title}>
+                <>
+                  <NavItem
+                    href={link.href}
+                    title={link.title}
+                    nestedNav={link.nestedNav}
+                    onOpenClick={onOpenClick}
+                  />
+                </>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+  )
+
+  const socialContent = (
+    <div>
+      <ul id={s.social} className={s.menuContent}>
+        <div className={s.mobileMenuHeaderContent}>
+          <Text variant="text3" color="grey">
+            Community
+          </Text>
+        </div>
         {SOCIAL_ICON.map(link => (
           <li key={link.title}>
-            <a href={link.uri} target="_blank" rel="noreferrer">
-              <Image
+            <a href={link.uri} target="_blank" rel="noreferrer" className={s.socialIconContainer}>
+              <NextImage
                 src={link.image}
                 alt={`${link.title} icon`}
                 width="24"
@@ -113,11 +135,18 @@ export default function Header() {
             </a>
           </li>
         ))}
-      </ul> */}
+      </ul>
+    </div>
+  )
+
+  return (
+    <header id={s.header}>
+      {headerContent}
+      {routeContent}
+      {socialContent}
 
       <button className={s.hamburger} onClick={onOpenClick}>
         <span id={s.hamburgerTop} />
-        <span id={s.hamburgerText}>Mobile Navigation</span>
         <span id={s.hamburgerBottom} />
       </button>
     </header>

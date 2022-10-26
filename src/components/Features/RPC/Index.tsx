@@ -3,6 +3,7 @@ import Text from '../../Text/Index'
 import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
 import s from './styles.module.css'
+import { isMobile } from '../../../utils/Index'
 
 const RPC = () => {
   const { title, image, text } = FEATURE_CARDS[7]
@@ -18,7 +19,14 @@ const RPC = () => {
         </Text>
       </div>
       <div className={s.imageContainer}>
-        <Image src={image} alt={title} layout="responsive" width={300} height={236} />
+        <Image
+          priority={true}
+          src={image}
+          alt={title}
+          layout="responsive"
+          width={isMobile() ? 200 : 250}
+          height={isMobile() ? 150 : 200}
+        />
       </div>
     </Card>
   )

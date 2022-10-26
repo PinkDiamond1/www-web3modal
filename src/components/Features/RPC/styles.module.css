@@ -16,3 +16,10 @@
         top: 15px;
     }
   }
+
+/* @media (min-width: 1390px) and (max-width: 2000px) {
+.imageContainer {
+    margin-top: -10px;
+    top:px;
+}
+} */

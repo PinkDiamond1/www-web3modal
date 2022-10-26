@@ -13,4 +13,83 @@
   flex-direction: column;
   padding: 4em;
   width: 75%;
+  /* min-height: 100vh; */
+}
+
+.headerContent {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2em 0 2em;
+}
+
+.checkeredContent {
+  background: linear-gradient(97.02deg, #272A2A 0%, #141414 100%);
+  border-radius: 44px;
+}
+
+.checkeredContentBG {
+  height: 100%;
+  border-radius: 44px;
+  display: flex;
+  height: 600px;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobileColorPickerRow {
+  display: none;
+}
+
+.mobileColorPicker {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .mainContent {
+    width: 100%;
+    padding: 4em 0 0 0 ;
+    flex: 1;
+  }
+  .headerContent{
+    padding: 0 1em 0 1em;
+  }
+  .mobileColorPickerRow {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin: 10px 0 0 0;
+  }
+  .mobileColorPicker{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 10px 0;
+    border-radius: 20px;
+    background-color: var(--color-blue-100);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 400px) {
+  .checkeredContentBG{
+    height: 500px;
+  }
+}
+
+@media screen and (min-width: 400px) and (max-width: 500px) {
+  .checkeredContentBG{
+    height: 600px;
+  }
 }

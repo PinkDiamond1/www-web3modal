@@ -1,7 +1,34 @@
+.codeContainer {
+    margin-top: 8px;
+    border: 1px solid linear-gradient(0deg, #3B4040, #3B4040);
+}
+
+.codeContainer code {
+    border: none;
+}
+
 .codeHighlighter {
     color: white;
     background: linear-gradient(97.02deg, #272A2A 0%, #141414 100%);
     width: 100%;
     padding: 15px 20px 15px 20px;
     border-radius: 0 0px 20px 20px;
+}
+
+.topCodeSyntax {
+    border: 1px solid #3B4040;
+    height: 40px;
+    width: 100%;
+    margin-bottom: -10px;
+    background: #272A2A;
+    border-radius: 20px 20px 0px 0px;
+    padding: 0px 20px 0px 16px;
+    border-width: 1px 1px 0px 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topCodeSyntax img:hover {
+    opacity: 0.5;
 }

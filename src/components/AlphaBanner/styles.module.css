@@ -1,0 +1,15 @@
+.bannerContainer {
+    height: 30px;
+    background: #19324D;
+    width: 100%;
+    border: 1px solid #0F4B8A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 800px) {
+    .bannerContainer {
+        display: none;
+    }
+}

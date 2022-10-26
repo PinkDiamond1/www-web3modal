@@ -15,11 +15,11 @@
 }
 
 .accentButton {
-  border-radius: 16px;
   background-color: transparent;
   border: 1px solid transparent;
   height: 32px;
   width: 32px;
+  border-radius: 16px;
   transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
   cursor: pointer;
   margin-right: 12px;
@@ -50,6 +50,11 @@
 .fillGrey {
   background-color: var(--color-grey-95);
   border-color: var(--color-grey-100);
+}
+
+.fillGreyNew {
+  background-color: var(--color-grey-16);
+  border-color: var(--color-grey-24);
 }
 
 .fillGrey:hover {
@@ -106,11 +111,16 @@
 }
 
 .fillWhite:hover {
-  opacity: 1;
+  background-color: var(--color-grey-70);
 }
 
 .fillTeal {
   background-color: var(--color-teal);
+  border-color: rgba(255, 255, 255, 0.1)
+}
+
+.fillCyan {
+  background-color: var(--color-cyan-fg);
   border-color: rgba(255, 255, 255, 0.1)
 }
 
@@ -148,14 +158,20 @@
 }
 
 .textIconRight {
-  margin-right: 10px;
+  margin-right: 6px;
 }
 
 .textIconLeft {
-  margin-left: 10px;
+  margin-left: 6px;
 }
 
 .spinner {
   position: absolute;
   margin-top: -1px;
+}
+
+@media screen and (max-width: 800px) {
+  .accentButton {
+    margin-right: 12px;
+  }
 }

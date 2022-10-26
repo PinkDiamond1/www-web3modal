@@ -20,10 +20,11 @@ const Frameworks = () => {
       </div>
       <div className={s.imageWrapper}>
         <Image
+          priority={true}
           src={image}
           alt={title}
-          width={isMobile() ? 350 : 300}
-          height={isMobile() ? 350 : 240}
+          width={isMobile() ? 350 : 350}
+          height={isMobile() ? 300 : 325}
         />
       </div>
     </Card>

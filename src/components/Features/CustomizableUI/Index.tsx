@@ -1,27 +1,43 @@
 import Card from '../../Card'
 import Text from '../../Text/Index'
-import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
-import { ConnectButton, useConnectModal } from '@web3modal/react'
+import { useConnectModal } from '@web3modal/react'
 // import { useEffect, useState } from "react";
-import { Web3Spinner } from '../../Web3Modal/Index'
 import W3MButtonStateless from '../../Web3Modal/W3MButtonStateless/Index'
-import ThemePicker from '../../ThemePicker'
+import ThemePicker from '../../ThemeColorPickerMobile'
 import { W3mConnectWalletDesktop } from '../../Web3Modal/W3MConnectWalletDesktop/Index'
 // import s from "../styles.module.css";
 import checkeredImage from '../../../../public/CheckerPattern.png'
 import { W3mConnectWalletMobile } from '../../Web3Modal/W3MConnectWalletMobile/Index'
 import { useEffect, useState } from 'react'
+import { isMobile } from '../../../utils/Index'
 import { ThemeCtrl } from '../../../controllers/ThemeCtrl'
-import ColorPickerDesktop from '../../ColorPickerDesktop'
 
 const CustomizableUI = () => {
   const { isOpen, open, close } = useConnectModal()
   const [currentAccentColor, setCurrentAccentColor] = useState('default')
 
   useEffect(() => {
-    // console.log('ThemeCtrl', ThemeCtrl.state.accentColor)
+    setCurrentAccentColor(ThemeCtrl.state.accentColor)
+    console.log('ThemeCtrl', ThemeCtrl.state.accentColor)
   }, [currentAccentColor])
+
+  const changeTheme = (theme: string) => {
+    // setCurrentAccentColor(theme)
+    ThemeCtrl.setTheme(theme)
+  }
+
+  const changeAccentColor = (color: string) => {
+    // setCurrentAccentColor(theme)
+    // setCurrentAccentColor(color)
+    ThemeCtrl.setAccentColor(color)
+    // console.log('ClientCtrl 1', ConfigCtrl.state.accentColor)
+    // Client.setAccentColor(color)
+  }
+  // const unsubscribeThemeCtrl = ThemeCtrl.subscribe(() => {
+  //   setTheme(ThemeCtrl.state.theme)
+  //   setAccentColor(ThemeCtrl.state.accentColor)
+  // })
 
   const { title, image, text } = FEATURE_CARDS[0]
   //ToDo: Move CheckeredUI  / Use FEATURED_CARDS DATA
@@ -55,16 +71,24 @@ const CustomizableUI = () => {
             marginTop: '3em'
           }}
         >
-          <W3MButtonStateless />
-          <W3mConnectWalletDesktop />
-          <W3mConnectWalletMobile />
-
-          {/* <ThemePicker
+          <W3MButtonStateless text="Connect Wallet" />
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '80%'
+            }}
+          >
+            {/* <w3m-modal /> */}
+            <W3mConnectWalletDesktop />
+            {/* {<W3mConnectWalletMobile />} */}
+          </div>
+          <ThemePicker
             currentAccentColor={currentAccentColor}
             setCurrentAccentColor={setCurrentAccentColor}
-          /> */}
-          <ThemePicker />
-
+          />
+          {/* <ThemePicker /> */}
           {/* <W3mConnectWalletMobile /> */}
         </div>
       </div>
