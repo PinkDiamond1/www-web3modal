@@ -20,8 +20,6 @@ interface Props {
   trackNestedHeaderOpen?: boolean
 }
 
-// const closedChevron = `.${s.closedChevron}`
-
 export default function NavItem({
   href,
   title,
@@ -82,6 +80,7 @@ export default function NavItem({
               <div
                 onClick={() => {
                   onOpenClick
+                  setTrackNestedHeaderOpen?.(!trackNestedHeaderOpen)
                 }}
                 key={title}
               >
