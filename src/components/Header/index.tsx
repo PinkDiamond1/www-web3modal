@@ -16,19 +16,11 @@ const menuContent = `.${s.menuContent}`
 
 //ToDo: Figure Hydration error...
 export default function Header() {
-  const scrollRef = useRef(null)
   const [open, setOpen] = useState(false)
   const [trackNestedHeaderOpen, setTrackNestedHeaderOpen] = useState(false)
 
   function onOpenClick() {
     setOpen(prev => !prev)
-    // scrollRef.current.overflow === 'auto'
-    // document.getElementsByTagName('html')[0].classList.add('allowScroll')
-    // if (open === true) {
-    //   document.getElementsByTagName('html')[0].classList.add('allowScroll')
-    // } else {
-    //   document.getElementsByTagName('html')[0].classList.remove('allowScroll')
-    // }
   }
 
   function onOpenMobileMenu() {
@@ -77,7 +69,7 @@ export default function Header() {
     } else {
       onMobileMenuClose()
     }
-    console.log('Header: trackNestedHeaderOpen', trackNestedHeaderOpen)
+    console.log('useEffect trackNestedHeaderOpen', trackNestedHeaderOpen)
   }, [open, trackNestedHeaderOpen])
 
   const headerContent = (

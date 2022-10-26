@@ -77,9 +77,10 @@ export default function NavItem({
         <ul style={{ paddingLeft: '1em', margin: 0 }}>
           {openSideBarMenu &&
             nestedNav.map(({ href, title }) => (
-              <div
+              <a
                 onClick={() => {
-                  onOpenClick
+                  onOpenClick?.()
+                  console.log('closing...')
                   setTrackNestedHeaderOpen?.(!trackNestedHeaderOpen)
                 }}
                 key={title}
@@ -97,7 +98,7 @@ export default function NavItem({
                     </li>
                   </a>
                 </Link>
-              </div>
+              </a>
             ))}
         </ul>
       </>
