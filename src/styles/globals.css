@@ -15,6 +15,14 @@ a {
   text-decoration: none;
 }
 
+.noScroll {
+  overflow: hidden;
+}
+
+.allowScroll {
+  overflow: auto;
+}
+
 code {
   background: linear-gradient(97.02deg, #272A2A 0%, #141414 100%), linear-gradient(0deg, #3B4040, #3B4040);
   border: 1px solid var(--color-grey-24);

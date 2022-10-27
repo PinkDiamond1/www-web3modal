@@ -26,7 +26,7 @@ export default function MobileTryItOut() {
 
   function onOpenMobileMenu() {
     // document.getElementsByTagName('html')[0].classList.add('noScroll')
-    timeline([[footer, { height: '100vh' }, { duration: 0.2, easing: 'ease-in-out' }]])
+    timeline([[footer, { height: '103vh' }, { duration: 0.2, easing: 'ease-in-out' }]])
   }
 
   function onMobileMenuClose() {
@@ -44,7 +44,7 @@ export default function MobileTryItOut() {
 
   const lightModeContent = () => {
     return (
-      <div>
+      <div style={{ padding: '2em 0' }}>
         <Text variant="text2" color="grey">
           Theme
         </Text>

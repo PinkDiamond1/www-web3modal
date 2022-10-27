@@ -129,11 +129,17 @@ opacity: 0.5;
 }
 
 .closedChevron {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(308deg) brightness(112%) contrast(101%);
     transform: rotate(90deg);
 }
 
 .openChevron {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(308deg) brightness(112%) contrast(101%);
     transform: rotate(180eg);
+}
+
+.safariChevron {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(308deg) brightness(112%) contrast(101%);
 }
 
 @media (max-width: 800px) {
