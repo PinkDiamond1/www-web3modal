@@ -1,31 +1,26 @@
 //-------- GET STARTED -------------------------------//
 export const INSTALL_INSTRUCTIONS = 'yarn add @web3modal/react @web3modal/ethereum ethers'
 
-export const APP_SETUP = `import { chains, providers } from '@web3modal/ethereum'
-import { Web3ModalProvider } from '@web3modal/react'
+export const APP_SETUP = `import { Web3Modal } from '@web3modal/react'
 
-const NEXT_PUBLIC_PROJECT_ID = { process.env }
-
-const modalConfig = {
-  projectId: NEXT_PUBLIC_PROJECT_ID,
+const config = {
+  projectId: '<YOUR_PROJECT_ID>',
   theme: 'dark',
   accentColor: 'default',
   ethereum: {
-    appName: 'web3Modal',
-    autoConnect: true,
-    chains: [chains.mainnet],
-    providers: [providers.walletConnectProvider({ projectId: NEXT_PUBLIC_PROJECT_ID })]
+    appName: 'web3Modal'
   }
 }
 
-export default function App({ Component, pageProps }) {
+export default function App() {
   return (
     <>
-      <App />
+      <YourAppContent />
       <Web3Modal config={config} />
     </>
   )
-}`
+}
+`
 
 export const GET_ADDRESS = `import { ConnectButton, useAccount } from '@web3modal/react'
 
