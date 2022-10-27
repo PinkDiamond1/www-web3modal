@@ -68,6 +68,7 @@ export const CONSOLE_LOG_REACT_PROJECT_ID = `const { REACT_APP_PROJECT_ID } = pr
 console.log('REACT_APP_PROJECT_ID', REACT_APP_PROJECT_ID)`
 
 export const WEB3_MODAL_REACT = `import ReactDOM from "react-dom/client";
+import { Web3Modal } from '@web3modal/react'
 import App from "./App";
 
 const config = {
@@ -89,13 +90,17 @@ root.render(
 
 );`
 
-export const GET_CONNECTED_REACT = `import { ConnectButton, useAccount } from '@web3modal/react';
+export const GET_CONNECTED_REACT = `import { Web3Button, useAccount } from '@web3modal/react';
 
 function App() {
-  const { connected, address } = useAccount()
-
-  return connected ? <h1>{address ? address : 'none'} </h1> : <ConnectButton />
-
+  const { account } = useAccount()
+  
+  return (
+    <div>
+      {account.isConnected ? <h1>{account.address}</h1> : null}
+      <Web3Button />
+    </div>
+  );
 }
 
 export default App;
