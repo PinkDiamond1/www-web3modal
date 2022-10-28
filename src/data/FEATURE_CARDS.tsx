@@ -17,7 +17,7 @@ const FEATURE_CARDS = [
     width: 'md'
   },
   {
-    title: 'Hundreds of wallets',
+    title: 'Hundreds of wallets.',
     image: '/features/Wallets.jpg',
     text: 'Connect with MetaMask, Coinbase, and many more.',
     width: 'md'
@@ -47,7 +47,7 @@ const FEATURE_CARDS = [
     width: 'md'
   },
   {
-    title: 'Works with WalletConnect v2.0. ',
+    title: 'Works with WalletConnect v2.0 ',
     image: '/features/V2Ready.jpg',
     text: 'Easily upgrade to unlock compatibility with all WalletConnect v2.0 SDKs.',
     width: 'lg'
