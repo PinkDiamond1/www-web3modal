@@ -3,13 +3,13 @@
 }
 
 .imageContainer {
-    border-radius: 44px;
-    overflow: hidden;
+    width: 100%;
+    height: 280px;
     margin-top: 1.5em;
-    position: relative;
+    object-fit: cover;
     border-radius: inherit;
-    max-height: 350px;
-
+    position: relative;
+    top: 6px;
 }
 
 @media (max-width: 800px) {
@@ -18,7 +18,6 @@
     }
     .imageContainer {
         margin-top: 0em;
-        /* margin: -10px  */
         top: 15px;
         border-radius: 32px;
     }

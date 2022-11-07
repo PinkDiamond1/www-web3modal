@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
+import { isMobile } from '../../../utils/Index'
 import Card from '../../Card'
 import Text from '../../Text/Index'
 import s from './styles.module.css'
@@ -19,7 +20,14 @@ const Interface = () => {
       </div>
       <div className={s.purpleCard}>
         <div className={s.interfaceCard}>
-          <Image priority={true} src={image} alt={title} width={392} height={263} />
+          <Image
+            priority={true}
+            src={image}
+            alt={title}
+            className={s.interfaceImage}
+            width="0"
+            height="0"
+          />
         </div>
       </div>
     </Card>

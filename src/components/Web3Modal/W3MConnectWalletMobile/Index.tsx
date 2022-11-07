@@ -8,21 +8,7 @@ import s from './styles.module.css'
 import { relative } from 'path'
 import { isMobile } from '../../../utils/Index'
 
-/**
- * Component
-    * Backdrop
-    * Container
-    * Mobile Wallet Section: LISTINGS. (Needs Listing State)
-    * Desktop Wallet Section
-    * View All:  LISTINGS.
-    * Gateway Section
-    * Get a Wallet / Learn More (Needs Theme State)
-//  */
-
 export function W3mConnectWalletMobile() {
-  //   props: JSX.IntrinsicElements['w3m-connect-wallet-view'],
-  //   props2: JSX.IntrinsicElements['w3m-desktop-wallet-selection'],
-  //   props3: JSX.IntrinsicElements['w3m-mobile-wallet-selection']
   return (
     <div
       style={{

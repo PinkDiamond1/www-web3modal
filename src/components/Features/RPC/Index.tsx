@@ -18,15 +18,16 @@ const RPC = () => {
           {text}
         </Text>
       </div>
-      <div className={s.imageContainer}>
-        <Image
-          priority={true}
-          src={image}
-          alt={title}
-          width={isMobile() ? 200 : 250}
-          height={isMobile() ? 150 : 200}
-        />
-      </div>
+      <Image
+        priority={true}
+        src={image}
+        alt={title}
+        width="0"
+        height="0"
+        className={s.imageContainer}
+        // width={isMobile() ? 200 : 250}
+        // height={isMobile() ? 150 : 200}
+      />
     </Card>
   )
 }

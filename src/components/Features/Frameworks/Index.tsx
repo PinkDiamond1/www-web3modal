@@ -18,15 +18,14 @@ const Frameworks = () => {
           {text}
         </Text>
       </div>
-      <div className={s.imageWrapper}>
-        <Image
-          priority={true}
-          src={image}
-          alt={title}
-          width={isMobile() ? 350 : 350}
-          height={isMobile() ? 300 : 325}
-        />
-      </div>
+      <Image
+        priority={true}
+        src={image}
+        alt={title}
+        width="0"
+        height="0"
+        className={s.imageWrapper}
+      />
     </Card>
   )
 }

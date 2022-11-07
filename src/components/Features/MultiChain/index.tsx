@@ -23,8 +23,11 @@ const MultiChain = () => {
           priority={true}
           src={image}
           alt={title}
-          width={isMobile() ? 240 : 260}
-          height={isMobile() ? 220 : 240}
+          // width={isMobile() ? 240 : 260}
+          // height={isMobile() ? 220 : 240}
+          className={s.multiChainImage}
+          width="0"
+          height="0"
         />
       </div>
     </Card>

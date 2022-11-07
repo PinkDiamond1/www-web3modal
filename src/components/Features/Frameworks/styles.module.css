@@ -3,11 +3,12 @@
 }
 
 .imageWrapper {
+    width: 100%;
+    height: 240px;
     border-radius: 44px;
     max-height: 350px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    object-fit: contain;
+
 }
 
 
@@ -16,6 +17,7 @@
         padding: 1.5em 1em 1.5em 1em;     
     }
     .imageWrapper{
-        padding: 0 2em 0 2em;
+        height: 320px;
+        object-fit: fill;
     }
   }
