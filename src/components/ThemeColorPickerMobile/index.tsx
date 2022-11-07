@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default function ThemePicker({ currentAccentColor, setCurrentAccentColor }: Props) {
-  const changeTheme = (theme: string) => {
+  const changeTheme = (theme: typeof ThemeCtrl.state.theme) => {
     ThemeCtrl.setTheme(theme)
   }
 

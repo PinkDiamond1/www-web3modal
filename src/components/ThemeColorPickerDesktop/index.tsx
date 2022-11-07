@@ -9,11 +9,11 @@ import s from './styles.module.css'
 export default function ColorPickerDesktop() {
   const { accentColor, theme } = useSnapshot(ThemeCtrl.state)
 
-  const changeTheme = (theme: string) => {
+  const changeTheme = (theme: typeof ThemeCtrl.state.theme) => {
     ThemeCtrl.setTheme(theme)
   }
 
-  const changeAccentColor = (color: string) => {
+  const changeAccentColor = (color: typeof ThemeCtrl.state.accentColor) => {
     ThemeCtrl.setAccentColor(color)
   }
 

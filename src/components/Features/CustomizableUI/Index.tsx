@@ -15,11 +15,11 @@ const CustomizableUI = () => {
     setCurrentAccentColor(ThemeCtrl.state.accentColor)
   }, [currentAccentColor])
 
-  const changeTheme = (theme: string) => {
+  const changeTheme = (theme: typeof ThemeCtrl.state.theme) => {
     ThemeCtrl.setTheme(theme)
   }
 
-  const changeAccentColor = (color: string) => {
+  const changeAccentColor = (color: typeof ThemeCtrl.state.accentColor) => {
     ThemeCtrl.setAccentColor(color)
   }
 
