@@ -40,7 +40,7 @@ export default function NavItem({
   }
 
   const childrenContent = () => {
-    if (!nestedNav) {
+    if (!nestedNav?.length) {
       return null
     }
 
@@ -100,7 +100,7 @@ export default function NavItem({
   }
 
   const nonChildren = (
-    <Link href={href} onClick={onOpenClick}>
+    <Link href={href} onClick={onOpenClick} legacyBehavior>
       <li className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}>
         <Text variant="heading6" color="white" textTransform={'capitalize'}>
           {title}

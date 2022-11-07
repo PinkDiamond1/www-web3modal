@@ -1,9 +1,9 @@
-import Button from '../Button/Index'
-import Text from '../Text/Index'
-import s from './styles.module.css'
 import Link from 'next/link'
 import CHEVRON from '../../../public/icons/Chevron.svg'
 import { isMobile } from '../../utils/Index'
+import Button from '../Button/Index'
+import Text from '../Text/Index'
+import s from './styles.module.css'
 
 const buttonContent = (
   <div className={s.buttonContent}>
@@ -33,17 +33,17 @@ const buttonContent = (
 
 const IntroText = () => {
   return (
-    <div className={s.introTextContainer}>
+    <>
       <Text variant={isMobile() ? 'heading5' : 'heading4'} color="white">
         Web3Modal is an elegantly simple yet powerful library that helps you manage your multi-chain
         wallet connection flows, all in one place.
         <Text as="span" color="grey" variant={isMobile() ? 'heading5' : 'heading4'}>
-          {''} Designed with both developers and end users in mind, it is easy to integrate and
+          Designed with both developers and end users in mind, it is easy to integrate and
           customize, bringing to life a sleek and unique experience.
         </Text>
       </Text>
       {buttonContent}
-    </div>
+    </>
   )
 }
 

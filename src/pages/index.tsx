@@ -1,15 +1,10 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
-import s from '../styles/Home.module.css'
-
 import Community from '../components/Community/Index'
+import FeatureCards from '../components/Features/Index'
 import FooterRouter from '../components/FooterRouter'
 import IntroText from '../components/IntroText/Index'
-import FeatureCards from '../components/Features/Index'
 import Video from '../components/Video/Index'
-import AlphaBanner from '../components/AlphaBanner/Index'
-import CustomizableUI from '../components/Features/CustomizableUI/Index'
-// import { isMobile } from '../utils/Index'
+import s from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   return (
@@ -18,7 +13,6 @@ const Home: NextPage = () => {
         <Video />
         <div className={s.mainContent}>
           <IntroText />
-          {/* <CustomizableUI /> */}
           <FeatureCards />
           <Community />
           <div className={s.mobileFooter}>

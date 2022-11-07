@@ -123,7 +123,7 @@ export default function MobileTryItOut() {
           <NextImage
             priority={true}
             alt="mobilePickerIcon"
-            src={currentTheme === 'light' ? '../icons/Moon.svg' : '../icons/Light.svg'}
+            src={currentTheme === 'light' ? '/icons/Moon.svg' : '/icons/Light.svg'}
             height={32}
             width={32}
           />

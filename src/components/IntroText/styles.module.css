@@ -1,46 +1,38 @@
 .whiteChevron {
-    position: relative;
-    left: 2px;
-    top: -2px;
+  position: relative;
+  left: 2px;
+  top: -2px;
 }
 
 .blackChevron {
-    position: relative;
-    left: 2px;
-    top: -2px;
+  position: relative;
+  left: 2px;
+  top: -2px;
 }
 
 .whiteChevron > path {
-    fill: var(--color-grey-100)
+  fill: var(--color-grey-100);
 }
 
 .blackChevron > path {
-    fill: var(--color-grey-0)
+  fill: var(--color-grey-0);
 }
 
 .buttonContent {
-    display: flex;
-    padding: 2em 0 4em 0;
-}
-
-.introTextContainer {
-    padding: 2em 0;
-    /* border: 1px solid red; */
+  display: flex;
+  padding: 2em 0 4em 0;
 }
 
 .buttonStretch {
-    margin-right: 10px
+  margin-right: 10px;
 }
 
 @media (max-width: 800px) {
-    .buttonContent {
-        padding: 2em 0 2em 0;
-        display: flex;
-    }
-    .introTextContainer {
-        padding: 0 2em 0 2em;
-    }
-    .buttonStretch{
-        width: 100%;
-    }
+  .buttonContent {
+    padding: 2em 0 2em 0;
+    display: flex;
+  }
+  .buttonStretch {
+    width: 100%;
+  }
 }
