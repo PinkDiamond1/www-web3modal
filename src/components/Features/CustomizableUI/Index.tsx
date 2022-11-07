@@ -1,43 +1,27 @@
+import { useEffect, useState } from 'react'
+import checkeredImage from '../../../../public/CheckerPattern.png'
+import { ThemeCtrl } from '../../../controllers/ThemeCtrl'
+import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
 import Card from '../../Card'
 import Text from '../../Text/Index'
-import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
-import { useConnectModal } from '@web3modal/react'
-// import { useEffect, useState } from "react";
-import W3MButtonStateless from '../../Web3Modal/W3MButtonStateless/Index'
 import ThemePicker from '../../ThemeColorPickerMobile'
+import W3MButtonStateless from '../../Web3Modal/W3MButtonStateless/Index'
 import { W3mConnectWalletDesktop } from '../../Web3Modal/W3MConnectWalletDesktop/Index'
-// import s from "../styles.module.css";
-import checkeredImage from '../../../../public/CheckerPattern.png'
-import { W3mConnectWalletMobile } from '../../Web3Modal/W3MConnectWalletMobile/Index'
-import { useEffect, useState } from 'react'
-import { isMobile } from '../../../utils/Index'
-import { ThemeCtrl } from '../../../controllers/ThemeCtrl'
 
 const CustomizableUI = () => {
-  const { isOpen, open, close } = useConnectModal()
   const [currentAccentColor, setCurrentAccentColor] = useState('default')
 
   useEffect(() => {
     setCurrentAccentColor(ThemeCtrl.state.accentColor)
-    // console.log('ThemeCtrl', ThemeCtrl.state.accentColor)
   }, [currentAccentColor])
 
   const changeTheme = (theme: string) => {
-    // setCurrentAccentColor(theme)
     ThemeCtrl.setTheme(theme)
   }
 
   const changeAccentColor = (color: string) => {
-    // setCurrentAccentColor(theme)
-    // setCurrentAccentColor(color)
     ThemeCtrl.setAccentColor(color)
-    // console.log('ClientCtrl 1', ConfigCtrl.state.accentColor)
-    // Client.setAccentColor(color)
   }
-  // const unsubscribeThemeCtrl = ThemeCtrl.subscribe(() => {
-  //   setTheme(ThemeCtrl.state.theme)
-  //   setAccentColor(ThemeCtrl.state.accentColor)
-  // })
 
   const { title, image, text } = FEATURE_CARDS[0]
   //ToDo: Move CheckeredUI  / Use FEATURED_CARDS DATA
@@ -54,9 +38,6 @@ const CustomizableUI = () => {
         </Text>
       </div>
       <div style={{ display: 'flex' }}></div>
-      {/* backgroundImage: `url(${bg.src})`,
-      width: '100%',
-      height: '100%', */}
       <div
         style={{
           height: 746,
