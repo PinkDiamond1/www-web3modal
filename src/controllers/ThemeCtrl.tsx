@@ -2,13 +2,21 @@ import { proxy, subscribe as valtioSub } from 'valtio/vanilla'
 
 // -- initial state ------------------------------------------------ //
 export interface ThemeControlState {
-  theme: string
-  accentColor: string
+  theme: 'dark' | 'light'
+  accentColor:
+    | 'blackWhite'
+    | 'blue'
+    | 'default'
+    | 'green'
+    | 'magenta'
+    | 'orange'
+    | 'purple'
+    | 'teal'
 }
 
 export const initialThemeState = {
-  theme: 'light',
-  accentColor: 'default'
+  theme: 'light' as const,
+  accentColor: 'default' as const
 }
 
 const countState = proxy({ count: 0 })

@@ -114,7 +114,7 @@
 }
 
 .mainContent {
-  padding: 0 7vw;
+  padding: 2rem 7vw 0;
   max-width: min(75vw, 1000px);
 }
 

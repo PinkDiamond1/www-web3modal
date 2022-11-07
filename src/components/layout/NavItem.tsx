@@ -100,8 +100,11 @@ export default function NavItem({
   }
 
   const nonChildren = (
-    <Link href={href} onClick={onOpenClick} legacyBehavior>
-      <li className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}>
+    <Link href={href} legacyBehavior>
+      <li
+        onClick={onOpenClick}
+        className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
+      >
         <Text variant="heading6" color="white" textTransform={'capitalize'}>
           {title}
         </Text>
