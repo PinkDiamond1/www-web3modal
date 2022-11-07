@@ -1,9 +1,9 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
+import THINCHEVRON from '../../../public/icons/ThinChevron.svg'
 import s from '../../styles/Layout.module.css'
 import Text from '../Text/Index'
-import THINCHEVRON from '../../../public/icons/ThinChevron.svg'
 
 interface Props {
   nestedNav:
@@ -25,10 +25,8 @@ export default function NavItem({
   title,
   nestedNav,
   onOpenClick,
-  hooksOpen,
   trackNestedHeaderOpen,
-  setTrackNestedHeaderOpen,
-  ...props
+  setTrackNestedHeaderOpen
 }: Props) {
   const router = useRouter()
   const [openSideBarMenu, setOpenSideBarMenu] = useState(false)
@@ -86,17 +84,13 @@ export default function NavItem({
                 key={title}
               >
                 <Link href={href}>
-                  <a>
-                    <li
-                      className={
-                        checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute
-                      }
-                    >
-                      <Text variant="heading6" color="white" textTransform="capitalize">
-                        {title}
-                      </Text>
-                    </li>
-                  </a>
+                  <li
+                    className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
+                  >
+                    <Text variant="heading6" color="white" textTransform="capitalize">
+                      {title}
+                    </Text>
+                  </li>
                 </Link>
               </a>
             ))}
@@ -106,14 +100,12 @@ export default function NavItem({
   }
 
   const nonChildren = (
-    <Link href={href}>
-      <a onClick={onOpenClick}>
-        <li className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}>
-          <Text variant="heading6" color="white" textTransform={'capitalize'}>
-            {title}
-          </Text>
-        </li>
-      </a>
+    <Link href={href} onClick={onOpenClick}>
+      <li className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}>
+        <Text variant="heading6" color="white" textTransform={'capitalize'}>
+          {title}
+        </Text>
+      </li>
     </Link>
   )
 

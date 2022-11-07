@@ -1,20 +1,20 @@
+import { useAccount, useDisconnect, Web3Button } from '@web3modal/react'
 import type { NextPage } from 'next'
-import Text from '../../components/Text/Index'
-import NextImage from 'next/future/image'
-import s from '../../styles/TryItOut.module.css'
-import { useDisconnect, ConnectButton, useAccount } from '@web3modal/react'
-import Button from '../../components/Button/Index'
-import ColorPickerDesktop from '../../components/ThemeColorPickerDesktop/index'
-import FooterRouter from '../../components/FooterRouter'
-import checkeredImage from '../../../public/CheckerPattern.png'
+import NextImage from 'next/image'
 import { useState } from 'react'
+import checkeredImage from '../../../public/CheckerPattern.png'
+import Button from '../../components/Button/Index'
+import FooterRouter from '../../components/FooterRouter'
 import MobileTryItOut from '../../components/MobileTryItOut'
+import Text from '../../components/Text/Index'
+import ColorPickerDesktop from '../../components/ThemeColorPickerDesktop/index'
 import W3MButtonStateless from '../../components/Web3Modal/W3MButtonStateless/Index'
 import { TRY_IT_OUT_CODE } from '../../data/MDX_CODE'
+import s from '../../styles/TryItOut.module.css'
 
 const TryItOut: NextPage = () => {
   const [copied, setCopied] = useState(false)
-  const { isConnected } = useAccount()
+  const { account } = useAccount()
   const disconnect = useDisconnect()
   let isMobileDimension
 
@@ -40,7 +40,7 @@ const TryItOut: NextPage = () => {
         className={s.checkeredContentBG}
         style={{ backgroundImage: `url(${checkeredImage.src})` }}
       >
-        <div>{!isConnected ? <ConnectButton /> : accountButton()}</div>
+        <div>{!account.isConnected ? <Web3Button /> : accountButton()}</div>
       </div>
     </div>
   )

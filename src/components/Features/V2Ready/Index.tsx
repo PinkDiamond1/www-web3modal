@@ -1,8 +1,8 @@
+import Image from 'next/image'
+import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
 import Card from '../../Card'
 import Text from '../../Text/Index'
-import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
 import s from './styles.module.css'
-import Image from 'next/image'
 
 const V2Ready = () => {
   const { title, image, text } = FEATURE_CARDS[8]
@@ -18,14 +18,7 @@ const V2Ready = () => {
         </Text>
       </div>
       <div className={s.imageContainer}>
-        <Image
-          priority={true}
-          src={image}
-          alt={title}
-          layout="responsive"
-          width={350}
-          height={220}
-        />
+        <Image priority={true} src={image} alt={title} width={350} height={220} />
       </div>
     </Card>
   )

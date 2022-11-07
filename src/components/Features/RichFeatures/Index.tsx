@@ -1,9 +1,9 @@
+import NextImage from 'next/image'
+import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
+import { isMobile } from '../../../utils/Index'
 import Card from '../../Card'
 import Text from '../../Text/Index'
-import NextImage from 'next/future/image'
-import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
 import s from './styles.module.css'
-import { isMobile } from '../../../utils/Index'
 
 const RichFeatures = () => {
   const { title, image, text } = FEATURE_CARDS[4]

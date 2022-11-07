@@ -1,20 +1,19 @@
-import Text from '../Text/Index'
 import { animate, timeline } from 'motion'
+import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
-import s from './styles.module.css'
-import Tag from '../Tag/Index'
+import { useEffect, useState } from 'react'
 import { SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
 import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
-import Image from 'next/image'
 import NavItem from '../layout/NavItem'
+import Tag from '../Tag/Index'
+import Text from '../Text/Index'
+import s from './styles.module.css'
 
 const topLine = `#${s.hamburgerTop}`
 const botLine = `#${s.hamburgerBottom}`
 const header = `#${s.header}`
 const menuContent = `.${s.menuContent}`
 
-//ToDo: Figure Hydration error...
 export default function Header() {
   const [open, setOpen] = useState(false)
   const [trackNestedHeaderOpen, setTrackNestedHeaderOpen] = useState(false)
@@ -69,17 +68,14 @@ export default function Header() {
     } else {
       onMobileMenuClose()
     }
-    console.log('useEffect trackNestedHeaderOpen', trackNestedHeaderOpen)
   }, [open, trackNestedHeaderOpen])
 
   const headerContent = (
     <div className={s.headerContent}>
       <Link href="/">
-        <div>
-          <Text variant="heading5" color="grey">
-            Web3Modal
-          </Text>
-        </div>
+        <Text variant="heading5" color="grey">
+          Web3Modal
+        </Text>
       </Link>
       <div style={{ marginLeft: 16 }}>
         <Tag>2.0.0</Tag>
@@ -100,16 +96,14 @@ export default function Header() {
           {SIDE_BAR_NAVIGATION.map(link => (
             <li key={link.title} className={s.item}>
               <Link href={link.href} key={link.title}>
-                <>
-                  <NavItem
-                    href={link.href}
-                    title={link.title}
-                    nestedNav={link.nestedNav}
-                    onOpenClick={onOpenClick}
-                    setTrackNestedHeaderOpen={setTrackNestedHeaderOpen}
-                    trackNestedHeaderOpen={trackNestedHeaderOpen}
-                  />
-                </>
+                <NavItem
+                  href={link.href}
+                  title={link.title}
+                  nestedNav={link.nestedNav}
+                  onOpenClick={onOpenClick}
+                  setTrackNestedHeaderOpen={setTrackNestedHeaderOpen}
+                  trackNestedHeaderOpen={trackNestedHeaderOpen}
+                />
               </Link>
             </li>
           ))}
@@ -118,7 +112,6 @@ export default function Header() {
     </div>
   )
 
-  //ToDo: revisit SVG (temp solution)
   const socialContent = (
     <div>
       <ul id={s.social} className={s.menuContent}>

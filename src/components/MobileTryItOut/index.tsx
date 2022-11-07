@@ -1,10 +1,8 @@
-import Text, { IProps as TextProps } from '../Text/Index'
 import { timeline } from 'motion'
+import NextImage from 'next/image'
 import { useEffect, useState } from 'react'
-import s from './styles.module.css'
-import NextImage from 'next/future/image'
+import { ThemeCtrl } from '../../controllers/ThemeCtrl'
 import { ACCENT_COLORS, THEME } from '../../data/COLOR_PICKER'
-import Button from '../Button/Index'
 import {
   buttonColorCheck,
   changeAccentColor,
@@ -12,7 +10,9 @@ import {
   checkCurrentAccentColor,
   checkCurrentTheme
 } from '../../utils/ThemeColorPicker'
-import { ThemeCtrl } from '../../controllers/ThemeCtrl'
+import Button from '../Button/Index'
+import Text, { IProps as TextProps } from '../Text/Index'
+import s from './styles.module.css'
 
 const footer = `#${s.footer}`
 

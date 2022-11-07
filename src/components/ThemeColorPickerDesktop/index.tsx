@@ -1,9 +1,9 @@
+import NextImage from 'next/image'
 import { ThemeCtrl } from '../../controllers/ThemeCtrl'
 import { ACCENT_COLORS, THEME } from '../../data/COLOR_PICKER'
 import Button from '../Button/Index'
 import Text, { IProps as TextProps } from '../Text/Index'
 import s from './styles.module.css'
-import NextImage from 'next/future/image'
 
 export default function ColorPickerDesktop() {
   const changeTheme = (theme: string) => {
