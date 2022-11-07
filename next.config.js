@@ -19,5 +19,8 @@ module.exports = withMDX({
     })
 
     return config
+  },
+  images: {
+    unoptimized: true
   }
 })
