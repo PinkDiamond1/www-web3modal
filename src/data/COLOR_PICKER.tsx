@@ -1,13 +1,13 @@
 export const THEME = [
   {
-    value: 'light',
+    value: 'light' as const,
     title: 'Light',
     icon: '/icons/Moon.svg',
     variant: 'fill',
     color: 'blue' as const
   },
   {
-    value: 'dark',
+    value: 'dark' as const,
     title: 'Dark',
     variant: 'fill',
     icon: '/icons/Light.svg',
@@ -15,12 +15,13 @@ export const THEME = [
   }
 ]
 export const ACCENT_COLORS = [
-  { value: 'default', text: 'Default' },
-  { value: 'magenta', text: 'Magenta' },
-  { value: 'blue', text: 'Blue' },
-  { value: 'orange', text: 'Orange' },
-  { value: 'green', text: 'Green' },
-  { value: 'purple', text: 'Purple' },
-  { value: 'teal', text: 'Teal' }
+  { value: 'default' as const, text: 'Default' },
+  { value: 'magenta' as const, text: 'Magenta' },
+  { value: 'blue' as const, text: 'Blue' },
+  { value: 'orange' as const, text: 'Orange' },
+  { value: 'green' as const, text: 'Green' },
+  { value: 'purple' as const, text: 'Purple' },
+  { value: 'teal' as const, text: 'Teal' }
+  //ToDo: Add black and white theme once better design
   // { value: 'blackWhite', text: 'Black and White' }
 ]

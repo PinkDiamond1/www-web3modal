@@ -6,21 +6,34 @@
     margin: 0
 }
 
+.walletImage {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
 .bottomTextButtonContainer {
     padding: 0 2em 0 2em;
     display: flex;
-    /* text-align: center; */
     flex-direction: column;
     width: 100%;
 }
 
-.poweredByWC {
-    width: 80%;
+.poweredByWCImage {
+    width: 100%;
+    height: 60px;
     padding: 10px 0;
 }
 
 @media (max-width: 800px) {
-    .poweredByWC  {
-      margin-bottom: 1em;
+    .poweredByWCImage  {
+        margin-bottom: 1em;
+        object-fit: contain;
+        object-position: 0%;
+    }
+    .walletImage {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
     }
   }

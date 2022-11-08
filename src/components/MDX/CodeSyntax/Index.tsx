@@ -1,9 +1,9 @@
+import NextImage from 'next/image'
+import { useState } from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism'
-import s from './styles.module.css'
 import Text from '../../Text/Index'
-import NextImage from 'next/future/image'
-import { useState } from 'react'
+import s from './styles.module.css'
 
 interface CodeSyntaxProps {
   codeString: string

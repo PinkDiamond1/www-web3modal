@@ -1,4 +1,4 @@
-import MultiChain from '../../components/Features/MultiChain'
+import MultiChain from './MultiChain/index'
 import Interface from '../../components/Features/Interface/Index'
 import Wallets from '../../components/Features/Wallets'
 import RichFeatures from '../../components/Features/RichFeatures/Index'

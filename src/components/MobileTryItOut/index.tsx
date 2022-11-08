@@ -1,10 +1,8 @@
-import Text, { IProps as TextProps } from '../Text/Index'
 import { timeline } from 'motion'
+import NextImage from 'next/image'
 import { useEffect, useState } from 'react'
-import s from './styles.module.css'
-import NextImage from 'next/future/image'
+import { ThemeCtrl } from '../../controllers/ThemeCtrl'
 import { ACCENT_COLORS, THEME } from '../../data/COLOR_PICKER'
-import Button from '../Button/Index'
 import {
   buttonColorCheck,
   changeAccentColor,
@@ -12,7 +10,9 @@ import {
   checkCurrentAccentColor,
   checkCurrentTheme
 } from '../../utils/ThemeColorPicker'
-import { ThemeCtrl } from '../../controllers/ThemeCtrl'
+import Button from '../Button/Index'
+import Text, { IProps as TextProps } from '../Text/Index'
+import s from './styles.module.css'
 
 const footer = `#${s.footer}`
 
@@ -25,12 +25,10 @@ export default function MobileTryItOut() {
   }
 
   function onOpenMobileMenu() {
-    // document.getElementsByTagName('html')[0].classList.add('noScroll')
     timeline([[footer, { height: '103vh' }, { duration: 0.2, easing: 'ease-in-out' }]])
   }
 
   function onMobileMenuClose() {
-    // document.getElementsByTagName('html')[0].classList.remove('noScroll')
     timeline([[footer, { height: '0vh' }, { duration: 0.2, easing: 'ease-in-out' }]])
   }
 
@@ -87,7 +85,6 @@ export default function MobileTryItOut() {
               color={buttonColorCheck(color.value) as TextProps['color']}
               textTransform="capitalize"
               textVariant="heading6"
-              // accentButton={true}
               className={
                 checkCurrentAccentColor(color.value)
                   ? s.selectedAccentColor
@@ -123,7 +120,7 @@ export default function MobileTryItOut() {
           <NextImage
             priority={true}
             alt="mobilePickerIcon"
-            src={currentTheme === 'light' ? '../icons/Moon.svg' : '../icons/Light.svg'}
+            src={currentTheme === 'light' ? '/icons/Moon.svg' : '/icons/Light.svg'}
             height={32}
             width={32}
           />

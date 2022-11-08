@@ -1,9 +1,9 @@
-import Card from '../Card'
-import Text from '../Text/Index'
 import Image from 'next/image'
 import FEATURE_CARDS from '../../data/FEATURE_CARDS'
 import { SOCIAL_ICON_COMMUNITY } from '../../data/SOCIAL_ICON'
+import Card from '../Card'
 import SocialIconCommunity from '../SocialLinksCommunity/Index'
+import Text from '../Text/Index'
 import s from './styles.module.css'
 
 export default function Community() {
@@ -37,7 +37,7 @@ export default function Community() {
           </div>
         </div>
         <div style={{ borderRadius: 44, overflow: 'hidden', position: 'relative', top: 10 }}>
-          <Image layout="responsive" src={image} alt={title} width={800} height={220} />
+          <Image src={image} alt={title} width={800} height={220} />
         </div>
       </Card>
     </div>

@@ -1,8 +1,7 @@
-import Card from '../../Card'
-import Text from '../../Text/Index'
 import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
-import Button from '../../Button/Index'
+import Card from '../../Card'
+import Text from '../../Text/Index'
 import s from './styles.module.css'
 
 const Interface = () => {
@@ -15,22 +14,19 @@ const Interface = () => {
           {title}
         </Text>
       </div>
-      <Image src={image} alt={title} layout="responsive" width={300} height={250} />
+      <Image src={image} alt={title} width="0" height="0" className={s.walletImage} />
       <div className={s.bottomTextButtonContainer}>
         <Text color="grey" variant="heading5">
           {text}
         </Text>
-        <div className={s.poweredByWC}>
-          {/* <Image src={"/icons/WalletConnectCloud.png"} layout="responsive" alt={title} width={228} height={40} /> */}
-          <Image
-            src={'/icons/WalletConnectCloud.png'}
-            layout="responsive"
-            priority={true}
-            alt={title}
-            width={240}
-            height={40}
-          />
-        </div>
+        <Image
+          src={'/icons/WalletConnectCloud.png'}
+          priority={true}
+          alt={title}
+          className={s.poweredByWCImage}
+          width="0"
+          height="0"
+        />
       </div>
     </Card>
   )

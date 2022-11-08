@@ -1,29 +1,32 @@
+import NextImage from 'next/image'
+import { useSnapshot } from 'valtio'
 import { ThemeCtrl } from '../../controllers/ThemeCtrl'
 import { ACCENT_COLORS, THEME } from '../../data/COLOR_PICKER'
 import Button from '../Button/Index'
 import Text, { IProps as TextProps } from '../Text/Index'
 import s from './styles.module.css'
-import NextImage from 'next/future/image'
 
 export default function ColorPickerDesktop() {
-  const changeTheme = (theme: string) => {
+  const { accentColor, theme } = useSnapshot(ThemeCtrl.state)
+
+  const changeTheme = (theme: typeof ThemeCtrl.state.theme) => {
     ThemeCtrl.setTheme(theme)
   }
 
-  const changeAccentColor = (color: string) => {
+  const changeAccentColor = (color: typeof ThemeCtrl.state.accentColor) => {
     ThemeCtrl.setAccentColor(color)
   }
 
   const checkCurrentAccentColor = (color: string) => {
-    if (color === ThemeCtrl.state.accentColor) {
+    if (color === accentColor) {
       return true
     } else {
       return false
     }
   }
 
-  const checkCurrentTheme = (theme: string) => {
-    if (theme === ThemeCtrl.state.theme) {
+  const checkCurrentTheme = (selectedTheme: string) => {
+    if (selectedTheme === theme) {
       return true
     } else {
       return false

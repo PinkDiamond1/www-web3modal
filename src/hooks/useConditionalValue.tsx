@@ -6,9 +6,6 @@ export default function useConditionalValue<T extends string>(
     return className
   } else if (Array.isArray(className) && Array.isArray(condition)) {
     const index = condition.findIndex(c => c)
-    if (index < 0) {
-      // throw new Error("No matching value");
-    }
 
     return className[index]
   }

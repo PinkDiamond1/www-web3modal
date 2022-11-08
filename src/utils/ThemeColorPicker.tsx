@@ -1,10 +1,10 @@
 import { ThemeCtrl } from '../controllers/ThemeCtrl'
 
-export const changeTheme = (theme: string) => {
+export const changeTheme = (theme: typeof ThemeCtrl.state.theme) => {
   ThemeCtrl.setTheme(theme)
 }
 
-export const changeAccentColor = (color: string) => {
+export const changeAccentColor = (color: typeof ThemeCtrl.state.accentColor) => {
   ThemeCtrl.setAccentColor(color)
 }
 

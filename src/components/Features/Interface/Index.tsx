@@ -1,7 +1,7 @@
-import Card from '../../Card'
-import Text from '../../Text/Index'
 import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
+import Card from '../../Card'
+import Text from '../../Text/Index'
 import s from './styles.module.css'
 
 const Interface = () => {
@@ -23,9 +23,9 @@ const Interface = () => {
             priority={true}
             src={image}
             alt={title}
-            layout="responsive"
-            width={392}
-            height={263}
+            className={s.interfaceImage}
+            width="0"
+            height="0"
           />
         </div>
       </div>
