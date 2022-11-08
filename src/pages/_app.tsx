@@ -13,7 +13,6 @@ if (!process.env.NEXT_PUBLIC_PROJECT_ID)
 function App({ Component, pageProps }: AppProps) {
   const { accentColor, theme } = useSnapshot(ThemeCtrl.state)
 
-  // Configure web3modal
   const modalConfig = {
     projectId: process.env.NEXT_PUBLIC_PROJECT_ID!,
     theme,

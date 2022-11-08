@@ -3,7 +3,6 @@ import Text from '../../Text/Index'
 import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
 import s from './styles.module.css'
-import { isMobile } from '../../../utils/Index'
 
 const TermsConditions = () => {
   const { title, image, text } = FEATURE_CARDS[5]

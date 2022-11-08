@@ -4,7 +4,6 @@
     height: 260px;
     border-radius: 44px;
     border: 1px solid #987DE8;
-    /* margin-top: 50px; */
 }
 
 .interfaceCard {
@@ -12,7 +11,6 @@
     justify-content: center;
     position: relative;
     top: -40px;
-    /* margin-top: -40px; */
 }
 
 .interfaceImage {
@@ -24,45 +22,28 @@
 
 .textContainer {
     padding: 2em 2em 1.5em 2em;    
-    margin-bottom: 50px;
+    margin-bottom: 3em;
 }
 
 @media (max-width: 800px) {
     .purpleCard{
-        /* margin-top: 60px; */
-        height: 220px;
+        height: 180px;
         border-radius: 32px;
     }
     .textContainer {
         padding: 1.5em 1em 1.5em 1em;     
     }
     .interfaceCard {
-        /* position: relative; */
-        /* width: 100%; */
-        width: inherit;
+        width: 107%;
         height: 230px;
         flex: none;
-        display: flex;
-        /* object-fit: fill; */
-        /* flex: none; */
         object-position: 50% 50%;
-        /* border: 1px solid red; */
-        /* display: block; */
-        /* object-fit: stretch; */
-        /* width: 200px; */
-        /* width: 120%; */
-        /* position: relative;
-        left: -15px;
-        top: -50px; */
-        margin-top: -50px;
+        margin-top: -2em;
+        position: relative;
+        left: -0.5em;
+        
     }
     .interfaceImage {
-        /* position: relative; */
-        /* height: 263px; */
-        /* object-position: 50% 50%; */
-        /* border: 1px solid red; */
-        /* width: calc(100% + 50px); */
-        /* height: 263px; */
         object-fit: contain;
     }
   }

@@ -1,6 +1,5 @@
 import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
-import { isMobile } from '../../../utils/Index'
 import Card from '../../Card'
 import Text from '../../Text/Index'
 import s from './styles.module.css'
@@ -23,8 +22,6 @@ const MultiChain = () => {
           priority={true}
           src={image}
           alt={title}
-          // width={isMobile() ? 240 : 260}
-          // height={isMobile() ? 220 : 240}
           className={s.multiChainImage}
           width="0"
           height="0"

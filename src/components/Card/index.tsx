@@ -20,10 +20,6 @@ export default function Card({
   width,
   ...props
 }: IProps) {
-  // FullWidth // ThreeCol // TwoCol
-  // Padding Normal on Desktop
-  // Breakpoint noPadding.
-
   const colorClass = useConditionalValue(
     [s.dark, s.gradient, s.transparent],
     [color === 'dark', color === 'gradient', color === 'transparent']

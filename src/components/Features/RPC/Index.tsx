@@ -25,8 +25,6 @@ const RPC = () => {
         width="0"
         height="0"
         className={s.imageContainer}
-        // width={isMobile() ? 200 : 250}
-        // height={isMobile() ? 150 : 200}
       />
     </Card>
   )

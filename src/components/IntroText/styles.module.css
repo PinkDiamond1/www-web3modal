@@ -33,6 +33,7 @@
     display: flex;
   }
   .buttonStretch {
-    width: 100%;
+    width: 96%;
+    margin-right: 1rem;
   }
 }
