@@ -1,5 +1,5 @@
 //-------- GET STARTED -------------------------------//
-export const INSTALL_INSTRUCTIONS = 'yarn add @web3modal/react @web3modal/ethereum ethers'
+export const INSTALL_INSTRUCTIONS = `yarn add @web3modal/react @web3modal/ethereum ethers`
 
 export const APP_SETUP = `import { Web3Modal } from '@web3modal/react'
 
