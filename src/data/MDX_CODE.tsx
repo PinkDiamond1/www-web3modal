@@ -54,56 +54,30 @@ export default function YourAppContent() {
 `
 
 //-------- REACT -------------------------------//
-export const CREATE_REACT_APP = `npx create-react-app wallectconnect-react-demo
-cd walletconnect-react-demo
-yarn add @web3modal/react @web3modal/ethereum ethers`
+export const INSTALL_REACT_DEPENDENCIES = `
+npm install @web3modal/react @web3modal/ethereum ethers
+`
 
-export const CREATE_ENV = `yarn add dot
-env touch .env`
-
-export const REACT_PROJECT_ID = `// .env
-REACT_APP_PROJECT_ID='YOUR_PROJECT_ID'`
-
-export const CONSOLE_LOG_REACT_PROJECT_ID = `const { REACT_APP_PROJECT_ID } = process.env
-console.log('REACT_APP_PROJECT_ID', REACT_APP_PROJECT_ID)`
-
-export const WEB3_MODAL_REACT = `import ReactDOM from "react-dom/client";
+export const CONFIGURE_REACT = `
 import { Web3Modal } from '@web3modal/react'
-import App from "./App";
 
 const config = {
-  projectId: YOUR_PROJECT_ID
-  theme: "dark",
-  accentColor: "default",
+  projectId: '<YOUR_PROJECT_ID>',
+  theme: 'dark',
+  accentColor: 'default',
   ethereum: {
-    appName: 'web3Modal',
-    autoConnect: true
+    appName: 'web3Modal'
   }
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <>
-    <App />
-    <Web3Modal config={config} />
-  </>
-
-);`
-
-export const GET_CONNECTED_REACT = `import { Web3Button, useAccount } from '@web3modal/react';
-
-function App() {
-  const { account } = useAccount()
-  
-  return (
-    <div>
-      {account.isConnected ? <h1>{account.address}</h1> : null}
-      <Web3Button />
-    </div>
-  );
 }
 
-export default App;
+export default function App() {
+  return (
+    <>
+      <YourAppContent />
+      <Web3Modal config={config} />
+    </>
+  )
+}
 `
 
 //-------- MODAL -------------------------------//

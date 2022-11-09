@@ -15,28 +15,18 @@ export const TOC_GET_STARTED = [
 //------REACT-------------------------------------------//
 export const TOC_REACT = [
   {
-    id: 'react',
-    title: 'React',
+    id: 'start',
+    title: 'Get Started',
     items: []
   },
   {
-    id: 'create-react-project',
-    title: 'Create React Project',
+    id: 'install',
+    title: 'Install',
     items: []
   },
   {
-    id: 'configure-app',
-    title: 'Configure App',
-    items: []
-  },
-  {
-    id: 'create-env',
-    title: 'Create Env',
-    items: []
-  },
-  {
-    id: 'get-connected',
-    title: 'Get Connected',
+    id: 'configure',
+    title: 'Configure',
     items: []
   }
 ]

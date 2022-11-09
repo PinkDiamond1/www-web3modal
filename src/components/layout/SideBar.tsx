@@ -1,23 +1,12 @@
-import { useRouter } from 'next/router'
-import s from '../../styles/Layout.module.css'
-import Text from '../Text/Index'
-import Tag from '../Tag/Index'
-import SocialIcon from '../SocialIcon/Index'
+import { SIDE_BAR_DOCS, SIDE_BAR_GUIDES } from '../../data/NAVIGATION'
 import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
-import { SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
+import s from '../../styles/Layout.module.css'
+import SocialIcon from '../SocialIcon/Index'
+import Tag from '../Tag/Index'
+import Text from '../Text/Index'
 import NavItem from './NavItem'
 
 export default function SideBar() {
-  const router = useRouter()
-
-  const checkIfCurrentRoute = (href: string) => {
-    if (href === router.pathname) {
-      return true
-    } else {
-      return false
-    }
-  }
-
   const socialContent = (
     <div style={{ paddingBottom: '1.5em' }}>
       <Text variant="heading6" color="grey" className={s.docsHeading}>
@@ -62,7 +51,15 @@ export default function SideBar() {
             Docs
           </Text>
           <ul style={{ padding: 0, margin: 0, listStyleType: 'none' }}>
-            {SIDE_BAR_NAVIGATION.map(({ href, title, nestedNav }) => (
+            {SIDE_BAR_DOCS.map(({ href, title, nestedNav }) => (
+              <NavItem key={title} href={href} title={title} nestedNav={nestedNav} />
+            ))}
+          </ul>
+          <Text variant="text3" color="grey">
+            Guides
+          </Text>
+          <ul style={{ padding: 0, margin: 0, listStyleType: 'none' }}>
+            {SIDE_BAR_GUIDES.map(({ href, title, nestedNav }) => (
               <NavItem key={title} href={href} title={title} nestedNav={nestedNav} />
             ))}
           </ul>
