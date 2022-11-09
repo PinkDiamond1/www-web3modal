@@ -48,8 +48,13 @@ export const TOC_REACT_HOOKS = [
     items: []
   },
   {
-    id: 'useContract',
-    title: 'useContract',
+    id: 'useContractEvent',
+    title: 'useContractEvent',
+    items: []
+  },
+  {
+    id: 'useContractRead',
+    title: 'useContractRead',
     items: []
   }
 ]

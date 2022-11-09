@@ -9,7 +9,9 @@ import {
   HOOK_USE_ACCOUNT,
   HOOK_USE_BALANCE,
   HOOK_USE_BLOCK_NUMBER,
-  HOOK_USE_CONTRACT
+  HOOK_USE_CONTRACT,
+  HOOK_USE_CONTRACT_EVENT,
+  HOOK_USE_CONTRACT_READ
 } from '../../data/MDX_CODE'
 import FooterRouter from '../../components/FooterRouter'
 import Text from '../../components/Text/Index'
@@ -24,20 +26,17 @@ import { TOC_REACT_HOOKS } from '../../data/TABLE_CONTENTS'
         Do note, you have to import and use these hooks from @web3modal packages.
       </MDXContentBlock>
 
-
       <Text variant="heading4" color="white" id="useConnectModal">useConnectModal</Text>
       <MDXContentBlock>
         Hook to check state of the modal, open or close it.
         <CodeSyntax codeString={HOOK_USE_CONNECT_MODAL} codeType={"app"} />
       </MDXContentBlock>
 
-
       <Text variant="heading4" color="white" id="useAccount">useAccount ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseAccount.tsx))</Text>
       <MDXContentBlock>
         Hook to get account data.
         <CodeSyntax codeString={HOOK_USE_ACCOUNT} codeType={"app"} />
       </MDXContentBlock>
-
 
       <Text variant="heading4" color="white" id="useBalance">useBalance ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseBalance.tsx))</Text>
       <MDXContentBlock>
@@ -55,6 +54,18 @@ import { TOC_REACT_HOOKS } from '../../data/TABLE_CONTENTS'
       <MDXContentBlock>
         Hook for declaratively creating an ethers [Contract](https://docs.ethers.io/v5/api/contract/contract/) instance.
         <CodeSyntax codeString={HOOK_USE_CONTRACT} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useContractEvent">useContractEvent ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseContractEvent.tsx))</Text>
+      <MDXContentBlock>
+        Hook for subscribing to ethers Contract [events](https://docs.ethers.io/v5/api/contract/contract/#Contract--events).
+        <CodeSyntax codeString={HOOK_USE_CONTRACT_EVENT} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useContractRead">useContractRead ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseContractRead.tsx))</Text>
+      <MDXContentBlock>
+        Hook for calling an ethers Contract [read-only](https://docs.ethers.io/v5/api/contract/contract/#Contract--readonly) method.
+        <CodeSyntax codeString={HOOK_USE_CONTRACT_READ} codeType={"app"} />
       </MDXContentBlock>
 
 

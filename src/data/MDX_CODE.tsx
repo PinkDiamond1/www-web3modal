@@ -169,3 +169,58 @@ interface Options {
   isReady: boolean
 }
 `
+
+export const HOOK_USE_CONTRACT_EVENT = `
+import { useContractEvent } from '@web3modal/react'
+import ensRegistryABI from './yourAbi/ensRegistryABI.json'
+
+// Usage
+useContractEvent({
+  address: '0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e',
+  abi: ensRegistryABI,
+  eventName: 'NewOwner',
+  listener: (...event) => console.log(event)
+})
+
+// Options
+interface Options {
+  address: string
+  abi: ContractInterface
+  eventName: string
+  listener: (...event: unknown[]) => void
+  chainId?: number
+  once?: boolean
+}
+`
+
+export const HOOK_USE_CONTRACT_READ = `
+import { useContractRead } from '@web3modal/react'
+import wagmigotchiABI from './yourAbi/wagmigotchiABI.json'
+
+// Usage
+const { data, error, isLoading, refetch } = useContractRead({
+  address: '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
+  abi: wagmigotchiABI,
+  functionName: 'getHunger'
+})
+
+// Returns
+interface Return {
+  data?: Result
+  error?: Error
+  isLoading: boolean
+  refetch: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  address: string
+  abi: ContractInterface
+  functionName: string
+  args?: any[]
+  overrides?: CallOverrides
+  chainId?: number
+  enabled?: boolean
+  watch?: boolean
+}
+`
