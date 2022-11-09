@@ -18,6 +18,11 @@ export const TOC_REACT_INSTALL = [
     id: 'configure',
     title: 'Configure',
     items: []
+  },
+  {
+    id: 'button',
+    title: 'Open & Close',
+    items: []
   }
 ]
 
@@ -40,6 +45,11 @@ export const TOC_REACT_HOOKS = [
   {
     id: 'useBlockNumber',
     title: 'useBlockNumber',
+    items: []
+  },
+  {
+    id: 'useContract',
+    title: 'useContract',
     items: []
   }
 ]

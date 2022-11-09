@@ -20,7 +20,7 @@ export const INSTALL_REACT_DEPENDENCIES = `
 npm install @web3modal/react @web3modal/ethereum ethers
 `
 
-export const CONFIGURE_REACT = `
+export const INSTALL_CONFIGURE_REACT = `
 import { Web3Modal } from '@web3modal/react'
 
 const config = {
@@ -37,6 +37,22 @@ export default function App() {
     <>
       <YourAppContent />
       <Web3Modal config={config} />
+    </>
+  )
+}
+`
+
+export const INSTALL_WEB3BUTTON = `
+import { Web3Button, useConnectModal } from '@web3modal/react'
+
+export default function YourAppContent() {
+  const { isOpen, open, close } = useConnectModal()
+
+  return (
+    <>
+      <Web3Button />
+      {/* or */}
+      <button onClick={open}>Open Modal</button>
     </>
   )
 }
@@ -127,5 +143,29 @@ interface Options {
   watch?: boolean
   enabled?: boolean
   chainId?: number
+}
+`
+
+export const HOOK_USE_CONTRACT = `
+import { useContract } from '@web3modal/react'
+import ensRegistryABI from './yourAbi/ensRegistryABI.json'
+
+// Usage
+const { contract, isReady } = useContract({
+  address: '0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e',
+  abi: ensRegistryABI
+})
+
+// Returns
+ethers.Contract | undefined
+
+// Options
+interface Options {
+  contract?: {
+    address: string
+    abi: ContractInterface
+    signerOrProvider?: Provider | Signer
+  }
+  isReady: boolean
 }
 `

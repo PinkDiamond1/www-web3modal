@@ -8,7 +8,8 @@ import {
   HOOK_USE_CONNECT_MODAL,
   HOOK_USE_ACCOUNT,
   HOOK_USE_BALANCE,
-  HOOK_USE_BLOCK_NUMBER
+  HOOK_USE_BLOCK_NUMBER,
+  HOOK_USE_CONTRACT
 } from '../../data/MDX_CODE'
 import FooterRouter from '../../components/FooterRouter'
 import Text from '../../components/Text/Index'
@@ -48,6 +49,12 @@ import { TOC_REACT_HOOKS } from '../../data/TABLE_CONTENTS'
       <MDXContentBlock>
         Hook for fetching the current block number.
         <CodeSyntax codeString={HOOK_USE_BLOCK_NUMBER} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useContract">useContract ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseContract.tsx))</Text>
+      <MDXContentBlock>
+        Hook for declaratively creating an ethers [Contract](https://docs.ethers.io/v5/api/contract/contract/) instance.
+        <CodeSyntax codeString={HOOK_USE_CONTRACT} codeType={"app"} />
       </MDXContentBlock>
 
 
