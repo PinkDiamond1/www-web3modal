@@ -9,7 +9,7 @@ interface Props {
   children?: ReactNode
 }
 
-export default function Layout({ children, ...props }: Props) {
+export default function Layout({ children }: Props) {
   const router = useRouter()
 
   return (

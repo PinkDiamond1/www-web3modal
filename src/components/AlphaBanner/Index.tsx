@@ -1,6 +1,4 @@
-import { useRouter } from 'next/router'
-import { createContext, Dispatch, ReactElement, SetStateAction, useEffect, useState } from 'react'
-import Button from '../Button/Index'
+import { useEffect, useState } from 'react'
 import Text from '../Text/Index'
 import s from './styles.module.css'
 

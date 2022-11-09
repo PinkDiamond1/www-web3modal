@@ -8,7 +8,7 @@ interface Props {
   data?: any
 }
 
-export default function MDXToCSection({ children, data, ...props }: Props) {
+export default function MDXToCSection({ data }: Props) {
   const [activeId, setActiveId] = useState()
   useIntersectionObserver(setActiveId)
 

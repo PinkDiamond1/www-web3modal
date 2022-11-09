@@ -1,9 +1,7 @@
-import { W3mButton } from '@web3modal/ui/dist/_types/src/components/w3m-button'
-import React, { useEffect } from 'react'
-import s from './styles.module.css'
 import { ThemeCtrl } from '../../../controllers/ThemeCtrl'
-import Text from '../../Text/Index'
 import useConditionalValue from '../../../hooks/useConditionalValue'
+import Text from '../../Text/Index'
+import s from './styles.module.css'
 
 interface Props {
   text: string
