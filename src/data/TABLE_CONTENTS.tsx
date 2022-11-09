@@ -71,5 +71,10 @@ export const TOC_REACT_HOOKS = [
     id: 'useContractWrite',
     title: 'useContractWrite',
     items: []
+  },
+  {
+    id: 'useEnsAddress',
+    title: 'useEnsAddress',
+    items: []
   }
 ]

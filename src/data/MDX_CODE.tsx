@@ -265,3 +265,51 @@ interface Options {
   signer?: Signer
 }
 `
+
+export const HOOK_USE_ENS_ADDRESS = `
+import { useEnsAddress } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading, refetch } = useEnsAddress({
+  name: 'vitalik.eth'
+})
+
+// Returns
+interface Return {
+  data?: string
+  error?: Error
+  isLoading: boolean
+  refetch: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  name: string
+  chainId?: number
+  enabled?: boolean
+}
+`
+
+export const HOOK_USE_ENS_AVATAR = `
+import { useEnsAvatar } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading, refetch } = useEnsAvatar({
+  addressOrName: 'vitalik.eth'
+})
+
+// Returns
+interface Return {
+  data?: string
+  error?: Error
+  isLoading: boolean
+  refetch: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  addressOrName: string
+  chainId?: number
+  enabled?: boolean
+}
+`
