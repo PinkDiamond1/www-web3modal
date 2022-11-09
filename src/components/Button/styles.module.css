@@ -74,37 +74,36 @@
 
 .fillGreen {
   background-color: var(--color-green);
-  border-color: rgba(255, 255, 255, 0.)
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .fillMagenta {
   background-color: var(--color-magenta);
-  border-color: rgba(255, 255, 255, 0.1)
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .fillBlueNew {
   background-color: var(--color-blue-new);
-  border-color: rgba(255, 255, 255, 0.1)
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .fillOrange {
   background-color: var(--color-orange);
-  border-color: rgba(255, 255, 255, 0.1)
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .fillPurple {
-
-  background-color: var( --color-purple-bg);
-  border-color: rgba(255, 255, 255, 0.1)
+  background-color: var(--color-purple-bg);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .fillPurple:hover {
   background-color: var(--color-purple-fg);
-  border-color: rgba(255, 255, 255, 0.1)
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .fillWhite {
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   border-color: rgba(255, 255, 255, 1);
 }
 
@@ -114,17 +113,17 @@
 
 .fillTeal {
   background-color: var(--color-teal);
-  border-color: rgba(255, 255, 255, 0.1)
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .fillCyan {
   background-color: var(--color-cyan-fg);
-  border-color: rgba(255, 255, 255, 0.1)
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .fillCyan {
   background-color: var(--color-cyan-fg);
-  border-color: rgba(255, 255, 255, 0.1)
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .outlineGrey {
