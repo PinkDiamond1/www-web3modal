@@ -33,14 +33,11 @@ import Text from '../../components/Text/Index'
       <Text variant="heading5" color="white" id="app-setup">App Setup</Text>
       <MDXContentBlock>
         In the consuming app:
-        - Import ```Web3ModalProvider``` from ```@web3modal/react```.
-        - Import chains and provider from ```@web3/ethereum```.
-        - Wrap the component with ```Web3ModalProvider```.
+        - Import ```Web3Modal``` from ```@web3modal/react```.
+        - Create a ```config``` object.
         - Set ```projectId``` to ```NEXT_PUBLIC_PROJECT_ID```.
-        - Set chains and providers according to the example code below.
         <CodeSyntax codeString={APP_SETUP} codeType={"app"} />
       </MDXContentBlock>
-
       <Text variant="heading5" color="white" id="get-address">Get Address</Text>
       <MDXContentBlock>
         To get the connected wallet’s address, `import ConnectButton and useAccount from @web3modal/react.`
