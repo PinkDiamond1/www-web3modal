@@ -11,7 +11,9 @@ import {
   HOOK_USE_BLOCK_NUMBER,
   HOOK_USE_CONTRACT,
   HOOK_USE_CONTRACT_EVENT,
-  HOOK_USE_CONTRACT_READ
+  HOOK_USE_CONTRACT_READ,
+  HOOK_USE_CONTRACT_WRITE,
+  HOOK_USE_DISCONNECT
 } from '../../data/MDX_CODE'
 import FooterRouter from '../../components/FooterRouter'
 import Text from '../../components/Text/Index'
@@ -30,6 +32,12 @@ import { TOC_REACT_HOOKS } from '../../data/TABLE_CONTENTS'
       <MDXContentBlock>
         Hook to check state of the modal, open or close it.
         <CodeSyntax codeString={HOOK_USE_CONNECT_MODAL} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useDisconnect">useDisconnect</Text>
+      <MDXContentBlock>
+        Hook for disconnecting the connected account.
+        <CodeSyntax codeString={HOOK_USE_DISCONNECT} codeType={"app"} />
       </MDXContentBlock>
 
       <Text variant="heading4" color="white" id="useAccount">useAccount ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseAccount.tsx))</Text>
@@ -66,6 +74,12 @@ import { TOC_REACT_HOOKS } from '../../data/TABLE_CONTENTS'
       <MDXContentBlock>
         Hook for calling an ethers Contract [read-only](https://docs.ethers.io/v5/api/contract/contract/#Contract--readonly) method.
         <CodeSyntax codeString={HOOK_USE_CONTRACT_READ} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useContractWrite">useContractWrite ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseContractWrite.tsx))</Text>
+      <MDXContentBlock>
+        Hook for calling an ethers Contract [write](https://docs.ethers.io/v5/api/contract/contract/#Contract--write) method. Perpares transaction under the hood i.e. estimates gas price.
+        <CodeSyntax codeString={HOOK_USE_CONTRACT_WRITE} codeType={"app"} />
       </MDXContentBlock>
 
 

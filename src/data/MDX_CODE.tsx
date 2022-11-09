@@ -73,6 +73,17 @@ interface Return {
 }
 `
 
+export const HOOK_USE_DISCONNECT = `
+import { useDisconnect } from '@web3modal/react'
+
+// Usage
+const disconnect = useDisconnect()
+disconnect()
+
+// Returns
+() => void
+`
+
 export const HOOK_USE_ACCOUNT = `
 import { useAccount } from '@web3modal/react'
 
@@ -222,5 +233,35 @@ interface Options {
   chainId?: number
   enabled?: boolean
   watch?: boolean
+}
+`
+
+export const HOOK_USE_CONTRACT_WRITE = `
+import { useContractWrite } from '@web3modal/react'
+import wagmigotchiABI from './yourAbi/wagmigotchiABI.json'
+
+// Usage
+const { data, error, isLoading, write } = useContractWrite({
+  address: '0xecb504d39723b0be0e3a9aa33d646642d1051ee1',
+  abi: wagmigotchiABI,
+  functionName: 'feed'
+})
+write()
+
+// Returns
+interface Return {
+  data?: TransactionResponse
+  error?: Error
+  isLoading: boolean
+  write: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  functionName: string
+  chainId?: number | undefined
+  args?: any[]
+  overrides?: CallOverrides
+  signer?: Signer
 }
 `

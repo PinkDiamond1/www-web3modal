@@ -33,6 +33,11 @@ export const TOC_REACT_HOOKS = [
     items: []
   },
   {
+    id: 'useDisconnect',
+    title: 'useDisconnect',
+    items: []
+  },
+  {
     id: 'useAccount',
     title: 'useAccount',
     items: []
@@ -48,6 +53,11 @@ export const TOC_REACT_HOOKS = [
     items: []
   },
   {
+    id: 'useContract',
+    title: 'useContract',
+    items: []
+  },
+  {
     id: 'useContractEvent',
     title: 'useContractEvent',
     items: []
@@ -55,6 +65,11 @@ export const TOC_REACT_HOOKS = [
   {
     id: 'useContractRead',
     title: 'useContractRead',
+    items: []
+  },
+  {
+    id: 'useContractWrite',
+    title: 'useContractWrite',
     items: []
   }
 ]
