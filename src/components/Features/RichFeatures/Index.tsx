@@ -29,8 +29,6 @@ const RichFeatures = () => {
             src={image}
             alt={title}
             width={isMobile() ? 320 : 390}
-            // height={isMobile() ? 285 : 285}
-            // width={390}
             height={285}
           />
         </div>
