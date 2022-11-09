@@ -6,23 +6,8 @@ export const TOC_GET_STARTED = [
     items: []
   },
   {
-    id: 'wallet-connect-cloud',
-    title: 'Wallet Connect Cloud',
-    items: []
-  },
-  {
-    id: 'install',
-    title: 'Install',
-    items: []
-  },
-  {
-    id: 'app-setup',
-    title: 'App Setup',
-    items: []
-  },
-  {
-    id: 'get-address',
-    title: 'Get Address',
+    id: 'get-project-id',
+    title: 'Get Project ID',
     items: []
   }
 ]
@@ -375,15 +360,6 @@ export const USE_SWITCH_NETWORK_TOC = [
   {
     id: 'example',
     title: 'Example',
-    items: []
-  }
-]
-
-//------CLOUD_GET_PROJECT_ID-------------------------------------------//
-export const CLOUD_GET_PROJECT_ID_TOC = [
-  {
-    id: 'get-project-id',
-    title: 'Get Project ID',
     items: []
   }
 ]

@@ -1,4 +1,9 @@
-.imageContainer {
-    border-radius: 32px;
-    overflow: hidden;
+.imageContainer img {
+  width: min(100%, 700px);
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 18px;
+  margin: 30px auto;
 }
