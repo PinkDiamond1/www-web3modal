@@ -76,5 +76,10 @@ export const TOC_REACT_HOOKS = [
     id: 'useEnsAddress',
     title: 'useEnsAddress',
     items: []
+  },
+  {
+    id: 'useEnsAvatar',
+    title: 'useEnsAvatar',
+    items: []
   }
 ]
