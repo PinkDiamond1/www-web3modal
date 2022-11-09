@@ -1,41 +1,3 @@
-//-------- GET STARTED -------------------------------//
-export const INSTALL_INSTRUCTIONS = 'yarn add @web3modal/react @web3modal/ethereum ethers'
-
-export const APP_SETUP = `import { Web3Modal } from '@web3modal/react'
-
-const config = {
-  projectId: '<YOUR_PROJECT_ID>',
-  theme: 'dark',
-  accentColor: 'default',
-  ethereum: {
-    appName: 'web3Modal'
-  }
-}
-
-export default function App() {
-  return (
-    <>
-      <YourAppContent />
-      <Web3Modal config={config} />
-    </>
-  )
-}
-`
-
-export const GET_ADDRESS = `import { ConnectButton, useAccount } from '@web3modal/react'
-
-export default function HomePage() {
-  const { connected, address } = useAccount()
-
-  return connected ? (
-    <>
-      <h1>{address ? address : 'none'} </h1>
-    </>
-  ) : (
-    <ConnectButton />
-  )
-}`
-
 //-------- TRY IT OUT -------------------------------//
 export const TRY_IT_OUT_CODE = `
 import { useConnected, ConnectButton, useConnectModal } from '@web3modal/react'
@@ -81,9 +43,8 @@ export default function App() {
 `
 
 //-------- MODAL -------------------------------//
-
-export const USE_MODAL_CONNECT = `
-import { useConnectModal } from '@web3modal/ethereum'
+export const HOOK_USE_CONNECT_MODAL = `
+import { useConnectModal } from '@web3modal/react'
 
 // Usage
 const { isOpen, open, close } = useConnectModal()
@@ -93,6 +54,27 @@ interface Return {
   isOpen: boolean
   open: () => void
   close: () => void
+}
+`
+
+export const HOOK_USE_ACCOUNT = `
+import { useAccount } from '@web3modal/react'
+
+// Usage
+const { account, isReady } = useAccount()
+
+// Returns
+interface Return {
+  account: {
+    address: string | ''
+    connector?: Connector
+    isConnecting?: boolean
+    isReconnecting?: boolean
+    isConnected?: boolean
+    isDisconnected?: boolean
+    status?: 'connecting' | 'reconnecting' | 'connected' | 'disconnected'
+  }
+  isReady: boolean
 }
 `
 

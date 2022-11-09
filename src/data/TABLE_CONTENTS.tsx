@@ -1,11 +1,6 @@
 //------GET STARTED-------------------------------------------//
 export const TOC_GET_STARTED = [
   {
-    id: 'get-started',
-    title: 'Get Started',
-    items: []
-  },
-  {
     id: 'get-project-id',
     title: 'Get Project ID',
     items: []
@@ -13,12 +8,7 @@ export const TOC_GET_STARTED = [
 ]
 
 //------REACT-------------------------------------------//
-export const TOC_REACT = [
-  {
-    id: 'start',
-    title: 'Get Started',
-    items: []
-  },
+export const TOC_REACT_INSTALL = [
   {
     id: 'install',
     title: 'Install',
@@ -27,6 +17,14 @@ export const TOC_REACT = [
   {
     id: 'configure',
     title: 'Configure',
+    items: []
+  }
+]
+
+export const TOC_REACT_HOOKS = [
+  {
+    id: 'useConnectModal',
+    title: 'useConnectModal',
     items: []
   }
 ]

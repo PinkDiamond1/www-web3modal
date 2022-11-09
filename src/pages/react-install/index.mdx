@@ -1,4 +1,3 @@
-import styles from '../../styles/Home.module.css'
 import MDXLayout from '../../components/MDX/Layout/Index'
 import MDXContentSection from '../../components/MDX/Content/Index'
 import MDXToCSection from '../../components/MDX/TOC/Index'
@@ -8,16 +7,14 @@ import CodeSyntax from '../../components/MDX/CodeSyntax/Index'
 import { INSTALL_REACT_DEPENDENCIES, CONFIGURE_REACT } from '../../data/MDX_CODE'
 import FooterRouter from '../../components/FooterRouter'
 import Text from '../../components/Text/Index'
-import { TOC_REACT } from '../../data/TABLE_CONTENTS'
+import { TOC_REACT_INSTALL } from '../../data/TABLE_CONTENTS'
 
 <MDXLayout>
     <MDXContentSection>
 
-      <Text variant="heading4" color="white" id="start">Getting Started</Text>
+      <Text variant="heading3" color="white" id="start">Getting Started</Text>
       <MDXContentBlock >
-        Please ensure you are updated to the latest React / Next.js or similar version, as web3modal libraries target es2020.
-        Web3Modal hooks are based on [wagmi](https://wagmi.sh), so it is good idea to read through their documentation as well.
-        Do note, you have to import and use these hooks from @web3modal packages.
+        Please ensure you are updated to the latest Create React App / Next.js or similar version, as web3modal libraries target es2020.
       </MDXContentBlock>
 
       <Text variant="heading4" color="white" id="install">1. Install Dependencies</Text>
@@ -38,6 +35,6 @@ import { TOC_REACT } from '../../data/TABLE_CONTENTS'
             padding="lg"
         />
     </MDXContentSection>
-    <MDXToCSection data={TOC_REACT}/>
+    <MDXToCSection data={TOC_REACT_INSTALL}/>
 
 </MDXLayout>

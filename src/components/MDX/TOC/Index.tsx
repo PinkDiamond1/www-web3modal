@@ -14,7 +14,7 @@ export default function MDXToCSection({ children, data, ...props }: Props) {
 
   return (
     <nav className={s.container}>
-      <div style={{ borderLeft: '1px solid white', paddingLeft: '1em', marginLeft: '-1em' }}>
+      <div style={{ marginBottom: 20 }}>
         <Text variant="heading6" color="white">
           On This Page
         </Text>
