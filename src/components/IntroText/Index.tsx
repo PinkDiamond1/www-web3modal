@@ -38,7 +38,7 @@ const IntroText = () => {
         Web3Modal is an elegantly simple yet powerful library that helps you manage your multi-chain
         wallet connection flows, all in one place.
         <Text as="span" color="grey" variant={isMobile() ? 'heading5' : 'heading4'}>
-          Designed with both developers and end users in mind, it is easy to integrate and
+          &nbsp; Designed with both developers and end users in mind, it is easy to integrate and
           customize, bringing to life a sleek and unique experience.
         </Text>
       </Text>

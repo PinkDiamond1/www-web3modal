@@ -25,12 +25,10 @@ export default function MobileTryItOut() {
   }
 
   function onOpenMobileMenu() {
-    // document.getElementsByTagName('html')[0].classList.add('noScroll')
     timeline([[footer, { height: '103vh' }, { duration: 0.2, easing: 'ease-in-out' }]])
   }
 
   function onMobileMenuClose() {
-    // document.getElementsByTagName('html')[0].classList.remove('noScroll')
     timeline([[footer, { height: '0vh' }, { duration: 0.2, easing: 'ease-in-out' }]])
   }
 
@@ -87,7 +85,6 @@ export default function MobileTryItOut() {
               color={buttonColorCheck(color.value) as TextProps['color']}
               textTransform="capitalize"
               textVariant="heading6"
-              // accentButton={true}
               className={
                 checkCurrentAccentColor(color.value)
                   ? s.selectedAccentColor

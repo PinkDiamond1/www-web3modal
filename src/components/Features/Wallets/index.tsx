@@ -14,20 +14,19 @@ const Interface = () => {
           {title}
         </Text>
       </div>
-      <Image src={image} alt={title} width={300} height={250} />
+      <Image src={image} alt={title} width="0" height="0" className={s.walletImage} />
       <div className={s.bottomTextButtonContainer}>
         <Text color="grey" variant="heading5">
           {text}
         </Text>
-        <div className={s.poweredByWC}>
-          <Image
-            src={'/icons/WalletConnectCloud.png'}
-            priority={true}
-            alt={title}
-            width={240}
-            height={40}
-          />
-        </div>
+        <Image
+          src={'/icons/WalletConnectCloud.png'}
+          priority={true}
+          alt={title}
+          className={s.poweredByWCImage}
+          width="0"
+          height="0"
+        />
       </div>
     </Card>
   )

@@ -22,5 +22,6 @@ export const ACCENT_COLORS = [
   { value: 'green' as const, text: 'Green' },
   { value: 'purple' as const, text: 'Purple' },
   { value: 'teal' as const, text: 'Teal' }
+  //ToDo: Add black and white theme once better design
   // { value: 'blackWhite', text: 'Black and White' }
 ]

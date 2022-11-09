@@ -8,6 +8,7 @@ import ThemePicker from '../../ThemeColorPickerMobile'
 import W3MButtonStateless from '../../Web3Modal/W3MButtonStateless/Index'
 import { W3mConnectWalletDesktop } from '../../Web3Modal/W3MConnectWalletDesktop/Index'
 
+//ToDo: (Tom) Revisit CustomizableUI / W3mConnectWalletDesktop / W3mConnectWalletMobile later.
 const CustomizableUI = () => {
   const [currentAccentColor, setCurrentAccentColor] = useState('default')
 
@@ -24,8 +25,6 @@ const CustomizableUI = () => {
   }
 
   const { title, image, text } = FEATURE_CARDS[0]
-  //ToDo: Move CheckeredUI  / Use FEATURED_CARDS DATA
-  // Import WebComponent only
 
   return (
     <Card color="dark" padding="none" rounded="lg">
@@ -61,16 +60,12 @@ const CustomizableUI = () => {
               height: '80%'
             }}
           >
-            {/* <w3m-modal /> */}
             <W3mConnectWalletDesktop />
-            {/* {<W3mConnectWalletMobile />} */}
           </div>
           <ThemePicker
             currentAccentColor={currentAccentColor}
             setCurrentAccentColor={setCurrentAccentColor}
           />
-          {/* <ThemePicker /> */}
-          {/* <W3mConnectWalletMobile /> */}
         </div>
       </div>
     </Card>

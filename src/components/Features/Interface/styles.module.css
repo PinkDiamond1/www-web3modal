@@ -1,37 +1,50 @@
 .purpleCard {
     background: #794CFF;
     width: 100%;
-    height: 230px;
+    height: 260px;
     border-radius: 44px;
     border: 1px solid #987DE8;
-    margin-top: 30px;
 }
 
 .interfaceCard {
-    width: 90%;
+    display: flex;
+    justify-content: center;
     position: relative;
-    left: 20px;
-    top: -30px;
+    top: -40px;
+}
+
+.interfaceImage {
+    width: 100%;
+    height: 263px;
+    object-fit: contain;
+    object-position: 50% 50%;
 }
 
 .textContainer {
     padding: 2em 2em 1.5em 2em;    
+    margin-bottom: 3em;
 }
 
 @media (max-width: 800px) {
     .purpleCard{
-        /* margin-top: 60px; */
-        height: 220px;
+        height: 180px;
         border-radius: 32px;
     }
     .textContainer {
         padding: 1.5em 1em 1.5em 1em;     
     }
     .interfaceCard {
-        /* width: 371px; */
         width: 107%;
+        height: 230px;
+        flex: none;
+        object-position: 50% 50%;
+        margin-top: -2em;
         position: relative;
-        left: -15px;
-        top: -50px;
+        left: -0.5em;
+        
+    }
+    .interfaceImage {
+        object-fit: contain;
     }
   }
+

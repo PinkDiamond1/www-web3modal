@@ -1,6 +1,5 @@
 import NextImage from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
-import { isMobile } from '../../../utils/Index'
 import Card from '../../Card'
 import Text from '../../Text/Index'
 import s from './styles.module.css'
@@ -20,18 +19,21 @@ const RichFeatures = () => {
       </div>
 
       <div className={s.pinkCard}>
-        <div className={s.accountButtonCard}>
-          <NextImage src="/icons/AccountButton.png" alt={title} width={259} height={40} />
-        </div>
-        <div className={s.interfaceCard}>
-          <NextImage
-            priority={true}
-            src={image}
-            alt={title}
-            width={isMobile() ? 320 : 390}
-            height={285}
-          />
-        </div>
+        <NextImage
+          src="/icons/AccountButton.png"
+          alt={title}
+          width="0"
+          height="0"
+          className={s.accountButtonImage}
+        />
+        <NextImage
+          priority={true}
+          src={image}
+          alt={title}
+          width="0"
+          height="0"
+          className={s.interfaceImage}
+        />
       </div>
     </Card>
   )

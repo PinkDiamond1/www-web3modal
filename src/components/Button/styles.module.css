@@ -77,8 +77,6 @@
   border-color: rgba(255, 255, 255, 0.)
 }
 
-/* ToDo: Add HoverStates to the new Colors */
-
 .fillMagenta {
   background-color: var(--color-magenta);
   border-color: rgba(255, 255, 255, 0.1)

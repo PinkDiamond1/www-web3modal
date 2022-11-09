@@ -8,28 +8,9 @@ import s from './styles.module.css'
 import { relative } from 'path'
 import { ThemeCtrl } from '../../../controllers/ThemeCtrl'
 
-/**
- * Component
-    * Backdrop
-    * Container
-    * Mobile Wallet Section: LISTINGS. (Needs Listing State)
-    * Desktop Wallet Section
-    * View All:  LISTINGS.
-    * Gateway Section
-    * Get a Wallet / Learn More (Needs Theme State)
-//  */
-
 export function W3mConnectWalletDesktop() {
   const [renderTheme, setRenderTheme] = React.useState('light')
 
-  // useEffect(() => {
-  //   console.log(ThemeCtrl.state.accentColor)
-  //   console.log(ThemeCtrl.state.theme)
-  // }, [])
-
-  //   props: JSX.IntrinsicElements['w3m-connect-wallet-view'],
-  //   props2: JSX.IntrinsicElements['w3m-desktop-wallet-selection'],
-  //   props3: JSX.IntrinsicElements['w3m-mobile-wallet-selection']
   return (
     <div
       style={{

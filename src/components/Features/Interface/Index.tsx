@@ -19,7 +19,14 @@ const Interface = () => {
       </div>
       <div className={s.purpleCard}>
         <div className={s.interfaceCard}>
-          <Image priority={true} src={image} alt={title} width={392} height={263} />
+          <Image
+            priority={true}
+            src={image}
+            alt={title}
+            className={s.interfaceImage}
+            width="0"
+            height="0"
+          />
         </div>
       </div>
     </Card>

@@ -3,7 +3,6 @@ import Text from '../../Text/Index'
 import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
 import s from './styles.module.css'
-import { isMobile } from '../../../utils/Index'
 
 const TermsConditions = () => {
   const { title, image, text } = FEATURE_CARDS[5]
@@ -24,8 +23,9 @@ const TermsConditions = () => {
             priority={true}
             src={image}
             alt={title}
-            width={isMobile() ? 430 : 400}
-            height={isMobile() ? 300 : 280}
+            className={s.interfaceCardImage}
+            width="0"
+            height="0"
           />
         </div>
       </div>

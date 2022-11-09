@@ -21,7 +21,6 @@
   backdrop-filter: blur(20px) saturate(180%);
   padding: 7px 10px 10px 0px;
   position: fixed;
-  /* z-index: 20; */
   top: 0;
   left: 0;
   right: 0;
@@ -63,18 +62,10 @@
   }
 }
 
-#container {
-  /* display: flex; */
-  /* width: 100%; */
-  /* align-items: center; */
-  /* flex: 1; */
-}
 
 @media (max-width: 800px) {
   #container {
-    /* margin: 28px 0; */
     align-items: flex-start;
-    /* width: 95vw; */
   }
 
   #container nav {
@@ -181,7 +172,6 @@
 
 .mobileLink {
   display: none;
-  /* margin: 0 0 10px 0; */
   margin-top: 28px;
   transition: opacity 0.2s ease-in-out;
   font-size: 32px;
@@ -241,7 +231,6 @@
 .socialIcon {
   height: 24px;
   width: 24px;
-  /* margin-right: 4px; */
 }
 
 .socialIconWhiteTemp {
