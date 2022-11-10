@@ -20,7 +20,7 @@ import { TOC_STANDALONE_INSTALL } from '../../data/TABLE_CONTENTS'
       <Text variant="heading3" color="white" id="start">Getting Started</Text>
       <MDXContentBlock >
         Standalone mode is a unique and lightweight implementation of Web3Modal that is intended for usage alongside our WalletConnect Sign SDK.
-        This means that you can use WalletConnect and Web3Modal in tandem on any chain and with any devtools.
+        This means that you can use WalletConnect and Web3Modal in tandem on any chain and with any dev tools.
       </MDXContentBlock>
 
       <Text variant="heading4" color="white" id="installDependencies">1. Install Dependencies</Text>
@@ -30,19 +30,19 @@ import { TOC_STANDALONE_INSTALL } from '../../data/TABLE_CONTENTS'
 
       <Text variant="heading4" color="white" id="configureSignClient">2. Configure WalletConnect Sign Client</Text>
       <MDXContentBlock >
-        Please see [sign sdk documentation](https://docs.walletconnect.com/2.0/introduction/sign) for more details.
+        Please see [Sign SDK documentation](https://docs.walletconnect.com/2.0/introduction/sign) for more details.
         <CodeSyntax codeString={STANDALONE_SIGN_CONFIG} codeType={"app"} />
       </MDXContentBlock>
 
       <Text variant="heading4" color="white" id="configureModal">3. Configure Web3Modal</Text>
-      Note: If you don't know your `standaloneChains` in advance (for example need to wait for user input to configure them), then you can also define this option in `ModalCtrl.open` method.
+      Note: If you don't know your `standaloneChains` in advance ( need to wait for user input to configure them), then you can also define this option in `ModalCtrl.open` method.
       See [usage](/standalone-usage) section for more info. Also, refer to [configuration section](/configuration) for more details about Web3Modal configuration.
       <MDXContentBlock >
         <CodeSyntax codeString={STANDALONE_MODAL_CONFIG} codeType={"app"} />
       </MDXContentBlock>
 
       <Text variant="heading4" color="white" id="addWebComponents">4. Add custom modal web component</Text>
-      At the root of your app, import our custom web component library and add modal component somewhere in your page (usually at the end of body / app layout).
+      At the root of your app, import our custom Web Component library and add the modal component somewhere in your page (usually at the end of body / app layout).
       <MDXContentBlock >
         <CodeSyntax codeString={STANDALONE_WEB_COMPONENT} codeType={"app"} />
       </MDXContentBlock>

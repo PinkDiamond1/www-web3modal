@@ -41,7 +41,7 @@ import { TOC_REACT_HOOKS } from '../../data/TABLE_CONTENTS'
       <Text variant="heading3" color="white" id="hooks">Hooks</Text>
       <MDXContentBlock>
         Web3Modal hooks are based on [wagmi](https://wagmi.sh), so it is good idea to read through their documentation as well.
-        Do note, you have to import and use these hooks from @web3modal packages.
+        Do note, it is necesary to import and use these hooks from @web3modal packages.
       </MDXContentBlock>
 
       <Text variant="heading4" color="white" id="useConnectModal">useConnectModal</Text>
@@ -76,7 +76,7 @@ import { TOC_REACT_HOOKS } from '../../data/TABLE_CONTENTS'
 
       <Text variant="heading4" color="white" id="useContract">useContract ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseContract.tsx))</Text>
       <MDXContentBlock>
-        Hook for declaratively creating an ethers [Contract](https://docs.ethers.io/v5/api/contract/contract/) instance.
+        Hook for declaratively creating an ethers [Contract](https://docs.ethers.io/v5/api/contract/contract/) instance. If needing to invoke a `read` or `write` method from a contract, it is recommended to use `useContractRead` or `useContractWrite` instead of imperatively calling the function.
         <CodeSyntax codeString={HOOK_USE_CONTRACT} codeType={"app"} />
       </MDXContentBlock>
 
@@ -94,7 +94,7 @@ import { TOC_REACT_HOOKS } from '../../data/TABLE_CONTENTS'
 
       <Text variant="heading4" color="white" id="useContractWrite">useContractWrite ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseContractWrite.tsx))</Text>
       <MDXContentBlock>
-        Hook for calling an ethers Contract [write](https://docs.ethers.io/v5/api/contract/contract/#Contract--write) method. Perpares transaction under the hood i.e. estimates gas price.
+        Hook for calling an ethers Contract [write](https://docs.ethers.io/v5/api/contract/contract/#Contract--write) method. Prepares transaction under the hood (i.e. estimates gas price).
         <CodeSyntax codeString={HOOK_USE_CONTRACT_WRITE} codeType={"app"} />
       </MDXContentBlock>
 
