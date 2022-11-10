@@ -20,7 +20,7 @@ import Text from '../../components/Text/Index'
 
       <Text variant="heading5" color="white" id="wallet-connect-cloud">WalletConnect Cloud</Text>
       <MDXContentBlock>
-        If this is your first time using Web3Modal, you will need to obtain a `projectId`. You can follow [this guide](https://walletconnect.com/) if you need help.
+        If this is your first time using Web3Modal, you will need to obtain a `projectId`. You can follow [this guide](./cloud-explorer/get-project-id) if you need help.
       </MDXContentBlock>
 
       <Text variant="heading5" color="white" id="install">Install</Text>
@@ -33,18 +33,15 @@ import Text from '../../components/Text/Index'
       <Text variant="heading5" color="white" id="app-setup">App Setup</Text>
       <MDXContentBlock>
         In the consuming app:
-        - Import ```Web3ModalProvider``` from ```@web3modal/react```.
-        - Import chains and provider from ```@web3/ethereum```.
-        - Wrap the component with ```Web3ModalProvider```.
+        - Import ```Web3Modal``` from ```@web3modal/react```.
+        - Create a ```config``` object.
         - Set ```projectId``` to ```NEXT_PUBLIC_PROJECT_ID```.
-        - Set chains and providers according to the example code below.
         <CodeSyntax codeString={APP_SETUP} codeType={"app"} />
       </MDXContentBlock>
-
       <Text variant="heading5" color="white" id="get-address">Get Address</Text>
       <MDXContentBlock>
         To get the connected wallet’s address, `import ConnectButton and useAccount from @web3modal/react.`
-        `Connected` is a boolean that will return `true` or `false` if there is a wallet
+        `isConnected` is a boolean that will return `true` or `false` if there is a wallet
         connected. address is the connected wallet’s address.
         <CodeSyntax codeString={GET_CONNECTED_REACT} codeType={"app"} />
       </MDXContentBlock>

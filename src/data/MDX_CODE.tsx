@@ -1,5 +1,5 @@
 //-------- GET STARTED -------------------------------//
-export const INSTALL_INSTRUCTIONS = 'yarn add @web3modal/react @web3modal/ethereum ethers'
+export const INSTALL_INSTRUCTIONS = `yarn add @web3modal/react @web3modal/ethereum ethers`
 
 export const APP_SETUP = `import { Web3Modal } from '@web3modal/react'
 
@@ -38,14 +38,14 @@ export default function HomePage() {
 
 //-------- TRY IT OUT -------------------------------//
 export const TRY_IT_OUT_CODE = `
-import { useConnected, ConnectButton, useConnectModal } from '@web3modal/react'
+import { useAccount, ConnectButton, useConnectModal } from '@web3modal/react'
 export default function YourAppContent() {
   const { isOpen, open, close } = useConnectModal()
-  const { connected } = useConnected()
+  const { account } = useAccount()
 
   return (
     <>
-      <div>{!isConnected ? <ConnectButton /> : accountButton()}</div>
+      <div>{!account.isConnected ? <ConnectButton /> : accountButton()}</div>
       {/* or */}
       <button onClick={open}>Open Modal</button>
     </>
