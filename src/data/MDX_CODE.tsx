@@ -696,3 +696,42 @@ const config = {
   ]
 }
 `
+
+export const CONFIG_ETH_APP_NAME = `
+const ethereum = {
+  appName: 'WalletConnect'
+}
+`
+
+export const CONFIG_ETH_AUTO_CONNECT = `
+const ethereum = {
+  autoConnect: true
+}
+`
+
+export const CONFIG_ETH_CHAINS = `
+import { chains } from "@web3modal/ethereum"
+
+// Example of custom chain config
+const customChain = {
+  id: 1285,
+  name: 'Moonriver',
+  network: 'moonriver',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Moonriver',
+    symbol: 'MOVR'
+  },
+  rpcUrls: {
+    default: 'https://rpc.api.moonriver.moonbeam.network'
+  },
+  blockExplorers: {
+    default: { name: 'Moonscan', url: 'https://moonriver.moonscan.io' }
+  },
+  testnet: false
+}
+
+const ethereum = {
+  chains: [chains.mainnet, chains.avalanche, customChain]
+}
+`

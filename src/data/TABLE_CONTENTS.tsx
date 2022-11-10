@@ -153,3 +153,17 @@ export const TOC_REACT_HOOKS = [
     items: []
   }
 ]
+
+// -- CONFIGURE ----------------------------- //
+export const TOC_CONFIGURE = [
+  {
+    id: 'modalConfiguration',
+    title: 'Modal',
+    items: []
+  },
+  {
+    id: 'ethereumConfiguration',
+    title: 'Ethereum Client',
+    items: []
+  }
+]
