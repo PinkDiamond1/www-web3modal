@@ -1,0 +1,36 @@
+import MDXLayout from '../../components/MDX/Layout/Index'
+import MDXContentSection from '../../components/MDX/Content/Index'
+import MDXToCSection from '../../components/MDX/TOC/Index'
+import MDXContentBlock from '../../components/MDX/ContentBlock'
+import CodeSyntax from '../../components/MDX/CodeSyntax/Index'
+
+import { STANDALONE_EXAMPLE } from '../../data/MDX_CODE'
+import FooterRouter from '../../components/FooterRouter'
+import Text from '../../components/Text/Index'
+import { TOC_STANDALONE_USAGE } from '../../data/TABLE_CONTENTS'
+
+<MDXLayout>
+    <MDXContentSection>
+
+      <Text variant="heading3" color="white" id="start">Usage</Text>
+      <MDXContentBlock >
+        Example below demonstrates one way of using Sign SDK alongside Web3Modal in React, however final implementation details are up to you and your apps needs.
+        <br/> <br/> The core idea is to initialize the Sign client and start the pairing process. This will give you a `uri` that you should pass to the modal when opening it.
+        Wait for user to approve or reject the pairing and then close the modal. You also need to provide `standaloneChains` either when you configure the modal or open it.
+        This is needed to load list of wallets that are compatible with your app.
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="example">Example</Text>
+      <MDXContentBlock>
+        <CodeSyntax codeString={STANDALONE_EXAMPLE} codeType={"terminal"} />
+      </MDXContentBlock>
+
+      <FooterRouter
+        previousRoute="/standalone-install"
+        previousRouteName="Install"
+        padding="lg"
+      />
+    </MDXContentSection>
+    <MDXToCSection data={TOC_STANDALONE_USAGE}/>
+
+</MDXLayout>

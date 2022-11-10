@@ -16,15 +16,7 @@ const CustomizableUI = () => {
     setCurrentAccentColor(ThemeCtrl.state.accentColor)
   }, [currentAccentColor])
 
-  const changeTheme = (theme: typeof ThemeCtrl.state.theme) => {
-    ThemeCtrl.setTheme(theme)
-  }
-
-  const changeAccentColor = (color: typeof ThemeCtrl.state.accentColor) => {
-    ThemeCtrl.setAccentColor(color)
-  }
-
-  const { title, image, text } = FEATURE_CARDS[0]
+  const { title, text } = FEATURE_CARDS[0]
 
   return (
     <Card color="dark" padding="none" rounded="lg">

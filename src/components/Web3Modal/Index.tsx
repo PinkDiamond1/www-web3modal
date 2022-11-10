@@ -1,6 +1,4 @@
 import { W3mSpinner } from '@web3modal/ui/dist/_types/src/components/w3m-spinner'
-import React from 'react'
-import { html, css, LitElement } from 'lit'
 
 /**
  * Component

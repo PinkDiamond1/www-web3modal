@@ -5,6 +5,6 @@ interface Props {
   children?: ReactNode
 }
 
-export default function MDXLayout({ children, ...props }: Props) {
+export default function MDXLayout({ children }: Props) {
   return <div className={s.container}>{children}</div>
 }

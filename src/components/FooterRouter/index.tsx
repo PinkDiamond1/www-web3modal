@@ -1,12 +1,8 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
-import { ReactNode } from 'react'
+import THINCHEVRON from '../../../public/icons/ThinChevron.svg'
 import useConditionalValue from '../../hooks/useConditionalValue'
-import Button from '../Button/Index'
 import Text from '../Text/Index'
 import s from './styles.module.css'
-import Image from 'next/image'
-import THINCHEVRON from '../../../public/icons/ThinChevron.svg'
 
 interface FooterRouteProps {
   previousRoute?: string

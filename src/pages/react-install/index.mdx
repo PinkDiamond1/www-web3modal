@@ -1,0 +1,50 @@
+import MDXLayout from '../../components/MDX/Layout/Index'
+import MDXContentSection from '../../components/MDX/Content/Index'
+import MDXToCSection from '../../components/MDX/TOC/Index'
+import MDXContentBlock from '../../components/MDX/ContentBlock'
+import CodeSyntax from '../../components/MDX/CodeSyntax/Index'
+
+import {
+  INSTALL_REACT_DEPENDENCIES,
+  INSTALL_CONFIGURE_REACT,
+  INSTALL_WEB3BUTTON
+} from '../../data/MDX_CODE'
+import FooterRouter from '../../components/FooterRouter'
+import Text from '../../components/Text/Index'
+import { TOC_REACT_INSTALL } from '../../data/TABLE_CONTENTS'
+
+<MDXLayout>
+    <MDXContentSection>
+
+      <Text variant="heading3" color="white" id="start">Getting Started</Text>
+      <MDXContentBlock >
+        Please ensure you are updated to the latest Create React App / Next.js or similar version, as web3modal libraries target es2020.
+        If you have not done so already, start by obtaining your [Project ID](/get-started).
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="install">1. Install Dependencies</Text>
+      <MDXContentBlock >
+        <CodeSyntax codeString={INSTALL_REACT_DEPENDENCIES} codeType={"terminal"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="configure">2. Configure Web3Modal at the root of your app</Text>
+      <MDXContentBlock >
+        <CodeSyntax codeString={INSTALL_CONFIGURE_REACT} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="button">3. Add `Web3Button` or `useConnectModal` hook</Text>
+      <MDXContentBlock >
+        <CodeSyntax codeString={INSTALL_WEB3BUTTON} codeType={"app"} />
+      </MDXContentBlock>
+
+      <FooterRouter
+            previousRoute="/get-started"
+            previousRouteName="Get Started"
+            nextRoute="/configure"
+            nextRouteName="Configure"
+            padding="lg"
+        />
+    </MDXContentSection>
+    <MDXToCSection data={TOC_REACT_INSTALL}/>
+
+</MDXLayout>

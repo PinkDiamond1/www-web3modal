@@ -1,0 +1,122 @@
+import MDXLayout from '../../components/MDX/Layout/Index'
+import MDXContentSection from '../../components/MDX/Content/Index'
+import MDXToCSection from '../../components/MDX/TOC/Index'
+import MDXContentBlock from '../../components/MDX/ContentBlock'
+import CodeSyntax from '../../components/MDX/CodeSyntax/Index'
+
+import {
+  CONFIG_PROJECT_ID,
+  CONFIG_THEME,
+  CONFIG_ACCENT_COLOR,
+  CONFIG_STANDALONE_CHAINS,
+  CONFIG_ETH_APP_NAME,
+  CONFIG_ETH_AUTO_CONNECT,
+  CONFIG_ETH_CHAINS,
+  CONFIG_ETH_PROVIDERS
+} from '../../data/MDX_CODE'
+import FooterRouter from '../../components/FooterRouter'
+import Text from '../../components/Text/Index'
+import { TOC_CONFIGURE } from '../../data/TABLE_CONTENTS'
+
+<MDXLayout>
+  <MDXContentSection>
+
+    <Text variant="heading3" color="white" id="configure">Configure</Text>
+    <MDXContentBlock >
+      Web3Modal consumes configuration object that allows to change it's appearance and settings for underlying clients.
+      Below are all the current options for co
+    </MDXContentBlock>
+
+    <Text variant="heading4" color="white" id="modalConfiguration">Modal</Text>
+
+    <Text variant="heading5" color="white">
+      `projectId`
+    </Text>
+    <MDXContentBlock>
+      Required. Enables Explorer API and thee optional WalletConnect RPC. Follow [Get Started](/get-started) section to acquire one.
+      <CodeSyntax codeString={CONFIG_PROJECT_ID} codeType={"app"} />
+    </MDXContentBlock>
+
+---
+
+    <Text variant="heading5" color="white">
+      `theme`
+    </Text>
+    <MDXContentBlock>
+      Optional. Defaults to user system preference. Allows you to set modal to light or dark mode.
+      <CodeSyntax codeString={CONFIG_THEME} codeType={"app"} />
+    </MDXContentBlock>
+
+---
+
+    <Text variant="heading5" color="white">
+      `accentColor`
+    </Text>
+    <MDXContentBlock>
+      Optional. Defaults to WalletConnect blue. Allows you to set modal accent color.
+      <CodeSyntax codeString={CONFIG_ACCENT_COLOR} codeType={"app"} />
+    </MDXContentBlock>
+
+---
+
+    <Text variant="heading5" color="white">
+      `standaloneChains`
+    </Text>
+    <MDXContentBlock>
+      Optional. Array of [CAIP-10](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md) compatible chain ids that can be defined in standalone modal mode.
+      <CodeSyntax codeString={CONFIG_STANDALONE_CHAINS} codeType={"app"} />
+    </MDXContentBlock>
+
+
+    <Text variant="heading4" color="white" id="ethereumConfiguration">Ethereum Client</Text>
+
+    <Text variant="heading5" color="white">
+      `appName`
+    </Text>
+    <MDXContentBlock>
+      Required. Name of your app.
+      <CodeSyntax codeString={CONFIG_ETH_APP_NAME} codeType={"app"} />
+    </MDXContentBlock>
+
+---
+
+    <Text variant="heading5" color="white">
+      `autoConnect`
+    </Text>
+    <MDXContentBlock>
+      Optional. Defaults to true. Indicate if user should be re-connected automatically.
+      <CodeSyntax codeString={CONFIG_ETH_AUTO_CONNECT} codeType={"app"} />
+    </MDXContentBlock>
+
+---
+
+    <Text variant="heading5" color="white">
+    `chains`
+    </Text>
+    <MDXContentBlock>
+      Optional. Defaults to Ethereum Mainnet. Array of preconfigured or custom chains.
+      <CodeSyntax codeString={CONFIG_ETH_CHAINS} codeType={"app"} />
+    </MDXContentBlock>
+
+---
+
+    <Text variant="heading5" color="white">
+    `providers`
+    </Text>
+    <MDXContentBlock>
+      Optional. Defaults to WalletConnect RPC. Array of preconfigured or custom providers / RPCs.
+      <CodeSyntax codeString={CONFIG_ETH_PROVIDERS} codeType={"app"} />
+    </MDXContentBlock>
+
+    <FooterRouter
+      previousRoute="/react-install"
+      previousRouteName="Install"
+      nextRoute="/react-hooks"
+      nextRouteName="Hooks"
+      padding="lg"
+    />
+
+  </MDXContentSection>
+  <MDXToCSection data={TOC_CONFIGURE}/>
+
+</MDXLayout>

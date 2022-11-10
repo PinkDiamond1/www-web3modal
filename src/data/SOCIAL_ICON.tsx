@@ -15,9 +15,9 @@ export const SOCIAL_ICON = [
     uri: 'https://twitter.com/WalletConnect'
   },
   {
-    title: 'Mirror',
-    image: '/icons/social/Mirror.svg',
-    uri: 'https://walletconnect.mirror.xyz/'
+    title: 'Medium',
+    image: '/icons/social/Medium.svg',
+    uri: 'https://medium.com/walletconnect'
   }
 ]
 

@@ -9,7 +9,7 @@
     object-fit: cover;
     border-radius: inherit;
     position: relative;
-    top: 6px;
+    top: 2rem;
 }
 
 @media (max-width: 800px) {
@@ -21,5 +21,6 @@
         border-radius: 32px;
         overflow: hidden;
         height: 190px;
+        top: 1rem;
     }
   }

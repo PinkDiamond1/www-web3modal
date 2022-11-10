@@ -1,3 +1,4 @@
+import { chains } from '@web3modal/ethereum'
 import { Web3Modal } from '@web3modal/react'
 import PlausibleProvider from 'next-plausible'
 import type { AppProps } from 'next/app'
@@ -19,7 +20,8 @@ function App({ Component, pageProps }: AppProps) {
     accentColor,
     ethereum: {
       appName: 'web3Modal',
-      autoConnect: true
+      autoConnect: true,
+      chains: [chains.mainnet]
     }
   }
 

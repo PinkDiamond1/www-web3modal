@@ -10,7 +10,7 @@ interface Props {
   setCurrentAccentColor: React.Dispatch<React.SetStateAction<string>>
 }
 
-export default function ThemePicker({ currentAccentColor, setCurrentAccentColor }: Props) {
+export default function ThemePicker({}: Props) {
   const changeTheme = (theme: typeof ThemeCtrl.state.theme) => {
     ThemeCtrl.setTheme(theme)
   }

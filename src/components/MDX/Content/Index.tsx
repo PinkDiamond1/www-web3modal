@@ -5,6 +5,6 @@ interface Props {
   children?: ReactNode
 }
 
-export default function MDXContentSection({ children, ...props }: Props) {
+export default function MDXContentSection({ children }: Props) {
   return <div className={s.container}>{children}</div>
 }

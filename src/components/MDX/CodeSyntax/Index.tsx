@@ -65,7 +65,7 @@ export default function CodeSyntax({ codeString, codeType }: CodeSyntaxProps) {
       <SyntaxHighlighter
         wrapLongLines={true}
         lineProps={{ style: { wordBreak: 'break-all', whiteSpace: 'pre-wrap' } }}
-        language="typescript"
+        language="tsx"
         style={dracula}
         customStyle={{
           border: '1px solid #3B4040',

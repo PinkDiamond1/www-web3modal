@@ -74,26 +74,30 @@ export default function NavItem({
 
         <ul style={{ paddingLeft: '1em', margin: 0 }}>
           {openSideBarMenu &&
-            nestedNav.map(({ href, title }) => (
-              <a
-                onClick={() => {
-                  onOpenClick?.()
-                  console.log('closing...')
-                  setTrackNestedHeaderOpen?.(!trackNestedHeaderOpen)
-                }}
-                key={title}
-              >
-                <Link href={href}>
-                  <li
-                    className={checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute}
-                  >
-                    <Text variant="heading6" color="white" textTransform="capitalize">
-                      {title}
-                    </Text>
-                  </li>
-                </Link>
-              </a>
-            ))}
+            nestedNav.map(({ href, title }) => {
+              return (
+                <a
+                  onClick={() => {
+                    onOpenClick?.()
+                    console.log('closing...')
+                    setTrackNestedHeaderOpen?.(!trackNestedHeaderOpen)
+                  }}
+                  key={title}
+                >
+                  <Link href={href}>
+                    <li
+                      className={
+                        checkIfCurrentRoute(href) ? s.sideBarRoutesSelected : s.sideBarRoute
+                      }
+                    >
+                      <Text variant="heading6" color="white" textTransform="capitalize">
+                        {title}
+                      </Text>
+                    </li>
+                  </Link>
+                </a>
+              )
+            })}
         </ul>
       </>
     )

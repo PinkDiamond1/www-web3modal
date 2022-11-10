@@ -1,7 +1,7 @@
-import Card from '../../Card'
-import Text from '../../Text/Index'
 import Image from 'next/image'
 import FEATURE_CARDS from '../../../data/FEATURE_CARDS'
+import Card from '../../Card'
+import Text from '../../Text/Index'
 import s from './styles.module.css'
 
 const Frameworks = () => {

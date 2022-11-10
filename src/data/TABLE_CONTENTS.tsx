@@ -1,389 +1,214 @@
 //------GET STARTED-------------------------------------------//
 export const TOC_GET_STARTED = [
   {
-    id: 'get-started',
-    title: 'Get Started',
+    id: 'get-project-id',
+    title: 'Get Project ID',
     items: []
-  },
-  {
-    id: 'wallet-connect-cloud',
-    title: 'Wallet Connect Cloud',
-    items: []
-  },
+  }
+]
+
+//------REACT-------------------------------------------//
+export const TOC_REACT_INSTALL = [
   {
     id: 'install',
     title: 'Install',
     items: []
   },
   {
-    id: 'app-setup',
-    title: 'App Setup',
+    id: 'configure',
+    title: 'Configure',
     items: []
   },
   {
-    id: 'get-address',
-    title: 'Get Address',
+    id: 'button',
+    title: 'Open & Close',
     items: []
   }
 ]
 
-//------REACT-------------------------------------------//
-export const TOC_REACT = [
+export const TOC_REACT_HOOKS = [
   {
-    id: 'react',
-    title: 'React',
-    items: []
-  },
-  {
-    id: 'create-react-project',
-    title: 'Create React Project',
-    items: []
-  },
-  {
-    id: 'configure-app',
-    title: 'Configure App',
-    items: []
-  },
-  {
-    id: 'create-env',
-    title: 'Create Env',
-    items: []
-  },
-  {
-    id: 'get-connected',
-    title: 'Get Connected',
-    items: []
-  }
-]
-
-//------MODAL-------------------------------------------//
-export const MODAL_HOOKS_TOC = [
-  {
-    id: 'modal-hooks',
-    title: 'Modal Hooks',
-    items: []
-  },
-  {
-    id: 'use-connect-modal',
+    id: 'useConnectModal',
     title: 'useConnectModal',
     items: []
-  }
-]
-
-//------DATA HOOKS -------------------------------------------//
-export const USE_ACCOUNT_TOC = [
+  },
   {
-    id: 'use-account',
+    id: 'useDisconnect',
+    title: 'useDisconnect',
+    items: []
+  },
+  {
+    id: 'useAccount',
     title: 'useAccount',
     items: []
   },
   {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-export const USE_BALANCE_TOC = [
-  {
-    id: 'use-balance',
+    id: 'useBalance',
     title: 'useBalance',
     items: []
   },
   {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-export const USE_BLOCK_NUMBER_TOC = [
-  {
-    id: 'use-block-number',
+    id: 'useBlockNumber',
     title: 'useBlockNumber',
     items: []
   },
   {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-export const USE_CONTRACT_TOC = [
-  {
-    id: 'use-contract',
+    id: 'useContract',
     title: 'useContract',
     items: []
   },
   {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-export const USE_CONTRACT_EVENT_TOC = [
-  {
-    id: 'use-contract-event',
+    id: 'useContractEvent',
     title: 'useContractEvent',
     items: []
   },
   {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-export const USE_CONTRACT_READ_TOC = [
-  {
-    id: 'use-contract-read',
+    id: 'useContractRead',
     title: 'useContractRead',
     items: []
   },
   {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-export const USE_ENS_ADDRESS_TOC = [
-  {
-    id: 'use-ens-address',
-    title: 'useEnsAddress',
-    items: []
-  },
-  {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-export const USE_ENS_AVATAR_TOC = [
-  {
-    id: 'use-ens-avatar',
-    title: 'useEnsAvatar',
-    items: []
-  },
-  {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-export const USE_ENS_NAME_TOC = [
-  {
-    id: 'use-ens-name',
-    title: 'useEnsName',
-    items: []
-  },
-  {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-export const USE_ENS_RESOLVER_TOC = [
-  {
-    id: 'use-ens-resolver',
-    title: 'useEnsResolver',
-    items: []
-  },
-  {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-export const USE_FEE_DATA_TOC = [
-  {
-    id: 'use-fee-data',
-    title: 'useFeeData',
-    items: []
-  },
-  {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-export const USE_NETWORK_TOC = [
-  {
-    id: 'use-network',
-    title: 'useNetwork',
-    items: []
-  },
-  {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-export const USE_PROVIDER_TOC = [
-  {
-    id: 'use-provider',
-    title: 'useProvider',
-    items: []
-  },
-  {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-export const USE_SIGNER_TOC = [
-  {
-    id: 'use-signer',
-    title: 'useSigner',
-    items: []
-  },
-  {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-export const USE_TOKEN_TOC = [
-  {
-    id: 'use-token',
-    title: 'useToken',
-    items: []
-  },
-  {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-export const USE_TRANSACTION_TOC = [
-  {
-    id: 'use-transaction',
-    title: 'useTransaction',
-    items: []
-  },
-  {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-export const USE_WAIT_FOR_TRANSACTION_TOC = [
-  {
-    id: 'use-wait-for-transaction',
-    title: 'useWaitForTransaction',
-    items: []
-  },
-  {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-export const USE_WEB_SOCKET_PROVIDER_TOC = [
-  {
-    id: 'use-web-socket-provider',
-    title: 'useWebsocketProvider',
-    items: []
-  },
-  {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-//------USEDISCONNECT-------------------------------------------//
-export const USEDISCONNECT = [
-  {
-    id: 'use-disconnect',
-    title: 'useDisconnect',
-    items: []
-  }
-]
-
-//------USE_WRITE_CONTRACT-------------------------------------------//
-export const USE_CONTRACT_WRITE_TOC = [
-  {
-    id: 'use-contract-write',
+    id: 'useContractWrite',
     title: 'useContractWrite',
     items: []
   },
   {
-    id: 'example',
-    title: 'Example',
+    id: 'useFeeData',
+    title: 'useFeeData',
     items: []
-  }
-]
-
-//------USE_SEND_TRANSACTION-------------------------------------------//
-export const USE_SEND_TRANSACTION_TOC = [
+  },
   {
-    id: 'use-send-transaction',
+    id: 'useNetwork',
+    title: 'useNetwork',
+    items: []
+  },
+  {
+    id: 'useProvider',
+    title: 'useProvider',
+    items: []
+  },
+  {
+    id: 'useWebsocketProvider',
+    title: 'useWebsocketProvider',
+    items: []
+  },
+  {
+    id: 'useSigner',
+    title: 'useSigner',
+    items: []
+  },
+  {
+    id: 'useToken',
+    title: 'useToken',
+    items: []
+  },
+  {
+    id: 'useTransaction',
+    title: 'useTransaction',
+    items: []
+  },
+  {
+    id: 'useWaitForTransaction',
+    title: 'useWaitForTransaction',
+    items: []
+  },
+  {
+    id: 'useSendTransaction',
     title: 'useSendTransaction',
     items: []
   },
   {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-//------USE_SEND_TRANSACTION-------------------------------------------//
-export const USE_SIGN_MESSAGE_TOC = [
-  {
-    id: 'use-sign-message',
+    id: 'useSignMessage',
     title: 'useSignMessage',
     items: []
   },
   {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-//------USE_SIGN_TYPE_DATA-------------------------------------------//
-export const USE_SIGN_TYPED_DATA_TOC = [
-  {
-    id: 'use-sign-typed-data',
+    id: 'useSignTypedData',
     title: 'useSignTypedData',
     items: []
   },
   {
-    id: 'example',
-    title: 'Example',
-    items: []
-  }
-]
-
-//------USE_SWITCH_NETWORK-------------------------------------------//
-export const USE_SWITCH_NETWORK_TOC = [
-  {
-    id: 'use-switch-network',
+    id: 'useSwitchNetwork',
     title: 'useSwitchNetwork',
     items: []
   },
   {
+    id: 'useEnsAddress',
+    title: 'useEnsAddress',
+    items: []
+  },
+  {
+    id: 'useEnsAvatar',
+    title: 'useEnsAvatar',
+    items: []
+  },
+  {
+    id: 'useEnsName',
+    title: 'useEnsName',
+    items: []
+  },
+  {
+    id: 'useEnsResolver',
+    title: 'useEnsResolver',
+    items: []
+  }
+]
+
+// -- CONFIGURE ----------------------------- //
+export const TOC_CONFIGURE = [
+  {
+    id: 'modalConfiguration',
+    title: 'Modal',
+    items: []
+  },
+  {
+    id: 'ethereumConfiguration',
+    title: 'Ethereum Client',
+    items: []
+  }
+]
+
+// -- STANDALONE ----------------------------- //
+export const TOC_STANDALONE_INSTALL = [
+  {
+    id: 'installDependencies',
+    title: 'Dependencies',
+    items: []
+  },
+  {
+    id: 'configureSignClient',
+    title: 'Configure Sign',
+    items: []
+  },
+  {
+    id: 'configureModal',
+    title: 'Configure Modal',
+    items: []
+  },
+  {
+    id: 'addWebComponents',
+    title: 'Web Components',
+    items: []
+  }
+]
+
+export const TOC_STANDALONE_USAGE = [
+  {
     id: 'example',
     title: 'Example',
     items: []
   }
 ]
 
-//------CLOUD_GET_PROJECT_ID-------------------------------------------//
-export const CLOUD_GET_PROJECT_ID_TOC = [
+export const TOC_TYPESCRIPT = [
   {
-    id: 'get-project-id',
-    title: 'Get Project ID',
+    id: 'useConst',
+    title: 'Type Constants',
+    items: []
+  },
+  {
+    id: 'componentType',
+    title: 'Web Component Types',
     items: []
   }
 ]

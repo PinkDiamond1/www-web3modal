@@ -1,50 +1,68 @@
-import styles from '../../styles/Home.module.css'
 import MDXLayout from '../../components/MDX/Layout/Index'
 import MDXContentSection from '../../components/MDX/Content/Index'
 import MDXToCSection from '../../components/MDX/TOC/Index'
 import MDXContentBlock from '../../components/MDX/ContentBlock'
-import CodeSyntax from '../../components/MDX/CodeSyntax/Index'
 
-import { INSTALL_INSTRUCTIONS, GET_CONNECTED_REACT, APP_SETUP } from '../../data/MDX_CODE'
 import { TOC_GET_STARTED } from '../../data/TABLE_CONTENTS'
 import FooterRouter from '../../components/FooterRouter'
 import Text from '../../components/Text/Index'
+import NextImage from 'next/image'
+import s from '../../styles/MDX.module.css'
 
 <MDXLayout>
   <MDXContentSection>
-      <Text variant="heading4" color="white" id="get-started">Get Started</Text>
-      <MDXContentBlock >
+      <Text variant="heading3" color="white" id="get-started">Get Started</Text>
+      <MDXContentBlock>
         Getting started with Web3Modal is fast and easy. Web3Modal is chain agnostic and plays with your preferred front-end framework.
-        To see what other frameworks and chains we currently support, please visit our [GitHub](https://github.com/WalletConnect/web3modal).
+        You will first need to obtain `projectId` and afterwards install `@web3modal` packages based on your
       </MDXContentBlock>
 
-      <Text variant="heading5" color="white" id="wallet-connect-cloud">WalletConnect Cloud</Text>
+       <Text variant="heading4" color="white" id="get-project-id">
+        Get Project ID
+      </Text>
       <MDXContentBlock>
-        If this is your first time using Web3Modal, you will need to obtain a `projectId`. You can follow [this guide](./cloud-explorer/get-project-id) if you need help.
+        Get your first Project ID [here](https://cloud.walletconnect.com/sign-up).
+        <div className={s.imageContainer}>
+          <NextImage
+            src="/docs/cloud-explorer/sign-in.png"
+            priority={true}
+            width={0}
+            height={0}
+          />
+        </div>
+        Click on WalletConnect to register with an Ethereum account. Scan the QR code with your mobile
+        device. This should open up your default wallet. Confirm the correct account you would like to
+        connect on your device. Once you do, you will be given the option to continue with the
+        previously selected account. Click continue.
+        <div className={s.imageContainer}>
+        <NextImage
+          src="/docs/cloud-explorer/continue.png"
+          priority={true}
+          width={0}
+          height={0}
+        />
+        </div>
+        You will be prompted once more on your mobile device to sign the transaction. Once you do, you
+        will be able to create a project by clicking on ‘+ New Project’.
+        <div className={s.imageContainer}>
+        <NextImage
+          src="/docs/cloud-explorer/new-project.png"
+          priority={true}
+          width={0}
+          height={0}
+        />
+        </div>
+        Name your project. At this time, you are not able to delete a project once you create one, although this [feature](https://github.com/WalletConnect/cloud-app/issues/44) is coming soon. Once you create a new project, copy the project ID.
+        <div className={s.imageContainer}>
+          <NextImage
+            src="/docs/cloud-explorer/demo-app.png"
+            priority={true}
+            width={0}
+            height={0}
+          />
+        </div>
       </MDXContentBlock>
 
-      <Text variant="heading5" color="white" id="install">Install</Text>
-      <MDXContentBlock>
-        Install the packages for your project. In our example, our front-end framework will be
-        React and the chain will be Ethereum.
-        <CodeSyntax codeString={INSTALL_INSTRUCTIONS} codeType={"terminal"} />
-      </MDXContentBlock>
-
-      <Text variant="heading5" color="white" id="app-setup">App Setup</Text>
-      <MDXContentBlock>
-        In the consuming app:
-        - Import ```Web3Modal``` from ```@web3modal/react```.
-        - Create a ```config``` object.
-        - Set ```projectId``` to ```NEXT_PUBLIC_PROJECT_ID```.
-        <CodeSyntax codeString={APP_SETUP} codeType={"app"} />
-      </MDXContentBlock>
-      <Text variant="heading5" color="white" id="get-address">Get Address</Text>
-      <MDXContentBlock>
-        To get the connected wallet’s address, `import ConnectButton and useAccount from @web3modal/react.`
-        `isConnected` is a boolean that will return `true` or `false` if there is a wallet
-        connected. address is the connected wallet’s address.
-        <CodeSyntax codeString={GET_CONNECTED_REACT} codeType={"app"} />
-      </MDXContentBlock>
 
       <FooterRouter previousRoute="/try-it-out" previousRouteName="Try It Out" nextRoute="/react" nextRouteName="React" padding="lg" />
 

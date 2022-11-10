@@ -2,7 +2,7 @@ import { animate, timeline } from 'motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { SIDE_BAR_NAVIGATION } from '../../data/NAVIGATION'
+import { SIDE_BAR_DOCS, SIDE_BAR_GUIDES } from '../../data/NAVIGATION'
 import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
 import NavItem from '../layout/NavItem'
 import Tag from '../Tag/Index'
@@ -92,8 +92,27 @@ export default function Header() {
               Docs
             </Text>
           </div>
+          {SIDE_BAR_DOCS.map(link => (
+            <li key={link.title} className={s.item}>
+              <Link href={link.href} key={link.title}>
+                <NavItem
+                  href={link.href}
+                  title={link.title}
+                  nestedNav={link.nestedNav}
+                  onOpenClick={onOpenClick}
+                  setTrackNestedHeaderOpen={setTrackNestedHeaderOpen}
+                  trackNestedHeaderOpen={trackNestedHeaderOpen}
+                />
+              </Link>
+            </li>
+          ))}
 
-          {SIDE_BAR_NAVIGATION.map(link => (
+          <div className={s.mobileMenuHeaderContent}>
+            <Text variant="text3" color="grey">
+              Guides
+            </Text>
+          </div>
+          {SIDE_BAR_GUIDES.map(link => (
             <li key={link.title} className={s.item}>
               <Link href={link.href} key={link.title}>
                 <NavItem
