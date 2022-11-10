@@ -11,7 +11,8 @@ import {
   CONFIG_STANDALONE_CHAINS,
   CONFIG_ETH_APP_NAME,
   CONFIG_ETH_AUTO_CONNECT,
-  CONFIG_ETH_CHAINS
+  CONFIG_ETH_CHAINS,
+  CONFIG_ETH_PROVIDERS
 } from '../../data/MDX_CODE'
 import FooterRouter from '../../components/FooterRouter'
 import Text from '../../components/Text/Index'
@@ -93,8 +94,18 @@ import { TOC_CONFIGURE } from '../../data/TABLE_CONTENTS'
     `chains`
     </Text>
     <MDXContentBlock>
-      Optional. Defaults to ethereum mainnet. Array of supported preconfigured chains or custom chains.
+      Optional. Defaults to ethereum mainnet. Array of preconfigured or custom chains.
       <CodeSyntax codeString={CONFIG_ETH_CHAINS} codeType={"app"} />
+    </MDXContentBlock>
+
+---
+
+    <Text variant="heading5" color="white">
+    `providers`
+    </Text>
+    <MDXContentBlock>
+      Optional. Defaults to WalletConnect rpc. Array of preconfigured or custom providers / rpcs.
+      <CodeSyntax codeString={CONFIG_ETH_PROVIDERS} codeType={"app"} />
     </MDXContentBlock>
 
     <FooterRouter

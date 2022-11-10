@@ -712,7 +712,7 @@ const ethereum = {
 export const CONFIG_ETH_CHAINS = `
 import { chains } from "@web3modal/ethereum"
 
-// Example of custom chain config
+// Example of custom chain
 const customChain = {
   id: 1285,
   name: 'Moonriver',
@@ -733,5 +733,28 @@ const customChain = {
 
 const ethereum = {
   chains: [chains.mainnet, chains.avalanche, customChain]
+}
+`
+
+export const CONFIG_ETH_PROVIDERS = `
+import { providers } from "@web3modal/ethereum"
+import { jsonRpcProvider } from '@wagmi/core/providers/jsonRpc'
+
+// Example of custom provider
+const customProvider = {
+  return jsonRpcProvider({
+    rpc: rpcChain => {
+      return {
+        http: 'https://rpc.your-rpc.com/?chainId=rpcChain.id'
+      }
+    }
+  })
+}
+
+const ethereum = {
+  providers: [
+    providers.walletConnectProvider({ projectId: 'YOUR_PROJECT_ID' }),
+    customProvider
+  ]
 }
 `
