@@ -7,7 +7,11 @@ import CodeSyntax from '../../components/MDX/CodeSyntax/Index'
 import {
   INSTALL_REACT_DEPENDENCIES,
   INSTALL_CONFIGURE_REACT,
-  INSTALL_WEB3BUTTON
+  INSTALL_WEB3BUTTON,
+  CONFIG_PROJECT_ID,
+  CONFIG_THEME,
+  CONFIG_ACCENT_COLOR,
+  CONFIG_STANDALONE_CHAINS
 } from '../../data/MDX_CODE'
 import FooterRouter from '../../components/FooterRouter'
 import Text from '../../components/Text/Index'
@@ -28,18 +32,39 @@ import { TOC_REACT_INSTALL } from '../../data/TABLE_CONTENTS'
       `projectId`
     </Text>
     <MDXContentBlock>
-      Required. Your projectId to enable explorer api and optional walletconnect rpc. You can obtain your `projectId` by following steps in [Get Started](/get-started) section.
+      Required. Enable explorer api and optional walletconnect rpc. Follow [Get Started](/get-started) section to acquire one.
+      <CodeSyntax codeString={CONFIG_PROJECT_ID} codeType={"app"} />
     </MDXContentBlock>
 
 ---
 
     <Text variant="heading5" color="white" id="projectId">
-      `theme` (optional)
+      `theme`
     </Text>
     <MDXContentBlock>
-      Defaults to user system preference. Option to put modal into light or dark mode.
+      Optional. Defaults to user system preference. Allows you to set modal into light or dark mode.
+      <CodeSyntax codeString={CONFIG_THEME} codeType={"app"} />
     </MDXContentBlock>
 
+---
+
+    <Text variant="heading5" color="white" id="projectId">
+      `accentColor`
+    </Text>
+    <MDXContentBlock>
+      Optional. Defaults to WalletConnect blue. Allows you to set modal accent color.
+      <CodeSyntax codeString={CONFIG_ACCENT_COLOR} codeType={"app"} />
+    </MDXContentBlock>
+
+---
+
+    <Text variant="heading5" color="white" id="projectId">
+      `standaloneChains`
+    </Text>
+    <MDXContentBlock>
+      Optional. Array of [CAIP-10](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-10.md) compatible chain ids that can be defined in standalone modal mode.
+      <CodeSyntax codeString={CONFIG_STANDALONE_CHAINS} codeType={"app"} />
+    </MDXContentBlock>
 
     <FooterRouter
           previousRoute="/get-started"

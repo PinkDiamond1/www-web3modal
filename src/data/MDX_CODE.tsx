@@ -658,3 +658,41 @@ interface Options {
   chainId?: number
 }
 `
+
+// -- CONFIGURATION ------------------------------------ //
+export const CONFIG_PROJECT_ID = `
+const config = {
+  projectId: 'YOUR_PROJECT_ID'
+}
+`
+
+export const CONFIG_THEME = `
+const config = {
+  theme: 'dark' | 'light'
+}
+`
+
+export const CONFIG_ACCENT_COLOR = `
+const config = {
+  accentColor: 
+    'blackWhite'
+    | 'blue' 
+    | 'default'
+    | 'green'
+    | 'magenta' 
+    | 'orange'
+    | 'teal'
+}
+`
+
+export const CONFIG_STANDALONE_CHAINS = `
+const config = {
+  standaloneChains: [
+    'eip155:1', 
+    'solana:4sGjMW1sUnHzSxGspuhpqLDx6wiyjNtZ', 
+    'cosmos:cosmoshub-4',
+    'polkadot:91b171bb158e2d3848fa23a9f1c25182',
+    'elrond:1'
+  ]
+}
+`
