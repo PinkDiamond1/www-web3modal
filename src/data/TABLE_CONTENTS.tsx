@@ -73,6 +73,46 @@ export const TOC_REACT_HOOKS = [
     items: []
   },
   {
+    id: 'useFeeData',
+    title: 'useFeeData',
+    items: []
+  },
+  {
+    id: 'useNetwork',
+    title: 'useNetwork',
+    items: []
+  },
+  {
+    id: 'useProvider',
+    title: 'useProvider',
+    items: []
+  },
+  {
+    id: 'useWebsocketProvider',
+    title: 'useWebsocketProvider',
+    items: []
+  },
+  {
+    id: 'useSigner',
+    title: 'useSigner',
+    items: []
+  },
+  {
+    id: 'useToken',
+    title: 'useToken',
+    items: []
+  },
+  {
+    id: 'useTransaction',
+    title: 'useTransaction',
+    items: []
+  },
+  {
+    id: 'useWaitForTransaction',
+    title: 'useWaitForTransaction',
+    items: []
+  },
+  {
     id: 'useEnsAddress',
     title: 'useEnsAddress',
     items: []
@@ -90,21 +130,6 @@ export const TOC_REACT_HOOKS = [
   {
     id: 'useEnsResolver',
     title: 'useEnsResolver',
-    items: []
-  },
-  {
-    id: 'useFeeData',
-    title: 'useFeeData',
-    items: []
-  },
-  {
-    id: 'useNetwork',
-    title: 'useNetwork',
-    items: []
-  },
-  {
-    id: 'useProvider',
-    title: 'useProvider',
     items: []
   }
 ]

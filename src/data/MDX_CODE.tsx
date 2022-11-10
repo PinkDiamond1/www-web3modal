@@ -426,3 +426,119 @@ interface Options {
   chainId?: number
 }
 `
+
+export const HOOK_USE_WEBSOCKET_PROVIDER = `
+import { useWebsocketProvider } from '@web3modal/react'
+
+// Usage
+const { websocketProvider, isReady } = useWebsocketProvider()
+
+// Returns
+interface Return {
+  websocketProvider?: ethers.WebSocketProvider
+  isReady: boolean
+}
+`
+
+export const HOOK_USE_SIGNER = `
+import { useSigner } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading } = useSigner(options)
+
+// Returns
+interface Return {
+  data?: ethers.providers.JsonRpcSigner
+  error?: Error
+  isLoading: boolean
+  refetch: (options?: Options) => Promise<Return['data']>
+}
+
+interface Options {
+  chainId?: number
+}
+`
+
+export const HOOK_USE_TOKEN = `
+import { useToken } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading, refetch } = useToken({
+  address: '0xc18360217d8f7ab5e7c516566761ea12ce7f9d72'
+})
+
+// Returns
+interface Return {
+  data?: {
+    address: string
+    decimals: number
+    name: string
+    symbol: string
+    totalSupply: {
+      formatted: string
+      value: BigNumber
+    }
+  }
+  error?: Error
+  isLoading: boolean
+  refetch: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  address: string
+  chainId?: number
+  enabled?: boolean
+  formatUnits?: number | 'wei' | 'kwei' | 'mwei' | 'gwei' | 'szabo' | 'finney' | 'ether'
+}
+`
+
+export const HOOK_USE_TRANSACTION = `
+import { useTransaction } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading, refetch } = useTransaction({
+  hash: '0xe75fb554e433e03763a1560646ee22dcb74e5274b34c5ad644e7c0f619a7e1d0'
+})
+
+// Returns
+interface Return {
+  data?: TransactionResponse
+  error?: Error
+  isLoading: boolean
+  refetch: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  hash: string
+  chainId?: number
+  enabled?: boolean
+}
+`
+
+export const HOOK_USE_WAIT_FOR_TRANSACTION = `
+import { useWaitForTransaction } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading, refetch } = useWaitForTransaction({
+  hash: '0xe75fb554e433e03763a1560646ee22dcb74e5274b34c5ad644e7c0f619a7e1d0'
+})
+
+// Returns
+interface Return {
+  data?: TransactionResponse
+  error?: Error
+  isLoading: boolean
+  refetch: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  confirmations?: number
+  hash?: string
+  timeout?: number
+  chainId?: number
+  enabled?: boolean
+}
+`

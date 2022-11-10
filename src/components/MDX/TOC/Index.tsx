@@ -13,32 +13,34 @@ export default function MDXToCSection({ data }: Props) {
   useIntersectionObserver(setActiveId)
 
   return (
-    <nav className={s.container}>
-      <div style={{ marginBottom: 20 }}>
-        <Text variant="heading6" color="white">
-          On This Page
-        </Text>
-      </div>
+    <div className={s.navContainer}>
+      <nav className={s.container}>
+        <div style={{ marginBottom: 20 }}>
+          <Text variant="heading6" color="white">
+            On This Page
+          </Text>
+        </div>
 
-      <ul className={s.li}>
-        {data.map((data: { title: string; id: string }) => (
-          <li key={data.title} className={data.id === activeId ? s.active : s.nonActive}>
-            <a
-              href={`#${data.id}`}
-              onClick={e => {
-                e.preventDefault()
-                document.querySelector(`#${data.id}`)!.scrollIntoView({
-                  behavior: 'smooth'
-                })
-              }}
-            >
-              <Text variant="text3" color={data.id === activeId ? 'blue' : 'grey'}>
-                {data.title}
-              </Text>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </nav>
+        <ul className={s.li}>
+          {data.map((data: { title: string; id: string }) => (
+            <li key={data.title} className={data.id === activeId ? s.active : s.nonActive}>
+              <a
+                href={`#${data.id}`}
+                onClick={e => {
+                  e.preventDefault()
+                  document.querySelector(`#${data.id}`)!.scrollIntoView({
+                    behavior: 'smooth'
+                  })
+                }}
+              >
+                <Text variant="text3" color={data.id === activeId ? 'blue' : 'grey'}>
+                  {data.title}
+                </Text>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </div>
   )
 }

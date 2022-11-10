@@ -20,7 +20,12 @@ import {
   HOOK_USE_ENS_RESOLVER,
   HOOK_USE_FEE_DATA,
   HOOK_USE_NETWORK,
-  HOOK_USE_PROVIDER
+  HOOK_USE_PROVIDER,
+  HOOK_USE_WEBSOCKET_PROVIDER,
+  HOOK_USE_SIGNER,
+  HOOK_USE_TOKEN,
+  HOOK_USE_TRANSACTION,
+  HOOK_USE_WAIT_FOR_TRANSACTION
 } from '../../data/MDX_CODE'
 import FooterRouter from '../../components/FooterRouter'
 import Text from '../../components/Text/Index'
@@ -89,6 +94,54 @@ import { TOC_REACT_HOOKS } from '../../data/TABLE_CONTENTS'
         <CodeSyntax codeString={HOOK_USE_CONTRACT_WRITE} codeType={"app"} />
       </MDXContentBlock>
 
+      <Text variant="heading4" color="white" id="useFeeData">useFeeData ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseFeeData.tsx))</Text>
+      <MDXContentBlock>
+        Hook for fetching network fee information.
+        <CodeSyntax codeString={HOOK_USE_FEE_DATA} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useNetwork">useNetwork ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseNetwork.tsx))</Text>
+      <MDXContentBlock>
+        Hook for accessing network data, such as current connected chain and connector chains.
+        <CodeSyntax codeString={HOOK_USE_NETWORK} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useProvider">useProvider ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseProvider.tsx))</Text>
+      <MDXContentBlock>
+        Hook for accessing Client's ethers [Provider](https://docs.ethers.io/v5/api/providers/).
+        <CodeSyntax codeString={HOOK_USE_PROVIDER} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useWebsocketProvider">useWebsocketProvider ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseWebsocketProvider.tsx))</Text>
+      <MDXContentBlock>
+        Hook for accessing the Client's ethers [WebSocket Provider](https://docs.ethers.io/v5/api/providers/other/#WebSocketProvider).
+        <CodeSyntax codeString={HOOK_USE_WEBSOCKET_PROVIDER} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useSigner">useSigner ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseSigner.tsx))</Text>
+      <MDXContentBlock>
+        Hook for accessing ethers [Signer](https://docs.ethers.io/v5/api/signer/) object for connected account.
+        <CodeSyntax codeString={HOOK_USE_SIGNER} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useToken">useToken ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseToken.tsx))</Text>
+      <MDXContentBlock>
+        Hook for fetching ERC-20 token information.
+        <CodeSyntax codeString={HOOK_USE_TOKEN} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useTransaction">useTransaction ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseTransaction.tsx))</Text>
+      <MDXContentBlock>
+        Hook for fetching transaction by hash.
+        <CodeSyntax codeString={HOOK_USE_TRANSACTION} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useWaitForTransaction">useWaitForTransaction ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseWaitForTransaction.tsx))</Text>
+      <MDXContentBlock>
+        Hook for declaratively waiting until transaction is processed. Pairs well with `useContractWrite` and `useSendTransaction`.
+        <CodeSyntax codeString={HOOK_USE_WAIT_FOR_TRANSACTION} codeType={"app"} />
+      </MDXContentBlock>
+
       <Text variant="heading4" color="white" id="useEnsAddress">useEnsAddress ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseEnsAddress.tsx))</Text>
       <MDXContentBlock>
         Hook for fetching address for ENS name.
@@ -111,24 +164,6 @@ import { TOC_REACT_HOOKS } from '../../data/TABLE_CONTENTS'
       <MDXContentBlock>
         Hook for fetching the resolver for ENS name.
         <CodeSyntax codeString={HOOK_USE_ENS_RESOLVER} codeType={"app"} />
-      </MDXContentBlock>
-
-      <Text variant="heading4" color="white" id="useFeeData">useFeeData ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseFeeData.tsx))</Text>
-      <MDXContentBlock>
-        Hook for fetching network fee information.
-        <CodeSyntax codeString={HOOK_USE_FEE_DATA} codeType={"app"} />
-      </MDXContentBlock>
-
-      <Text variant="heading4" color="white" id="useNetwork">useNetwork ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseNetwork.tsx))</Text>
-      <MDXContentBlock>
-        Hook for accessing network data, such as current connected chain and connector chains.
-        <CodeSyntax codeString={HOOK_USE_NETWORK} codeType={"app"} />
-      </MDXContentBlock>
-
-      <Text variant="heading4" color="white" id="useProvider">useProvider ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseProvider.tsx))</Text>
-      <MDXContentBlock>
-        Hook for accessing Client's ethers [Provider](https://docs.ethers.io/v5/api/providers/).
-        <CodeSyntax codeString={HOOK_USE_PROVIDER} codeType={"app"} />
       </MDXContentBlock>
 
 
