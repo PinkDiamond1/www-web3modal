@@ -869,6 +869,8 @@ const config = {
 `
 
 export const TYPESCRIPT_COMPONET_TYPE = `
+import type { W3mModal } from "@web3modal/ui"
+
 declare global {
   namespace JSX {
     interface IntrinsicElements {
