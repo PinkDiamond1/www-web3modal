@@ -167,3 +167,27 @@ export const TOC_CONFIGURE = [
     items: []
   }
 ]
+
+// -- STANDALONE ----------------------------- //
+export const TOC_STANDALONE_INSTALL = [
+  {
+    id: 'installDependencies',
+    title: 'Dependencies',
+    items: []
+  },
+  {
+    id: 'configureSignClient',
+    title: 'Configure Sign',
+    items: []
+  },
+  {
+    id: 'configureModal',
+    title: 'Configure Modal',
+    items: []
+  },
+  {
+    id: 'addWebComponents',
+    title: 'Web Components',
+    items: []
+  }
+]
