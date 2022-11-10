@@ -1,15 +1,16 @@
 .container {
-    width: 75%;
-    padding: 5em 5em 0 5em;
+  /* 20vw of table of contents */
+  width: calc(100% - 20vw);
+  padding: 3em 3em 0 3em;
 }
 
 .container a {
-    color: var(--color-blue-100);
+  color: var(--color-blue-100);
 }
 
 @media (max-width: 800px) {
-    .container {
-        width: 100%;
-        padding: 20px;
-    }
+  .container {
+    width: 100%;
+    padding: 20px;
+  }
 }
