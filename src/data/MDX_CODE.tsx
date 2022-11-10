@@ -542,3 +542,119 @@ interface Options {
   enabled?: boolean
 }
 `
+
+export const HOOK_USE_SEND_TRANSACTION = `
+import { useSendTransaction } from '@web3modal/react'
+import { BigNumber } from 'ethers'
+
+// Usage
+const { data, error, isLoading, sendTransaction } = useSendTransaction({
+  request: {
+    to: 'vitalik.eth',
+    value: BigNumber.from('10000000000000000')
+  }
+})
+sendTransaction()
+
+// Returns
+interface Return {
+  data?: TransactionResponse
+  error?: Error
+  isLoading: boolean
+  sendTransaction: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  request: TransactionRequest & {
+    to: string
+  }
+  chainId?: number
+  signer?: Signer
+}
+`
+
+export const HOOK_USE_SIGN_MESSAGE = `
+import { useSignMessage } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading, signMessage } = useSignMessage({
+  message: 'WalletConnect web3modal message'
+})
+signMessage()
+
+// Returns
+interface Return {
+  data?: string
+  error?: Error
+  isLoading: boolean
+  signMessage: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  message: string | Bytes
+}
+`
+
+export const HOOK_USE_SIGN_TYPED_DATA = `
+import { useSignTypedData } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading, signTypedData } = useSignTypedData({
+  domain,
+  types,
+  value
+})
+signTypedData()
+
+// Returns
+interface Return {
+  data?: string
+  error?: Error
+  isLoading: boolean
+  signTypedData: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  domain: {
+    name?: string
+    version?: string
+    chainId?: string | number | bigint
+    verifyingContract?: string
+    salt?: BytesLike
+  }
+  types: Record<
+    string,
+    Array<{
+      name: string
+      type: string
+    }>
+  >
+  value: Record<string, any>
+}
+`
+
+export const HOOK_USE_SWITCH_NETWORK = `
+import { useSwitchNetwork } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading, switchNetwork } = useSwitchNetwork({
+  chainId: 1
+})
+switchNetwork()
+
+// Returns
+interface Return {
+  data?: Chain
+  error?: Error
+  isLoading: boolean
+  switchNetwork: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  chainId?: number
+}
+`

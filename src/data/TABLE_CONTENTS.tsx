@@ -113,6 +113,26 @@ export const TOC_REACT_HOOKS = [
     items: []
   },
   {
+    id: 'useSendTransaction',
+    title: 'useSendTransaction',
+    items: []
+  },
+  {
+    id: 'useSignMessage',
+    title: 'useSignMessage',
+    items: []
+  },
+  {
+    id: 'useSignTypedData',
+    title: 'useSignTypedData',
+    items: []
+  },
+  {
+    id: 'useSwitchNetwork',
+    title: 'useSwitchNetwork',
+    items: []
+  },
+  {
     id: 'useEnsAddress',
     title: 'useEnsAddress',
     items: []

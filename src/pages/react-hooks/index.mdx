@@ -25,7 +25,11 @@ import {
   HOOK_USE_SIGNER,
   HOOK_USE_TOKEN,
   HOOK_USE_TRANSACTION,
-  HOOK_USE_WAIT_FOR_TRANSACTION
+  HOOK_USE_WAIT_FOR_TRANSACTION,
+  HOOK_USE_SEND_TRANSACTION,
+  HOOK_USE_SIGN_MESSAGE,
+  HOOK_USE_SIGN_TYPED_DATA,
+  HOOK_USE_SWITCH_NETWORK
 } from '../../data/MDX_CODE'
 import FooterRouter from '../../components/FooterRouter'
 import Text from '../../components/Text/Index'
@@ -141,6 +145,42 @@ import { TOC_REACT_HOOKS } from '../../data/TABLE_CONTENTS'
         Hook for declaratively waiting until transaction is processed. Pairs well with `useContractWrite` and `useSendTransaction`.
         <CodeSyntax codeString={HOOK_USE_WAIT_FOR_TRANSACTION} codeType={"app"} />
       </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useSendTransaction">useSendTransaction ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseSendTransaction.tsx))</Text>
+      <MDXContentBlock>
+        Hook for sending a transaction. Perpares transaction under the hood i.e. estimates gas price.
+        <CodeSyntax codeString={HOOK_USE_SEND_TRANSACTION} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useSignMessage">useSignMessage ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseSignMessage.tsx))</Text>
+      <MDXContentBlock>
+        Hook for signing messages with connected account.
+        <CodeSyntax codeString={HOOK_USE_SIGN_MESSAGE} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useSignTypedData">useSignTypedData ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseSignTypedData.tsx))</Text>
+      <MDXContentBlock>
+        Hook for signing messages with connected account.
+        <CodeSyntax codeString={HOOK_USE_SIGN_TYPED_DATA} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="useSwitchNetwork">useSwitchNetwork ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseSwitchNetwork.tsx))</Text>
+      <MDXContentBlock>
+        Hook for switching networks with a connector.
+        <CodeSyntax codeString={HOOK_USE_SWITCH_NETWORK} codeType={"app"} />
+      </MDXContentBlock>
+
+
+
+
+
+
+
+
+
+
+
+
 
       <Text variant="heading4" color="white" id="useEnsAddress">useEnsAddress ([Example](https://github.com/WalletConnect/web3modal/blob/V2/examples/react/src/sections/UseEnsAddress.tsx))</Text>
       <MDXContentBlock>
