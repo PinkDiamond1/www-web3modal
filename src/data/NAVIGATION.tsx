@@ -51,7 +51,7 @@ export const SIDE_BAR_GUIDES = [
   },
   {
     href: '/typescript',
-    title: 'Typescript'
+    title: 'TypeScript'
   }
   // {
   //   href: '/html-js',

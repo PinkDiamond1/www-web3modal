@@ -12,22 +12,22 @@ import { TOC_TYPESCRIPT } from '../../data/TABLE_CONTENTS'
 <MDXLayout>
     <MDXContentSection>
 
-      <Text variant="heading3" color="white" id="start">Typescript</Text>
+      <Text variant="heading3" color="white" id="start">TypeScript</Text>
       <MDXContentBlock >
-        All WalletConnect / Web3Modal packages support typescript out of the box.
-        But there are few unique caveats that you might run into that we discuss below.
+        All WalletConnect / Web3Modal packages support TypeScript out of the box.
+        However there are few unique caveats that you might run into whcih are addressed below:
       </MDXContentBlock>
 
-      <Text variant="heading4" color="white" id="useConst">Using consts in config object</Text>
+      <Text variant="heading4" color="white" id="useConst">Using `consts` in config object</Text>
       You need to use `as const` on some values, so that typescript doesn't see them as plain `string` type.
       <MDXContentBlock>
         <CodeSyntax codeString={TYPESCRIPT_CONSTS} codeType={"app"} />
       </MDXContentBlock>
 
-      <Text variant="heading4" color="white" id="componentType">Add webc omponent types</Text>
-      Some frameworks require custom type definitions for custom dom elements / web components.
-      We define these for our `@web3modal/react` package, however if you don't use it or are in standalone mode, you may need to declare them globally yourself.
-      Below is example of how we do it for react.
+      <Text variant="heading4" color="white" id="componentType">Add Web Component types</Text>
+      Some frameworks require custom type definitions for custom dom elements / Web Components.
+      We define these in our `@web3modal/react` package, however if you do not use it or are in standalone mode, you may need to declare them globally yourself.
+      <br/> <br/>Below is example of how we do it for react.
       <MDXContentBlock>
         <CodeSyntax codeString={TYPESCRIPT_COMPONET_TYPE} codeType={"app"} />
       </MDXContentBlock>
