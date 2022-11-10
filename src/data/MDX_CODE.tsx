@@ -758,3 +758,34 @@ const ethereum = {
   ]
 }
 `
+
+// -- STANDALONE ------------------------------------ //
+export const STANDALONE_DEPENDENCIES = `
+npm install @walletconnect/sign-client @web3modal/core @web3modal/ui
+`
+
+export const STANDALONE_SIGN_CONFIG = `
+import SignClient from '@walletconnect/sign-client'
+
+const signClient = await SignClient.init({ 
+  projectId: 'YOUR_PROJECT_ID'
+})
+`
+
+export const STANDALONE_MODAL_CONFIG = `
+import { ConfigCtrl } from '@web3modal/core'
+
+ConfigCtrl.setConfig({
+  projectId: 'YOUR_PROJECT_ID',
+  theme: 'light',
+  accentColor: 'default',
+  standaloneChains: ['eip155:1', 'cosmos:cosmoshub-4']
+})
+`
+
+export const STANDALONE_WEB_COMPONENT = `
+import "@web3modal/ui"
+
+// Somewhere in your app add
+<w3m-modal></w3m-modal>
+`

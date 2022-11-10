@@ -34,6 +34,20 @@ export const SIDE_BAR_GUIDES = [
         title: 'Hooks'
       }
     ]
+  },
+  {
+    href: '/standalone',
+    title: 'Standalone',
+    nestedNav: [
+      {
+        href: '/standalone-install',
+        title: 'Install'
+      },
+      {
+        href: '/standalone-usage',
+        title: 'Usage'
+      }
+    ]
   }
   // {
   //   href: '/html-js',

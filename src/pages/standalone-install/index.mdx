@@ -1,0 +1,60 @@
+import MDXLayout from '../../components/MDX/Layout/Index'
+import MDXContentSection from '../../components/MDX/Content/Index'
+import MDXToCSection from '../../components/MDX/TOC/Index'
+import MDXContentBlock from '../../components/MDX/ContentBlock'
+import CodeSyntax from '../../components/MDX/CodeSyntax/Index'
+
+import {
+  STANDALONE_DEPENDENCIES,
+  STANDALONE_SIGN_CONFIG,
+  STANDALONE_MODAL_CONFIG,
+  STANDALONE_WEB_COMPONENT
+} from '../../data/MDX_CODE'
+import FooterRouter from '../../components/FooterRouter'
+import Text from '../../components/Text/Index'
+import { TOC_REACT_INSTALL } from '../../data/TABLE_CONTENTS'
+
+<MDXLayout>
+    <MDXContentSection>
+
+      <Text variant="heading3" color="white" id="start">Getting Started</Text>
+      <MDXContentBlock >
+        Standalone mode is a unique and lightweight implementation of Web3Modal that is intended for usage alongside our WalletConnect Sign SDK.
+        This means that you can use WalletConnect and Web3Modal in tandem on any chain and with any devtools.
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="install">1. Install Dependencies</Text>
+      <MDXContentBlock>
+        <CodeSyntax codeString={STANDALONE_DEPENDENCIES} codeType={"terminal"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="configure">2. Configure WalletConnect Sign Client</Text>
+      <MDXContentBlock >
+        Please see [sign sdk documentation](https://docs.walletconnect.com/2.0/introduction/sign) for more details.
+        <CodeSyntax codeString={STANDALONE_SIGN_CONFIG} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="button">3. Configure Web3Modal</Text>
+      Note: If you don't know your `standaloneChains` in advance (for example need to wait for user input to configure them), then you can also define this option in `ModalCtrl.open` method.
+      See [usage](/standalone-usage) section for more info. Also, refer to [configuration section](/configuration) for more details about Web3Modal configuration.
+      <MDXContentBlock >
+        <CodeSyntax codeString={STANDALONE_MODAL_CONFIG} codeType={"app"} />
+      </MDXContentBlock>
+
+      <Text variant="heading4" color="white" id="button">4. Add custom modal web component</Text>
+      At the root of your app, import our custom web component library and add modal component somewhere in your page (usually at the end of body / app layout).
+      <MDXContentBlock >
+        <CodeSyntax codeString={STANDALONE_WEB_COMPONENT} codeType={"app"} />
+      </MDXContentBlock>
+
+      <FooterRouter
+            previousRoute="/get-started"
+            previousRouteName="Get Started"
+            nextRoute="/configure"
+            nextRouteName="Configure"
+            padding="lg"
+        />
+    </MDXContentSection>
+    <MDXToCSection data={TOC_REACT_INSTALL}/>
+
+</MDXLayout>
