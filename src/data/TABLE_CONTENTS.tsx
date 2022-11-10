@@ -81,5 +81,30 @@ export const TOC_REACT_HOOKS = [
     id: 'useEnsAvatar',
     title: 'useEnsAvatar',
     items: []
+  },
+  {
+    id: 'useEnsName',
+    title: 'useEnsName',
+    items: []
+  },
+  {
+    id: 'useEnsResolver',
+    title: 'useEnsResolver',
+    items: []
+  },
+  {
+    id: 'useFeeData',
+    title: 'useFeeData',
+    items: []
+  },
+  {
+    id: 'useNetwork',
+    title: 'useNetwork',
+    items: []
+  },
+  {
+    id: 'useProvider',
+    title: 'useProvider',
+    items: []
   }
 ]

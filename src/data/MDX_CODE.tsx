@@ -313,3 +313,116 @@ interface Options {
   enabled?: boolean
 }
 `
+
+export const HOOK_USE_ENS_NAME = `
+import { useEnsName } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading, refetch } = useEnsName({
+  address: '0xd8da6bf26964af9d7eed9e03e53415d37aa96045'
+})
+
+// Returns
+interface Return {
+  data?: string
+  error?: Error
+  isLoading: boolean
+  refetch: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  address: string
+  chainId?: number
+  enabled?: boolean
+}
+`
+
+export const HOOK_USE_ENS_RESOLVER = `
+import { useEnsResolver } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading, refetch } = useEnsResolver({
+  name: 'vitalik.eth'
+})
+
+// Returns
+interface Return {
+  data?: string
+  error?: Error
+  isLoading: boolean
+  refetch: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  name: string
+  chainId?: number
+  enabled?: boolean
+}
+`
+
+export const HOOK_USE_FEE_DATA = `
+import { useFeeData } from '@web3modal/react'
+
+// Usage
+const { data, error, isLoading, refetch } = useFeeData({ formatUnits: 'gwei' })
+
+// Returns
+interface Return {
+  data?: {
+    gasPrice: BigNumber
+    maxFeePerGas: BigNumber
+    maxPriorityFeePerGas: BigNumber
+    formatted: {
+      gasPrice: string
+      maxFeePerGas: string
+      maxPriorityFeePerGas: string
+    }
+  }
+  error?: Error
+  isLoading: boolean
+  refetch: (options?: Options) => Promise<Return['data']>
+}
+
+// Options
+interface Options {
+  formatUnits?: number | 'wei' | 'kwei' | 'mwei' | 'gwei' | 'szabo' | 'finney' | 'ether'
+  chainId?: number
+  watch?: boolean
+  enabled?: boolean
+}
+`
+
+export const HOOK_USE_NETWORK = `
+import { useNetwork } from '@web3modal/react'
+
+// Usage
+const { network, isReady } = useNetwork()
+
+// Returns
+interface Return {
+  network?: {
+    chain?: Chain & { unsupported?: boolean }
+    chains?: Chain[]
+  }
+  isReady: boolean
+}
+`
+
+export const HOOK_USE_PROVIDER = `
+import { useProvider } from '@web3modal/react'
+
+// Usage
+const { provider, isReady } = useProvider(options)
+
+// Returns
+interface Return {
+  provider?: ethers.Provider
+  isReady: boolean
+}
+
+interface Options {
+  chainId?: number
+}
+`
