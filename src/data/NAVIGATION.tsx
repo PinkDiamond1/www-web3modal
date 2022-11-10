@@ -48,6 +48,10 @@ export const SIDE_BAR_GUIDES = [
         title: 'Usage'
       }
     ]
+  },
+  {
+    href: '/typescript',
+    title: 'Typescript'
   }
   // {
   //   href: '/html-js',

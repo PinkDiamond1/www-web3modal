@@ -191,3 +191,24 @@ export const TOC_STANDALONE_INSTALL = [
     items: []
   }
 ]
+
+export const TOC_STANDALONE_USAGE = [
+  {
+    id: 'example',
+    title: 'Example',
+    items: []
+  }
+]
+
+export const TOC_TYPESCRIPT = [
+  {
+    id: 'useConst',
+    title: 'Type Constants',
+    items: []
+  },
+  {
+    id: 'componentType',
+    title: 'Web Component Types',
+    items: []
+  }
+]

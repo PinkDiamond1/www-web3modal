@@ -858,3 +858,22 @@ export default function HomePage() {
   )
 }
 `
+
+// -- Typescript ------------------------------ //
+export const TYPESCRIPT_CONSTS = `
+const config = {
+  projectId: 'YOUR_PROJECT_ID',
+  theme: 'dark' as const,
+  accentColor: 'green' as const
+}
+`
+
+export const TYPESCRIPT_COMPONET_TYPE = `
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'w3m-modal': Partial<W3mModal>
+    }
+  }
+}
+`
