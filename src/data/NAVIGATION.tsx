@@ -10,11 +10,6 @@ export const SIDE_BAR_DOCS = [
     nestedNav: []
   },
   {
-    href: '/customization',
-    title: 'Customization',
-    nestedNav: []
-  },
-  {
     href: '/get-started',
     title: 'Get Started',
     nestedNav: []
@@ -31,27 +26,27 @@ export const SIDE_BAR_GUIDES = [
         title: 'Install'
       },
       {
+        href: '/configure',
+        title: 'Configure'
+      },
+      {
         href: '/react-hooks',
         title: 'Hooks'
-      },
-      {
-        href: '/react-chains',
-        title: 'Custom Chains'
-      }
-    ]
-  },
-  {
-    href: '/html-js',
-    title: 'Html/Js',
-    nestedNav: [
-      {
-        href: '/html-js-install',
-        title: 'Install'
-      },
-      {
-        href: '/html-js-controllers',
-        title: 'Controllers'
       }
     ]
   }
+  // {
+  //   href: '/html-js',
+  //   title: 'Html/Js',
+  //   nestedNav: [
+  //     {
+  //       href: '/html-js-install',
+  //       title: 'Install'
+  //     },
+  //     {
+  //       href: '/html-js-controllers',
+  //       title: 'Controllers'
+  //     }
+  //   ]
+  // }
 ]

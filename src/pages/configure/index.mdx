@@ -1,0 +1,55 @@
+import MDXLayout from '../../components/MDX/Layout/Index'
+import MDXContentSection from '../../components/MDX/Content/Index'
+import MDXToCSection from '../../components/MDX/TOC/Index'
+import MDXContentBlock from '../../components/MDX/ContentBlock'
+import CodeSyntax from '../../components/MDX/CodeSyntax/Index'
+
+import {
+  INSTALL_REACT_DEPENDENCIES,
+  INSTALL_CONFIGURE_REACT,
+  INSTALL_WEB3BUTTON
+} from '../../data/MDX_CODE'
+import FooterRouter from '../../components/FooterRouter'
+import Text from '../../components/Text/Index'
+import { TOC_REACT_INSTALL } from '../../data/TABLE_CONTENTS'
+
+<MDXLayout>
+  <MDXContentSection>
+
+    <Text variant="heading3" color="white" id="configure">Configure</Text>
+    <MDXContentBlock >
+      As you may have noticed from previous sections, Web3Modal consumes configuration object that allows to tweak it's appearance and settings of underlying clients.
+      Below are all currently avavailable options for such configuration.
+    </MDXContentBlock>
+
+    <Text variant="heading4" color="white" id="install">Modal Configuration</Text>
+
+    <Text variant="heading5" color="white" id="projectId">
+      `projectId`
+    </Text>
+    <MDXContentBlock>
+      Required. Your projectId to enable explorer api and optional walletconnect rpc. You can obtain your `projectId` by following steps in [Get Started](/get-started) section.
+    </MDXContentBlock>
+
+---
+
+    <Text variant="heading5" color="white" id="projectId">
+      `theme` (optional)
+    </Text>
+    <MDXContentBlock>
+      Defaults to user system preference. Option to put modal into light or dark mode.
+    </MDXContentBlock>
+
+
+    <FooterRouter
+          previousRoute="/get-started"
+          previousRouteName="Get Started"
+          nextRoute="/react-hooks"
+          nextRouteName="Hooks"
+          padding="lg"
+      />
+
+  </MDXContentSection>
+  <MDXToCSection data={TOC_REACT_INSTALL}/>
+
+</MDXLayout>
