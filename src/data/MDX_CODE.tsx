@@ -52,7 +52,7 @@ export default function YourAppContent() {
     <>
       <Web3Button />
       {/* or */}
-      <button onClick={open}>Open Modal</button>
+      <button onClick={() => open()}>Open Modal</button>
     </>
   )
 }
