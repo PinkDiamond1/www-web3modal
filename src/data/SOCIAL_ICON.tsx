@@ -2,7 +2,7 @@ export const SOCIAL_ICON = [
   {
     title: 'Discord',
     image: '/icons/social/Discord.svg',
-    uri: 'https://discord.com/invite/cB54BwPGru/'
+    uri: 'https://discord.gg/walletconnect'
   },
   {
     title: 'Github',
