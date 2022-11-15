@@ -36,7 +36,7 @@ export const SOCIAL_ICON_COMMUNITY = [
     color: 'purple',
     fill: 'white',
     image: '/icons/social/Discord.svg',
-    uri: 'https://discord.com/invite/cB54BwPGru/'
+    uri: 'https://discord.gg/walletconnect'
   },
   {
     title: 'Twitter',
