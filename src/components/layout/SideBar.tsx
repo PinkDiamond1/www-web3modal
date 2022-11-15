@@ -1,4 +1,4 @@
-import { SIDE_BAR_DOCS, SIDE_BAR_GUIDES } from '../../data/NAVIGATION'
+import { SIDEBAR } from '../../data/NAVIGATION'
 import { SOCIAL_ICON } from '../../data/SOCIAL_ICON'
 import s from '../../styles/Layout.module.css'
 import SocialIcon from '../SocialIcon/Index'
@@ -46,24 +46,12 @@ export default function SideBar() {
           marginTop: '2.5em'
         }}
       >
-        <div className={s.docsHeading}>
-          <Text variant="text3" color="grey">
-            Docs
-          </Text>
-          <ul style={{ padding: 0, margin: 0, listStyleType: 'none' }}>
-            {SIDE_BAR_DOCS.map(({ href, title, nestedNav }) => (
-              <NavItem key={title} href={href} title={title} nestedNav={nestedNav} />
-            ))}
-          </ul>
-          <Text variant="text3" color="grey">
-            Guides
-          </Text>
-          <ul style={{ padding: 0, margin: 0, listStyleType: 'none' }}>
-            {SIDE_BAR_GUIDES.map(({ href, title, nestedNav }) => (
-              <NavItem key={title} href={href} title={title} nestedNav={nestedNav} />
-            ))}
-          </ul>
-        </div>
+        <ul style={{ padding: 0, margin: 0, listStyleType: 'none' }}>
+          {SIDEBAR.map(({ href, title, nestedNav }) => (
+            <NavItem key={title} href={href} title={title} nestedNav={nestedNav} />
+          ))}
+        </ul>
+
         {socialContent}
       </nav>
     </aside>

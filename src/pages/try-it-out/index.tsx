@@ -75,8 +75,8 @@ const TryItOut: NextPage = () => {
       <FooterRouter
         previousRoute="/"
         previousRouteName="Introduction"
-        nextRoute="/get-started"
-        nextRouteName="Get Started"
+        nextRoute="https://docs.walletconnect.com/2.0/introduction/web3modal/about"
+        nextRouteName="Docs"
         padding="md"
       />
       <MobileTryItOut />

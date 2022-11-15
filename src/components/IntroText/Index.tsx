@@ -17,17 +17,6 @@ const buttonContent = (
         TRY IT OUT
       </Button>
     </Link>
-
-    <Link href="get-started">
-      <Button
-        variant="fill"
-        color="grey"
-        iconRight={<CHEVRON width={7} height={12} className={s.blackChevron} />}
-        className={s.buttonStretch}
-      >
-        GET STARTED
-      </Button>
-    </Link>
   </div>
 )
 
