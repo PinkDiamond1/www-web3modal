@@ -79,7 +79,7 @@ export default function MobileTryItOut() {
         <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '1em' }}>
           {ACCENT_COLORS.map(color => (
             <Button
-              onClick={() => changeAccentColor(color.value)}
+              onClick={() => changeAccentColor(color.value as any)}
               key={color.value}
               variant="fill"
               color={buttonColorCheck(color.value) as TextProps['color']}
