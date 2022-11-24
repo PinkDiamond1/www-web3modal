@@ -1,7 +1,8 @@
-import { useAccount, useDisconnect, Web3Button } from '@web3modal/react'
+import { Web3Button } from '@web3modal/react'
 import type { NextPage } from 'next'
 import NextImage from 'next/image'
 import { useState } from 'react'
+import { useAccount, useDisconnect } from 'wagmi'
 import checkeredImage from '../../../public/CheckerPattern.png'
 import Button from '../../components/Button/Index'
 import FooterRouter from '../../components/FooterRouter'
@@ -14,8 +15,8 @@ import s from '../../styles/TryItOut.module.css'
 
 const TryItOut: NextPage = () => {
   const [copied, setCopied] = useState(false)
-  const { account } = useAccount()
-  const disconnect = useDisconnect()
+  const { isConnected } = useAccount()
+  const { disconnect } = useDisconnect()
   let isMobileDimension
 
   const copyCode = () => {
@@ -40,7 +41,7 @@ const TryItOut: NextPage = () => {
         className={s.checkeredContentBG}
         style={{ backgroundImage: `url(${checkeredImage.src})` }}
       >
-        <div>{!account.isConnected ? <Web3Button /> : accountButton()}</div>
+        <div>{!isConnected ? <Web3Button /> : accountButton()}</div>
       </div>
     </div>
   )
