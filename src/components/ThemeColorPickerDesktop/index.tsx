@@ -1,5 +1,5 @@
+import { useWeb3ModalTheme } from '@web3modal/react'
 import NextImage from 'next/image'
-import { useSnapshot } from 'valtio'
 import { ThemeCtrl } from '../../controllers/ThemeCtrl'
 import { ACCENT_COLORS, THEME } from '../../data/COLOR_PICKER'
 import Button from '../Button/Index'
@@ -7,18 +7,18 @@ import Text, { IProps as TextProps } from '../Text/Index'
 import s from './styles.module.css'
 
 export default function ColorPickerDesktop() {
-  const { accentColor, theme } = useSnapshot(ThemeCtrl.state)
+  const { theme, setTheme } = useWeb3ModalTheme()
 
   const changeTheme = (theme: typeof ThemeCtrl.state.theme) => {
-    ThemeCtrl.setTheme(theme)
+    setTheme({ themeMode: theme })
   }
 
   const changeAccentColor = (color: typeof ThemeCtrl.state.accentColor) => {
-    ThemeCtrl.setAccentColor(color)
+    setTheme({ themeColor: color })
   }
 
   const checkCurrentAccentColor = (color: string) => {
-    if (color === accentColor) {
+    if (color === theme.themeColor) {
       return true
     } else {
       return false
@@ -26,7 +26,7 @@ export default function ColorPickerDesktop() {
   }
 
   const checkCurrentTheme = (selectedTheme: string) => {
-    if (selectedTheme === theme) {
+    if (selectedTheme === theme.themeMode) {
       return true
     } else {
       return false
