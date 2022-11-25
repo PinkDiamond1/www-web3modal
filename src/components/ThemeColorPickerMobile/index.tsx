@@ -1,5 +1,4 @@
-import { Web3Button } from '@web3modal/react'
-import { ThemeCtrl } from '../../controllers/ThemeCtrl'
+import { useWeb3ModalTheme, Web3Button } from '@web3modal/react'
 import { ACCENT_COLORS, THEME } from '../../data/COLOR_PICKER'
 import Button from '../Button/Index'
 import { IProps as TextProps } from '../Text/Index'
@@ -11,9 +10,7 @@ interface Props {
 }
 
 export default function ThemePicker({}: Props) {
-  const changeTheme = (theme: typeof ThemeCtrl.state.theme) => {
-    ThemeCtrl.setTheme(theme)
-  }
+  const { setTheme } = useWeb3ModalTheme()
 
   const buttonColorCheck = (color: string) => {
     if (color === 'default') {
@@ -43,7 +40,7 @@ export default function ThemePicker({}: Props) {
           >
             {THEME.map(theme => (
               <Button
-                onClick={() => changeTheme(theme.value)}
+                onClick={() => setTheme({ themeMode: theme.value })}
                 key={theme.title}
                 variant="fill"
                 color={theme.color}
