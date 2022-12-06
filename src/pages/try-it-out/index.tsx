@@ -41,7 +41,9 @@ const TryItOut: NextPage = () => {
         className={s.checkeredContentBG}
         style={{ backgroundImage: `url(${checkeredImage.src})` }}
       >
-        <div>{!isConnected ? <Web3Button /> : accountButton()}</div>
+        <div>
+          <Web3Button />
+        </div>
       </div>
     </div>
   )
