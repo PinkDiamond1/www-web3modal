@@ -1,10 +1,8 @@
 import { Web3Button } from '@web3modal/react'
 import type { NextPage } from 'next'
-import NextImage from 'next/image'
 import { useState } from 'react'
 import { useAccount, useDisconnect } from 'wagmi'
 import checkeredImage from '../../../public/CheckerPattern.png'
-import Button from '../../components/Button/Index'
 import FooterRouter from '../../components/FooterRouter'
 import MobileTryItOut from '../../components/MobileTryItOut'
 import Text from '../../components/Text/Index'
@@ -53,7 +51,7 @@ const TryItOut: NextPage = () => {
       <Text variant={isMobileDimension ? 'heading5' : 'heading4'} color="white">
         Try It Out
       </Text>
-      <Button
+      {/* <Button
         color="grey"
         variant="outline"
         onClick={copyCode}
@@ -66,7 +64,7 @@ const TryItOut: NextPage = () => {
         }
       >
         {copied ? 'Copied' : 'Copy Code'}
-      </Button>
+      </Button> */}
     </div>
   )
 
