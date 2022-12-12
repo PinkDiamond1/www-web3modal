@@ -1,7 +1,6 @@
 import { timeline } from 'motion'
 import NextImage from 'next/image'
 import { useEffect, useState } from 'react'
-import { ThemeCtrl } from '../../controllers/ThemeCtrl'
 import { ACCENT_COLORS, THEME } from '../../data/COLOR_PICKER'
 import {
   buttonColorCheck,
@@ -108,31 +107,5 @@ export default function MobileTryItOut() {
     )
   }
 
-  const mobileIcon = () => {
-    return (
-      <div className={s.mobileColorPickerRow}>
-        <Button
-          onClick={onOpenClick}
-          className={s.mobileColorPicker}
-          variant={'fill'}
-          color={buttonColorCheck(ThemeCtrl.state.accentColor) as TextProps['color']}
-        >
-          <NextImage
-            priority={true}
-            alt="mobilePickerIcon"
-            src={currentTheme === 'light' ? '/icons/Moon.svg' : '/icons/Light.svg'}
-            height={32}
-            width={32}
-          />
-        </Button>
-      </div>
-    )
-  }
-
-  return (
-    <div>
-      {mobileIcon()}
-      {overLayFooterMenu()}
-    </div>
-  )
+  return <div>{overLayFooterMenu()}</div>
 }

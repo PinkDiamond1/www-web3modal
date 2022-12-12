@@ -3,7 +3,8 @@ import { Web3Modal } from '@web3modal/react'
 import PlausibleProvider from 'next-plausible'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import { chain, configureChains, createClient, WagmiConfig } from 'wagmi'
+import { configureChains, createClient, WagmiConfig } from 'wagmi'
+import { arbitrum, avalanche, bsc, fantom, mainnet, optimism, polygon } from 'wagmi/chains'
 import Layout from '../components/layout/Layout'
 import '../styles/globals.css'
 
@@ -12,7 +13,7 @@ if (!process.env.NEXT_PUBLIC_PROJECT_ID)
 
 const projectId = process.env.NEXT_PUBLIC_PROJECT_ID
 
-const chains = [chain.mainnet, chain.polygon, chain.optimism, chain.arbitrum]
+const chains = [mainnet, avalanche, polygon, optimism, arbitrum, bsc, fantom]
 const { provider } = configureChains(chains, [walletConnectProvider({ projectId })])
 const wagmiClient = createClient({
   autoConnect: true,

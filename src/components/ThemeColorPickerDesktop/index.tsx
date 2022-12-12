@@ -25,6 +25,14 @@ export default function ColorPickerDesktop() {
     }
   }
 
+  const checkCurrentBackground = (background: string) => {
+    if (background === theme.themeBackground) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   const checkCurrentTheme = (selectedTheme: string) => {
     if (selectedTheme === theme.themeMode) {
       return true
@@ -99,11 +107,41 @@ export default function ColorPickerDesktop() {
     )
   }
 
+  const backgroundStyleContent = () => {
+    return (
+      <div style={{ padding: '2em 0' }}>
+        <Text variant="text2" color="grey">
+          Background Style
+        </Text>
+        <div style={{ display: 'flex', flexWrap: 'wrap', marginTop: '1em' }}>
+          {['gradient', 'themeColor'].map(variant => (
+            <Button
+              // @ts-expect-error
+              onClick={() => setTheme({ themeBackground: variant })}
+              key={variant}
+              variant="fill"
+              // @ts-expect-error
+              color={buttonColorCheck(variant === 'gradient' ? 'blackWhite' : theme.themeColor)}
+              textTransform="capitalize"
+              textVariant="heading6"
+              className={
+                checkCurrentBackground(variant) ? s.selectedAccentColor : s.nonSelectedAccentColor
+              }
+            >
+              {variant === 'gradient' ? 'Gradient' : 'Color'}
+            </Button>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className={s.pickerContainer}>
       <div style={{ padding: '5rem 1rem 5rem 1rem' }}>
         {lightModeContent()}
         {accentColorContent()}
+        {backgroundStyleContent()}
       </div>
     </div>
   )
