@@ -51,20 +51,6 @@ const TryItOut: NextPage = () => {
       <Text variant={isMobileDimension ? 'heading5' : 'heading4'} color="white">
         Try It Out
       </Text>
-      {/* <Button
-        color="grey"
-        variant="outline"
-        onClick={copyCode}
-        iconLeft={
-          copied ? (
-            <NextImage src={'/icons/Tick.svg'} alt={'codeSnippet'} width={14} height={14} />
-          ) : (
-            <div style={{ margin: 0, padding: 0 }} />
-          )
-        }
-      >
-        {copied ? 'Copied' : 'Copy Code'}
-      </Button> */}
     </div>
   )
 
