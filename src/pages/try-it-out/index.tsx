@@ -1,37 +1,14 @@
 import { Web3Button } from '@web3modal/react'
 import type { NextPage } from 'next'
-import { useState } from 'react'
-import { useAccount, useDisconnect } from 'wagmi'
 import checkeredImage from '../../../public/CheckerPattern.png'
 import FooterRouter from '../../components/FooterRouter'
 import MobileTryItOut from '../../components/MobileTryItOut'
 import Text from '../../components/Text/Index'
 import ColorPickerDesktop from '../../components/ThemeColorPickerDesktop/index'
-import W3MButtonStateless from '../../components/Web3Modal/W3MButtonStateless/Index'
-import { TRY_IT_OUT_CODE } from '../../data/MDX_CODE'
 import s from '../../styles/TryItOut.module.css'
 
 const TryItOut: NextPage = () => {
-  const [copied, setCopied] = useState(false)
-  const { isConnected } = useAccount()
-  const { disconnect } = useDisconnect()
   let isMobileDimension
-
-  const copyCode = () => {
-    navigator.clipboard.writeText(TRY_IT_OUT_CODE)
-    setCopied(true)
-    setTimeout(() => {
-      setCopied(false)
-    }, 2000)
-  }
-
-  const accountButton = () => {
-    return (
-      <div style={{ position: 'relative', top: -20 }}>
-        <W3MButtonStateless text="Disconnect" onClick={disconnect} />
-      </div>
-    )
-  }
 
   const checkeredSVG = (
     <div className={s.checkeredContent}>
@@ -40,7 +17,7 @@ const TryItOut: NextPage = () => {
         style={{ backgroundImage: `url(${checkeredImage.src})` }}
       >
         <div>
-          <Web3Button />
+          <Web3Button balance="show" />
         </div>
       </div>
     </div>

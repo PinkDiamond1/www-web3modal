@@ -2543,36 +2543,36 @@
   dependencies:
     "@walletconnect/window-getters" "^1.0.0"
 
-"@web3modal/core@2.0.0-beta.10":
-  version "2.0.0-beta.10"
-  resolved "https://registry.yarnpkg.com/@web3modal/core/-/core-2.0.0-beta.10.tgz#02e3127554869d8c47b431e9baed5cefe5d6e3ae"
-  integrity sha512-wWDP1kmqbbtCuIRwBBVr/aFBn2A8d8fAsameizFfX+a0pMvZRL5LAkRWAk5+GOY8Dzu1pI520no0Uw1s/uE3xA==
+"@web3modal/core@2.0.0-rc.1":
+  version "2.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@web3modal/core/-/core-2.0.0-rc.1.tgz#93f8f03ed6dc638ed90efa41a611f5cebc922032"
+  integrity sha512-44XpAFBfcnften2tYDgCfVKeau+U7EasDMg00aUxRQ5oIuE7pidHtRCAuPXse6cYgw6FMGP6dLgoYWARqXFxPg==
   dependencies:
     buffer "6.0.3"
     valtio "1.7.6"
 
-"@web3modal/ethereum@2.0.0-beta.10":
-  version "2.0.0-beta.10"
-  resolved "https://registry.yarnpkg.com/@web3modal/ethereum/-/ethereum-2.0.0-beta.10.tgz#cb49700f492f9fc651f1a033f60f5c1bb8821bb1"
-  integrity sha512-Lu1veaAyATAUNaA1tHUlxPxq97eZPR8khPkCjaEu087Ss4k6mJbqfoHyd73ySBDL6ycJIcgggMyMlSU4fGQVYA==
+"@web3modal/ethereum@2.0.0-rc.1":
+  version "2.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@web3modal/ethereum/-/ethereum-2.0.0-rc.1.tgz#cfbb74e9c9ccb991e4406bf7f9c93dd117f8f62a"
+  integrity sha512-fNLgHW5P60vgKjDClBHtahIr30x6lCIEhmS5SxkySdIlP5r52Ygknl+SuT6q99BQC9JtSrHQ+lR6NEJT4Rvw0Q==
   dependencies:
     "@coinbase/wallet-sdk" "3.6.3"
     "@walletconnect/ethereum-provider" "1.8.0"
 
-"@web3modal/react@2.0.0-beta.10":
-  version "2.0.0-beta.10"
-  resolved "https://registry.yarnpkg.com/@web3modal/react/-/react-2.0.0-beta.10.tgz#7e96e7d80651d0bc82ee00b81924bbff43201b13"
-  integrity sha512-Sjfufq17ysBNlwwjNdsfxP9ExGkxVx7ZEMSIy5sV8HAABabpVh+5VIl5bHTrDD7Ys6PcA1eS678Aayru3S0O4g==
+"@web3modal/react@2.0.0-rc.1":
+  version "2.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@web3modal/react/-/react-2.0.0-rc.1.tgz#095960809fa4c8edd765d94d811724dc2d267f56"
+  integrity sha512-aVfdAB1pE+KyHM6YoSs4i5+dO+L/wskeas1SIudKfvuC4Iz198zoRQgtVHJNJaA6tTLKSIC//E1tTgzKWjnWBA==
   dependencies:
-    "@web3modal/core" "2.0.0-beta.10"
-    "@web3modal/ui" "2.0.0-beta.10"
+    "@web3modal/core" "2.0.0-rc.1"
+    "@web3modal/ui" "2.0.0-rc.1"
 
-"@web3modal/ui@2.0.0-beta.10":
-  version "2.0.0-beta.10"
-  resolved "https://registry.yarnpkg.com/@web3modal/ui/-/ui-2.0.0-beta.10.tgz#5fbb1a2b25594868b5d8c528dc4f58d5b9a51157"
-  integrity sha512-YEEt5tZvfDePk3AOMZ3kV4TGKYqUOzAC4pkZsQvABUTJ6MnyqWsy71RDZ7wqBlPP8Igp7NnRzMdPjzrVb3GkVg==
+"@web3modal/ui@2.0.0-rc.1":
+  version "2.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/@web3modal/ui/-/ui-2.0.0-rc.1.tgz#38ad96c3424488e2140a5dfc8fbb01d53767d47a"
+  integrity sha512-m1GNOrqcIBlj9sBndJKjYeo6/lCFLDeUZlbEMjJJnIXS5XR+ocQfoIPZFf1l7oCFlCGXldm7wBagaGRNWkGarQ==
   dependencies:
-    "@web3modal/core" "2.0.0-beta.10"
+    "@web3modal/core" "2.0.0-rc.1"
     lit "2.5.0"
     motion "10.15.3"
     qrcode "1.5.1"
