@@ -48,7 +48,8 @@ export default function ThemePicker({}: Props) {
               ></Button>
             ))}
           </div>
-          <Web3Button />
+
+          <Web3Button balance="show" />
 
           <div
             style={{ width: 1, height: 24, background: '#3B4040', marginLeft: 16, marginRight: 16 }}
